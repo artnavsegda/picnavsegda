@@ -1,0 +1,211 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+ALTERNATE::1	C:\4XK20 Release\DFT\oled_cmd.c	7;"	d	line:7	file:
+ALTERNATE::1	C:\4XK20 Release\DFT\oled_cmd.h	3;"	d	line:3
+ActivateHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.c	28;"	f	line:28
+ActivateHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.h	9;"	p	line:9	signature:(void)
+BINCOUNT	C:\4XK20 Release\DFT\main.c	44;"	v	line:44
+CHIP_SELECT::oled_cs=0	C:\4XK20 Release\DFT\oled_interface.h	9;"	d	line:9
+CHIP_UNSELECT::oled_cs=1	C:\4XK20 Release\DFT\oled_interface.h	12;"	d	line:12
+COMMAND_SELECT::oled_c=0	C:\4XK20 Release\DFT\oled_interface.h	10;"	d	line:10
+Convert1xto2x	C:\4XK20 Release\DFT\oled.c	115;"	f	line:115	signature:(unsigned char uplow, unsigned char byte)
+DATA_SELECT::oled_c=1	C:\4XK20 Release\DFT\oled_interface.h	11;"	d	line:11
+DCDCOnOff	C:\4XK20 Release\DFT\oled_cmd.c	100;"	f	line:100	signature:(char x)
+DCDCOnOff	C:\4XK20 Release\DFT\oled_cmd.h	21;"	p	line:21	signature:(char x)
+DeactivateHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.c	34;"	f	line:34
+DeactivateHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.h	10;"	p	line:10	signature:(void)
+EntireDisplayOnOff	C:\4XK20 Release\DFT\oled_cmd.c	82;"	f	line:82	signature:(char x)
+EntireDisplayOnOff	C:\4XK20 Release\DFT\oled_cmd.h	18;"	p	line:18	signature:(char x)
+FTABLE	C:\4XK20 Release\DFT\main.c	40;"	v	line:40
+IBIN	C:\4XK20 Release\DFT\main.c	41;"	v	line:41
+INBUFFER	C:\4XK20 Release\DFT\main.c	43;"	v	line:43
+InitializeOled	C:\4XK20 Release\DFT\main.c	54;"	p	line:54	file:	signature:(void)
+InitializeSystem	C:\4XK20 Release\DFT\main.c	52;"	p	line:52	file:	signature:(void)
+InitializeSystem	C:\4XK20 Release\DFT\main.c	93;"	f	line:93	file:	signature:(void)
+InterruptHandler	C:\4XK20 Release\DFT\main.c	173;"	f	line:173	signature:(void)
+InterruptHandler	C:\4XK20 Release\DFT\main.c	53;"	p	line:53	file:	signature:(void)
+MSB_TEMP	C:\4XK20 Release\DFT\main.c	45;"	v	line:45
+NOP::0xE3	C:\4XK20 Release\DFT\oled_interface.c	5;"	d	line:5	file:
+OFF::0	C:\4XK20 Release\DFT\oled_cmd.c	6;"	d	line:6	file:
+OFF::0	C:\4XK20 Release\DFT\oled_cmd.h	2;"	d	line:2
+ON::1	C:\4XK20 Release\DFT\oled_cmd.c	5;"	d	line:5	file:
+ON::1	C:\4XK20 Release\DFT\oled_cmd.h	1;"	d	line:1
+QBIN	C:\4XK20 Release\DFT\main.c	42;"	v	line:42
+SEQUENTIAL::0	C:\4XK20 Release\DFT\oled_cmd.c	8;"	d	line:8	file:
+SEQUENTIAL::0	C:\4XK20 Release\DFT\oled_cmd.h	4;"	d	line:4
+SPI	C:\4XK20 Release\DFT\oled.h	1;"	d	line:1
+SPI	C:\4XK20 Release\DFT\oled_interface.h	3;"	d	line:3
+SetAreaColorPowerMode	C:\4XK20 Release\DFT\oled_cmd.c	138;"	f	line:138	signature:(char c,char p)
+SetAreaColorPowerMode	C:\4XK20 Release\DFT\oled_cmd.h	27;"	p	line:27	signature:(char c,char p)
+SetBankColorA	C:\4XK20 Release\DFT\oled_cmd.c	64;"	f	line:64	signature:(char a,char b,char c,char e)
+SetBankColorA	C:\4XK20 Release\DFT\oled_cmd.h	15;"	p	line:15	signature:(char a,char b,char c,char d)
+SetBankColorB	C:\4XK20 Release\DFT\oled_cmd.c	70;"	f	line:70	signature:(char a,char b,char c,char e)
+SetBankColorB	C:\4XK20 Release\DFT\oled_cmd.h	16;"	p	line:16	signature:(char a,char b,char c,char d)
+SetBrightness	C:\4XK20 Release\DFT\oled_cmd.c	52;"	f	line:52	signature:(char a)
+SetBrightness	C:\4XK20 Release\DFT\oled_cmd.h	13;"	p	line:13	signature:(char a)
+SetCOMHWConfig	C:\4XK20 Release\DFT\oled_cmd.c	155;"	f	line:155	signature:(char x)
+SetCOMHWConfig	C:\4XK20 Release\DFT\oled_cmd.h	29;"	p	line:29	signature:(char x)
+SetCOMScan	C:\4XK20 Release\DFT\oled_cmd.c	118;"	f	line:118	signature:(char x)
+SetCOMScan	C:\4XK20 Release\DFT\oled_cmd.h	24;"	p	line:24	signature:(char x)
+SetContrastControlRegister	C:\4XK20 Release\DFT\oled_cmd.c	46;"	f	line:46	signature:(char a)
+SetContrastControlRegister	C:\4XK20 Release\DFT\oled_cmd.h	12;"	p	line:12	signature:(char a)
+SetDisplayClockDivider	C:\4XK20 Release\DFT\oled_cmd.c	132;"	f	line:132	signature:(char a)
+SetDisplayClockDivider	C:\4XK20 Release\DFT\oled_cmd.h	26;"	p	line:26	signature:(char a)
+SetDisplayOffset	C:\4XK20 Release\DFT\oled_cmd.c	126;"	f	line:126	signature:(char a)
+SetDisplayOffset	C:\4XK20 Release\DFT\oled_cmd.h	25;"	p	line:25	signature:(char a)
+SetDisplayOnOff	C:\4XK20 Release\DFT\oled_cmd.c	106;"	f	line:106	signature:(char x)
+SetDisplayOnOff	C:\4XK20 Release\DFT\oled_cmd.h	22;"	p	line:22	signature:(char x)
+SetDisplayStartLine	C:\4XK20 Release\DFT\oled_cmd.c	40;"	f	line:40	signature:(char x)
+SetDisplayStartLine	C:\4XK20 Release\DFT\oled_cmd.h	11;"	p	line:11	signature:(char x)
+SetHigherColumnAddress	C:\4XK20 Release\DFT\oled_cmd.c	16;"	f	line:16	signature:(char x)
+SetHigherColumnAddress	C:\4XK20 Release\DFT\oled_cmd.h	7;"	p	line:7	signature:(char x)
+SetInverse	C:\4XK20 Release\DFT\oled_cmd.c	88;"	f	line:88	signature:(char x)
+SetInverse	C:\4XK20 Release\DFT\oled_cmd.h	19;"	p	line:19	signature:(char x)
+SetLUT	C:\4XK20 Release\DFT\oled_cmd.c	58;"	f	line:58	signature:(char x,char a,char b,char c)
+SetLUT	C:\4XK20 Release\DFT\oled_cmd.h	14;"	p	line:14	signature:(char x,char a,char b,char c)
+SetLowerColumnAddress	C:\4XK20 Release\DFT\oled_cmd.c	10;"	f	line:10	signature:(char x)
+SetLowerColumnAddress	C:\4XK20 Release\DFT\oled_cmd.h	6;"	p	line:6	signature:(char x)
+SetMultiplexRatio	C:\4XK20 Release\DFT\oled_cmd.c	94;"	f	line:94	signature:(char a)
+SetMultiplexRatio	C:\4XK20 Release\DFT\oled_cmd.h	20;"	p	line:20	signature:(char a)
+SetPageAddress	C:\4XK20 Release\DFT\oled_cmd.c	112;"	f	line:112	signature:(char x)
+SetPageAddress	C:\4XK20 Release\DFT\oled_cmd.h	23;"	p	line:23	signature:(char x)
+SetPrechargePeriod	C:\4XK20 Release\DFT\oled_cmd.c	149;"	f	line:149	signature:(char a)
+SetPrechargePeriod	C:\4XK20 Release\DFT\oled_cmd.h	28;"	p	line:28	signature:(char a)
+SetSegmentReMap	C:\4XK20 Release\DFT\oled_cmd.c	76;"	f	line:76	signature:(char x)
+SetSegmentReMap	C:\4XK20 Release\DFT\oled_cmd.h	17;"	p	line:17	signature:(char x)
+SetVCOMDeselectLevel	C:\4XK20 Release\DFT\oled_cmd.c	163;"	f	line:163	signature:(char a)
+SetVCOMDeselectLevel	C:\4XK20 Release\DFT\oled_cmd.h	30;"	p	line:30	signature:(char a)
+SetupHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.c	22;"	f	line:22	signature:(char a,char b,char c,char e)
+SetupHorizontalScroll	C:\4XK20 Release\DFT\oled_cmd.h	8;"	p	line:8	signature:(char a,char b,char c,char d)
+WRITE::(d)write_i2c(d)	C:\4XK20 Release\DFT\oled_interface.h	18;"	d	line:18
+WRITE::(d)write_parallel(d)	C:\4XK20 Release\DFT\oled_interface.h	21;"	d	line:21
+WRITE::(d)write_spi(d)	C:\4XK20 Release\DFT\oled_interface.h	15;"	d	line:15
+abs_bin	C:\4XK20 Release\DFT\dft.asm	118;"	l	line:118
+abs_negative	C:\4XK20 Release\DFT\dft.asm	128;"	l	line:128
+abs_positive	C:\4XK20 Release\DFT\dft.asm	133;"	l	line:133
+add_negative	C:\4XK20 Release\DFT\dft.asm	56;"	l	line:56
+add_negative	C:\4XK20 Release\DFT\dft.asm	86;"	l	line:86
+add_positive	C:\4XK20 Release\DFT\dft.asm	65;"	l	line:65
+add_positive	C:\4XK20 Release\DFT\dft.asm	95;"	l	line:95
+buffer_index	C:\4XK20 Release\DFT\main.c	35;"	v	line:35
+c	C:\4XK20 Release\DFT\oled.c	74;"	l	line:74
+check_negative	C:\4XK20 Release\DFT\dft.asm	125;"	l	line:125
+correlate	C:\4XK20 Release\DFT\dft.asm	104;"	l	line:104
+correlation	C:\4XK20 Release\DFT\dft.asm	48;"	m	line:48
+countx	C:\4XK20 Release\DFT\main.c	301;"	l	line:301
+d	C:\4XK20 Release\DFT\oled_cmd.c	102;"	l	line:102
+d	C:\4XK20 Release\DFT\oled_cmd.c	108;"	l	line:108
+d	C:\4XK20 Release\DFT\oled_cmd.c	114;"	l	line:114
+d	C:\4XK20 Release\DFT\oled_cmd.c	120;"	l	line:120
+d	C:\4XK20 Release\DFT\oled_cmd.c	128;"	l	line:128
+d	C:\4XK20 Release\DFT\oled_cmd.c	12;"	l	line:12
+d	C:\4XK20 Release\DFT\oled_cmd.c	134;"	l	line:134
+d	C:\4XK20 Release\DFT\oled_cmd.c	140;"	l	line:140
+d	C:\4XK20 Release\DFT\oled_cmd.c	151;"	l	line:151
+d	C:\4XK20 Release\DFT\oled_cmd.c	157;"	l	line:157
+d	C:\4XK20 Release\DFT\oled_cmd.c	165;"	l	line:165
+d	C:\4XK20 Release\DFT\oled_cmd.c	18;"	l	line:18
+d	C:\4XK20 Release\DFT\oled_cmd.c	24;"	l	line:24
+d	C:\4XK20 Release\DFT\oled_cmd.c	30;"	l	line:30
+d	C:\4XK20 Release\DFT\oled_cmd.c	36;"	l	line:36
+d	C:\4XK20 Release\DFT\oled_cmd.c	42;"	l	line:42
+d	C:\4XK20 Release\DFT\oled_cmd.c	48;"	l	line:48
+d	C:\4XK20 Release\DFT\oled_cmd.c	54;"	l	line:54
+d	C:\4XK20 Release\DFT\oled_cmd.c	60;"	l	line:60
+d	C:\4XK20 Release\DFT\oled_cmd.c	66;"	l	line:66
+d	C:\4XK20 Release\DFT\oled_cmd.c	72;"	l	line:72
+d	C:\4XK20 Release\DFT\oled_cmd.c	78;"	l	line:78
+d	C:\4XK20 Release\DFT\oled_cmd.c	84;"	l	line:84
+d	C:\4XK20 Release\DFT\oled_cmd.c	90;"	l	line:90
+d	C:\4XK20 Release\DFT\oled_cmd.c	96;"	l	line:96
+delayy	C:\4XK20 Release\DFT\main.c	29;"	v	line:29
+dft	C:\4XK20 Release\DFT\dft.asm	33;"	l	line:33
+dft	C:\4XK20 Release\DFT\main.c	47;"	p	line:47	file:	signature:(void)
+drawmagnitudeplot	C:\4XK20 Release\DFT\main.c	300;"	f	line:300	signature:(void)
+drawmagnitudeplot	C:\4XK20 Release\DFT\main.c	55;"	p	line:55	file:	signature:(void)
+eff	C:\4XK20 Release\DFT\main.c	30;"	v	line:30
+g_pucFont	C:\4XK20 Release\DFT\font.c	1;"	v	line:1
+high_interrupt	C:\4XK20 Release\DFT\main.c	64;"	f	line:64	signature:(void)
+iin	C:\4XK20 Release\DFT\main.c	27;"	v	line:27
+imageNumber	C:\4XK20 Release\DFT\main.c	24;"	v	line:24
+init_sine_table	C:\4XK20 Release\DFT\dft.asm	139;"	l	line:139
+init_sine_table	C:\4XK20 Release\DFT\main.c	48;"	p	line:48	file:	signature:(void)
+iout	C:\4XK20 Release\DFT\main.c	27;"	v	line:27
+loop_abs	C:\4XK20 Release\DFT\dft.asm	120;"	l	line:120
+loop_bin	C:\4XK20 Release\DFT\dft.asm	79;"	l	line:79
+loop_sine_lookup	C:\4XK20 Release\DFT\dft.asm	149;"	l	line:149
+low_interrupt	C:\4XK20 Release\DFT\main.c	70;"	f	line:70	signature:(void)
+magnitude	C:\4XK20 Release\DFT\main.c	36;"	v	line:36
+magnitude_divisor	C:\4XK20 Release\DFT\main.c	36;"	v	line:36
+main	C:\4XK20 Release\DFT\main.c	240;"	f	line:240	signature:(void)
+max_result	C:\4XK20 Release\DFT\main.c	36;"	v	line:36
+oled_ScreenSaver	C:\4XK20 Release\DFT\oled.c	169;"	f	line:169	signature:(unsigned char enable)
+oled_ScreenSaver	C:\4XK20 Release\DFT\oled.h	18;"	p	line:18	signature:(unsigned char enable)
+oled_SendCommand	C:\4XK20 Release\DFT\oled_interface.c	9;"	f	line:9	signature:(unsigned char *d,unsigned char c)
+oled_SendCommand	C:\4XK20 Release\DFT\oled_interface.h	24;"	p	line:24	signature:(unsigned char *d,unsigned char c)
+oled_SendCommand_2	C:\4XK20 Release\DFT\oled_interface.c	26;"	f	line:26	signature:(unsigned char d,unsigned char c)
+oled_SendCommand_2	C:\4XK20 Release\DFT\oled_interface.h	25;"	p	line:25	signature:(unsigned char d,unsigned char c)
+oled_SendData	C:\4XK20 Release\DFT\oled_interface.c	41;"	f	line:41	signature:(unsigned char *d,unsigned char c)
+oled_SendData	C:\4XK20 Release\DFT\oled_interface.h	27;"	p	line:27	signature:(unsigned char *d,unsigned char c)
+oled_SendData_2	C:\4XK20 Release\DFT\oled_interface.c	56;"	f	line:56	signature:(unsigned char d,unsigned char c)
+oled_SendData_2	C:\4XK20 Release\DFT\oled_interface.h	28;"	p	line:28	signature:(unsigned char d,unsigned char c)
+oled_SetBrightness	C:\4XK20 Release\DFT\oled.c	86;"	f	line:86	signature:(char b)
+oled_SetBrightness	C:\4XK20 Release\DFT\oled.h	19;"	p	line:19	signature:(char b)
+oled_WriteChar1x	C:\4XK20 Release\DFT\oled.h	13;"	p	line:13	signature:(char, unsigned char, unsigned char)
+oled_WriteChar2x	C:\4XK20 Release\DFT\oled.h	14;"	p	line:14	signature:(char, unsigned char, unsigned char)
+oled_c::LATAbits.LATA5	C:\4XK20 Release\DFT\oled_interface.h	6;"	d	line:6
+oled_clear	C:\4XK20 Release\DFT\oled.h	3;"	p	line:3	signature:(void)
+oled_cs::LATAbits.LATA7	C:\4XK20 Release\DFT\oled_interface.h	7;"	d	line:7
+oled_draw_row	C:\4XK20 Release\DFT\oled.c	70;"	f	line:70	signature:(char r, unsigned char *d)
+oled_draw_row	C:\4XK20 Release\DFT\oled.h	4;"	p	line:4	signature:(char, unsigned char *)
+oled_init	C:\4XK20 Release\DFT\oled.c	14;"	f	line:14	signature:(void)
+oled_init	C:\4XK20 Release\DFT\oled.h	2;"	p	line:2	signature:(void)
+oled_off	C:\4XK20 Release\DFT\oled.c	91;"	f	line:91
+oled_off	C:\4XK20 Release\DFT\oled.h	6;"	p	line:6	signature:(void)
+oled_on	C:\4XK20 Release\DFT\oled.c	96;"	f	line:96
+oled_on	C:\4XK20 Release\DFT\oled.h	7;"	p	line:7	signature:(void)
+oled_plotbar	C:\4XK20 Release\DFT\oled.h	17;"	p	line:17	signature:(unsigned char r, unsigned char c, unsigned char v)
+oled_putc_1x	C:\4XK20 Release\DFT\oled.h	11;"	p	line:11	signature:(char)
+oled_putc_2x	C:\4XK20 Release\DFT\oled.h	12;"	p	line:12	signature:(char)
+oled_puts_1x	C:\4XK20 Release\DFT\oled.h	15;"	p	line:15	signature:(char *s)
+oled_puts_2x	C:\4XK20 Release\DFT\oled.h	16;"	p	line:16	signature:(char *s)
+oled_refresh	C:\4XK20 Release\DFT\oled.h	9;"	p	line:9	signature:(void)
+oled_res::LATAbits.LATA4	C:\4XK20 Release\DFT\oled_interface.h	5;"	d	line:5
+oled_reset	C:\4XK20 Release\DFT\oled.c	101;"	f	line:101
+oled_reset	C:\4XK20 Release\DFT\oled.h	8;"	p	line:8	signature:(void)
+oled_scroll_right	C:\4XK20 Release\DFT\oled.c	82;"	f	line:82
+pin	C:\4XK20 Release\DFT\main.c	28;"	v	line:28
+pout	C:\4XK20 Release\DFT\main.c	28;"	v	line:28
+put_number	C:\4XK20 Release\DFT\main.c	56;"	p	line:56	file:	signature:(char *s, unsigned int v)
+putpixel_vram	C:\4XK20 Release\DFT\oled.h	10;"	p	line:10	signature:(unsigned char x,unsigned char y,unsigned char color)
+read_parallel	C:\4XK20 Release\DFT\oled_interface.c	95;"	f	line:95
+read_parallel	C:\4XK20 Release\DFT\oled_interface.h	32;"	p	line:32	signature:(void)
+result	C:\4XK20 Release\DFT\oled.c	117;"	l	line:117
+result_index	C:\4XK20 Release\DFT\main.c	35;"	v	line:35
+rowx	C:\4XK20 Release\DFT\main.c	301;"	l	line:301
+sine_table	C:\4XK20 Release\DFT\dft.asm	156;"	l	line:156
+start_dft	C:\4XK20 Release\DFT\main.c	35;"	v	line:35
+sum	C:\4XK20 Release\DFT\main.c	29;"	v	line:29
+temp	C:\4XK20 Release\DFT\oled.c	103;"	l	line:103
+temp	C:\4XK20 Release\DFT\oled.c	16;"	l	line:16
+temp	C:\4XK20 Release\DFT\oled_interface.c	74;"	l	line:74
+temp	C:\4XK20 Release\DFT\oled_interface.c	7;"	v	line:7
+test	C:\4XK20 Release\DFT\main.c	31;"	v	line:31
+vin	C:\4XK20 Release\DFT\main.c	26;"	v	line:26
+vout	C:\4XK20 Release\DFT\main.c	26;"	v	line:26
+write_i2c	C:\4XK20 Release\DFT\oled_interface.c	86;"	f	line:86	signature:(char c)
+write_i2c	C:\4XK20 Release\DFT\oled_interface.h	30;"	p	line:30	signature:(char)
+write_parallel	C:\4XK20 Release\DFT\oled_interface.c	91;"	f	line:91	signature:(char c)
+write_parallel	C:\4XK20 Release\DFT\oled_interface.h	31;"	p	line:31	signature:(char)
+write_spi	C:\4XK20 Release\DFT\oled_interface.c	72;"	f	line:72	signature:(char c)
+write_spi	C:\4XK20 Release\DFT\oled_interface.h	29;"	p	line:29	signature:(char)
+x	C:\4XK20 Release\DFT\oled_interface.c	11;"	l	line:11
+x	C:\4XK20 Release\DFT\oled_interface.c	28;"	l	line:28
+x	C:\4XK20 Release\DFT\oled_interface.c	43;"	l	line:43
+x	C:\4XK20 Release\DFT\oled_interface.c	58;"	l	line:58

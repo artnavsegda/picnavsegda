@@ -1,0 +1,1040 @@
+MPLINK 4.13, Linker
+Linker Map File - Created Tue May 06 10:59:44 2008
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+               _entry_scn       code   0x000000    program   0x000006
+              high_vector       code   0x000008    program   0x000006
+               low_vector       code   0x000018    program   0x000006
+                   .cinit    romdata   0x00002a    program   0x00001a
+             .code_oled.o       code   0x000044    program   0x0009b4
+             .code_main.o       code   0x0009f8    program   0x000838
+         .code_oled_cmd.o       code   0x001230    program   0x0006c4
+                    .code       code   0x0018f4    program   0x0006a6
+          .romdata_font.o    romdata   0x001f9a    program   0x0001db
+      .romdata_oled_cmd.o    romdata   0x002175    program   0x000000
+      .idata_oled_cmd.o_i    romdata   0x002175    program   0x000000
+          .romdata_oled.o    romdata   0x002175    program   0x000000
+.idata_oled_interface.o_i    romdata   0x002175    program   0x000000
+.romdata_oled_interface.o    romdata   0x002175    program   0x000000
+      .romdata_fxd3232u.o    romdata   0x002175    program   0x000000
+       .romdata_fxm3232.o    romdata   0x002175    program   0x000000
+          .romdata_main.o    romdata   0x002175    program   0x000000
+          .idata_main.o_i    romdata   0x002175    program   0x000001
+        .romdata___init.o    romdata   0x002175    program   0x000000
+         .romdata_c018i.o    romdata   0x002175    program   0x000000
+   .code_oled_interface.o       code   0x002176    program   0x00016c
+               _cinit_scn       code   0x0022e2    program   0x00009e
+          .code_fxm3232.o       code   0x002380    program   0x000070
+         .code_fxd3232u.o       code   0x0023f0    program   0x000048
+             _startup_scn       code   0x002438    program   0x00001c
+           .code___init.o       code   0x002454    program   0x000002
+          .idata_oled.o_i    romdata   0x002456    program   0x000010
+       .idata_fxm3232.o_i    romdata   0x002466    program   0x000000
+      .idata_fxd3232u.o_i    romdata   0x002466    program   0x000000
+        .idata___init.o_i    romdata   0x002466    program   0x000000
+             .code_font.o       code   0x002466    program   0x000000
+          .idata_font.o_i    romdata   0x002466    program   0x000000
+            .code_c018i.o       code   0x002466    program   0x000000
+         .idata_c018i.o_i    romdata   0x002466    program   0x000000
+    .config_300001_main.o    romdata   0x300001    program   0x000001
+    .config_300002_main.o    romdata   0x300002    program   0x000001
+    .config_300003_main.o    romdata   0x300003    program   0x000001
+    .config_300005_main.o    romdata   0x300005    program   0x000001
+    .config_300006_main.o    romdata   0x300006    program   0x000001
+    .config_300008_main.o    romdata   0x300008    program   0x000001
+    .config_300009_main.o    romdata   0x300009    program   0x000001
+    .config_30000a_main.o    romdata   0x30000a    program   0x000001
+    .config_30000b_main.o    romdata   0x30000b    program   0x000001
+    .config_30000c_main.o    romdata   0x30000c    program   0x000001
+    .config_30000d_main.o    romdata   0x30000d    program   0x000001
+                 .tmpdata      udata   0x000000       data   0x00001c
+                MATH_DATA      udata   0x00001c       data   0x000010
+     InterruptHandler_tmp      udata   0x00002c       data   0x000001
+               OLEDDATA_7      udata   0x000060       data   0x000084
+            .udata_main.o      udata   0x0000e4       data   0x000013
+  .udata_oled_interface.o      udata   0x0000f7       data   0x000002
+            .idata_main.o      idata   0x0000f9       data   0x000001
+         .udata_fxm3232.o      udata   0x0000fa       data   0x000000
+        .idata_fxd3232u.o      idata   0x0000fa       data   0x000000
+        .udata_fxd3232u.o      udata   0x0000fa       data   0x000000
+         .idata_fxm3232.o      idata   0x0000fa       data   0x000000
+  .idata_oled_interface.o      idata   0x0000fa       data   0x000000
+          .udata___init.o      udata   0x0000fa       data   0x000000
+          .idata___init.o      idata   0x0000fa       data   0x000000
+            .udata_oled.o      udata   0x0000fa       data   0x000000
+        .idata_oled_cmd.o      idata   0x0000fa       data   0x000000
+        .udata_oled_cmd.o      udata   0x0000fa       data   0x000000
+            .idata_font.o      idata   0x0000fa       data   0x000000
+            .udata_font.o      udata   0x0000fa       data   0x000000
+           .idata_c018i.o      idata   0x0000fa       data   0x000000
+            analyzer_vars      udata   0x000100       data   0x00004b
+               OLEDDATA_6      udata   0x00014b       data   0x000080
+            .idata_oled.o      idata   0x0001cb       data   0x000010
+           .udata_c018i.o      udata   0x0001db       data   0x00000a
+               OLEDDATA_5      udata   0x000200       data   0x000080
+               OLEDDATA_4      udata   0x000280       data   0x000080
+                 dft_vars      udata   0x000300       data   0x0000a3
+               OLEDDATA_3      udata   0x000400       data   0x000080
+               OLEDDATA_2      udata   0x000480       data   0x000080
+               OLEDDATA_1      udata   0x000500       data   0x000080
+               OLEDDATA_0      udata   0x000580       data   0x000080
+                   .stack      udata   0x000e00       data   0x000100
+            SFR_UNBANKED0      udata   0x000f77       data   0x000089
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000005      
+                            0x000008    0x00000d      
+                            0x000018    0x00001d      
+                            0x00002a    0x002465      
+                            0x300001    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            9305 out of 66584 program addresses used, program memory utilization is 13%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+ ActivateHorizontalScroll   0x001308    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            Convert1xto2x   0x00090e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                DCDCOnOff   0x00164e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+DeactivateHorizontalScroll   0x001336    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+       EntireDisplayOnOff   0x00159e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+                 FXD3232U   0x0023f0    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
+                  FXM3232   0x002380    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
+         InitializeSystem   0x0009f8    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+         InterruptHandler   0x000a5e    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+    SetAreaColorPowerMode   0x0017c6    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBankColorA   0x001496    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBankColorB   0x001500    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBrightness   0x0013de    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+           SetCOMHWConfig   0x001862    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+               SetCOMScan   0x001700    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+SetContrastControlRegister   0x001398    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+   SetDisplayClockDivider   0x001780    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+         SetDisplayOffset   0x001738    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+          SetDisplayOnOff   0x001698    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+      SetDisplayStartLine   0x001364    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+   SetHigherColumnAddress   0x001262    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+               SetInverse   0x0015d2    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+                   SetLUT   0x001424    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+    SetLowerColumnAddress   0x001230    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+        SetMultiplexRatio   0x001606    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+           SetPageAddress   0x0016cc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+       SetPrechargePeriod   0x00181c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+          SetSegmentReMap   0x00156a    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+     SetVCOMDeselectLevel   0x0018ac    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+    SetupHorizontalScroll   0x001296    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+          _10add_negative   0x001b0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _10add_positive   0x001b1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _11add_negative   0x001b3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _11add_positive   0x001b4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _12add_negative   0x001b6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _12add_positive   0x001b7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _13add_negative   0x001b9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _13add_positive   0x001baa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _14add_negative   0x001bca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _14add_positive   0x001bda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _15add_negative   0x001bfa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _15add_positive   0x001c0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _16add_negative   0x001c2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _16add_positive   0x001c3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _17add_negative   0x001c5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _17add_positive   0x001c6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _18add_negative   0x001c8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _18add_positive   0x001c9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _19add_negative   0x001cba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _19add_positive   0x001cca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _1add_negative   0x00195a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _1add_positive   0x00196a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _20add_negative   0x001cea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _20add_positive   0x001cfa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _21add_negative   0x001d1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _21add_positive   0x001d2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _22add_negative   0x001d4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _22add_positive   0x001d5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _23add_negative   0x001d7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _23add_positive   0x001d8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _24add_negative   0x001daa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _24add_positive   0x001dba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _25add_negative   0x001dda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _25add_positive   0x001dea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _26add_negative   0x001e0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _26add_positive   0x001e1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _27add_negative   0x001e3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _27add_positive   0x001e4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _28add_negative   0x001e6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _28add_positive   0x001e7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _29add_negative   0x001e9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _29add_positive   0x001eaa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _2add_negative   0x00198a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _2add_positive   0x00199a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _30add_negative   0x001eca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _30add_positive   0x001eda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _31add_negative   0x001efa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _31add_positive   0x001f0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _3add_negative   0x0019ba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _3add_positive   0x0019ca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _4add_negative   0x0019ea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _4add_positive   0x0019fa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _5add_negative   0x001a1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _5add_positive   0x001a2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _6add_negative   0x001a4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _6add_positive   0x001a5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _7add_negative   0x001a7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _7add_positive   0x001a8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _8add_negative   0x001aaa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _8add_positive   0x001aba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _9add_negative   0x001ada    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _9add_positive   0x001aea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          ___for_lbl00001   0x0021a8    program     static                          
+          ___for_lbl00002   0x0021ac    program     static                          
+          ___for_lbl00003   0x002186    program     static                          
+          ___for_lbl00005   0x0021e6    program     static                          
+          ___for_lbl00006   0x0021ea    program     static                          
+          ___for_lbl00007   0x0021d4    program     static                          
+          ___for_lbl00009   0x002234    program     static                          
+          ___for_lbl00010   0x002238    program     static                          
+          ___for_lbl00011   0x002212    program     static                          
+          ___for_lbl00013   0x002274    program     static                          
+          ___for_lbl00014   0x002278    program     static                          
+          ___for_lbl00015   0x002262    program     static                          
+       ___return_lbl00000   0x0023ee    program     static                          
+       ___return_lbl00000   0x00000c    program     static                          
+       ___return_lbl00000   0x000004    program     static                          
+       ___return_lbl00000   0x002436    program     static                          
+       ___return_lbl00000   0x0021ba    program     static                          
+       ___return_lbl00001   0x002452    program     static                          
+       ___return_lbl00001   0x00001c    program     static                          
+       ___return_lbl00002   0x00237e    program     static                          
+       ___return_lbl00004   0x0021f8    program     static                          
+       ___return_lbl00008   0x002248    program     static                          
+       ___return_lbl00012   0x002288    program     static                          
+               __config_0   0x300001    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_1   0x300002    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              __config_10   0x30000d    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_2   0x300003    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_3   0x300005    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_4   0x300006    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_5   0x300008    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_6   0x300009    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_7   0x30000a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_8   0x30000b    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_9   0x30000c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   __init   0x002454    program     extern C:\MCC18\src\TRADIT~1\stdclib\__init.c
+            __zero_memory   0x001f8c    program     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                _do_cinit   0x0022e2    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                   _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                   _false   0x002432    program     static                          
+                 _startup   0x002438    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                  abs_bin   0x001f2c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             abs_negative   0x001f3c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             abs_positive   0x001f44    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             add_negative   0x00192c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             add_positive   0x00193a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           check_negative   0x001f38    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+               clear_loop   0x001f92    program     static C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     clrw   0x001936    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                copy_loop   0x002354    program     static                          
+            copy_one_byte   0x00235a    program     static                          
+                correlate   0x001950    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                      dft   0x0018f4    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                     done   0x00237e    program     static                          
+             done_copying   0x002368    program     static                          
+        drawmagnitudeplot   0x000ec0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                g_pucFont   0x001f9a    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\font.c
+            getpixel_vram   0x00037c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+           high_interrupt   0x000008    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               initOutput   0x0011e0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+          init_sine_table   0x001f4c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             is_printable   0x0003e0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                     loop   0x0023fe    program     static                          
+                     loop   0x002448    program     static                          
+                 loop_abs   0x001f30    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                 loop_bin   0x001920    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+         loop_sine_lookup   0x001f60    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+            low_interrupt   0x000018    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     main   0x000bc2    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+         oled_ScreenSaver   0x00097c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_SendCommand   0x002176    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+       oled_SendCommand_2   0x0021c4    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+            oled_SendData   0x002202    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+          oled_SendData_2   0x002252    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+       oled_SetBrightness   0x000246    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_WriteChar1x   0x000668    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_WriteChar2x   0x000764    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+               oled_clear   0x000116    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            oled_draw_row   0x0001b0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                oled_init   0x000044    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 oled_off   0x000262    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                  oled_on   0x00026c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_plotbar   0x0009b6    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_putc_1x   0x0004a8    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_putc_2x   0x000584    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_puts_1x   0x000430    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_puts_2x   0x00046c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_refresh   0x0001fe    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+               oled_reset   0x000278    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_scroll_left   0x0001fc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+        oled_scroll_right   0x000244    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            putpixel_vram   0x0002dc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            read_parallel   0x0022dc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                   setCCP   0x001206    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               sine_table   0x001f6c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+              soundOutput   0x001220    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     test   0x0022fc    program     static                          
+                write_i2c   0x0022bc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+           write_parallel   0x0022cc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                write_spi   0x002292    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                   ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    ANSEL   0x000f7e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ANSELH   0x000f7f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ANSELHbits   0x000f7f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                ANSELbits   0x000f7e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 BINCOUNT   0x0003a0       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      BSR   0x000fe0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM1CON0   0x000f7b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM1CON0bits   0x000f7b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM2CON0   0x000f7a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM2CON0bits   0x000f7a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM2CON1   0x000f79       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM2CON1bits   0x000f79       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CVRCON2   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CVRCON2bits   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EEADRH   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               EEADRHbits   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                EEADRbits   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   FTABLE   0x000300       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IBIN   0x000320       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                 INBUFFER   0x000380       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                    INDF0   0x000fef       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IOCB   0x000f7d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IOCBbits   0x000f7d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATA   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 MSB_TEMP   0x0003a1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   OSCCON   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                       PC   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PSTRCON   0x000fb9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              PSTRCONbits   0x000fb9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PWM1CON   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              PWM1CONbits   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     QBIN   0x000350       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     RCON   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     SIGN   0x00002a       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+                   SLRCON   0x000f78       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               SLRCONbits   0x000f78       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SSPMSK   0x000f77       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               SSPMSKbits   0x000f77       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TXREG   0x000fad       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                        W   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     WPUB   0x000f7c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 WPUBbits   0x000f7c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 __AARGB0   0x000023       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB1   0x000022       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB2   0x000021       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB3   0x000020       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB4   0x00001f       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB5   0x00001e       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB6   0x00001d       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB7   0x00001c       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                   __AEXP   0x000024       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __BARGB0   0x000028       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB1   0x000027       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB2   0x000026       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB3   0x000025       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                   __BEXP   0x000029       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                __FPFLAGS   0x00002b       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+            __FPFLAGSbits   0x00002b       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+                  __REMB0   0x00001f       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB1   0x00001e       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB2   0x00001d       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB3   0x00001c       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __tmp_0   0x000000       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                  __tmp_0   0x000000       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                  __tmp_1   0x00002c       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+             buffer_index   0x000100       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                 c_col_1x   0x0000e1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_col_2x   0x0000e3       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_row_1x   0x0000e0       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_row_2x   0x0000e2       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                curr_byte   0x0001de       data     static C:\MCC18\src\traditional\startup\c018i.c
+               curr_entry   0x0001e0       data     static C:\MCC18\src\traditional\startup\c018i.c
+                 data_ptr   0x0001e2       data     static C:\MCC18\src\traditional\startup\c018i.c
+                      eff   0x0000f3       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      iin   0x0000e9       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              imageNumber   0x0000e4       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     iout   0x0000eb       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                magnitude   0x000103       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+        magnitude_divisor   0x000147       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               max_result   0x000143       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              outputLevel   0x0003a2       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      pin   0x0000ed       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     pout   0x0000ef       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     prom   0x0001db       data     static C:\MCC18\src\traditional\startup\c018i.c
+             result_index   0x000102       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                start_dft   0x000101       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      sum   0x0000f1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     temp   0x0000f7       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                     test   0x0000f9       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      vin   0x0000e5       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     vout   0x0000e7       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     vram   0x0001cb       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_0   0x000580       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_1   0x000500       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_2   0x000480       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_3   0x000400       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_4   0x000280       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_5   0x000200       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_6   0x00014b       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_7   0x000060       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
+       ___return_lbl00000   0x000004    program     static                          
+           high_interrupt   0x000008    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+       ___return_lbl00000   0x00000c    program     static                          
+            low_interrupt   0x000018    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+       ___return_lbl00001   0x00001c    program     static                          
+                oled_init   0x000044    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+               oled_clear   0x000116    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            oled_draw_row   0x0001b0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_scroll_left   0x0001fc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_refresh   0x0001fe    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+        oled_scroll_right   0x000244    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+       oled_SetBrightness   0x000246    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 oled_off   0x000262    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                  oled_on   0x00026c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+               oled_reset   0x000278    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            putpixel_vram   0x0002dc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            getpixel_vram   0x00037c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             is_printable   0x0003e0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_puts_1x   0x000430    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_puts_2x   0x00046c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_putc_1x   0x0004a8    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_putc_2x   0x000584    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_WriteChar1x   0x000668    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_WriteChar2x   0x000764    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+            Convert1xto2x   0x00090e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         oled_ScreenSaver   0x00097c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+             oled_plotbar   0x0009b6    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+         InitializeSystem   0x0009f8    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+         InterruptHandler   0x000a5e    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     main   0x000bc2    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+        drawmagnitudeplot   0x000ec0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               initOutput   0x0011e0    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   setCCP   0x001206    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              soundOutput   0x001220    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+    SetLowerColumnAddress   0x001230    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+   SetHigherColumnAddress   0x001262    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+    SetupHorizontalScroll   0x001296    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+ ActivateHorizontalScroll   0x001308    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+DeactivateHorizontalScroll   0x001336    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+      SetDisplayStartLine   0x001364    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+SetContrastControlRegister   0x001398    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBrightness   0x0013de    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+                   SetLUT   0x001424    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBankColorA   0x001496    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+            SetBankColorB   0x001500    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+          SetSegmentReMap   0x00156a    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+       EntireDisplayOnOff   0x00159e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+               SetInverse   0x0015d2    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+        SetMultiplexRatio   0x001606    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+                DCDCOnOff   0x00164e    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+          SetDisplayOnOff   0x001698    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+           SetPageAddress   0x0016cc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+               SetCOMScan   0x001700    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+         SetDisplayOffset   0x001738    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+   SetDisplayClockDivider   0x001780    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+    SetAreaColorPowerMode   0x0017c6    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+       SetPrechargePeriod   0x00181c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+           SetCOMHWConfig   0x001862    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+     SetVCOMDeselectLevel   0x0018ac    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_cmd.c
+                      dft   0x0018f4    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                 loop_bin   0x001920    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             add_negative   0x00192c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                     clrw   0x001936    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             add_positive   0x00193a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                correlate   0x001950    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _1add_negative   0x00195a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _1add_positive   0x00196a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _2add_negative   0x00198a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _2add_positive   0x00199a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _3add_negative   0x0019ba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _3add_positive   0x0019ca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _4add_negative   0x0019ea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _4add_positive   0x0019fa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _5add_negative   0x001a1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _5add_positive   0x001a2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _6add_negative   0x001a4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _6add_positive   0x001a5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _7add_negative   0x001a7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _7add_positive   0x001a8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _8add_negative   0x001aaa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _8add_positive   0x001aba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _9add_negative   0x001ada    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           _9add_positive   0x001aea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _10add_negative   0x001b0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _10add_positive   0x001b1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _11add_negative   0x001b3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _11add_positive   0x001b4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _12add_negative   0x001b6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _12add_positive   0x001b7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _13add_negative   0x001b9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _13add_positive   0x001baa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _14add_negative   0x001bca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _14add_positive   0x001bda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _15add_negative   0x001bfa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _15add_positive   0x001c0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _16add_negative   0x001c2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _16add_positive   0x001c3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _17add_negative   0x001c5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _17add_positive   0x001c6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _18add_negative   0x001c8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _18add_positive   0x001c9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _19add_negative   0x001cba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _19add_positive   0x001cca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _20add_negative   0x001cea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _20add_positive   0x001cfa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _21add_negative   0x001d1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _21add_positive   0x001d2a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _22add_negative   0x001d4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _22add_positive   0x001d5a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _23add_negative   0x001d7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _23add_positive   0x001d8a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _24add_negative   0x001daa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _24add_positive   0x001dba    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _25add_negative   0x001dda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _25add_positive   0x001dea    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _26add_negative   0x001e0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _26add_positive   0x001e1a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _27add_negative   0x001e3a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _27add_positive   0x001e4a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _28add_negative   0x001e6a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _28add_positive   0x001e7a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _29add_negative   0x001e9a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _29add_positive   0x001eaa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _30add_negative   0x001eca    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _30add_positive   0x001eda    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _31add_negative   0x001efa    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          _31add_positive   0x001f0a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                  abs_bin   0x001f2c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+                 loop_abs   0x001f30    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+           check_negative   0x001f38    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             abs_negative   0x001f3c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+             abs_positive   0x001f44    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+          init_sine_table   0x001f4c    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+         loop_sine_lookup   0x001f60    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+               sine_table   0x001f6c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\dft.asm
+            __zero_memory   0x001f8c    program     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               clear_loop   0x001f92    program     static C:\MCC18\src\traditional\proc\p18f46k20.asm
+                g_pucFont   0x001f9a    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\font.c
+         oled_SendCommand   0x002176    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+          ___for_lbl00003   0x002186    program     static                          
+          ___for_lbl00001   0x0021a8    program     static                          
+          ___for_lbl00002   0x0021ac    program     static                          
+       ___return_lbl00000   0x0021ba    program     static                          
+       oled_SendCommand_2   0x0021c4    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+          ___for_lbl00007   0x0021d4    program     static                          
+          ___for_lbl00005   0x0021e6    program     static                          
+          ___for_lbl00006   0x0021ea    program     static                          
+       ___return_lbl00004   0x0021f8    program     static                          
+            oled_SendData   0x002202    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+          ___for_lbl00011   0x002212    program     static                          
+          ___for_lbl00009   0x002234    program     static                          
+          ___for_lbl00010   0x002238    program     static                          
+       ___return_lbl00008   0x002248    program     static                          
+          oled_SendData_2   0x002252    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+          ___for_lbl00015   0x002262    program     static                          
+          ___for_lbl00013   0x002274    program     static                          
+          ___for_lbl00014   0x002278    program     static                          
+       ___return_lbl00012   0x002288    program     static                          
+                write_spi   0x002292    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                write_i2c   0x0022bc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+           write_parallel   0x0022cc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+            read_parallel   0x0022dc    program     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                _do_cinit   0x0022e2    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     test   0x0022fc    program     static                          
+                copy_loop   0x002354    program     static                          
+            copy_one_byte   0x00235a    program     static                          
+             done_copying   0x002368    program     static                          
+                     done   0x00237e    program     static                          
+       ___return_lbl00002   0x00237e    program     static                          
+                  FXM3232   0x002380    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
+       ___return_lbl00000   0x0023ee    program     static                          
+                 FXD3232U   0x0023f0    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
+                     loop   0x0023fe    program     static                          
+                   _false   0x002432    program     static                          
+       ___return_lbl00000   0x002436    program     static                          
+                 _startup   0x002438    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     loop   0x002448    program     static                          
+       ___return_lbl00001   0x002452    program     static                          
+                   __init   0x002454    program     extern C:\MCC18\src\TRADIT~1\stdclib\__init.c
+               __config_0   0x300001    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_1   0x300002    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_2   0x300003    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_3   0x300005    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_4   0x300006    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_5   0x300008    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_6   0x300009    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_7   0x30000a    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_8   0x30000b    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               __config_9   0x30000c    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              __config_10   0x30000d    program     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                  __tmp_0   0x000000       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                  __tmp_0   0x000000       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                  __REMB3   0x00001c       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB7   0x00001c       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB2   0x00001d       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB6   0x00001d       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB1   0x00001e       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB5   0x00001e       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                  __REMB0   0x00001f       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB4   0x00001f       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB3   0x000020       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB2   0x000021       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB1   0x000022       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __AARGB0   0x000023       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                   __AEXP   0x000024       data     extern C:\MCC18\SRC\TRADIT~1\MATH\aarg.asm
+                 __BARGB3   0x000025       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB2   0x000026       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB1   0x000027       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                 __BARGB0   0x000028       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                   __BEXP   0x000029       data     extern C:\MCC18\SRC\TRADIT~1\MATH\barg.asm
+                     SIGN   0x00002a       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+                __FPFLAGS   0x00002b       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+            __FPFLAGSbits   0x00002b       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
+                  __tmp_1   0x00002c       data     static C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   vram_7   0x000060       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_row_1x   0x0000e0       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_col_1x   0x0000e1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_row_2x   0x0000e2       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                 c_col_2x   0x0000e3       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+              imageNumber   0x0000e4       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      vin   0x0000e5       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     vout   0x0000e7       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      iin   0x0000e9       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     iout   0x0000eb       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      pin   0x0000ed       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     pout   0x0000ef       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      sum   0x0000f1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                      eff   0x0000f3       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     temp   0x0000f7       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled_interface.c
+                     test   0x0000f9       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+             buffer_index   0x000100       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                start_dft   0x000101       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+             result_index   0x000102       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                magnitude   0x000103       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+               max_result   0x000143       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+        magnitude_divisor   0x000147       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   vram_6   0x00014b       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                     vram   0x0001cb       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                     prom   0x0001db       data     static C:\MCC18\src\traditional\startup\c018i.c
+                curr_byte   0x0001de       data     static C:\MCC18\src\traditional\startup\c018i.c
+               curr_entry   0x0001e0       data     static C:\MCC18\src\traditional\startup\c018i.c
+                 data_ptr   0x0001e2       data     static C:\MCC18\src\traditional\startup\c018i.c
+                   vram_5   0x000200       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_4   0x000280       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   FTABLE   0x000300       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     IBIN   0x000320       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                     QBIN   0x000350       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                 INBUFFER   0x000380       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                 BINCOUNT   0x0003a0       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                 MSB_TEMP   0x0003a1       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+              outputLevel   0x0003a2       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\main.c
+                   vram_3   0x000400       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_2   0x000480       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_1   0x000500       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   vram_0   0x000580       data     extern C:\Work\2007\Projects\4XK20 2XK20 STARTER KIT CD ROM\Demos\DFT\oled.c
+                   SSPMSK   0x000f77       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               SSPMSKbits   0x000f77       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SLRCON   0x000f78       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               SLRCONbits   0x000f78       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM2CON1   0x000f79       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM2CON1bits   0x000f79       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM2CON0   0x000f7a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM2CON0bits   0x000f7a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CM1CON0bits   0x000f7b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CM1CON0   0x000f7b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     WPUB   0x000f7c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 WPUBbits   0x000f7c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IOCB   0x000f7d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IOCBbits   0x000f7d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    ANSEL   0x000f7e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                ANSELbits   0x000f7e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ANSELH   0x000f7f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ANSELHbits   0x000f7f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATA   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                EEADRbits   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               EEADRHbits   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   EEADRH   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TXREG   0x000fad       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CVRCON2bits   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CVRCON2   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PWM1CON   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              PWM1CONbits   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PSTRCON   0x000fb9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              PSTRCONbits   0x000fb9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     RCON   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   OSCCON   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      BSR   0x000fe0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                        W   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    INDF0   0x000fef       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                       PC   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\src\traditional\proc\p18f46k20.asm
+
+
