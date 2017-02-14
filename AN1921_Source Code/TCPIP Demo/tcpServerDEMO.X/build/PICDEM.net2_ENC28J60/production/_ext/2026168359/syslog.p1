@@ -1,0 +1,100 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"30 C:\Program Files (x86)\Microchip\xc8\v1.35\include\time.h
+[v _time `(l ~T0 @X0 0 ef1`*l ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 25: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"43 ../../TCPIP Library/source/syslog.c
+[v _SYSLOG_Init `(v ~T0 @X0 1 ef ]
+"44
+{
+[; ;syslog.c: 43: void SYSLOG_Init(void)
+[; ;syslog.c: 44: {
+[e :U _SYSLOG_Init ]
+[f ]
+"45
+[v _t `ul ~T0 @X0 1 a ]
+[; ;syslog.c: 45: unsigned long t = time(0);
+[e = _t -> ( _time (1 -> -> 0 `i `*l `ul ]
+[; ;syslog.c: 47: printf("\r\n\r\nStarting Syslog at %u\r\n",t);
+"47
+[e ( _printf , (. :s 1C _t ]
+[; ;syslog.c: 48: }
+"48
+[e :UE 3 ]
+}
+"50
+[v _SYSLOG_Write `(v ~T0 @X0 1 ef1`*Cuc ]
+"51
+{
+[; ;syslog.c: 50: void SYSLOG_Write(const char *message)
+[; ;syslog.c: 51: {
+[e :U _SYSLOG_Write ]
+"50
+[v _message `*Cuc ~T0 @X0 1 r1 ]
+"51
+[f ]
+"52
+[v _t `ui ~T0 @X0 1 a ]
+[; ;syslog.c: 52: unsigned int t = (unsigned int) time(0);
+[e = _t -> ( _time (1 -> -> 0 `i `*l `ui ]
+[; ;syslog.c: 53: printf("%u : %s\r\n",t,message);
+"53
+[e ( _printf , , (. :s 2C _t _message ]
+[; ;syslog.c: 54: }
+"54
+[e :UE 4 ]
+}
+[p f _printf 8651776 ]
+[a 1C 13 10 13 10 83 116 97 114 116 105 110 103 32 83 121 115 108 111 103 32 97 116 32 37 117 13 10 0 ]
+[a 2C 37 117 32 58 32 37 115 13 10 0 ]

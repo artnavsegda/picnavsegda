@@ -1,0 +1,1031 @@
+
+# 1 "../../TCPIP Library/source/dhcp_client.c"
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 34
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 51 "../../TCPIP Library/include\tcpip_types.h"
+typedef enum {TCB_ERROR = -1, TCB_NO_ERROR = 0} tcbError_t;
+
+typedef union
+{
+uint16_t value;
+struct
+{
+unsigned int priorityCodePoint:3;
+unsigned int dropEligible:1;
+unsigned int vlanId:12;
+};
+} tci_t;
+
+typedef struct
+{
+uint8_t destinationMAC[6];
+uint8_t sourceMAC[6];
+union
+{
+uint16_t type;
+uint16_t length;
+uint16_t tpid;
+}id;
+
+
+
+
+} ethernetFrame_t;
+
+uint8_t Control_Byte = 0x00;
+
+# 88
+typedef struct
+{
+unsigned ihl:4;
+unsigned version:4;
+unsigned ecn:2;
+unsigned dscp:6;
+uint16_t length;
+uint16_t identifcation;
+unsigned fragmentOffsetHigh:5;
+unsigned :1;
+unsigned dontFragment:1;
+unsigned moreFragments:1;
+uint8_t fragmentOffsetLow;
+uint8_t timeToLive;
+uint8_t protocol;
+uint16_t headerCksm;
+uint32_t srcIpAddress;
+uint32_t dstIpAddress;
+
+
+} ipv4Header_t;
+
+
+typedef struct
+{
+uint32_t srcIpAddress;
+uint32_t dstIpAddress;
+uint8_t protocol;
+uint8_t z;
+uint16_t length;
+} ipv4_pseudo_header_t;
+
+typedef struct
+{
+union
+{
+uint16_t typeCode;
+struct
+{
+uint8_t code;
+uint8_t type;
+};
+};
+uint16_t checksum;
+uint16_t identifier;
+uint16_t sequence;
+
+} icmpHeader_t;
+
+
+typedef enum
+{
+ECHO_REPLY = 0x0000,
+
+DEST_NETWORK_UNREACHABLE = 0x0300,
+DEST_HOST_UNREACHABLE = 0x0301,
+DEST_PROTOCOL_UNREACHABLE = 0x0302,
+DEST_PORT_UNREACHABLE = 0x0303,
+FRAGMENTATION_REQUIRED = 0x0304,
+SOURCE_ROUTE_FAILED = 0x0305,
+DESTINATION_NETWORK_UNKNOWN = 0x0306,
+SOURCE_HOST_ISOLATED = 0x0307,
+NETWORK_ADMINISTRATIVELY_PROHIBITED = 0x0308,
+HOST_ADMINISTRATIVELY_PROHIBITED = 0x0309,
+NETWORK_UNREACHABLE_FOR_TOS = 0x030A,
+HOST_UNREACHABLE_FOR_TOS = 0x030B,
+COMMUNICATION_ADMINISTRATIVELY_PROHIBITED = 0x030C,
+HOST_PRECEDENCE_VIOLATION = 0x030D,
+PRECEDENCE_CUTOFF_IN_EFFECT = 0x030E,
+
+SOURCE_QUENCH = 0x0400,
+
+REDIRECT_DATAGRAM_FOR_THE_NETWORK = 0x0500,
+REDIRECT_DATAGRAM_FOR_THE_HOST = 0x0501,
+REDIRECT_DATAGRAM_FOR_THE_TOS_AND_NETWORK = 0x0502,
+REDIRECT_DATAGRAM_FOR_THE_TOS_AND_HOST = 0x0503,
+
+ALTERNATE_HOST_ADDRESS = 0x0600,
+
+ECHO_REQUEST = 0x0800,
+
+ROUTER_ADVERTISEMENT = 0x0900,
+ROUTER_SOLICITATION = 0x0A00,
+TRACEROUTE = 0x3000
+} icmpTypeCodes_t;
+
+typedef struct
+{
+uint16_t srcPort;
+uint16_t dstPort;
+uint16_t length;
+uint16_t checksum;
+} udpHeader_t;
+
+typedef struct
+{
+uint16_t sourcePort;
+uint16_t destPort;
+uint32_t sequenceNumber;
+uint32_t ackNumber;
+union{
+uint8_t byte13;
+struct{
+uint8_t ns:1;
+uint8_t reserved:3;
+uint8_t dataOffset:4;
+};
+};
+
+union{
+uint8_t flags;
+struct{
+uint8_t fin:1;
+uint8_t syn:1;
+uint8_t rst:1;
+uint8_t psh:1;
+uint8_t ack:1;
+uint8_t urg:1;
+uint8_t ece:1;
+uint8_t cwr:1;
+};
+};
+
+uint16_t windowSize;
+uint16_t checksum;
+uint16_t urgentPtr;
+
+
+
+} tcpHeader_t;
+
+typedef struct
+{
+unsigned int version:4;
+unsigned int trafficClass:8;
+unsigned int flowLabel:20;
+uint16_t payloadLength;
+uint8_t nextHeader;
+uint8_t hopLimit;
+uint8_t srcAddress[8];
+uint8_t dstAddress[8];
+
+} ipv6Header_t;
+
+
+typedef enum
+{
+HOPOPT = 0,
+ICMP = 1,
+IGMP = 2,
+GGP = 3,
+IPV4 = 4,
+ST = 5,
+TCP = 6,
+CBT = 7,
+EGP = 8,
+IGP = 9,
+BBN_RCC_MON = 10,
+NVP_II = 11,
+PUP = 12,
+ARGUS = 13,
+EMCON = 14,
+XNET = 15,
+CHAOS = 16,
+UDP = 17,
+MUX = 18,
+DCN_MEAS = 19,
+HMP = 20,
+PRM = 21,
+XNS_IDP = 22,
+TRUNK_1 = 23,
+TRUNK_2 = 24,
+LEAF_1 = 25,
+LEAF_2 = 26,
+RDP = 27,
+IRTP = 28,
+ISO_TP4 = 29,
+NETBLT = 30,
+MFE_NSP = 31,
+MERIT_INP = 32,
+DCCP = 33,
+THREEPC = 34,
+IDPR = 35,
+XTP = 36,
+DDP = 37,
+IDPR_CMTP = 38,
+TPpp = 39,
+IL = 40,
+IPV6_TUNNEL = 41,
+SDRP = 42,
+IPV6_Route = 43,
+IPV6_Frag = 44,
+IDRP = 45,
+RSVP = 46,
+GRE = 47,
+DSR = 48,
+BNA = 49,
+ESP = 50,
+AH = 51,
+I_NLSP = 52,
+SWIPE = 53,
+NARP = 54,
+MOBILE = 55,
+TLSP = 56,
+SKIP = 57,
+IPV6_ICMP = 58,
+IPV6_NoNxt = 59,
+IPV6_Opts = 60,
+CFTP = 62,
+SAT_EXPAK = 64,
+KRYPTOLAN = 65,
+RVD = 66,
+IPPC = 67,
+SAT_MON = 69,
+VISA = 70,
+IPCV = 71,
+CPNX = 72,
+CPHB = 73,
+WSN = 74,
+PVP = 75,
+BR_SAT_MON = 76,
+SUN_ND = 77,
+WB_MON = 78,
+WB_EXPAK = 79,
+ISO_IP = 80,
+VMTP = 81,
+SECURE_VMTP = 82,
+VINES = 83,
+TTP = 84,
+IPTM = 84,
+NSFNET_IGP = 85,
+DGP = 86,
+TCF = 87,
+EIGRP = 88,
+OSPFIGP = 89,
+Sprite_RPC = 90,
+LARP = 91,
+MTP = 92,
+AX25 = 93,
+IPIP = 94,
+MICP = 95,
+SCC_SP = 96,
+ETHERIP = 97,
+ENCAP = 98,
+GMTP = 100,
+IFMP = 101,
+PNNI = 102,
+PIM = 103,
+ARIS = 104,
+SCPS = 105,
+QNX = 106,
+A_N = 107,
+IPComp = 108,
+SNP = 109,
+Compaq_Peer = 110,
+IPX_in_IP = 111,
+VRRP = 112,
+PGM = 113,
+L2TP = 115,
+DDX = 116,
+IATP = 117,
+STP = 118,
+SRP = 119,
+UTI = 120,
+
+SM = 122,
+PTP = 123,
+ISIS = 124,
+FIRE = 125,
+CRTP = 126,
+CRUDP = 127,
+SSCOPMCE = 128,
+IPLT = 129,
+SPS = 130,
+PIPE = 131,
+SCTP = 132,
+FC = 133
+} ipProtocolNumbers;
+
+typedef struct
+{
+union{
+uint32_t s_addr;
+uint8_t s_addr_byte[4];
+};
+}inAddr_t;
+
+typedef struct
+{
+uint16_t port;
+inAddr_t addr;
+}sockaddr_in_t;
+
+typedef enum
+{
+ERROR =0,
+SUCCESS,
+LINK_NOT_FOUND,
+BUFFER_BUSY,
+TX_LOGIC_NOT_IDLE,
+MAC_NOT_FOUND,
+IP_WRONG_VERSION,
+IPV4_CHECKSUM_FAILS,
+DEST_IP_NOT_MATCHED,
+ICMP_CHECKSUM_FAILS,
+UDP_CHECKSUM_FAILS,
+TCP_CHECKSUM_FAILS,
+DMA_TIMEOUT,
+PORT_NOT_AVAILABLE,
+ARP_IP_NOT_MATCHED
+}error_msg;
+
+typedef struct
+{
+inAddr_t dest_addr;
+}destIP_t;
+
+
+typedef int8_t socklistsize_t;
+
+typedef void (*ip_receive_function_ptr)(int);
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
+typedef unsigned char bool;
+
+# 49 "../../TCPIP Library/include\mac_address.h"
+typedef union
+{
+uint8_t mac_array[6];
+struct { uint8_t byte1,byte2,byte3,byte4,byte5,byte6; } s;
+} mac48Address_t;
+
+extern const mac48Address_t broadcastMAC;
+extern const mac48Address_t macAddress;
+
+const mac48Address_t *MAC_getAddress(void);
+
+# 51 "../../TCPIP Library/ethernet_drivers\ethernet_driver.h"
+typedef struct
+{
+uint16_t byteCount;
+unsigned long_drop_event:1;
+unsigned :1;
+unsigned excessCarrierEvent:1;
+unsigned :1;
+unsigned crcError:1;
+unsigned lengthCheckError:1;
+unsigned lengthLongError:1;
+unsigned rxOK:1;
+unsigned rxMulticast:1;
+unsigned rxBroadcast:1;
+unsigned dribbleNibble:1;
+unsigned controlFrame:1;
+unsigned pauseControlFrame:1;
+unsigned unknownContrlFrame:1;
+unsigned vlanTagPresent:1;
+unsigned zero:1;
+}receiveStatusVector_t;
+
+typedef struct
+{
+unsigned error:1;
+unsigned pktReady:1;
+unsigned up:1;
+unsigned idle:1;
+unsigned linkChange:1;
+unsigned bufferBusy:1;
+unsigned :2;
+uint16_t TXPacketSize;
+uint16_t saveRDPT;
+uint16_t saveWRPT;
+} ethernetDriver_t;
+
+extern volatile ethernetDriver_t ethData;
+
+# 92
+void ETH_Init(void);
+void ETH_EventHandler(void);
+void ETH_NextPacketUpdate();
+void ETH_ResetReceiver(void);
+void ETH_SendSystemReset(void);
+
+
+uint16_t ETH_ReadBlock(void*, uint16_t);
+uint8_t ETH_Read8(void);
+uint16_t ETH_Read16(void);
+uint32_t ETH_Read32(void);
+void ETH_Dump(uint16_t);
+void ETH_Flush(void);
+
+error_msg ETH_WriteStart(const mac48Address_t *dest_mac, uint16_t type);
+uint16_t ETH_WriteBlock(void *, uint16_t);
+void ETH_Write8(uint8_t);
+void ETH_Write16(uint16_t);
+void ETH_Write24(uint24_t data);
+void ETH_Write32(uint32_t);
+void ETH_Insert(char *,uint16_t, uint16_t);
+error_msg ETH_Copy(uint16_t);
+error_msg ETH_Send(void);
+
+uint16_t ETH_TxComputeChecksum(uint16_t position, uint16_t len, uint16_t seed);
+uint16_t ETH_RxComputeChecksum(uint16_t len, uint16_t seed);
+
+void ETH_GetMAC(uint8_t *);
+void ETH_SetMAC(uint8_t *);
+
+void ETH_SaveRDPT(void);
+
+void ETH_ResetByteCount(void);
+uint16_t ETH_GetByteCount(void);
+
+bool ETH_CheckLinkUp();
+
+# 62 "../../TCPIP Library/include\network.h"
+void Network_Init(void);
+void Network_Read(void);
+void Network_Manage(void);
+void Network_WaitForLink(void);
+
+# 67 "../../TCPIP Library/include\tcpip_config.h"
+const char dhcpName[] = "PIC18F97J60 ETHERNET";
+
+# 58 "../../TCPIP Library/include\dhcp_client.h"
+typedef enum
+{
+DHCP_DISCOVER = 1,
+DHCP_OFFER, DHCP_REQUEST, DHCP_DECLINE, DHCP_ACK, DHCP_NACK, DHCP_RELEASE,
+DHCP_INFORM, DHCP_FORCERENEW, DHCP_LEASEQUERY, DHCP_LEASEUNASSIGNED, DHCP_LEASEUNKNOWN,
+DHCP_LEASEACTIVE, DHCP_BULKLEASEQUERY, DHCP_LEASEQUERYDONE
+}dhcp_type;
+
+typedef enum
+{
+INIT = 1, INIT_REBOOT, SELECTING, REQUESTING, BOUND
+}dhcp_client_state;
+
+# 81
+void DHCP_Request(dhcp_type);
+
+# 90
+void DHCP_Handler(int);
+
+# 96
+void DHCP_Manage(void);
+
+# 104
+void DHCP_WriteZeros(uint16_t length);
+
+# 81 "../../TCPIP Library/include\udpv4.h"
+error_msg UDP_Start(uint32_t destIP, uint16_t destPort, uint16_t srcPort);
+
+# 95
+error_msg UDP_Send();
+
+# 103
+inline void UDP_Write8(uint8_t data);
+
+# 111
+inline void UDP_Write16(uint16_t data);
+
+# 119
+inline void UDP_Write32(uint32_t data);
+
+# 130
+inline void UDP_WriteBlock(void* data, uint16_t length);
+
+# 138
+inline uint8_t UDP_Read8(void);
+
+# 146
+inline uint16_t UDP_Read16(void);
+
+# 154
+inline uint32_t UDP_Read32(void);
+
+# 167
+uint16_t UDP_ReadBlock(void* data, uint16_t length);
+
+# 175
+uint16_t UDP_GetDestPort(void);
+
+# 183
+uint32_t UDP_GetDestIP(void);
+
+# 195
+error_msg UDP_Receive(uint16_t udpcksm);
+
+# 47 "../udpDEMO.X\udp_demo.h"
+void DEMO_UDP_Send();
+void DEMO_UDP_Recv(int len);
+void DEMO_UDP_IdlePkt(int length);
+
+uint16_t DEMO_UDP_MeasureTemp(void);
+
+void DEMO_UDP_IPLockTimer(void);
+void DEMO_UDP_SetClaimIP(uint8_t claim_ip);
+bit DEMO_UDP_ClaimIPCheck();
+void DEMO_UDP_IdlePktUdp(int length);
+
+# 54 "../../TCPIP Library/include\udpv4_port_handler_table.h"
+void udp_test(int len);
+extern void DEMO_UDP_Recv(int len);
+extern void DEMO_UDP_IdlePkt(int length);
+
+
+
+typedef struct
+{
+uint16_t portNumber;
+ip_receive_function_ptr callBack;
+} udp_handler_t;
+
+const udp_handler_t UDP_CallBackTable[] = {
+
+# 69
+{65532, &DEMO_UDP_IdlePkt},
+{65531, &DEMO_UDP_Recv},
+
+{68, &DHCP_Handler}
+};
+
+# 63 "../../TCPIP Library/include\ipv4.h"
+extern uint32_t ipv4Address;
+extern uint32_t dstIPv4Address;
+extern uint32_t ipv4Gateway;
+extern uint8_t gatewayMAC[6];
+extern uint32_t ipv4DNS[2];
+extern uint32_t ipv4SubnetMask;
+extern uint32_t ipv4Router;
+extern ipv4Header_t ipv4Header;
+
+# 79
+void IPV4_Init(void);
+
+# 86
+error_msg IPV4_Packet(void);
+
+# 103
+error_msg IPv4_Start(uint32_t dstAddress, ipProtocolNumbers protocol);
+
+# 111
+uint32_t IPV4_GetMyIP(void);
+
+# 122
+uint16_t IPV4_PseudoHeaderChecksum(uint16_t payloadLen);
+
+# 136
+error_msg IPV4_Send(uint16_t payloadLength);
+
+# 62 "../../TCPIP Library/include\arpv4.h"
+void ARPV4_Init(void);
+
+# 74
+error_msg ARPV4_Packet(void);
+
+# 80
+void ARPV4_Update(void);
+
+# 91
+mac48Address_t* ARPV4_Lookup(uint32_t ipAddress);
+
+# 104
+error_msg ARPV4_Request(uint32_t destAddress);
+
+# 8 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\time.h"
+typedef long time_t;
+struct tm {
+int tm_sec;
+int tm_min;
+int tm_hour;
+int tm_mday;
+int tm_mon;
+int tm_year;
+int tm_wday;
+int tm_yday;
+int tm_isdst;
+};
+
+# 25
+extern int time_zone;
+
+# 30
+extern time_t time(time_t *);
+extern int stime(time_t *);
+
+# 47
+extern char * asctime(const struct tm *) ;
+extern char * ctime(const time_t *) ;
+extern struct tm * gmtime(const time_t *) ;
+extern struct tm * localtime(const time_t *) ;
+extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+extern time_t mktime(struct tm *);
+
+# 65 "../../TCPIP Library/source/dhcp_client.c"
+const uint32_t xidValue = 0x4D434850;
+static uint32_t dhcpLeaseTime=0;
+static uint32_t dhcpServerId;
+static dhcp_client_state clientState=INIT;
+
+
+void DHCP_Request(dhcp_type type)
+{
+
+mac48Address_t ethMAC;
+bool started = 0;
+uint16_t msglength = ((240 + 25 + 20) + 1);
+
+ETH_GetMAC((char*)&ethMAC);
+
+if (type == DHCP_REQUEST)
+{
+msglength += 12;
+}
+
+started = UDP_Start(0xFFFFFFFF,68,67);
+
+if(started==SUCCESS)
+{
+ETH_Write32(0x01010600);
+ETH_Write32(xidValue);
+ETH_Write32(0x00008000);
+if (type == DHCP_REQUEST)
+{
+ETH_Write32(0);
+}
+else
+{
+ETH_Write32(ipv4Address);
+}
+ETH_Write32(0);
+ETH_Write32(0);
+ETH_Write32(0);
+ETH_WriteBlock((char *)&ethMAC,6);
+DHCP_WriteZeros(202);
+ETH_Write32(0x63825363);
+
+ETH_Write8(53);
+ETH_Write8(1);
+ETH_Write8(type);
+if(type == DHCP_REQUEST)
+{
+ETH_Write8(54);ETH_Write8(4);ETH_Write32(dhcpServerId);
+ETH_Write8(50);ETH_Write8(4);ETH_Write32(ipv4Address);
+}
+ETH_Write8(55); ETH_Write8(4); ETH_Write8(1); ETH_Write8(3); ETH_Write8(6); ETH_Write8(15);
+ETH_Write8(57); ETH_Write8(2); ETH_Write16(512);
+ETH_Write8(12); ETH_Write8(20); ETH_WriteBlock((char *)dhcpName,20);
+
+ETH_Write8(61); ETH_Write8(7); ETH_Write8(1); ETH_WriteBlock((char *)&ethMAC,6);
+ETH_Write8(255);
+
+ETH_Write8(0);
+
+UDP_Send();
+if (type == DHCP_DISCOVER)
+clientState=SELECTING;
+}
+}
+
+void DHCP_Manage(void)
+{
+if(ethData.linkChange)
+{
+if (clientState == BOUND && dhcpLeaseTime)
+{
+dhcpServerId = 0xFFFFFFFF;
+DHCP_Request(DHCP_REQUEST);
+}
+else
+{
+clientState = INIT;
+DHCP_Request(DHCP_DISCOVER);
+}
+ethData.linkChange=0;
+}
+else if (clientState == INIT || clientState == INIT_REBOOT)
+{
+clientState = INIT;
+DHCP_Request(DHCP_DISCOVER);
+}
+else if ((dhcpLeaseTime < 100)&& clientState == BOUND)
+{
+DHCP_Request(DHCP_REQUEST);
+}
+else
+{
+if(clientState == BOUND && dhcpLeaseTime) dhcpLeaseTime --;
+else if (!dhcpLeaseTime) clientState = INIT_REBOOT;
+}
+}
+
+void DHCP_Handler(int length)
+{
+
+uint32_t myip,v;
+uint16_t v16;
+uint16_t ip[4];
+
+mac48Address_t ethPktMAC;
+mac48Address_t ethMAC;
+
+ETH_GetMAC((char*)&ethMAC);
+
+# 178
+if(length > 240)
+{
+v16 = ETH_Read16();
+if(v16 == 0x0201)
+{
+ETH_Dump(2);
+v = ETH_Read32();
+if(v == xidValue)
+{
+ETH_Dump(8);
+myip = ETH_Read32();
+ip[0] = myip & 0x00FF;
+ip[1] = (myip >> 8) & 0x00FF;
+ip[2] = (myip >> 16) & 0x00FF;
+ip[3] = (myip >> 24) & 0x00FF;
+ETH_Dump(8);
+ETH_ReadBlock((char *)&ethPktMAC, sizeof(ethPktMAC.s));
+
+if(memcmp(&ethPktMAC.s, &ethMAC.s, 6)== 0)
+{
+ETH_Dump(202);
+if(ETH_Read32() == 0x63825363)
+{
+length -= 240;
+while(length>0)
+{
+
+uint8_t option, optionLength;
+option = ETH_Read8();
+optionLength = ETH_Read8();
+length -= 2 + optionLength;
+switch(option)
+{
+case 1:
+ipv4SubnetMask = ETH_Read32();
+break;
+case 3:
+ipv4Router = ETH_Read32();
+break;
+case 6:
+
+if(optionLength >= 4)
+{
+ipv4DNS[0] = ETH_Read32();
+optionLength -= 4;
+if(optionLength >= 4)
+{
+ipv4DNS[1] = ETH_Read32();
+optionLength -= 4;
+}
+}
+break;
+case 51:
+if(optionLength >= 4)
+{
+dhcpLeaseTime = ETH_Read32();
+optionLength -= 4;
+}
+break;
+case 54:
+dhcpServerId = ETH_Read32();
+optionLength -= 4;
+break;
+case 53:
+switch(ETH_Read8())
+{
+case DHCP_OFFER:
+ipv4Address = myip;
+clientState = REQUESTING;
+break;
+case DHCP_ACK:
+ipv4Address = myip;
+clientState = BOUND;
+
+break;
+case DHCP_NACK:
+clientState = INIT;
+break;
+default:
+break;
+}
+optionLength -=1;
+break;
+default:
+ETH_Dump(optionLength);
+break;
+}
+}
+if (clientState == REQUESTING)
+DHCP_Request( DHCP_REQUEST );
+}
+}
+else
+ETH_Dump(length - 34);
+}
+}
+}
+}
+
+void DHCP_WriteZeros(uint16_t length)
+{
+while(length--)
+{
+ETH_Write8(0);
+}
+}

@@ -1,0 +1,121 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"52 ../../TCPIP Library/include\mac_address.h
+[s S2 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S2 . byte1 byte2 byte3 byte4 byte5 byte6 ]
+"50
+[u S1 `uc -> 6 `i `S2 1 ]
+[n S1 . mac_array s ]
+"67 ../../TCPIP Library/include\tcpip_config.h
+[v _dhcpName `Cuc ~T0 @X0 -> 0 `x e ]
+[i _dhcpName
+:U ..
+-> 80 `c
+-> 73 `c
+-> 67 `c
+-> 49 `c
+-> 56 `c
+-> 70 `c
+-> 57 `c
+-> 55 `c
+-> 74 `c
+-> 54 `c
+-> 48 `c
+-> 32 `c
+-> 69 `c
+-> 84 `c
+-> 72 `c
+-> 69 `c
+-> 82 `c
+-> 78 `c
+-> 69 `c
+-> 84 `c
+-> 0 `c
+..
+]
+[; ;include\tcpip_config.h: 67: const char dhcpName[] = "PIC18F97J60 ETHERNET";
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;include\mac_address.h: 49: typedef union
+[; ;include\mac_address.h: 50: {
+[; ;include\mac_address.h: 51: uint8_t mac_array[6];
+[; ;include\mac_address.h: 52: struct { uint8_t byte1,byte2,byte3,byte4,byte5,byte6; } s;
+[; ;include\mac_address.h: 53: } mac48Address_t;
+[; ;include\mac_address.h: 55: extern const mac48Address_t broadcastMAC;
+[; ;include\mac_address.h: 56: extern const mac48Address_t macAddress;
+[; ;include\mac_address.h: 58: const mac48Address_t *MAC_getAddress(void);
+"42 ../../TCPIP Library/source/mac_address.c
+[v _macAddress `CS1 ~T0 @X0 1 e ]
+[i _macAddress
+:U ..
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 222 `i `uc
+-> -> 173 `i `uc
+-> -> 0 `i `uc
+-> -> 190 `i `uc
+-> -> 239 `i `uc
+..
+..
+..
+]
+[; ;mac_address.c: 42: const mac48Address_t macAddress = {0x00,0xDE,0xAD,0x00, 0xBE, 0XEF};
+"43
+[v _broadcastMAC `CS1 ~T0 @X0 1 e ]
+[i _broadcastMAC
+:U ..
+:U ..
+:U ..
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+..
+..
+..
+]
+[; ;mac_address.c: 43: const mac48Address_t broadcastMAC = {0xff,0xff,0xff,0xff,0xff,0xff};
+"46
+[v _MAC_getAddress `(*CS1 ~T0 @X0 1 ef ]
+"47
+{
+[; ;mac_address.c: 46: const mac48Address_t *MAC_getAddress(void)
+[; ;mac_address.c: 47: {
+[e :U _MAC_getAddress ]
+[f ]
+[; ;mac_address.c: 48: return &macAddress;
+"48
+[e ) &U _macAddress ]
+[e $UE 3  ]
+[; ;mac_address.c: 49: }
+"49
+[e :UE 3 ]
+}

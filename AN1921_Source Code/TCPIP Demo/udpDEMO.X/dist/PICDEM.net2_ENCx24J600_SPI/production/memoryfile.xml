@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/PICDEM.net2_ENCx24J600_SPI/production\udpDEMO.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131064</length>
+      <used>22129</used>
+      <free>108935</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3808</length>
+      <used>707</used>
+      <free>3101</free>
+    </memory>
+  </executable>
+</project>
