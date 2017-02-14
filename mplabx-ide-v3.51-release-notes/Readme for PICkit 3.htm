@@ -1,0 +1,2023 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>PICkit 3 Release Notes for X</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"MS Shell Dlg";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"NKMNCA+TimesNewRoman\,Bold";}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:343.8pt;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.6in;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.Heading0, li.Heading0, div.Heading0
+	{mso-style-name:"Heading 0";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.Computer, li.Computer, div.Computer
+	{mso-style-name:Computer;
+	mso-style-link:"Computer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.NormalNoSpace, li.NormalNoSpace, div.NormalNoSpace
+	{mso-style-name:NormalNoSpace;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.DeviceList, li.DeviceList, div.DeviceList
+	{mso-style-name:"Device List";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"NKMNCA+TimesNewRoman\,Bold";
+	color:black;}
+p.ListBullet2NoSpace, li.ListBullet2NoSpace, div.ListBullet2NoSpace
+	{mso-style-name:"List Bullet 2 NoSpace";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.ListBulletNoSpace, li.ListBulletNoSpace, div.ListBulletNoSpace
+	{mso-style-name:"List Bullet No Space";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.ComputerChar
+	{mso-style-name:"Computer Char";
+	mso-style-link:Computer;
+	font-family:"Courier New";}
+p.Answers, li.Answers, div.Answers
+	{mso-style-name:Answers;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+span.apple-style-span
+	{mso-style-name:apple-style-span;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Arial","sans-serif";}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Arial","sans-serif";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.75in .75in .75in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=Heading0>Release Notes for PICkit™ 3</p>
+
+<p class=Heading0>Development (nonproduction) Programmer &amp; </p>
+
+<p class=Heading0>In-Circuit Debugger</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>MPLAB<sup><span
+style='font-size:12.0pt'>®</span></sup> X IDE v3.51</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><p style='font-size:10.0pt;font-family:Arial;font-weight:bold;'>DLL and Firmware versions:</p><table style='font-size:10.0pt;font-family:Arial;font-weight:normal;' border=0 cellspacing=2 cellpadding=0><tr><td>&nbsp;PICkit 3 Suite (OS, FW)&nbsp;</td><td>&nbsp;&nbsp;v01.46.14</td><td>&nbsp;&nbsp;(PK3FW_014614.jam)</td></tr></table></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>January 13, 2017</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=Heading0>Table of Contents</p>
+
+<p class=MsoToc1><a name="_Ref123024713"></a><a
+href="#_Toc468373516">1<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Device Support</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373517">2<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Other
+Support</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373518">3<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Reference
+Documents</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373519">4<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>What's
+New in v3.50</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373520">5<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Repairs
+and Enhancements Made in v3.50</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373521">6<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Known
+Problems</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373522">7<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Important
+Notes</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373523">8<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Reserved
+Resources</a></p>
+
+<p class=MsoToc1><a href="#_Toc468373524">9<span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif";color:windowtext;text-decoration:none'>       </span>Number
+of Hardware Breakpoints per Device</a></p>
+
+<h1>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><a name="_Toc468373516">Device Support</a></h1>
+
+<p class=MsoNormal>Click the link below to see device support for “PICkit 3
+Debugging” (PK3D) and “PICkit 3 Programming” (PK3P).</p>
+
+<p class=MsoListBullet><a href="Device%20Support.htm">Device Support List</a></p>
+
+<p class=MsoNormal>For device family feature support, see the debugger on-line
+help file, “Device and Feature Support”.</p>
+
+<h2 style='margin-left:.4in'>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Debugging Considerations</h2>
+
+<p class=MsoNormal>For low pin-count devices (8 to 28 pins), a <b>Header board</b>
+is usually required. See the <i>Header Board Specification</i> (DS51292) or
+Header help file (hlpHeader.chm) for a list of available headers by device.</p>
+
+<p class=MsoNormal>For high pin-count devices (40 to 100 pins), a <b>Header
+board</b> may be available, but is not required. See the <i>Header Board
+Specification</i> (DS51292) or Header help file (hlpHeader.chm) for a list of
+available headers by device.</p>
+
+<h1><a name="_Toc468373517"></a><a name="_Toc301510412">2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Other Support</a></h1>
+
+<p class=MsoNormal>See the <a href="Readme%20for%20MPLAB%20X%20IDE.htm">Readme
+for MPLAB X IDE.htm</a> for debugging and other support information.</p>
+
+<p class=MsoNormal>See the <a href="Readme%20for%20MPLAB%20IPE.htm">Readme for
+MPLAB IPE.htm</a> for programming information.</p>
+
+<h1><a name="_Toc468373518">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reference Documents</a></h1>
+
+<p class=MsoNormal>The following documents may be found on our website:</p>
+
+<p class=NormalNoSpace style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Using PICkit 3 In-Circuit Debugger for MPLAB X IDE (DS52010)</p>
+
+<p class=NormalNoSpace style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>PICkit 3 Programmer/Debugger User's Guide for MPLAB X IDE (Help
+Only)</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Development Tools Design Advisory (DS51764)</p>
+
+<p class=NormalNoSpace style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Header Board Specification (DS51292)</p>
+
+<p class=NormalNoSpace style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Transition Socket Specification (DS51194)</p>
+
+<p class=MsoNormal>On-line help may be found in MPLAB X IDE under <i><u>Help&gt;Help
+Contents</u></i>.</p>
+
+<h1><a name="_Toc468373519">4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>What's New in v3.50</a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Toc224025135"><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:red'>Reminder: Windows XP operating system is
+no longer supported</span> – MPLAB X IDE is no longer supported on Windows XP.
+This means MPLAB X IDE will no longer be tested on Windows XP and JRE8 will be
+the new default JRE. To continue using Windows XP, JRE 7 will need to be
+installed. The MPLAB X IDE installer will search for JRE 7 on your system, and
+if it is not found will recommend sites for download.</a></p>
+
+<h1><a name="_Toc468373520">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Repairs and Enhancements Made in v3.50</a></h1>
+
+<p class=MsoNormal>None.</p>
+
+<h1><a name="_Toc468373521">6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Known Problems</a></h1>
+
+<p class=MsoNormal>The following is a list of known problems. For information
+on common problems, error messages and limitations please see Troubleshooting
+in the online help file for the PICkit 3.</p>
+
+<h2 style='margin-left:.4in'><a name="_Software/Hardware_Conflicts"></a>6.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Software/Hardware
+Conflicts</h2>
+
+<p class=MsoNormal>Some applications, plug-ins or widgets may take control of,
+or interfere with, the system provided HID USB driver, which can cause problems
+communicating with the PICkit 3. If you cannot connect to the PICkit 3, review
+the Task Manager for these types of programs and close them.</p>
+
+<p class=MsoNormal>If you have a PICkit 3 that is a revision 7 or above, you
+must use the MPLAB X IDE or MPLAB IPE (Integrated Programming Environment) to
+load the PTG (Programmer-to-Go) image onto the PICkit 3. Previous revisions (6
+and older) of the PICkit 3 work with MPLAB v8.</p>
+
+<p class=MsoNormal>For more information, see forum posts:</p>
+
+<p class=MsoNormal><a href="http://www.microchip.com/forums/m614572-p2.aspx">http://www.microchip.com/forums/m614572-p2.aspx</a></p>
+
+<p class=MsoNormal><a
+href="http://forums.ni.com/t5/Multifunction-DAQ/No-supported-devices-found/td-p/1856299/page/2">http://forums.ni.com/t5/Multifunction-DAQ/No-supported-devices-found/td-p/1856299/page/2</a></p>
+
+<h2 style='margin-left:.4in'><a name="_PIC12F/16F_Devices_–"></a>6.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PIC12F/16F
+Devices</h2>
+
+<p class=MsoListBullet>On PIC16F88X devices it is necessary to pull the RB3/PGM
+pin low for ICSP programming. This is due to a silicon issue.</p>
+
+<p class=MsoListBullet>If you cannot enter debug mode with one of the devices
+listed below, set the PWRTE (Power-Up Timer Enable bit) to DISABLED.</p>
+
+<p class=NormalNoSpace style='margin-left:.25in'>PIC16F1937 / PIC16LF1937</p>
+
+<p class=NormalNoSpace style='margin-left:.25in'>PIC16F1936 / PIC16LF1936</p>
+
+<p class=NormalNoSpace style='margin-left:.25in'>PIC16F1934 / PIC16LF1934</p>
+
+<p class=MsoListBullet>For the following Processor Extension Pak products:</p>
+
+<p class=NormalNoSpace style='margin-left:.25in'>AC244026 - PIC16F727-ICE
+Processor Extension Pak</p>
+
+<p class=NormalNoSpace style='margin-left:.25in'>AC244027 - PIC16LF727-ICE
+Processor Extension Pak</p>
+
+<p class=MsoNormal style='margin-left:.25in'>Physically isolate the Processor
+Extension Pak’s target /MCLR signal from any connection(s) to the board being
+debugged. (For example, if a simple pull-up resistor reset circuit is connected
+between /MCLR and Vdd, completely isolate it by removing the pull-up resistor.)</p>
+
+<h2 style='margin-left:.4in'><a name="_PIC18F_Devices_–"></a>6.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PIC18F
+Devices </h2>
+
+<p class=MsoListBullet>Watch window – It will take 1 cycle for the watch window
+to update properly for PORTx registers. Use an instruction that reads the port
+such as ‘MOVFF PORTx, PORTx_copy’ before the breakpoint is reached. This
+affects the following devices:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:25.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F4620</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F84J90</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F65J11</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F63J90</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F84J95</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F83J11</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F64J90</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F85J90</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F84J11</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F64J95</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F63J11</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F84J16</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F65J95</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F64J11</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F85J11</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F83J90</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F64J16</p>
+  </td>
+  <td width=158 valign=top style='width:95.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F8722</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListBullet>For the PIC18F14K22 family, MPLAB X IDE
+debug/programming tools will not work below 1.9v. The work-around is to run the
+device above 1.9v.</p>
+
+<p class=MsoListBullet>PIC18F2520 MCUs: Table Read Protect (EBTRx) will not
+work unless Code Protect (CPx) is enabled. Also, once Table Read Protect is
+enabled, you cannot perform a Verify on the protected block.</p>
+
+<p class=MsoListBullet>For PIC18F8720, MEMCON cannot be read if in a
+microcontroller mode. This is a silicon issue.</p>
+
+<p class=MsoListBullet>PIC18F45K20/46K20 MCU family: There is a silicon issue
+that prevents some device revisions from being programmed with &quot;power from
+programmer&quot;. The workaround is to use &quot;power from target&quot; OR
+increase the capacitance across VDD, VSS (for example to 47uF.)</p>
+
+<p class=MsoNormal>See Section 6.6 Tool SSRs (System Service Requests).</p>
+
+<h2 style='margin-left:.4in'><a name="_dsPIC30F_Devices_–"></a>6.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>dsPIC30F
+Devices </h2>
+
+<p class=MsoListBullet>PICkit 3 does not support preserve EEPROM memory during
+programming.</p>
+
+<h2 style='margin-left:.4in'><a name="_dsPIC33EP/PIC24EP_Devices_–"></a>6.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>dsPIC33EP/PIC24EP
+Devices </h2>
+
+<p class=MsoListBullet>Stopwatches don’t work on PICkit 3.</p>
+
+<p class=MsoListBullet>If there is a Software breakpoint on a function that is in
+Auxiliary memory, single stepping over that breakpoint will not work properly. </p>
+
+<p class=MsoListBullet>Verifying Auxiliary memory sometimes will proceed even
+when verifying Program Memory has failed.</p>
+
+<p class=MsoListBullet>When programming in Debugger mode, a message may come up
+that protection bits need to be turned off even though they show as being
+turned off in the Configuration Bits window.</p>
+
+<h2 style='margin-left:.4in'><a name="_Ref369785608"></a><a
+name="_Numbered_Issues"></a>6.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Tool SSRs (System Service Requests)</h2>
+
+<p class=MsoNormal>The following is a list of issues that are being tracked for
+this tool.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=827
+ style='width:495.9pt;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Key</b></p>
+   </td>
+   <td width=510 valign=top style='width:4.25in;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Summary</b></p>
+   </td>
+   <td width=210 valign=top style='width:1.75in;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Device</b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-386</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PICkit 3 fails to program the alternate device
+  configuration word 0 (ADEVCFG0).</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MZ2048EFH144 and family</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-384</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PICkit 3 not showing PIC32MZ serial number register
+  values.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListNumber style='margin-top:0in;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in;text-indent:0in'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-383</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>When using PICkit 3 (PTG) or MPLAB ICD 3 as a programmer,
+  once it has been set up to program, the programming power is still on when it
+  is moved to another target.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListNumber style='margin-top:0in;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in;text-indent:0in'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-369</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Programming failure seen with dsPIC30F5011 when
+  programming with &quot;Full chip&quot; programming option selected.
+  Programming failure is not seen if boot, secure and general segments are
+  selected to be programmed.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC30F5011</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-368</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3 when used with MPLAB X IDE/MPLAB IPE asks the user to
+  enable the secure boot segment option when programming an Image that does not
+  touch boot /secure segments for the 30F6014A</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC30F6014A</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-363</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Programmer To Go Support is not available for
+  dsPIC33EVxxxx, dsPIC33EPxxGS202, PIC24FxxGx410, and PIC24FxxGx610.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EVxxxx, dsPIC33EPxxGS202, PIC24FxxGx410,
+  PIC24FxxGx610</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-362</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Programming a PIC32MZ device with preserve flash memory
+  option enabled may not work using PICkit 3.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MZ</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-359</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Some combinations of Macs may have intermittent USB
+  connections with REAL ICE/ICD3/and PICkit 3 tools. If possible isolate tool
+  by using an externally powered USB HUB.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-353</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PICkit3 unable to set certain voltages for dsPIC30F2011
+  when powering the target from PICkit 3.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC30F2011</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-348</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Low-Voltage Programming will not work on the following
+  devices. There is an errata on some versions of the devices.</p>
+  <p class=MsoNormal>Device                 Revision           Errata Document</p>
+  <p class=MsoNormal>PIC12F/LF1822   Rev 6               DS-80502 Rev E</p>
+  <p class=MsoNormal>PIC16F/LF1823   Rev 6               DS-80502 Rev E</p>
+  <p class=MsoNormal>PIC16F/LF1824   Rev A1              DS-80000510 Rev J</p>
+  <p class=MsoNormal>PIC16F/LF1828   Rev A1              DS-80000510 Rev J</p>
+  <p class=MsoNormal>PIC16F/LF1933   Rev A1, A2, A3      DS-80000490 Rev M</p>
+  <p class=MsoNormal>Errata Summary:</p>
+  <p class=MsoNormal>Bulk Erase Feature not available with Low-Voltage Programming
+  mode. A bulk erase of the program Flash memory or data memory cannot be
+  executed in Low-Voltage Programming mode.</p>
+  <p class=MsoNormal><b>Workaround:</b></p>
+  <p class=MsoNormal>Method 1: If ICSP Low-Voltage Programming mode is
+  required, use row erases to erase the program memory, as described in the
+  Program/Verify mode section of the Programming Specification. Data memory
+  must be over-written with the desired values.</p>
+  <p class=MsoNormal>Method 2: Use ICSP High-Voltage Programming mode if a bulk
+  erase is required.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC12F1822, PIC12LF1822, PIC16F1823, PIC16LF1823, PIC16F1824,
+  PIC16LF1824, PIC16F1828, PIC16LF1828, PIC16F1933, PIC16LF1933</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-345</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>'Failed to read device' rendered when attempting to read
+  the device in a debug session (debug mode read).</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC30F4012</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-343</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Cannot debug using the AC162054 (PIC16F716) header on
+  PICkit 3. In order to debug, solder a 10pF cap on the bottom side of the
+  header between pins 14(GND) and 16(ICSPCLK).</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC16F716, MCV18E</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-314</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>MPLAB IDE debug mode reset fails around Vdd minimum
+  voltages.</p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC16F1939 (affects entire Enhanced Midrange firmware)</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PK3-310</p>
+  </td>
+  <td width=510 valign=top style='width:4.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PICkit3 cannot program PIC18F97J94 device if a 64 MHz
+  oscillator is connected. As the frequency is reduced the occurrence is less
+  frequent. </p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC18F97J94 device family</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:.4in'><a name="_Processor_Extension_Paks"></a>6.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Other
+Tool SSRs (System Service Requests)</h2>
+
+<p class=MsoNormal>The following is a list of issues that are being tracked for
+other tools but are related to this tool.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=827
+ style='width:495.9pt;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Key</b></p>
+   </td>
+   <td width=525 valign=top style='width:315.0pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Summary</b></p>
+   </td>
+   <td width=195 valign=top style='width:117.0pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal style='margin-right:-5.4pt'><b>Device</b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>ICD3-401 </p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Unimplemented configuration bits are not being programmed
+  as specified in the programming specification for device. This can lead to
+  your application not working correctly. </p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+  color:black'>PIC18F67J60</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='color:black'>IPE-616</span></p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='color:black'>Dual partition devices currently
+  do not support environment files.</span></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>MPLABX-2754</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Intermittent programming failure may occur for dual
+  partition devices. Workaround: Reprogramming the device should be successful.
+  This will be fixed in a future release.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>dsPIC33EP64GS5xx
+  PIC24FJ1024GA/GB6xx PIC24FJ128GA/GB4xx PIC24FJ128GA/GB6xx PIC24FJ256GA/GB4xx
+  PIC24FJ256GA/GB6xx PIC24FJ512GA/GB6xx PIC24FJ64GA/GB4xx</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>MPLABX-2457</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Programmer To Go is currently not supported for the dsPIC33EVxxx
+  and PIC32MZxxx devices.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>dsPIC33EV32GM002, 33EV32GM004,
+  33EV32GM006, 33EV32GM102, 33EV32GM104, 33EV32GM106</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>ICD3-369</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>For PIC16F570 (header AC244062), there is no debug
+  visibility into GPR banks 4, 5, 6 and 7, although user access to these banks
+  works.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC16F570</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>ICD2-81</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>For PIC24F devices during a programming/verify operation
+  (or subsequent verification operation) of user code that performs self-writes
+  and/or self-erases to program space, a verify sequence may fail if the code
+  execution occurs within the first execution cycles following reset.</p>
+  <p class=MsoNormal><b>Workaround: </b>Place a delay in your code before the
+  code section that performs the self-write and/or self-erase. The specific
+  delay value may need to be adjusted, but 100 ms would be a conservative value
+  to start out with. Here is a C language example that illustrates the
+  workaround:</p>
+  <p class=Computer><span style='font-family:"Arial","sans-serif"'>int main
+  (void)</span></p>
+  <p class=Computer><span style='font-family:"Arial","sans-serif"'>{</span></p>
+  <p class=Computer><span style='font-family:"Arial","sans-serif"'>    // Place
+  100 ms delay here before any self-write/self-erase code</span></p>
+  <p class=Computer><span style='font-family:"Arial","sans-serif"'>       
+  :       :       :</span></p>
+  <p class=Computer><span style='font-family:"Arial","sans-serif"'>}</span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC24F</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>TBAA0-199</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>When reading a device with a programmer, code or write
+  protection applied to either the General or Auxiliary Segment is being
+  applied to both; therefore all flash memory will read back as zero. Only
+  devices with no code or write protection applied can be successfully read
+  using a programmer. This limitation applies to revision B1 (0x4002) of the
+  following devices:</p>
+  <p class=ListBulletNoSpace>PIC24EP512GU814</p>
+  <p class=ListBulletNoSpace>PIC24EP512GU810</p>
+  <p class=ListBulletNoSpace>PIC24EP256GU814</p>
+  <p class=ListBulletNoSpace>PIC24EP256GU810</p>
+  <p class=ListBulletNoSpace>dsPIC33EP512MU814</p>
+  <p class=ListBulletNoSpace>dsPIC33EP512MU810</p>
+  <p class=ListBulletNoSpace>dsPIC33EP256MU814</p>
+  <p class=ListBulletNoSpace>dsPIC33EP256MU810</p>
+  <p class=ListBulletNoSpace>dsPIC33EP256MU806</p>
+  <p class=ListBulletNoSpace>PIC24EP512GP806 </p>
+  <p class=ListBulletNoSpace>dsPIC33EP512GP806</p>
+  <p class=ListBulletNoSpace>dsPIC33EP512MC806</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC24EP/ dsPIC33EP</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'>SPI001-113</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet>SPI misses SDI input when single-stepping with freeze
+  in debug enabled.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet style='margin-right:-5.4pt'>General</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>RI-688</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Cannot enter debug mode on PIC16(L)F707 for MPLAB REAL ICE
+  in-circuit emulator, MPLAB ICD 3 or PICkit 3.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC16(L)F707</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>RI-654</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJxxxGA2xx Family fails Blank Check Upon Erase.
+  Configuration Word 2, bit 11, has been changed from 0 to 1 to conform to the
+  programming spec. Ignore if blank check fails because of this.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA202/204, PIC24FJ64GA202/204</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet>RI-588</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet>&quot;Failed while sending cmd_SET_PERIPHERAL_FREEZE
+  command&quot; error is sometimes seen when debugging dsPIC33EP, PIC24EP and
+  dsPIC33EV devices. Possible work-around: First retry the same operation.
+  Second unplug and replug the tool, and then try the operation again.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet style='margin-right:-5.4pt'>dsPIC33EP512MC502,
+  PIC24EP512GP/MC202, also dsPIC33EV</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>RI-412</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256DA210 Family: Data Memory not functional unless
+  96 MHz PLL is enabled. This is a silicon issue that is being worked on.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC24F</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet>RI-400</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet>If you are not able to enter debug mode when power-up
+  timer is enabled for the following devices, please disable power-up timer
+  during the debugging session. (If the final application firmware requires
+  power-up timer enabled, please enable it after the debugging session is
+  complete and program the part with the final application firmware.)</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F4620/4610/2620/2610</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F4680/2680/4681/2681</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F4520/4420/2520/2420</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F4550/2550/4455/2455</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F8490/8410/6490/6410/8390/8310/6390/6310</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F8722/8627/8622/8527/6722/6627/6622/6527</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F2525/4525</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F87K90/PIC18F86K90/PIC18F85K90/PIC18F67K90/PIC18F66K90/PIC18F65K90</p>
+  <p class=ListBullet2NoSpace style='margin-left:.25in'>PIC18F87K22/PIC18F86K22/PIC18F85K22/PIC18F67K22/PIC18F66K22/PIC18F65K22</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListBullet style='margin-right:-5.4pt'>PIC18</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>29399</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24F devices can start to run after programming but
+  before verification. This can result in a verification failure if the code
+  performs self-write to either program memory or Data EE.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC24F</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>26344</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Below 4.5 V, PICkit will not overprogram User ID's on
+  these devices:</p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='margin-left:25.4pt;border-collapse:collapse'>
+   <tr>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC12F635</p>
+    </td>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace> PIC16F684</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F689</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F914</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC12F683</p>
+    </td>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F685</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F690</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F916</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F636</p>
+    </td>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F687</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F785</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F917</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F639</p>
+    </td>
+    <td width=117 valign=top style='width:70.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F688</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F913</p>
+    </td>
+    <td width=108 valign=top style='width:65.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=NormalNoSpace>PIC16F946</p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>PIC12/16</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=107 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>UART002-175</p>
+  </td>
+  <td width=525 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Don't read the FIFO when single stepping in debug mode.
+  The FIFO should get set back to the user mode pointer when exiting debug, but
+  instead it just keeps incrementing on its own. Work-around: Always reads the
+  full FIFO.</p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:-5.4pt'>dsPIC33EP512MC20x,
+  dsPIC33EP512MC50x, dsPIC33EP512GP50x</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:.4in'>6.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Processor Extension Paks</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>For the following
+Processor Extension Pak products:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AC244026&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIC16F727-ICE
+Processor Extension Pak</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AC244027&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIC16LF727-ICE
+Processor Extension Pak</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Full debugging
+support is not available for the PICkit 3 at this time when using the above
+Processor Extension Paks. Full PICkit 3 support is planned for a future MPLAB
+release.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Workaround: use
+either the MPLAB ICD 3 or MPLAB REAL ICE tool if debugging support is needed
+for these products.</p>
+
+<h2 style='margin-left:.4in'><a name="_Engineering_Technical_Notes"></a>6.9<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Engineering
+Technical Notes (ETNs)</h2>
+
+<p class=MsoNormal>The following ETNs are related to the PICkit 3 in-circuit
+debugger. Please see the product webpage for details.</p>
+
+<p class=MsoListBullet><b>ETN-32</b>: Applies to Assembly #10-00424-R4 or below.</p>
+
+<h1><a name="_Toc468373522">7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Important Notes</a></h1>
+
+<h2 style='margin-left:.4in'>7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Programmer-to-Go</h2>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'>1)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>PICkit 3
+Programmer-to-Go can program devices with up to 512K byte Flash.</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'>2)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>PICkit 3
+Programmer-to-Go does not support programming the following devices:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>All PIC32MZ devices</li>
+ <li class=MsoNormal>The following devices:</li>
+</ul>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP16GS202</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP16GS502</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP16GS504</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP16GS505</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP16GS506</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP32GS202</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP32GS502</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP32GS504</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP32GS505</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP32GS506</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM002</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM004</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM006</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM102</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM104</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV128GM106</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM002</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM004</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM006</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM102</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM104</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV256GM106</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM002</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM004</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM006</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM102</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM104</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV32GM106</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM002</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM004</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM006</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM102</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM104</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EV64GM106</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA702</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA704</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA705</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256GA702</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256GA704</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256GA705</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:119.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ64GA702</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ64GA704</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ64GA705</p>
+  </td>
+  <td width=200 valign=top style='width:119.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'>3)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>PICkit 3
+does not support SQTP in PTG mode. There is no memory available on the PICkit 3
+to store all of the SQTP numbers. </p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'>4)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>In PTG
+mode, if an unexpected device ID occurs, the status LED (red) blinks short,
+then long. </p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'>5)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>PICkit 3
+Programmer-To-Go is not supported for all dual partition devices:</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:23.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=176 valign=top style='width:105.3pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP64GS5xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ1024GA/GB6xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA/GB4xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ128GA/GB6xx</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=176 valign=top style='width:105.3pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256GA/GB4xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ256GA/GB6xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ512GA/GB6xx</p>
+  </td>
+  <td width=215 valign=top style='width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FJ64GA/GB4xx</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:.4in'>7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>16-Bit Devices</h2>
+
+<p class=MsoListNumber>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>RB0 and RB1 pins:<br>
+If the PICkit 3 is selected as a debugger, it initializes all the A/D input
+pins - AN0 (RB0) through AN15 (RB15) pins - as &quot;digital&quot; pins, by
+setting all 16 bits in the ADPCFG register.</p>
+
+<ol style='margin-top:0in' start=1 type=a>
+ <li class=MsoNormal>If you have selected a pair of &quot;debug pins&quot;
+     (EMUD/EMUC, EMUD1/EMUC1, EMUD2/EMUC2 or EMUD3/EMUC3) that are multiplexed
+     with A/D input pin functions on the particular dsPIC30f device being used,
+     then you must never clear the bits in the ADPCFG register that correspond
+     to those A/D pins. </li>
+</ol>
+
+<p class=MsoNormal style='margin-left:.5in'>For example, if EMUD3 and EMUC3 are
+used as the debug pins on a dsPIC30F2010 device, then bits 0 and 1 of the
+ADPCFG register must remain set at all times. Similarly, if EMUD and EMUC are
+used as the debug pins on a dsPIC30F5011 device, then bits 6 and 7 of the
+ADPCFG register must remain set at all times. In such cases, you must also take
+proper precaution to isolate the application circuitry from the corresponding
+A/D pins during debugging.</p>
+
+<ol style='margin-top:0in' start=2 type=a>
+ <li class=MsoNormal>If your application needs to use certain A/D pins as
+     analog input pins, then your code must clear the corresponding bits in the
+     ADPCFG register during A/D module initialization.</li>
+</ol>
+
+<p class=MsoNormal style='margin-left:.5in'>For example, if AN4 and AN5 are
+required as analog input pins, then bits 4 and 5 of the ADPCFG register must be
+cleared.</p>
+
+<p class=MsoListNumber>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SLEEP, IDLE, WDT, Clock Switching:<br>
+For dsPIC devices, debug operations can be executed on programs which use SLEEP
+or IDLE mode, Watchdog Timer, and/or Clock Switching. </p>
+
+<p class=MsoListNumber>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Debug during SLEEP or IDLE Mode:<br>
+When the device is in SLEEP and IDLE mode and a Halt command is issued, the
+PICkit 3 debugger will wake up the device and halt execution on the instruction
+immediately following the PWRSAV instruction.</p>
+
+<p class=MsoListNumber>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Interrupts:</p>
+
+<ol style='margin-top:0in' start=1 type=a>
+ <li class=MsoNormal>In general, single-stepping an instruction will not
+     generate an interrupt or trap, because the corresponding interrupt/trap
+     status flag bit would not get set. Essentially, the interrupt or trap
+     condition would be ignored.</li>
+ <li class=MsoNormal>However, if the user has explicitly set an interrupt/trap
+     flag bit, either in the user program or by modifying the status flag
+     values in the MPLAB Watch, SFR or File Registers window, then the
+     interrupt/trap would get generated, and the user would be able to
+     single-step into the Interrupt or Trap Service Routine.</li>
+</ol>
+
+<p class=MsoListNumber>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Break Point Behavior:<br>
+If a break point is set on an instruction that follows a taken branch, the
+Breakpoint will be triggered even though the branch went elsewhere.</p>
+
+<p class=MsoListNumber>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Break Point Behavior and Skidding:<br>
+It is possible that a breakpoint halt will exhibit program memory skidding in
+that the execution stops N instructions after reaching the breakpoint. The
+following definitions are provided and referred to:</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>One skid  - A breakpoint
+occurs AFTER the instructions is executed (PC+2)</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>Two skid  - A break point
+occurs AFTER the NEXT instruction (PC+4) </p>
+
+<p class=MsoNormal style='margin-left:.5in'>Break Point Behavior:</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>If a Non-Program-Flow,
+modifying, Single-Word, Two-Cycle instruction (such as Table or PSV) precedes a
+break point instruction, then the breakpoint occurs BEFORE the instruction at
+the breakpoint address is executed (ONE SKID).</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>All other instructions
+have a &quot;TWO SKID&quot;, which means the break occurs AFTER the NEXT
+instruction is executed.</p>
+
+<p class=MsoListNumber>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The CAN module, unlike the other peripherals, does not get frozen in the
+following situations:</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>during a Halt </p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>during a stop on a
+Breakpoint</p>
+
+<p class=ListBullet2NoSpace style='margin-left:.25in'>after a Single-Step </p>
+
+<p class=MsoNormal style='margin-left:.25in'>For example, if you set a
+Breakpoint and run to it, the CAN module continues to run in the background,
+and it may seem that data transmissions and receptions have completed
+immediately.</p>
+
+<p class=MsoListNumber>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DISICNT register:<br>
+In five dsPIC30F devices (dsPIC30F6010, dsPIC30F6011, dsPIC30F6012,
+dsPIC30F6013 and dsPIC30F6014), since the DISICNT register continues to
+decrement even when the device is halted by the debugger, the DISICNT value
+will always be seen as 0x0000 in the Watch, SFR and File Registers windows. To
+monitor the DISICNT value, add code to copy the DISICNT register contents to a
+W register or memory location and monitor the value of the corresponding W
+register or memory location in the Watch, SFR or File Registers window.</p>
+
+<p class=MsoListNumber>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ADCMD bit in PMD1 register:<br>
+The user application must not set the ADCMD bit (bit 0 of PMD1 register). This
+would lead to incorrect ICE operation.</p>
+
+<p class=MsoListNumber>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>SPLIM register:<br>
+When using the PICkit 3 as a Debugger, your software must initialize the Stack
+Pointer Limit register (SPLIM) before using the stack (device errata).</p>
+
+<p class=MsoListNumber>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>Single-stepping a DO loop:<br>
+In five dsPIC30F devices (dsPIC30F6010, dsPIC30F6011, dsPIC30F6012,
+dsPIC30F6013 and dsPIC30F6014), single-stepping through a DO loop in dsPIC30F
+assembly code results in the loop getting executed one less time than expected.</p>
+
+<p class=MsoListNumber>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>Pass Counter feature in Advanced Breakpoints:<br>
+For a specified Pass count of 'N', the code will break after 'N+1' occurrences
+of the breakpoint instead of 'N' occurrences.</p>
+
+<p class=MsoListNumber>13.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>If you need to use the Fail-Safe Clock Monitor feature on a dsPIC device
+when using the PICkit 3 for debugging your application, a Watchdog Timer Device
+Reset will occur, even if the Watchdog Timer has not been explicitly enabled in
+the application. To work around this issue, use the &quot;CLRWDT&quot;
+instruction in the main loop of your application code. This will ensure that
+the Watchdog Timer gets cleared before it causes the device to reset.</p>
+
+<p class=MsoListNumber>14.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>For PIC16F616 devices PICkit 3 does not row erase the device below
+4.5V.  A bulk erase will be required which must take place with Vdd above 4.5V.
+(ICD3-125)</p>
+
+<h1><a name="_Toc468373523">8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reserved Resources</a></h1>
+
+<p class=MsoNormal>Due to the built-in in-circuit debugging capability of some
+devices, and the ICSP function offered by the debugger, the PICkit 3 in-circuit
+debugger uses on-chip resources when debugging, i.e., some device resources are
+reserved for use by the debugger. For a list of reserved resources by device
+for the debugger, click the link below.</p>
+
+<p class=MsoListBullet><a href="ReservedResources/PK3_ReservedResources.htm">PICkit
+3 In-Circuit Debugger Reserved Resources</a></p>
+
+<h1><a name="_Toc468373524">9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Number of Hardware Breakpoints per Device</a></h1>
+
+<p class=MsoNormal>To see the number of breakpoints supported for your device
+and the number of breakpoints used in your project, use the Dashboard window (<i><u>Window&gt;Dashboard</u></i>).</p>
+
+<p class=MsoNormal>Breakpoint support per device is as follows:</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:solid black 1.5pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace><b><i>Devices</i></b></p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border-top:solid black 1.5pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace><b><i>Number of Breakpoints</i></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC12F/16F</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC16F1xxx enhanced</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>3</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18F enhanced</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>3</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC18FxxJ</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>3 or 5 (Note 1)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>dsPIC30F</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>2</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>dsPIC33F/PIC24H/F</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>4</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>dsPIC33EP/PIC24EP</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>2</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>dsPIC33EP/PIC24EPxxxxx8xx:</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>3</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=267 valign=top style='width:160.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>PIC32MX</p>
+  </td>
+  <td width=208 valign=top style='width:125.0pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalNoSpace>6</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Note 1: There is a limitation for these devices that only 1
+data capture is available.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<html>
+<head>
+  <title>PICkit 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>PICkit 3 Reserved Resources By Device</p>
+<h2><a name="PIC16F5">PIC10F2XX, PIC12F/16F5XX Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<h3>General Resources Used - Headers</h3>
+<ul>
+  <li>MCLR/Vpp shared for programming.
+</ul>
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Tables</h3>
+<a href="#PIC10F2XX_Devices">PIC10F2XX Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC12F5XX_Devices">PIC12F5XX Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC16F5XX_Devices">PIC16F5XX Devices</a>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC10F2XX_Devices">PIC10F2XX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F200</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F202</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F204</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F206</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F220</td>
+	<td>AC162070 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC10F222</td>
+	<td>AC162070 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC12F5XX_Devices">PIC12F5XX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC12F508</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC12F509</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC12F510</td>
+	<td>AC162070 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC12F519</td>
+	<td>AC162096 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC16F5XX_Devices">PIC16F5XX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F505</td>
+	<td>AC162059 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F506</td>
+	<td>AC162070 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F526</td>
+	<td>AC162096 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F527</td>
+	<td>AC244061 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F570</td>
+	<td>AC244062 (Req)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+</table>
+<br/>
+2016/12/05 03:25:48 PM
+</body></html>

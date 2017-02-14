@@ -1,0 +1,62 @@
+<!-- Attaching SCL -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Attaching SCL</h2>
+	<body>
+		<p>
+			This section creates a simple simulator debug session in MPLAB X
+			and then executes the SCL program created in the 
+			<a href="../content/ASimpleSCLFile.html"  target="sclTextFrame">last section</a>.
+		</p>
+		<li>
+			Open MPLAB X and create a simple, non-terminating, PIC18F4620 project 
+			using the simulator as the debug tool.  Here is a likely program:
+		</li>
+		<br>
+		<code>
+			<pre class="precode">int main(int argc, char** argv) {</pre>
+            <pre class="precode">   while (1);</pre>
+			<pre class="precode">}</pre>
+		</code>
+		<br>
+		<li>
+			Create a watch on the ADRESH register and observe that its value is 0x00.
+		</li>
+		<br>
+		<li>
+			Debug run the program.
+		</li>
+		<br>
+		<li>
+			Open the stimulus window from the MPLAB X main menu
+		</li>
+		<p class="indent1">
+			Window -> Simulator -> Stimulus
+		</p>
+		<image src="../image/attach1.png"/ class="indent1"/>
+		<p></p>
+		<li>
+			In the Stimulus window, click the Attach SCL File button (second 
+			from top on left hand side), and browse to the mySCL.scl file 
+			created in the first step.
+		</li>
+		<p></p>
+		<image src="../image/attach2.png"/ class="indent1"/>
+		<p></p>
+		<li>
+			Click the Open button.  At this point the mySCL.scl program will be 
+			executed.
+		</li>
+		<p></p>
+		<li>
+			Return to the Watches window and observer that ADRESH is now 0xBB!
+		</li>
+		<p>
+			Congratulations, you have just executed your first SCL program which 
+			injected a value to an SFR while during simulator execution!
+		</p>
+	</body>
+</html>

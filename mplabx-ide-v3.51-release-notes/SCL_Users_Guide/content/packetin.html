@@ -1,0 +1,63 @@
+<!-- packetin -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>packetin</h2>
+	<body>
+		<p>
+			packetin() parses a string for values to be injected to an
+			<a href="../content/sfr.html" target="sclTextFrame">SFR</a>.
+		</p>
+		<code>
+			<pre class="precode">packetin(inString,     <i>// String to be parsed</i></pre>
+			<pre class="precode">         sfr,          <i>// SFR to be injected</i></pre>
+			<pre class="precode">         append);      <i>// boolean, if false, clear previous packets</i></pre>
+			<br>
+			<pre class="precode">packetin(inString, RCREG, true);</pre>
+		</code>
+		<p>
+			packetin() is similar to 
+			<a href="../content/accessin.html"      target="sclTextFrame">accessin()</a>
+			in that the data is injected to the 
+			<a href="../content/sfr.html"           target="sclTextFrame">SFR</a> 
+			"on demand", or each time the processor reads the SFR.
+		</p>
+		<p>
+			<b>inString</b> is a String variable with the data to be parsed.
+			The data can be in two different formats, white space delimited 
+			hexadecimal values, or strings of characters.  The string is 
+			often read in from a file.
+		</p>
+		<code>
+			<pre class="precode">06F 3FE 45 FFFE</i></pre>
+			<pre class="precode">"The quick brown fox."</pre>
+		</code>
+		<p>
+			The <b>sfr</b> is just the SFR that will receive the injection 
+			values.
+		</p>
+		<p>
+			<b>append</b> is a boolean specifying whether previously parsed
+			data is kept or discarded.
+		</p>
+		<p>
+			To understand what append does it is useful to know that packetin()
+			was implemented to support register injection to the UART receive
+			register RCREG.  Moreover, that injection to RCREG is not on-demand.
+			Instead the UART peripheral simulation determines when the next
+			injection should occur, based on baud rate.  So it is possible that
+			some data values have not been injected yet when new data values 
+			are parsed by packetin.  UART developers wanted to be able to 
+			simulate missed data packets.  This is accomplished by setting 
+			append to false, causing the previous data values, not yet 
+			injected values to be thrown away before the new values are 
+			parsed.
+		</p>
+		<p>
+			Remember that packetin() is not limited to RCREG injection, and that
+			all other SFRs are injected on-demand.
+		</p>
+	</body>
+</html>

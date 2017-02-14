@@ -1,0 +1,74 @@
+<!-- What SCL Does -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>What SCL Does</h2>
+	<body>
+		<p>
+			SCL allows the user to inject external values into the simulated PIC
+			environment while the simultor is executing the user's project code.
+			For example, SCL can be used to toggle the INT0 pin to cause an
+			interrupt to occur.
+		</p>
+		<p>
+			Given that the Simulator is, well, a simulation, timing of injection
+			can be tricky.  Events that happen simultaneously on the real 
+			hardware necessarily happen sequentially in the simulation.  It is 
+			necessary to understand how the Simulator works to know when to inject.
+		</p>
+		<p>
+			The Simulator's fundamental process is to execute an instruction from
+			the user's software image.  For example, when "running", the Simulator
+			is actually just executing one instruction after another.  Of course
+			the Simulator also simulates peripherals and handles SCL injections
+			too.  Here is the basic single-step flow:
+		</p>
+		<code>
+			<pre class="precode">singleStep</pre>
+			<pre class="precode">   execute user instruction</pre>
+			<pre class="precode">   for each Tcyc needed by instruction   <i>// might be more than 1 Tcyc!</i></pre>
+			<pre class="precode">      increment stopwatch</pre>
+			<pre class="precode">      process each peripheral</pre>
+			<pre class="precode">      run SCL processes</pre>
+		</code>
+		<p>
+			What is important here is to note that SCL injection won't occur until
+			after the instruction has been executed.  Usually the SCL author doesn't
+			have to worry about cycle accuracy to such a fine level.  But when
+			injections absolutely have to occur at a specific instruction cycle,
+			remembering the above process flow can be invaluable.
+		</p>
+		<h3>Running SCL Processes</h3>
+		<p>
+			The <i>run SCL processes</i> step in the above singleStep flow was a
+			bit vague.  What exactly happens when the Simulator runs SCL processes?
+		</p>
+		<p>
+			<i>(If you are new to SCL and the next part is confusing, skip it for now.
+			It will make more sense after you've played with SCL for a bit!)</i>
+		</p>
+		<p>
+			SCL maintains two 
+			<a href="../content/process.html" target="sclTextFrame">process</a> 
+			queues, active and inactive.  When SCL runs it's processes, each 
+			process on the inactive queue is checked to see if that process can
+			be moved to the active queue.  (This is usually determined by the 
+			arguments to the
+			<a href="../content/wait.html" target="sclTextFrame">wait</a>
+			statment that put the process on the inactive queue.)  Then each
+			process on the active queue is executed until another wait statement
+			is encountered, putting the process back on the inactive queue.
+		</p>
+		<p>
+			This sequence is repeated until no SCL processes remain on the 
+			active queue.  In particular note that a process can encounter a wait
+			condition that will immediately move it back to the active queue.  For 
+			example assume the wait statement is "<code>wait until STATUS.Z == 1</code>".
+			If the STATUS.Z register field is currently 1, then the process will 
+			move to the inactive queue and immediately move back to the active queue
+			and continue executing.  All within the same simulation Tcyc!
+		</p>
+	</body>
+</html>

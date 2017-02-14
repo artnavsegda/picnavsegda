@@ -1,0 +1,85 @@
+<html>
+<head><title>Reserved Resources Table - Heading Descriptions</title></head>
+<body style="font-family:sans-serif; font-size:10pt" bgcolor="#FFFFE0">
+
+<h1>Reserved Resources Table - Heading Descriptions</h1>
+
+<table style="font-family: sans-serif; font-size: 10pt;" border=1 cellspacing=5 cellpadding=5>
+<!--width="70%"-->
+
+  <tr bgcolor="#A8C6FD">
+    <th>Heading</th>
+    <th>Heading Description</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Tool Support</b></td>
+    <td>
+      <b>RI</b> = MPLAB<sup>®</sup> REAL ICE™ in-circuit emulator/production programmer<br>
+      <b>ICD3</b> = MPLAB ICD 3 in-circuit debugger/production programmer<br>
+      <b>PK3</b> = PICkit™ 3 in-circuit debugger/development programmer*<br>
+      * Software breakpoints are not supported on PICkit 3.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Device</b></td>
+    <td>Device or Header (AC) has either yellow or green light support in MPLAB<sup>®</sup> X IDE.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Header,<br>Alt. Header</b></td>
+    <td>Header and alternate header associated with Device. Entries may be:<br>
+      <b>N/A</b>: No header available or needed. Reserved resources apply to Device.<br>
+      <b>AC###### (required)</b>: Header required for debug. Reserved resources apply to header.<br>
+      <b>AC###### (optional)</b>: Optional header available. Reserved resources apply to Device.
+      See header in Device column (AC) for header reserved resources.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Program Memory Reserved</b></td>
+    <td>Device Program memory reserved for debug.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>File Registers Reserved</b></td>
+    <td>Device File Registers memory reserved for debug.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Program Memory Reserved<br>(SW BP Support)</b></td>
+    <td>Device Program memory reserved for debug.
+    Software Breakpoint support may require more resources for debug.
+    Not all tools support software breakpoints.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>File Registers Reserved<br>(SW BP Support)</b></td>
+    <td>Device File Registers memory reserved for debug.
+    Software Breakpoint support may require more resources for debug.
+    Not all tools support software breakpoints.</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>MCLR Pin Reserved/Shared</b></td>
+    <td>Master Clear (MCLR) pin may be reserved for debug and/or shared with Vpp.
+    If reserved/shared, the pin cannot be used as digital I/O while debugging.</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>LVP Disabled</b></td>
+    <td>Low voltage programming (LVP) will be disabled on devices that support this feature.<br>
+    <b>NOTE</b>: In-circuit debuggers/emulators do not support Low Voltage Programming (LVP)
+    and will disable this function.<br>
+    You cannot enable it through programming using the debugger.<br>
+    However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+    </td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Device Pins Reserved</b></td>
+    <td>Programming pins (RB6/RB7, PGC/PGD) may be reserved for debug.<br>
+    Emulation pins (EMUC/EMUD) may be reserved for debug.<br>
+    Other functions multiplexed on these pins will not be available during debug.</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Stack Reserved</b></td>
+    <td>Some stack levels may be reserved for debug.
+    If levels are reserved, the debugger will need to control the stack,<br>
+    so on some device TOS registers (TOSL, TOSH, TOSU) will also be reserved.</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+<head><title>Hardware Tool Debug Features Table - Heading Descriptions</title></head>
+<body style="font-family:sans-serif; font-size:10pt" bgcolor="#FFFFE0">
+
+<h1>Hardware Tool Debug Features Table - Heading Descriptions</h1>
+
+<table style="font-family: sans-serif; font-size: 10pt;" border=1 cellspacing=5 cellpadding=5 width="75%">
+
+  <tr bgcolor="#A8C6FD">
+    <th>Tool<br>Support*</th>
+    <th>Feature</th>
+    <th>Feature Description**</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td rowspan="16"><b>RI,<br>ICD3,<br>PK3</b></td>
+    <td><b>Device or Header</b></td>
+    <td>Device or Header (AC) has either yellow or green light support in MPLAB<sup>®</sup> X IDE.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Prog/Data BPs</b></td>
+    <td>Maximum number of Program and Data Memory breakpoints.<br>
+    X Total: X breakpoints are shared between program and data memory.<br>
+    X/Y: X breakpoints dedicated to program memory and Y breakpoints dedicated to data memory.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Data BP Access</b></td>
+    <td>Break on data fetch, data write or either data fetch or write.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Tuples (ANDed BPs)</b></td>
+    <td>Maximum number of Tuples (ANDed breakpoints). A tuple consists of one program memory breakpoint
+    ANDed with one data memory breakpoint.
+    Breakpoint 1 AND breakpoint 2 must occur at the same time before a program halt.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Sequenced BPs</b></td>
+    <td>Maximum number of sequences and sequenced breakpoints.<br>
+    X/Y: X is the maximum number of a breakpoint sequences. Y is the maximum number of breakpoints in the sequence.<br>
+    A breakpoint sequence is a list of breakpoints that execute but do not halt until the last breakpoint is executed.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Range BPs</b></td>
+    <td>Break on a range of program or data memory addresses.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Table R/W BPs</b></td>
+    <td>Break on a table read or write.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Pass Counter</b></td>
+    <td>Break after a specified number of passes occur, specified by a counter.</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Clock Switch Break</b></td>
+    <td>Break on clock switching</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Sleep Wake Break</b></td>
+    <td>Break on wake from Sleep</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Stack Over/Under Break</b></td>
+    <td>Break on stack overflow/underflow</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>WDT Timeout Break</b></td>
+    <td>Break on Watchdog Timer timeout</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Stopwatch</b></td>
+    <td>Use the stopwatch with breakpoints to time code execution.
+    Stopwatch uses 1-2 breakpoint resources</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Debug Reads</b></td>
+    <td>Read values on program execution halt.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Stack Snapshot</b></td>
+    <td>Applies to emulation headers: View hardware stack on halt.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>PKOB Support</b></td>
+    <td>PICkit On Board Support<br>
+    MPLAB X IDE can read all device configuration settings at once.
+    Devices that must break up configuration settings cannot be used with PKOB.</td>
+  </tr>
+  <tr bgcolor="#E3E3E3">
+    <td rowspan="3"><b>RI,<br>ICD3</b></td>
+    <td><b>Runtime BPs</b></td>
+    <td>Add breakpoints on program execution halt.</td>
+  </tr>
+  <tr bgcolor="#E3E3E3">
+    <td><b>SW BPs</b></td>
+    <td>Software Breakpoints</td>
+  </tr>
+  <tr bgcolor="#E3E3E3">
+    <td><b>App IO</b></td>
+    <td>Application Input/Output</td>
+  </tr>
+  <tr bgcolor="lightgray">
+   <td rowspan="9"><b>RI</b></td>
+    <td><b>Data Capture</b></td>
+    <td>Non-trace data capture</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>Runtime Watch</b></td>
+    <td>Watch values change during run</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>Native Trace</b></td>
+    <td rowspan="3">Instrumented Trace - Compiler support required</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>Port Trace</b></td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>SPI Trace</b></td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>Inst Trace</b></td>
+    <td>Instruction Trace</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>Jump Trace</b></td>
+    <td>Trace Window shows branch/jump addresses.</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>PC Sampling</b></td>
+    <td>Percent time spent in a function</td>
+  </tr>
+  <tr bgcolor="lightgray">
+    <td><b>FLP</b></td>
+    <td>Function Level Profiling - Code Profiling plugin required (SW100100)</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td colspan="3">
+    * RI = MPLAB<sup>®</sup> REAL ICE™ in-circuit emulator; ICD3 = MPLAB ICD 3; PK3 = PICkit™ 3.<br>
+    ** See your tool documentation (PDF or Help file) for details on debug features.
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

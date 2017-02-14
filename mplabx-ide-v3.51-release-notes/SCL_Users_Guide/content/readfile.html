@@ -1,0 +1,38 @@
+<!-- Example:  Reading From File -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Example:  Reading From a File</h2>
+	<body>
+		<p>
+			This example which reads data from a file and injects it 
+			it to an SFR.
+		</p>
+		<code>
+			<pre class="precode">process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      variable fileVar : file;</pre>
+			<pre class="precode">      variable status  : file_open_status;</pre>
+			<pre class="precode">      file_open(status, fileVar, "C:\example\data.txt", read_mode);</pre>
+			<pre class="precode">      if status == open_ok then</pre>
+			<pre class="precode">         while endfile(fileVar) == false loop</pre>
+			<pre class="precode">            wait until AD1CON.DONE == 1;</pre>
+			<pre class="precode">            read(fileVar, ADC1BUF0);</pre>
+			<pre class="precode">            wait until AD1CON.DONE == 0;</pre>
+			<pre class="precode">         end loop;</pre>
+			<pre class="precode">      file_close(fileVar);</pre>
+			<pre class="precode">      wait;</pre>
+			<pre class="precode">      end if;</pre>
+			<pre class="precode">   end process;</pre>
+		</code>
+		<p>
+			And here is an example data.txt file.
+		</p>
+		<code>
+			<pre class="precode">00 01 02 03 04 05 06 07</pre>
+			<pre class="precode">08 09 0A 0B 0C 0D 0E 0F</pre>
+		</code>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- shared location -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Shared Location</h2>
+	<body>
+		<p>
+			SCL allows the reading and writing of general purpose memory locations.
+			But, you have to declare a chared location in the configuration 
+			section.
+		</p>
+		<code>
+			<pre class="precode">shared location <i>varName</i> := <i>locationAddress</i>;</pre>
+		</code>
+		<p>
+			For example...
+		</p>
+		<code>
+			<pre class="precode">configuration for "PIC16F877" is</pre>
+			<pre class="precode">   shared location loc70 := 16#70#;</pre>
+			<pre class="precode">   end configuration;</pre>
+			<pre class="precode">testbench for "PIC16F877" is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">   process is</pre>
+			<pre class="precode">      begin</pre>
+			<pre class="precode">      wait on loc70;</pre>
+			<pre class="precode">      if loc70 == 0 then</pre>
+			<pre class="precode">         loc70 <= 1;</pre>
+			<pre class="precode">      else</pre>
+			<pre class="precode">         loc70 <= 0;</pre>
+			<pre class="precode">      end if;</pre>
+			<pre class="precode">      end process;</pre>
+			<pre class="precode">   end testbench;</pre>
+		</code>
+	</body>
+</html>

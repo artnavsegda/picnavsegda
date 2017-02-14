@@ -1,0 +1,31 @@
+<!-- Configuration -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Configuration</h2>
+	<body>
+		<p>
+			SCL programs may contain an optional configuration.  The configuration,
+			if it exists, comes before the 
+			<a href="../content/testbench.html"     target="sclTextFrame">testbench</a>
+			, and contains declarations
+			of shared labels and addresses from the users PIC software.  Like 
+			the testbench, the configuration can be empty, but there is little
+			reason to do so.  
+		</p>
+		<p>
+			Here is an empty configuration to show the basic syntax:
+		</p>
+		<code>
+			<pre class="precode">configuration for PIC32MX360F512L is</pre>
+			<pre class="precode">   <i>// shared variables and labels go here</i></pre>
+			<pre class="precode">end configuration;</pre>
+			<pre class="precode"><i>// testbench follows</i></pre>
+		</code>
+		<p>
+			As with testbench, the device name is ignored, but must be present.
+		</p>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- Loop -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Loop</h2>
+	<body>
+		<p>
+			The loop statement provides looping capability.
+		</p>
+		<code>
+            <pre class="precode">loop</pre>
+            <pre class="precode">   <i>scl statements</i></pre>
+            <pre class="precode">   exit when <i>booleanExpression     // optional</i></pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<p>
+			The 
+			<a href="../content/boolexp.html" target="sclTextFrame">boolean expression</a>
+			is what you would expect it to be.  Here are a few examples
+		</p>
+		<code>
+			<pre class="precode"><i>//infinite loop (no exit when)</i></pre>
+            <pre class="precode">loop</pre>
+            <pre class="precode">   RD1 <= '0';</pre>
+			<pre class="precode">   wait on RD1;</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<br>
+		<code>
+			<pre class="precode"><i>//clock until pc == foo label</i></pre>
+            <pre class="precode">loop</pre>
+            <pre class="precode">   RD0 <= '0';</pre>
+            <pre class="precode">   wait 4 ic;</pre>
+			<pre class="precode">   RD0 <= '1';</pre>
+            <pre class="precode">   wait 4 ic;</pre>
+            <pre class="precode">   exit when PC == foo;</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<br>
+		<code>
+			<pre class="precode"><i>//unadorned exit (yeah this is contrived!)</i></pre>
+            <pre class="precode">loop</pre>
+            <pre class="precode">   AN1 <= 3500 mv;</pre>
+            <pre class="precode">   exit;             <i>// unconditional exit</i></pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<p>
+		Note that a loop can have more than one exit when condition
+		</p>
+		<code>
+			<pre class="precode"><i>//multiple exit conditions</i></pre>
+            <pre class="precode">loop</pre>
+            <pre class="precode">   wait on RD1;</pre>
+            <pre class="precode">   RD0 <= '0';</pre>
+            <pre class="precode">   exit when STATUS.Z == 0;</pre>
+            <pre class="precode">   exit when RD2 == '0';</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+	</body>
+</html>

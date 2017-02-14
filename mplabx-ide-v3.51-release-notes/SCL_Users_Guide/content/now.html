@@ -1,0 +1,23 @@
+<!-- now -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>now</h2>
+	<body>
+		<p>
+			now() returns the current simulation cycle
+		</p>
+		<code>
+			<pre class="precode">variable timeMark : cycle;</pre>
+			<pre class="precode">timeMark := now();</pre>
+			<br>
+			<pre class="precode">...</pre>
+			<br>
+			<pre class="precode">if (now() > timeMark + 20 ic) then    <i>// don't do this if current time not</i></pre>
+			<pre class="precode">                                      <i>// at least 20 ic later than when</i></pre>
+			<pre class="precode">                                      <i>// time was marked</i></pre>
+		</code>
+	</body>
+</html>

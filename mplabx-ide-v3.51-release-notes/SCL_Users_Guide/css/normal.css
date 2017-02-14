@@ -1,0 +1,71 @@
+/* SCL User's Guide normal style sheet */
+body
+	{
+	background-color:white;
+	background-image:url('../image/paper.gif')
+	}
+	
+.funcTable
+	{
+	border: "1";
+	}
+
+.funcTable td
+	{
+	padding: 5px;
+	}
+
+/* Class precode */
+.precode
+	{
+	margin-top: 0px;
+	margin-left: 25px;
+	margin-bottom: 0px;
+	}
+	
+.indent1
+	{
+	margin-left: 25px;
+	}
+	
+.ul2
+	{
+	margin-left: 25px;
+	padding-left: 25px;
+	}
+	
+.warning
+	{
+	margin-left: 25px;
+	color:magenta;
+	}
+	
+/* Class outline */
+.outline 
+	{
+	list-style: none;
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+
+.outline ul 
+	{
+	list-style: none;
+	}
+
+.outline li 
+	{
+	cursor: auto;
+	}
+
+.olink 
+	{
+	border-style: none;
+	padding-right: 10px;
+	}
+	
+.oimg 
+	{
+	border-style: none;
+	}
+

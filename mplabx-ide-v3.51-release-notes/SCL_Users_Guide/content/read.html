@@ -1,0 +1,65 @@
+<!-- read -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>read</h2>
+	<body>
+		<p>
+			read() is an overloaded routine.
+		</p>
+		<p>
+			This version parses a value from a string.
+		</p>
+		<code>
+			<pre class="precode">read(inStr,        <i>// String to parse</i></pre>
+			<pre class="precode">     result)       <i>// variable to receive newly parsed value</i></pre>
+		</code>
+		<p>
+			This version also parses a value from a string, but returns a 
+			status.
+		</p>
+		<code>
+			<pre class="precode">read(inStr,        <i>// String to parse</i></pre>
+			<pre class="precode">     result,       <i>// variable to receive newly parsed value</i></pre>
+			<pre class="precode">     status)       <i>// boolean, true if parse was successful</i></pre>
+		</code>
+		<p>
+			This version reads a word value from a text file.
+		</p>
+		<code>
+			<pre class="precode">read(fileVar,      <i>// file variable of file to be read</i></pre>
+			<pre class="precode">     location)     <i>// sfr or shared location to receive value</i></pre>
+			<pre class="precode">     numBytes)     <i>// size of sfr or shared location in bytes</i></pre>
+		</code>
+		<p>
+			<b>inStr</b> A string variable to be parsed.  Typically the string
+			was read from an input file.  Parsing occurs from left to right in
+			the string.  Note that after the call to read(), the parsed value
+			will be removed from the string.
+		</p>
+		<p>
+			<b>result</b> is a variable that receives the parsed value.  The
+			variable can be of type integer, string, pin, or time.  The format of
+			the string token varies based on type.
+		</p>
+		<code>
+			<pre class="precode">"FF 03E 25"                 <i>// typical integer tokens</i></pre>
+			<pre class="precode">"typical string tokens"     <i>// typcial string tokens</i></pre>
+			<pre class="precode">"10 ms 20 us"               <i>// typcial time tokens</i></pre>
+			<pre class="precode">"'1' 3 V '0' 3500 mV"       <i>// typcial pin tokens</i></pre>
+		</code>
+		<p>
+			<b>location</b> is an
+				<a href="../content/sfr.html" target="sclTextFrame">SFR</a>
+			or 
+				<a href="../content/sharedloc.html" target="sclTextFrame">shared location</a>
+			to receive the newly read value.
+		</p>
+		<p>
+			<b>status</b> is a boolean variable containing read operation 
+			status.  If true, the read operation succeeded.
+		</p>
+	</body>
+</html>

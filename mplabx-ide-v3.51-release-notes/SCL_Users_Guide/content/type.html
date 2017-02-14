@@ -1,0 +1,49 @@
+<!-- Type -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Types</h2>
+	<body>
+		<p>
+			SCL allows the definition of types which can then be subsequently
+			used to define
+			<a href="../content/variable.html" target="sclTextFrame">variables</a></li>
+			.  There are several types of type definitions.
+		</p>
+		<h3>Enumerations</h3>
+		<p>
+			Enumeration type definitions give specific values that the type
+			allows.
+		</p>
+		<code>
+			<pre class="precode">type color is (red, blue, green);</pre>
+		</code>
+		<h3>Ranges</h3>
+		<p>
+			Range definitions give a range of values that the type allows.
+		</p>
+		<code>
+			<pre class="precode">type Byte is range 0 to #16#FF#;</pre>
+		</code>
+		<p>
+			Range definitions can include an option definition of the units
+			associated with the type
+		</p>
+		<code>
+			<pre class="precode">type voltage is range -9223372036854775807 to 9223372036854775807</pre>
+            <pre class="precode">   units mV;</pre>
+            <pre class="precode">      V  = 1000 mV;</pre>
+            <pre class="precode">      kV = 1000 V;</pre>
+            <pre class="precode">   end units;</pre>
+		</code>
+		<h3>Arrays</h3>
+		<p>
+			Here is an example of an array type
+		</p>
+		<code>
+			<pre class="precode">type bit_vector is array (integer range <>) of bit;</pre>
+		</code>
+	</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MPLINK Linker Release Notes</title>
+<style type="text/css">
+span {
+	font-family: Arial;
+	color: #000000;
+	background: #FFFFFF;
+	font-size: 10pt;
+}
+pre {
+	font-family: monospace;
+	color: #000000;
+	background: #FFFFFF;
+	font-size: 10pt;
+}
+p.Heading0, li.Heading0, div.Heading0, span.Heading0 {
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;
+}
+h1 {
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	tab-stops:list .3in;
+	font-size:14.0pt;
+	font-family:Arial;
+}
+h2 {
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	tab-stops:list .4in;
+	font-size:12.0pt;
+	font-family:Arial;
+}
+DL, DT, OL, UL, LI, DD {
+    list-style-position: outside;
+}
+pre {
+    font-family: monospace;
+}
+</style>
+</head>
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+<span><div class=Heading0>Release Notes for MPLINK&trade; Object Linker and Utilities v5.08 <br /></div>
+<TABLE COLS=2 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR><TD>MPLINK Object Linker</TD><TD>&nbsp;v5.08</TD></TR>
+<TR><TD>MPLIB&trade; Object Librarian</TD><TD>&nbsp;v5.07</TD></TR>
+<TR><TD>MP2COD COFF to COD File Converter</TD><TD>&nbsp;v5.08</TD></TR>
+<TR><TD>MP2HEX COFF to HEX File Converter</TD><TD>&nbsp;v5.08</TD></TR>
+</TABLE>
+17 November 2016<br />
+<br />
+<div class=Heading0>Table of Contents</div>
+<OL>
+<LI><A HREF="#Compatibility" TITLE="Jump to 'Important Backward Compatibility
+       Notes' Section">Important Backward Compatibility Notes</A></LI>
+<LI><A HREF="#WhatsNew5xx" TITLE="Jump to 'What&apos;s New in v4.3x'
+       Section">What's New in v5.xx</A></LI>
+<LI><A HREF="#WhatsNew4xx" TITLE="Jump to 'What&apos;s New in v4.3x'
+       Section">Changes introduced in v4.xx</A></LI>
+<LI><A HREF="#Fixed" TITLE="Jump to 'What&apos;s Been Fixed Since v4.30'
+       Section">What's Been Fixed Since v4.30</A></LI>
+<LI><A HREF="#Devices" TITLE="Jump to 'Command Line Device Options Supported'
+       Section">Command Line Device Options Supported</A></LI>
+<LI><A HREF="#OSSupport8" TITLE="Jump to 'Operating System Support List - MPLAB IDE'
+       Section">Operating System Support List - MPLAB IDE</A></LI>
+<LI><A HREF="#OSSupportX" TITLE="Jump to 'Operating System Support List - MPLAB X IDE'
+       Section">Operating System Support List - MPLAB X IDE</A></LI>
+<LI><A HREF="#KnownProblems" TITLE="Jump to 'Known Problems' Section">
+       Known Problems</A></LI>
+<LI><A HREF="#Support" TITLE="Jump to 'Customer Support' Section">
+       Customer Support</A></LI>
+</OL>
+<OL style="list-style-type:decimal;">
+<LI class="Heading0"><h1><A NAME="Compatibility">Important Backward
+        Compatibility Notes</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+		<h2>New switch to reserve debug resources and IDE compatibility</h2>
+		<p>MPLINK v5.00 introduces a new command line option /r, which 
+		can be used to specify regions in data and program memory in which the 
+		linker should not allocate any object. MPLAB X IDE v2.00 and higher will 
+		make use of this new MPLINK option to reserve the program and data memory 
+		required for hardware debugging. MPLAB X IDE v2.00 and higher will also be 
+		able to work with older versions of MPLINK. However, in order to use MPLINK 
+		v5.00 or newer in any project that requires hardware debugging, upgrading to
+		MPLAB X IDE v2.00 or higher is necessary. 
+        		
+		</p>
+
+		<h2>Linker Script Filename Case In Linux</h2>
+		<p>Prior to v3.46, few linker script filenames were in uppercase.
+		MPLAB X projects using such devices failed to build on Linux based
+		OS as MPLAB X used to specify the linker script using lowercase names.
+		Starting from v3.46 of C18, all linker script filenames have been
+		converted to lowercase to fix this issue. 
+
+		<p/><p>Users using their own custom scripts to build C18 or MPASM projects
+		should change the filename of linker script in their custom scripts
+		to lowercase. Otherwise they might encounter  "Could not find 
+		Generic linker commands for this device" error during the link 
+		stage. If the user does not wish to do this, then they can work
+		around the issue by creating a symbolic link to the new lowercase
+		filename from the uppercase filename. A shell script
+		called createbackcompatiblelinks  has been provided in mpasmx
+		folder on Linux to do the same. Depending on where the
+		user's bin\LKR folder  is located, root or super-user privilege
+		might be required. 
+</p>
+        <h2>COFF File Format Replaces COD File Format</h2>
+        <p>Due to the elimination of the COD Format from MPASM ouput, and the
+        use of COFF format instead, new flags have been added to COFF files
+        that are generated by C18 v3.30 and MPASM v5.30. These flags are only
+        recognized by MPLINK v4.30 and above. MPLINK v4.30 and above continue
+        to recognize the old COFF files. However, earlier versions of MPLINK
+        may not recognize new COFF files.</p>
+
+
+        <h2>Corrected behavior for programs with no high priority Interrupt
+        Service Routine (ISR) due to removal of the vectors region from linker
+        scripts (BIN18-70)</h2>
+        <p>This note is only applicable to programs with the following
+        characteristics:
+        <OL style="list-style-type:decimal;">
+        <LI>Explicitly defined low priority ISR and </LI>
+        <LI>No defined high priority ISR and </LI>
+        <LI>Has the High priority interrupt enabled (either explicity or
+        by not disabling the default) </LI></OL>
+        <p>In the previous versions of the linker scripts (with the vectors
+        region), no code or data was being placed between the High/Low-priority
+        interrupt vectors.  Consequently, with the arrival of a High-priority
+        interrupt, the execution of the program would (erroneously) fall into
+        the low-priority ISR.  With the removal of the vectors region from the
+        linker scripts, other data or code may be placed at the addresses
+        between the High and Low priority interrupt vectors.  This results in
+        a non-deterministic behavior, upon the arrival of a high priority
+        interrupt for these programs.
+
+
+        <h2>MPLINK Linker and MPLAB IDE Compatibilty</h2>
+        <p>Due to a change in COFF file format, MPLAB C18 v3.00 and later will
+        not be compatible with versions of MPLINK Linker prior to v4.00 or
+        versions of the MPLAB IDE prior to v7.21.</p>
+        <p>MPLINK Linker v4.00 and later will have backward compatibility to
+        earlier versions at the source level only. Any existing object files or
+        libraries compiled with earlier versions of the tools will not link
+        using new versions of the tools. They will need to be recompiled
+        from source.</p>
+        <p>If the user attempts to use this release with object files or
+        libraries compiled with earlier versions of MPLAB C18, MPLINK Linker,
+        and MPASM Assembler, the error message that will be received will be
+        similar to:</p>
+<pre>
+Error - Coff file format for 'C:\mcc18\lib/c018i.o' is out of date.
+</pre>
+        <p>If the user attempts to use an old version of MPLINK Linker to link
+        object files or libraries compiled with this release, the error message
+        that will be received will be similar to:</p>
+<pre>
+Error - Coff file format for 'C:\mcc18\lib/c018i.o' does not appear to be a valid COFF file.
+</pre>
+</span>
+
+
+<LI> class="Heading0"><h1><A NAME="WhatsNew5xx">What's New in v5.xx</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<OL style="list-style-type:lower-alpha;font-weight:bold;"><br />
+<span style="font-size:10pt;font-weight:normal;">
+<UL>
+        <DT><b>Introduced in v5.00</b> 
+        <DD><LI>New command-line option to reserve data and program memory. </DT><br />
+
+		The new <tt>/r</tt> command line option introduced in v5.00 allows the 
+		user or IDE to reserve data and program memory regions. MPLINK will not 
+		allocate any objects in the the memory range specified using the <tt>/r</tt> option. 
+		
+		<p><b>Usage:</b></p>
+		
+		<LI> <b>To reserve program memory:</b> <br> 
+		        -r=ROM@&lt;start address>:&lt;end address> <br> 
+				      Where, &lt;start address> and  &lt;end address> are in hex format with 0x prefix</br>
+		<br/>
+		<LI> <b>To reserve data memory:</b> <br>
+		       -r=RAM@<qualifier>:&lt;start address>:&lt;end address> <br>
+                      Where, &lt;start address> and  &lt;end address> are in hex format with 0x prefix <br>
+					         &lt;qualifier>: could be GPR: or ACCESS: or SHARE: and is optional <br/>
+							 <br/>
+					  
+		<LI>This option is used by the MPLAB X IDE v2.00 and higher to reserve the program and data memory regions required by some hardware debuggers during debugging.  			  
+
+	
+ </span>
+ </OL>
+ </span>
+ </UL>
+
+<LI class="Heading0"><h1><A NAME="WhatsNew4xx">Changes introduced in v4.xx</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<OL style="list-style-type:lower-alpha;font-weight:bold;"><br />
+<span style="font-size:10pt;font-weight:normal;">
+<UL>
+        <LI>Early adopter part support has been added. See <A HREF="#Devices"
+        TITLE="Jump to 'Devices' Section">"Devices"</A> below.</LI> <br />
+<br />
+        <LI>Old linker scripts will no longer be included in new installations.
+        Only the generic linker scripts will be included. For example,
+        18F4550.lkr, 18F4550i.lkr, 18F4550_e.lkr and 18F4550i_e.lkr (which
+        would be found under MCC18/lkr for the compiler) will no longer be
+        installed.  Instead, only 18F4550_g.lkr will be installed (which can
+        be found under MCC18/bin/LKR for the compiler).<br />
+        <B>Note:</B> Installing over an older installation will not remove the
+        old linker scripts, but updates will only be made to the new generic
+        linker scripts.
+        <br /> <br />
+
+        <LI> The following beta devices have been renamed from "L" devices to
+        "LF" devices:<br />
+        18L13K22  to  18LF13K22<br />
+        18L13K50  to  18LF13K50<br />
+        18L14K22  to  18LF14K22<br />
+        18L14K50  to  18LF14K50<br />
+        18L24J11  to  18LF24J11<br />
+        18L24J50  to  18LF24J50<br />
+        18L25J11  to  18LF25J11<br />
+        18L25J50  to  18LF25J50<br />
+        18L26J11  to  18LF26J11<br />
+        18L26J50  to  18LF26J50<br />
+        18L44J11  to  18LF44J11<br />
+        18L44J50  to  18LF44J50<br />
+        18L45J11  to  18LF45J11<br />
+        18L45J50  to  18LF45J50<br />
+        18L46J11  to  18LF46J11<br />
+        18L46J50  to  18LF46J50<br />
+        </LI> <br />
+</UL>
+        <DT><b>Introduced in v4.22 from BIN18-72</b>
+        <DD>Request for new #define and #if/else style directives for linker
+        scripts. </DT><br />
+
+        <p>As an extension to the new features implemented for BIN18-72, now
+        MPLINK has made available:</p>
+        <OL style="list-style-type:lower-roman;">
+        <LI><tt>/p</tt> command-line flag allows the user or IDE to define the part
+        number for the linker. If this flag is used, MPLINK will select the
+        correct generic linker script from the <tt>lkr</tt> directory relative to the
+        location of the executable and use it to build the project. </LI>
+
+        <LI><tt>/u</tt> command-line flag allows the user or IDE to define symbols that
+        will be used by the linker to resolve the conditional directives inside
+        the linker script. For more details on this please refer to the
+        <i>MPASM Assembler,MPLINK Object Linker, MPLIB Object Librarian
+        User's Guide</i> (DS33014).</LI>
+
+        <LI>Customized Linker Scripts:
+        <OL style="list-style-type:lower-alpha;">
+        <LI> The existing (old) linker scripts will be removed (in the future)
+        from the distribution tree and only the generic linker scripts will be
+        supported. The existing projects with local linker scripts will continue
+        to work and user can decide if they want to use their local linker
+        script or just eliminate it and let the linker to use the generic one.
+        However, regarding the projects that use the default linker script, we
+        recommend that users move to the new paradigm of not having any linker
+        script.</LI>
+
+        <LI>Customization of linker scripts is no different than before. Users
+        can use their existing linker script or take a generic linker script
+        and apply their modifications, and include it in their project. For
+        more details on how to do this modification please refer to the
+        <i>MPASM Assembler,MPLINK Object Linker, MPLIB Object Librarian
+        User's Guide</i> (DS33014).</LI>
+        </OL>
+
+        <LI>Generic Linker Scripts:<br />
+        Using the conditional directives, now a single generic linker script,
+        per device, replaces the various existing linker scripts, eliminating
+        the need for an explicit selection of a linker-script inside the MPLAB
+        projects. Through the <tt>/p</tt> and <tt>/u</tt> command-line flags,
+        the IDE communicates the part number and different debug and part specific
+        information to MPLINK. Accordingly, MPLINK selects the proper
+        generic linker script and uses it to link the entire project. Any combination
+        of the following build possibilities will automatically be handled without the user
+        needing to worry about linker scripts:
+
+        <OL style="list-style-type:lower-alpha;">
+        <LI>Build for debug or no debug for various debuggers</LI>
+
+        <LI>Build for C or assembly only projects</LI>
+
+        <LI>Build for extended or traditional mode (for PIC18)</LI></OL>
+</LI>
+</OL>
+
+</OL>
+</span>
+
+<LI class="Heading0"><h1><A NAME="Fixed">
+        What's Been Fixed Since v4.30:</A></h1>
+<span style="font-size:10pt;font-weight:normal;">
+<OL style="list-style-type:lower-alpha;font-weight:bold;"><br />
+
+<LI>Problems resolved between v5.06 and v5.07:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.05 and v5.06:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.04 and v5.05:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.03 and v5.04:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.02 and v5.03:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.01 and v5.02:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v5.00 and v5.01:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v4.51 and v5.00:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT><b>(BIN18-160</b>)
+        <DD> In mplink v4.51, using &#45;m option results in hex file corruption if BANKSEL directive is used 
+        </DT><br /><br /><br />
+
+</DL>
+<LI>Problems resolved between v4.50 and v4.51:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v4.49 and v4.50:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+<LI>Problems resolved between v4.48 and v4.49:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.47 and v4.48:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.46 and v4.47:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.45 and v4.46:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+
+        <LI>Problems resolved between v4.44 and v4.45:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+
+        <LI>Problems resolved between v4.43 and v4.44:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+
+<LI>Problems resolved between v4.42 and v4.43:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.41 and v4.42:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.40 and v4.41:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.39 and v4.40:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-134</b>)
+        <DD>MPLINK fails to link the 16f630 project
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-142</b>)
+        <DD>Flash Memory is not defined in the linker scripts
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-143</b>)
+        <DD>Flash Memory information is missing in the linker script for 16F526
+        </DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.38 and v4.39:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-135</b>)
+        <DD>Make MPLINK display resource file version number in version banner
+        </DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.37 and v4.38:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-132</b>)
+        <DD>Linker CODEPAGE .config end address for 16F88/16F87 Family
+        changed from 0x2009 to 0x2008.
+        </DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.36 and v4.37:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+</DL>
+
+        <LI>Problems resolved between v4.35 and v4.36:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-116</b>)
+        <DD>Need to add RESERVED keyword to the linker script
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-122</b>)
+        <DD>Correct the end address for eedata in the linker script for 16F882.
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-124</b>)
+        <DD>MPLINK does not recognize MCP250XX
+        </DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.34 and v4.35:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-4</b>)
+        <DD>MPLIB truncates filenames containing a forward-slash path delimiter
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-110</b>)
+        <DD>Add /i command line option description to MPLINK help documentation
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-114</b>)
+        <DD>Enable linker to also search the linker script at
+        {linkerexepath}../lkr and linkerexepath}../LKR by default.
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-115</b>)
+        <DD>For midrange devices, the one byte used by debug executable is
+        not safe
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-117</b>)
+        <DD>idloc locations are not PROTECTed in the device 16F877
+        </DT><br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v4.33 and v4.34:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-104</b>)
+        <DD>Internal Coff output file is corrupt, error is generated when
+        the code has empty code and data sections
+        </DT><br /><br />
+
+        <DT>(<b>BIN18-108</b>)
+        <DD>Add support to allocate large objects (size more than one bank
+        size) in Linear Memory for enhanced midrange devices (PIC16F193x).
+        </DT><br /><br />
+</DL>
+
+        <LI>Problems resolved between v4.32 and v4.33:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>(<b>BIN18-107</b>)
+        <DD>MPLINK fails to link for the device 18F86K95.
+        </DT><br /><br />
+</DL>
+
+        <LI>Problems resolved between v4.31 and v4.32:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+</DL>
+
+        <LI>Problems resolved between v4.30 and v4.31:<br /><br />
+<DL style="font-weight:normal;">
+
+        <DT>None</DT><br /><br />
+</DL>
+
+<!--
+        <DT>(<b>BIN18-xx</b>)
+        <DD>Description here.
+        </DT><br /><br />
+-->
+</OL>
+</span>
+
+<LI class="Heading0"><h1><A NAME="Devices">
+        Command Line Device Options Supported</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<p>Click <a href="chips.htm">here</a> for a complete listing.</p>
+
+<!--
+Syntax to comment out lines.
+-->
+
+THE PARTS CORRESPONDING TO THESE OPTIONS MAY NOT ALL BE
+COMMERCIALLY AVAILABLE.</p>
+<p>
+The part selection is specified at assembly time and contained
+within the object file. An appropriate linker command file is
+necessary to properly link for the chosen part.
+</p>
+</span>
+
+<LI class="Heading0"><h1><A NAME="OSSupport8">Operating System Support List - MPLAB IDE</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+    <p>MLINK.EXE is the 32-bit Windows version of MPLINK Object Linker which
+       is distributed with MPLAB IDE and MPLAB C18. It is supported on the
+       following platforms (32- and 64-bit):</p>
+
+    <ul>
+        <li>Microsoft Windows XP Professional SP3/ Windows 7 Professional/ Windows 8 Professional</li>
+    </ul>
+</span>
+
+<LI class="Heading0"><h1><A NAME="OSSupportX">Operating System Support List - MPLAB X IDE</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+    <p>MLINK.EXE is the 32-bit version of MPLINK Object Linker which
+       is distributed with MPLAB X IDE. It is supported on the
+       following platforms (32- and 64-bit):</p>
+
+    <ul>
+        <li>Microsoft Windows XP Professional SP3/ Windows 7 Professional/ Windows 8 Professional</li>
+        <li>Ubuntu 9.10</li>
+        <li>Macintosh OS X 10.5 Intel</li>
+    </ul>
+</span>
+
+<LI class="Heading0"><h1><A NAME="KnownProblems">Known Problems</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<DL>
+        <DT>(<b>BIN18-3 / 22483</b>)
+        <DD>MPLIB is unable to work with MPLAB C18 files compiled in the
+        static overlay model.<br />
+        For example, the source code:
+<pre>
+        int add( int a, int b )
+        {
+           int c;
+
+           c = a + b;
+           return c;
+        }
+</pre>
+        can be compiled and archived with the commands:
+<pre>
+        mcc18 test.c -sco
+        mplib -c test.lib test.o
+</pre>
+        However, attempting to list the files in the archive link the archive
+        will result in the error:
+<pre>
+        Error - Coff file 'test.o' could not read string table.
+        Error - Could not build member 'test.o' in library file './test.lib'.
+</pre> </DD></DT>
+
+        <DT>(<b>BIN18-5 / 3224</b>)
+        <DD>MPLINK Linker always links in the section which loads initialized
+        data from program memory to data memory, even though it is not
+        required. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-21 / 18214</b>)
+        <DD>If MPLINK.EXE is invoked without arguments, an error message
+        stating "Error spawning _mplink.exe" is emitted. This message is
+        spurious; it can be ignored. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-22 / 18432</b>)
+        <DD>An interrupt with locals of "overlay" storage class which calls a
+        function reachable from main is incorrectly viewed as recursive.<br />
+        For example, the program:
+<pre>
+        int g (void) {
+          return 2;
+        }
+
+        void f (void);
+        #pragma interrupt f
+        void f (void) {
+          overlay int x;
+          x = g ();
+        }
+
+        void main (void) {
+          int x;
+          x = g ();
+        }
+</pre>
+        Will cause a linker error, stating that 'g' is recursive and has
+        locals of "overlay" storage class. The workaround is to use "auto"
+        instead of "overlay" in the interrupt. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-26 / 19225</b>)
+        <DD>MPLINK Linker may generate an assertion failure on programs which
+        contain a section of zero length. The workaround is to remove such
+        sections from the program. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-27 / 20403</b>)
+        <DD>The '/r' option of MP2HEX does not work correctly for ranges
+        specified outside of any existing data.<br />
+        For example, given the following source, 't.asm':
+<pre>
+        LIST P=12C508
+        CODE 0x100
+        MOVLW 0
+        MOVLW 1
+        MOVLW 2
+        MOVLW 3
+        END
+</pre>
+        After assembly, execute 'mp2hex.exe t.o /r 0x104-0x104'.
+        The hex file content is:
+<pre>
+        :02 0000 04 0000FA
+        :02 0206 00 030C E7
+        :00 0000 01 FF
+</pre>
+        The data record shows the instruction 'MOVLW 3' at address
+        0x103, but 0x103 was not specified in the range.<br />
+        Since no data exists at 0x104 in the COFF file, there should be
+        no data bytes in the hex file. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-29 / 22228</b>)
+        <DD>Quiet mode (/q) disables the printing of errors and warnings to
+        standard out. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-33 / 22947</b>)
+        <DD>The /? command-line option may give the following error message
+        on Windows 2000:
+<pre>
+        Error - unknown switch: /r
+</pre>
+        Use the /h option instead. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-50 / 27314</b>)
+        <DD>Program memory utilization is not correct in map files
+        generated for PIC18F87J10. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-53 / 28114</b>)
+        <DD>The linker may disregard the section information in the last
+        IDATA due to CONFIG syntax directives. </DD></DT><br /><br />
+
+        <DT>(<b>BIN18-139</b>)
+        <DD>Linker error - "Cannot fit the section" seen with 12F675
+        </DD></DT><br /><br />
+
+</DL>
+</span>
+<LI class="Heading0"><h1><A NAME="Support">Customer Support</A></h1>
+<span style="font-size:10pt;font-weight:normal;">
+<br />
+Microchip provides online support via our home page at:<br />
+<A HREF="http://www.microchip.com">http://www.microchip.com</A><br />
+<br />
+Technical support is available through the web site at:<br />
+<A HREF="http://support.microchip.com">http://support.microchip.com</A><br />
+<br />
+A forum for discussion of Microchip products and tools is
+available at:<br />
+<A HREF="http://forum.microchip.com">http://forum.microchip.com</A><br />
+</span>
+</OL>
+</span>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- Arithmetic -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Arithmetic</h2>
+	<body>
+		<p>
+			Mathmatical operations can be performed on word sized integer values like SFRs and integer variables.
+		</p>
+		<code>
+			<pre class="precode"><i>intVal</i> <= <i>intVal</i> [+|-|*|/] <i>intVal</i>;</pre>
+		</code>
+		<p>
+			Integer values can be SFRs, integer variables, integer constants, or word sized 
+			<a href="../content/sharedvar.html" target="sclTextFrame">shared variable</a></li>
+			.
+		</p>
+		<code>
+			<pre class="precode">TMR1 <= TMR1 + 1;</pre>
+			<pre class="precode">intVar := WREG / 5;</pre>
+			<pre class="precode">sharedVar <= intVar + RCREG * 3 - 1;</pre>
+		</code>
+	</body>
+</html>

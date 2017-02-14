@@ -1,0 +1,424 @@
+<html>
+<head>
+  <title>PICkit 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>PICkit 3 Reserved Resources By Device</p>
+<h2><a name="PIC18F4">PIC18F4XXX Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<h3>General Resources Used - Devices</h3>
+<ul>
+  <li>MCLR pin reserved for debugging, i.e., you cannot use this pin as digital I/O while debugging.
+  <li>MCLR/Vpp shared for programming.
+  <li>Low-voltage ICSP programming disabled for devices that support this type of programming.<br/><b>NOTE:</b> The in-circuit debugger does not support Low Voltage Programming (LVP) and will disable this function. You cannot enable it through programming using the debugger. However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+  <li>RB6 and RB7 reserved for programming and in-circuit debugging. Therefore, other functions multiplexed on these pins will not be available during debug.
+  <li>Two stacks level not available. Also, because the debugger needs to control the stack, TOS registers (TOSL, TOSH, TOSU) are reserved.
+</ul>
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Table</h3>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F4XXX_Devices">PIC18F4XXX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4220</td>
+	<td>None</td>
+	<td>0xDC0-0xFFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4220</td>
+	<td>None</td>
+	<td>0xDC0-0xFFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4221</td>
+	<td>None</td>
+	<td>0xDC0-0xFFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4221</td>
+	<td>None</td>
+	<td>0xDC0-0xFFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4320</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4320</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4321</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4321</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4331</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4331</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4410</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4410</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF442</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4420</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4420</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4423</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4423</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4431</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4431</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4450</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4450</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4455</td>
+	<td>None</td>
+	<td>0x5DC0-0x5FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4455</td>
+	<td>None</td>
+	<td>0x5DC0-0x5FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4458</td>
+	<td>None</td>
+	<td>0x5DC0-0x5FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4458</td>
+	<td>None</td>
+	<td>0x5DC0-0x5FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF448</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4480</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4480</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4510</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4510</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4515</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4515</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF452</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4520</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4520</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4523</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4523</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4525</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4525</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4550</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4550</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4553</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4553</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x3F4-0x3FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF458</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4580</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4580</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4585</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4585</td>
+	<td>None</td>
+	<td>0xBD30-0xBFFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4610</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4610</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4620</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4620</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4680</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4680</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4682</td>
+	<td>None</td>
+	<td>0x13D30-0x13FFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4682</td>
+	<td>None</td>
+	<td>0x13D30-0x13FFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F4685</td>
+	<td>None</td>
+	<td>0x17D30-0x17FFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF4685</td>
+	<td>None</td>
+	<td>0x17D30-0x17FFF<br/></td>
+	<td>0xCF4-0xCFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+</table>
+<br/>
+2016/12/05 03:25:48 PM
+</body></html>

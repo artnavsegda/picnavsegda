@@ -1,0 +1,31 @@
+<!-- SFR -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>SFR</h2>
+	<body>
+		<p>
+			SCL automatically creates 
+			<a href="../content/variable.html"     target="sclTextFrame">variables</a>
+			that correspond to each of the SFRs on the current device.  The 
+			variable name will be the same as the SFR.  The SFR variable can
+			then be assigned, tested, etc.
+		</p>
+		<code>
+			<pre class="precode">ADC1BUF0 <= #16#15F#;</pre>
+			<pre class="precode">if STATUS == 0 then</pre>
+		</code>
+		<p>
+			SFRs in SCL are modeled as records where the fields are the SFR
+			fields become the record fields.  This allows the user to 
+			reference the fields by name without having to manually 
+			mask and shift.
+		</p>
+		<code>
+			<pre class="precode">PIR3.ADIF <= 1;</pre>
+			<pre class="precode">if STATUS.Z == 0 then</pre>
+		</code>
+	</body>
+</html>

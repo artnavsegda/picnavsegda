@@ -1,0 +1,54 @@
+<!-- While -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>While</h2>
+	<body>
+		<p>
+			The while loop is a variation on the 
+			<a href="../content/loop.html" target="sclTextFrame">Loop</a>
+			statement where the boolean exit condition is given at the start
+			of the loop.
+		</p>
+		<code>
+            <pre class="precode">while <i>booleanExpression</i> loop</pre>
+            <pre class="precode">   <i>scl statements</i></pre>
+            <pre class="precode">   exit when <i>booleanExpression     // optional</i></pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<p>
+			The 
+			<a href="../content/boolexp.html" target="sclTextFrame">boolean expression</a>
+			is what you would expect it to be.  Here are a few examples
+		</p>
+		<code>
+			<pre class="precode"><i>//infinite loop</i></pre>
+            <pre class="precode">while true loop</pre>
+            <pre class="precode">   RD1 <= '0';</pre>
+			<pre class="precode">   wait on RD1;</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<br>
+		<code>
+			<pre class="precode"><i>//loop until PC > 0x2000</i></pre>
+            <pre class="precode">while PC <= #16#2000# loop</pre>
+            <pre class="precode">   PIR3.ADIF <= 1;</pre>
+            <pre class="precode">   wait 200 us;</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+		<p>
+			Note that even though the while statement has it's own boolean
+			expression, the loop can still contain exit when statements.
+		</p>
+		<code>
+			<pre class="precode"><i>//loop until PIR2.EEIF is cleared</i></pre>
+            <pre class="precode">while PIR2.EEIF == 1 loop</pre>
+            <pre class="precode">   RD1 <= '1';</pre>
+            <pre class="precode">   wait on RD0;</pre>
+            <pre class="precode">   exit when PC == 0;   <i>// device reset</pre>
+            <pre class="precode">end loop;</pre>
+		</code>
+	</body>
+</html>

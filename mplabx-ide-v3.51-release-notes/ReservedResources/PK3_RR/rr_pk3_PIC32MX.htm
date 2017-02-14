@@ -1,0 +1,785 @@
+<html>
+<head>
+  <title>PICkit 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>PICkit 3 Reserved Resources By Device</p>
+<h2><a name="PIC32MX">PIC32MX Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<p>Some devices have built-in trace capabilities.</p>
+<h3>General Resources Used - Devices</h3>
+<ul>
+  <li>MCLR pin reserved for debugging, i.e., you cannot use this pin as digital I/O while debugging.
+  <li>MCLR/Vpp shared for programming.
+  <li>PGCx and PGDx reserved for programming and debugging. Therefore, other functions multiplexed on these pins will not be available during debug.
+</ul>
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Table</h3>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC32MX_Devices">PIC32MX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX110F016B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX110F016C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX110F016D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX120F032B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX120F032C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX120F032D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX120F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F064B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F064C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F064D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F256B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX130F256D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX150F128B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX150F128C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX150F128D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX150F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX150F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX151F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX170F256B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX170F256D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX170F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX170F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX210F016B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX210F016C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX210F016D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX220F032B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX220F032C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX220F032D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F064B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F064C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F064D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F256B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX230F256D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX250F128B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX250F128C</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX250F128D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX250F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX250F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX251F128E</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX251F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX270F256B</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX270F256D</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX270F256DB</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX270F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX270F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX320F032H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX320F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX320F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX320F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX330F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX330F064L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX340F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX340F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX340F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX340F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX350F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX350F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX350F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX350F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX360F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX360F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX370F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX370F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX420F032H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX430F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX430F064L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX440F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX440F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX440F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX440F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX450F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX450F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX450F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX450F256HB</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX450F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX460F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX460F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX470F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX470F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX470F512LB</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX530F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX530F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX534F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX534F064L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX550F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX550F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX564F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX564F064L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX564F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX564F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX570F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX570F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC00490-0X1FC00BF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX575F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX575F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX575F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX575F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX664F064H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX664F064L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX664F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX664F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX675F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX675F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX675F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX675F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX695F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX695F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX764F128H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX764F128L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX775F256H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX775F256L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX775F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX775F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX795F512H</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MX795F512L</td>
+	<td>None</td>
+	<td>0x1FC00480-0x1FC00487 (BCM)<br/>0X1FC02000-0X1FC02FF0 (BCM)<br/></td>
+	<td>0x0000-0x01FC<br/></td>
+  </tr>
+</table>
+* BCM = Boot Configuration Memory Used
+<br/>
+<br/>
+2016/12/05 03:25:48 PM
+</body></html>

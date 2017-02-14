@@ -1,0 +1,1431 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MPASM Assembler Release Notes</title>
+<style type="text/css">
+span {
+	font-family: Arial;
+	color: #000000;
+	background: #FFFFFF;
+	font-size: 10pt;
+}
+pre {
+	font-family: monospace;
+	color: #000000;
+	background: #FFFFFF;
+	font-size: 10pt;
+}
+p.Heading0, li.Heading0, div.Heading0, span.Heading0 {
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;
+}
+h1 {
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	tab-stops:list .3in;
+	font-size:14.0pt;
+	font-family:Arial;
+}
+h2 {
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	tab-stops:list .4in;
+	font-size:12.0pt;
+	font-family:Arial;
+}
+DL, DT, OL, UL, LI, DD {
+    list-style-position: outside;
+}
+pre {
+    font-family: monospace;
+}
+code {
+    font-family: monospace;
+}
+</style>
+</head>
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+<span><div class=Heading0>Release Notes for MPASM&trade; Assembler v5.71<br /></div>
+17 November 2016<br />
+<br />
+<div class=Heading0>Table of Contents</div>
+<OL>
+<LI><A HREF="#Compatibility" TITLE="Jump to 'Important Backward Compatibility
+       Notes' Section">Important Backward Compatibility Notes</A></LI>
+<LI><A HREF="#Devices" TITLE="Jump to 'Command Line Device Options Supported'
+       Section">Command Line Device Options Supported</A></LI>
+<LI><A HREF="#OSSupport8" TITLE="Jump to 'Operating System Support List - MPLAB IDE'
+       Section">Operating System Support List - MPLAB IDE</A></LI>
+<LI><A HREF="#OSSupportX" TITLE="Jump to 'Operating System Support List - MPLAB X IDE'
+       Section">Operating System Support List - MPLAB X IDE</A></LI>
+<LI><A HREF="#WhatsNew" TITLE="Jump to 'What&apos;s New in v5.6x'
+       Section">What's New in v5.6x</A></LI>	   
+<LI><A HREF="#Change53x" TITLE="Jump to 'Notable changes in v5.3x'
+       Section">Notable changes in v5.3x</A></LI>
+<LI><A HREF="#Fixed" TITLE="Jump to 'Repairs and Enhancements Made Since v5.30'
+       Section">Repairs and Enhancements</A></LI>
+<LI><A HREF="#KnownProblems" TITLE="Jump to 'Known Problems'
+       Section">Known Problems</A></LI>
+<LI><A HREF="#UsingMPASM" TITLE="Jump to 'Using MPASM Assembler'
+       Section">Using MPASM Assembler</A></LI>
+<LI><A HREF="#Support" TITLE="Jump to 'Customer Support'
+       Section">Customer Support</A></LI>
+</OL></span>
+
+<OL style="list-style-type:decimal;">
+<LI class="Heading0"><h1><A NAME="Compatibility">
+        Important Backward Compatibility Notes</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+		<h2>Header File Filename Case In Linux</h2>
+		<p>Prior to Prior to v5.50, the MPASM header file name of few devices
+		were in uppercase and most of them were in lowercase. On case in-sensitive
+		OS like Windows, this was not a matter of concern. On case sensitive OS
+		like those based on Linux, the user had to take care of matching  the case
+		of the filename used in their #include statement to that of the actual 
+		filename.</p>
+
+        <p>In order to maintain uniformity and avoid confusion, starting
+		from v5.50,the names of all MPASM header file (.inc) would be in lowercase.
+		As a consequence,  assembly source files with uppercase filenames in 
+		#include statement might fail to assemble. There are two possible ways
+		to fix this:</p>
+
+		<p>The recommended method is to change the filename of .inc file
+		in the #include statement to lowercase. If the user does not
+		wish to do this, then they can work around the issue by creating
+		a symbolic link to the new lowercase filename from the uppercase
+		filename. A shell script called createbackcompatiblelinks  has
+		been provided in mpasmx folder on Linux to do the same. 
+		Depending on where the user's mpasmx folder  is located,
+		root or super-user privilege might be required.</p>
+
+        <h3>COFF File Format Replaces COD File Format</h3>
+        <p>Due to the various limitations of COD format, versions 5.3 and above
+        of MPASM do not generate COD format as the output of an absolute
+        assembly file. COFF format replaces COD format in all cases. This
+        should not affect ordinary users because COD format was only used
+        by MPLAB IDE versions prior to v8.20 to display debug information.
+        MPLAB IDE v8.20 and later recognize the COFF output of MPASM in
+        absolute mode, and this transition should not impose noticeable
+        change in the expected behavior of the language tool suite.</p>
+
+        <p>Also due to the elimination of the COD Format from MPASM ouput,
+        and the use of COFF format instead, new flags have been added to COFF
+        files that are generated by C18 v3.30 and MPASM v5.30.  These flags are
+        only recognized by MPLINK v4.30 and above. MPLINK v4.30 and above
+        continue to recognize the old COFF files. However, earlier versions of
+        MPLINK may not recognize new COFF files. </p>
+
+        <h2>Note to Users of Parts with External Memory Bus</h2>
+
+        <p>The default behavior of MPLINK does not allow defining code or
+        data in memory address locations outside the boundaries of linker
+        script regions. Existing projects in absolute mode that use these
+        address spaces will encounter a linker error indicating that section
+        '.org_xx' can not fit the absolute section. The workaround for this
+        error is to add a new region to the default linker script to define the
+        user defined addresses for the linker. For more information, see the
+        MPLINK User's Guide. The default linker script is located at the LKR
+        directory at the same location where the mplink.exe executable exists.</p>
+
+        <p> For example, if you see the following error message in the output
+        window of your MPLAB IDE when building your Absolute assembly project:</p>
+<pre>
+  Executing: "C:\MCC18\bin\mplink.exe" /p18F8527 "test.o" /z__MPLAB_BUILD=1 /o"test.cof" /M"test.map" /W /x MPLINK 4.30, Linker Copyright (c) 2009 Microchip Technology Inc.
+  Error - section '.org_6' can not fit the absolute section. Section '.org_6' start=0x0000c020, length=0x00000006
+</pre>
+        <p> open the file "C:\MCC18\bin\LKR\18f8527_g.lkr" in a text editor and
+        add the line:</p>
+<pre>
+  CODEPAGE   NAME=unimplemented   START=0xC000   END=0x1FFFFF  PROTECTED
+</pre>
+        <p>at line 32 after #FI and before the idlocs region.</p>
+
+        <p> This problem only applicable since MPLINK v4.30.</p>
+
+        <h2>MPLINK Linker and MPLAB IDE Compatibility</h2>
+        <p>Due to a change in COFF file format, MPASM Assembler v5.00 and later
+        will not be compatible with versions of MPLINK Linker prior to v4.00 or
+        versions of the MPLAB IDE prior to v7.21.</p>
+
+        <p>MPASM Assembler v5.00 and later will have backward compatibility to
+        earlier versions at the source level only. Any existing object files or
+        libraries compiled with earlier versions of the tools will not link
+        using new versions of the tools. They will need to be recompiled
+        from source.</p>
+        <p>If the user attempts to use this release with object files or
+        libraries compiled with earlier versions of MPLAB C18, MPLINK Linker,
+        and MPASM Assembler, the error message that will be received will be
+        similar to:</p>
+<pre>
+Error - Coff file format for 'C:\mcc18\lib/c018i.o' is out of date.
+</pre>
+        <p>If the user attempts to use an old version of MPLINK Linker to link
+        object files or libraries compiled with this release, the error message
+        that will be received will be similar to:</p>
+<pre>
+Error - Coff file format for 'C:\mcc18\lib/c018i.o' does not appear to be a valid COFF file.<br />
+</pre>
+</span>
+<LI class="Heading0"><h1><A NAME="Devices">Command Line Device Options Supported</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<p>Click <a href="chips.htm">here</a> for a complete listing.</p>
+
+<!--
+Syntax to comment out lines.
+-->
+
+<p>THE PARTS CORRESPONDING TO THESE OPTIONS MAY NOT ALL BE
+COMMERCIALLY AVAILABLE.</p>
+
+<p>These can be chosen through the introductory screen, on the command
+line, or in source file.</p>
+<p></p>
+<p><b>NOTES:</b></p>
+
+<UL>
+        <LI>The selections 16C5X, 16CXX, 17CXX, and
+        18CXX are supported as generic family indicators.</LI>
+
+        <LI>The selections EEPROM8 and EEPROM16 are provided for generic memory
+        product support. Read below for a description of how to use MPASM
+        Assembler to generate files for programming Microchip Serial EEPROM
+        devices.</LI>
+
+        <LI>Use files 'MCP250XX.INC' and 'MCP250XX.ASM' as references for
+        programming I/O expander (MCP250XX) devices. The file 'MCP250XX.ASM'
+        is in the 'TEMPLATE\CODE' directory under 'MPLAB'.<br />
+        The standard header files have been updated to reflect these devices.
+        One header file, MEMORY.INC, is provided for generic memory product
+        support. Another header file, MCP250XX.INC, is provided for generic
+        MCP250XX device support.</LI>
+
+        <LI>The devices PIC18F2423, PIC18F2523, PIC18F4423, and PIC18F4523 were
+        formerly known as PIC18LF2423, PIC18LF2523, PIC18LF4423, PIC18LF4523.
+        </LI>
+
+        <LI>Use the P12C509A.INC header file for the PIC12CR509A;
+        Use the P16C620A.INC header file for the PIC16CR620A.</LI>
+
+        <LI>Use the P16C74.INC header file for the PIC16CR74;
+        Use the P16C77.INC header file for the PIC16CR77.</LI>
+
+        <LI>Use the 16C5X.INC header file for the following device command
+        line options:
+<pre>
+                16C52
+                16C54
+                16CR54
+                16C54A
+                16CR54A
+                16C54B
+                16CR54B
+                16C54C
+                16CR54C
+                16C55
+                16C55A
+                16C56
+                16C56A
+                16CR56A
+                16C57
+                16CR57A
+                16CR57B
+                16C57C
+                16CR57C
+                16C58A
+                16CR58A
+                16C58B
+                16CR58B
+</pre></LI>
+        <LI>Use the P16F5X.INC header file for the following device
+        command line options:
+<pre>
+                16F54
+                16F57
+                16F59
+</pre></LI>
+</UL>
+</span>
+<LI class="Heading0"><h1><A NAME="OSSupport8">Operating System Support List - MPLAB IDE</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+        <p>MPASMWIN.EXE is the 32-bit Windows version of MPASM Assembler which
+       is distributed with MPLAB IDE and MPLAB C18. It is supported on the
+       following platforms (32- and 64-bit):</p>
+
+    <ul>
+        <li>Microsoft Windows XP Professional SP3/ Windows 7 Professional/ Windows 8 Professional</li>
+    </ul>
+
+</span>
+
+<LI class="Heading0"><h1><A NAME="OSSupportX">Operating System Support List - MPLAB X IDE</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+        <p>MPASMX.EXE is the 32-bit version of MPASM Assembler which
+        is distributed with MPLAB X IDE. It is supported on the
+        following platforms (32- and 64-bit):</p>
+
+    <ul>
+        <li>Microsoft Windows XP Professional SP3/ Windows 7 Professional/ Windows 8 Professional</li>
+        <li>Ubuntu 9.10</li>
+        <li>Macintosh OS X 10.5 Intel</li>
+    </ul>
+
+</span>
+
+
+
+<LI class="Heading0"><h1><A NAME="WhatsNew">What's New in v5.6x</A></h1>
+<span style="font-size:10pt;font-weight:normal;">
+<UL>
+        <LI>Early adopter part support has been added. See <A HREF="#Devices"
+        TITLE="Jump to 'Devices' Section">"Devices"</A> above.</LI> <br />
+<br />
+        <LI>Several bug fixes. See <A HREF="#Fixed" TITLE="Jump to 'Repairs
+        and Enhancements Made Since v5.30' Section">"Repairs and Enhancements
+        "</A> below.</LI> <br />
+<br />
+        <LI><strong>_IDLOCS directive now supports 14-bit user-id for enhanced mid-range devices </strong>
+        <br /><br />
+		Certain enhanced mid-range devices now support 14-bit wide user-id per location. Starting from v5.62, _IDLOCS directive can accept 
+		14-bit wide user-ids along with id location for these devices. The syntax is identical to that used for PIC18 devices to specify the user-id.
+		<br/><br/>
+		<strong>Example:</strong><br/>
+<pre>
+          include p16f18313.inc
+
+          __idlocs _IDLOC0, 0x0123 
+          __idlocs _IDLOC1, 0x0678
+          __idlocs _IDLOC2, 0x09ab
+ 
+          code
+          .
+          .
+          end
+</pre>		
+		</LI> <br />
+
+
+</LI><br />
+</UL>
+</span>
+<LI class="Heading0"><h1><A NAME="Change53x">Notable changes in v5.3x</A></h1>
+<span style="font-size:10pt;font-weight:normal;">
+<UL>
+
+        <LI>Old linkerscripts will no longer be included in new installations.
+        Only the generic linkerscripts will be included. See the Readme for
+        MPLINK linker for more details.</LI> <br /><br />
+
+        <LI> The following beta devices have been renamed from "L" devices to
+        "LF" devices:<br />
+        18L13K22  to  18LF13K22<br />
+        18L13K50  to  18LF13K50<br />
+        18L14K22  to  18LF14K22<br />
+        18L14K50  to  18LF14K50<br />
+        18L24J11  to  18LF24J11<br />
+        18L24J50  to  18LF24J50<br />
+        18L25J11  to  18LF25J11<br />
+        18L25J50  to  18LF25J50<br />
+        18L26J11  to  18LF26J11<br />
+        18L26J50  to  18LF26J50<br />
+        18L44J11  to  18LF44J11<br />
+        18L44J50  to  18LF44J50<br />
+        18L45J11  to  18LF45J11<br />
+        18L45J50  to  18LF45J50<br />
+        18L46J11  to  18LF46J11<br />
+        18L46J50  to  18LF46J50<br />
+        </LI> <br />
+
+        <LI> New support for PIC16 Extended has been added: <br /><br />
+
+        <OL style="list-style-type:decimal;">
+        <LI>A new Directive DTM is added for PIC16 Extended only. This directive
+        is similar to existing the DT directive except it generates the MOVLW
+        instead of the RETLW generated by DT.</LI>
+
+        <LI>BANKSEL directive - A MOVLB instruction is generated for PIC16
+        extended and BCF/BSF instructions are generated for traditional PIC16.
+        </LI>
+
+        <LI>BANKISEL directive - It modifies FSR0H for PIC16 extended instead of
+        modifying the IRP bit in PIC16 traditional.</LI>
+
+        <LI>PAGESEL directive - The MOVLP instruction is generated for PIC16
+        extended.</LI>
+
+        <LI>PAGESELW directive - Is not supported for PIC16 extended.</LI>
+
+        <LI>__CONFIG / __FUSES directive usage: For devices having multiple
+        config words (for eg. PIC16F193x), __CONFIG/__FUSES directive should be
+        used with the two operand syntax and usage with one operand is invalid.
+        </LI>
+        </OL><br />
+
+        <B>New Error message added :</B><br />
+
+        If any directive or instruction is not supported on any family, then
+        the following error would be emitted:
+<pre>
+        'Instruction is not supported on this device'
+</pre>
+        For example, PAGESELW is not supported on PIC16 extended.<br /><br />
+
+        <B>New Warning message added :</B><br />
+
+        The following warning message is added for PIC16 extended for users
+        trying to access a non-existing bit of the STATUS register (IRP or RP1
+        or RP0 bits):
+<pre>
+        'STATUS register has no IRP or RP1 or RP0 bits'
+</pre>
+</LI><br />
+</UL>
+</span>
+
+<LI class="Heading0"><h1><A NAME="Fixed">
+Repairs and Enhancements</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<OL style="list-style-type:lower-alpha;font-weight:bold;"><br />
+
+<UL style="font-weight:bold;"><br />
+
+		<LI>Problems resolved between v5.63 and v5.65</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-449</b>)</DT>
+        <DD>The instruction encoding for 'banksel' on enhanced mid-range devices that have more than 32 banks was incorrect.</DD>
+			<br /><br />		
+
+</DL>
+
+		<LI>Problems resolved between v5.60 and v5.62:</LI>
+<DL style="font-weight:normal;"><br />
+        <DT>None</DT>
+		<br /><br />
+</DL>
+
+		<LI>Problems resolved between v5.58 and v5.59:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-434</b>)</DT>
+        <DD>"Changed "nZCD" to "ZCD" in config bits" for 12(L)F1612/13 and  it is causing old source 
+		file with this configuration setting to fail build.</DD>
+			<br /><br />		
+
+</DL>
+
+		<LI>Problems resolved between v5.57 and v5.58:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-432</b>)</DT>
+        <DD>MPASM generates UNKNOWN ERROR with 18F config bits in absolute mode.</DD>
+			<br /><br />
+
+</DL>
+
+		<LI>Problems resolved between v5.56 and v5.57:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-427</b>)</DT>
+        <DD>Setting more than two config registers using 
+		_CONFIG directive for device PIC16F1613 results in erroneous config values in hex file. 
+		</DD>
+            <br /><br />
+
+</DL>
+
+		<LI>Problems resolved between v5.55 and v5.56:</LI>
+<DL style="font-weight:normal;"><br />
+
+                 <DT>None</DT>
+		<br /><br />
+</DL>
+
+		<LI>Problems resolved between v5.54 and v5.55:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-422</b>)</DT>
+        <DD>p16f1xxx.inc references an incorrect device</DD>
+            <br /><br />
+
+</DL>
+
+		<LI>Problems resolved between v5.53 and v5.54:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-417</b>)</DT>
+        <DD>p16F1xxx.inc has the 16LF1788 and 16LF1789 as IFNDEF, should be IFDEF.</DD>
+            <br /><br />
+
+</DL>
+
+		<LI>Problems resolved between v5.52 and v5.53:</LI>
+<DL style="font-weight:normal;"><br />
+        <DT>None</DT>
+		<br /><br />
+</DL>
+
+		<LI>Problems resolved between v5.51 and v5.52:</LI>
+<DL style="font-weight:normal;"><br />
+
+                 <DT>None</DT>
+
+		<br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.50 and v5.51:</LI>
+<DL style="font-weight:normal;"><br />
+
+                 <DT>None</DT>
+
+		<br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.49 and v5.50:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-410</b>)</DT>
+        <DD>All linker scripts are now in lowercase.</DD>
+		<br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.48 and v5.49:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-412</b>)</DT>
+	    <DD>BANKSEL directive does not work for Enhanced Baseline devices</DD>
+		<br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.47 and v5.48:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-406</b>)</DT>
+	    <DD>MPASM now emits error messages to console when the option /e=CON is passed to it.</DD>
+		<br /><br />
+		
+        <DT>(<b>MPASM-405</b>)</DT>
+	<DD>Program words larger than 14-bits should not be generated for 14E core (cooper devices).
+	    Warning is issued for values greater than 14-bits.</DD>
+		<br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.46 and v5.47:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>UDBC-643</b>)</DT>
+	    <DD>Incorrect bad ram definition in device file for 16F527.</DD>
+		<br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.45 and v5.46:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-401</b>)</DT>
+        <DD>MPASM does not generate PAGESEL instructions for enhanced baseline family.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-396</b>)</DT>
+        <DD>Invalid config values generated by MPASM for MCP250XX devices.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-393</b>)</DT>
+        <DD>CONFIG Directive Error. Config directive's case sensitive behaviour.</DD>
+            <br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.44 and v5.45:</LI>
+<DL style="font-weight:normal;"><br />
+        <DT>None</DT>
+        <br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.43 and v5.44:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-383</b>)</DT>
+        <DD>Changes in CONFIG setting names for BORV values for enhanced
+        mid-range devices. BORV_xx notation (i.e. _BORV_25 and _BORV_19)
+        has been replaced with BORV_HI and BORV_LO.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.42 and v5.43:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-333</b>)</DT>
+        <DD>Incorrect bit names in 16F/LF1825. APFCON0: SS1SEL (bit 5) and
+        SDO1SEL (bit 6) should be SSSEL and SDOSEL.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-370</b>)</DT>
+        <DD>MPASM issue with SFRs in banked RAM</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-377</b>)</DT>
+        <DD>MPASM does not link source files with more than one period in
+        their name.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.41 and v5.42:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-366</b>)</DT>
+        <DD>Incorrect code generated for the attached source code using
+        a memory device when processor selected is EEPROM8</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-367</b>)</DT>
+        <DD>MPASM generates incorrect opcode for EECON, EEADR, and EEDATA
+        registers for 16F526</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-369</b>)</DT>
+        <DD>Warning not generated for the MOVLB instruction when the
+        argument provided is out of range.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.40 and v5.41:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-337</b>)</DT>
+        <DD>LGOTO instruction is not working for the address ranges expecting
+        to set the 5-bit of the PCLATH register for 16F193x devices</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-349</b>)</DT>
+        <DD>"Argument out of range (0000 not between 0005 and 0007)" error is
+        observed on building any code for the devices, 12C671, 12C672, 12CE673,
+        12CE674 & 16C433.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-350</b>)</DT>
+        <DD>"Processor type is undefined" error is observed on building any
+        code for the device 16C58A.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-356</b>)</DT>
+        <DD>Configuration Macro does not properly set some of the configuration
+        bits</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-360</b>)</DT>
+        <DD>No support for EEPROM8 in resource file</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-361</b>)</DT>
+        <DD>Build error in the include file when using PIC12C671</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.39 and v5.40:</LI>
+<DL style="font-weight:normal;"><br />
+        <DT><b>None</b></DT>
+            <br /><br />
+</DL>
+
+        <LI>Problems resolved between v5.38 and v5.39:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-92 / 26223</b>)</DT>
+        <DD>MPASM Assembler does not correctly handle Windows CLI and DOS
+        command line string limitations and error diagnostics can be ambiguous
+        or absent.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-347</b>)</DT>
+        <DD>MPASMWIN hangs for absolute code projects when built using MPLAB
+        IDE and displays "Unknown error" dialog box when built using
+        command-line.</DD>
+            <br /><br />
+
+        <DT>( <b>MPASM-364</b>)</DT>
+        <DD>MPASM build does not like relative paths with '/' on Windows</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.37 and v5.38:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-176</b>)</DT>
+        <DD>PIC16F737 Include file has PORTD and TRISD defined. It should
+        not since this is a 28-pin device.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-282</b>)</DT>
+        <DD>16F873 header file has listed CMIF, but this device does not have
+        a comparator, nor is this bit defined in the data sheet.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-302</b>)</DT>
+        <DD>For 18F1320 Family, DDRC/TRISC, DDRD/TRISD and DDRE/TRISE do not
+        exist for theses parts and should be removed.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-304</b>)</DT>
+        <DD>Config words and bits defined different than standard way in old
+        INC files (18C452 Family - 18C452, 18C442, 18C252, 18C242).
+        The new INC files have the current config word definitions as other
+        PIC18 devices:
+<pre>
+            _CONFIG1L, _CONFIG1H... _CONFIG4L
+</pre>
+
+        Config bit setting definition example:
+<pre>
+        _LP_OSC_1H
+</pre>
+
+        They are different from the old INC files that had:
+<pre>
+            _CONFIG0, _CONFIG1, _CONFIG2... _CONFIG4
+</pre>
+        Example:
+<pre>
+        _LP_OSC_1
+</pre>
+        </DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-305</b>)</DT>
+        <DD>Old Include files issues (18F458 Family - 18F458, 18F448, 18F258,
+        18F248)<br />
+        18F458, 18F448 only:<br />
+        IBF, OBF, IBOV, PSPMODE bits are listed as being in the PSPCON register,
+        they are actually in the TRISE register (there is no PSPCON register).
+        <br /><br />
+
+        18F258, 18F248 only:<br />
+        IBF, OBF, IBOV, PSPMODE bits are listed as being in the PSPCON register,
+        the bits have been removed (no Parallel Slave Port on 28-pin devices).</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-306</b>)</DT>
+        <DD>Config words and bits defined different than standard way in old
+        INC files (18C858/18C658 Family).
+        18C858, 18C658:<br />
+        The new INC files have the current config word definitions as other
+        PIC18 devices:
+<pre>
+            _CONFIG1L, _CONFIG1H... _CONFIG4L
+</pre>
+
+        Config bit setting definition example:
+<pre>
+        _LP_OSC_1H
+</pre>
+
+        They are different from the old INC files that had:
+<pre>
+            _CONFIG0, _CONFIG1, _CONFIG2... _CONFIG4
+<pre>
+        Example:
+<pre>
+        _LP_OSC_1</DD>
+</pre>
+            <br /><br />
+
+        <DT>(<b>MPASM-307</b>)</DT>
+        <DD>Register / bits in existing INC files that have been removed for
+        18C858/18C658 Family.
+        MEMCON Register was removed (family does not support external memory)<br />
+
+        MEMCON bits removed (family does not support external memory):<br />
+<pre>
+            EBDIS
+            WAIT1
+            WAIT0
+            WM1
+            WM0
+</pre>
+
+        PORTE bits removed (family does not support external memory):<br />
+<pre>
+            ALE
+            OE
+            WRL
+            WRH
+</pre>
+        </DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-308</b>)</DT>
+        <DD>New INC file differences from old INC files (18C801/18C601 Family).<br />
+        18C801, 18C601:<br />
+            Old include files had BADRAM start at 400h.<br />
+            New include files have BADRAM start at 600h.<br />
+            Both are correct depending on the state of the PGRM bit in MEMCON:<br />
+            400 if PGRM=1<br />
+            600 if PGRM=0 (POR value)<br /><br />
+
+            INTCON2.INTEDG3 has been removed (no INT3).<br />
+            PORTB.INT3 has been removed (no INT3).<br /><br />
+
+        18C801 only:<br />
+            PORTH<AN15:12> have been removed (only has 12 analog channels
+            AN<11:0>).</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-320</b>)</DT>
+        <DD>Include file: removed/changed __BADRAM locations for 16F77/16F76
+        Family.
+        Removed __BADRAM locations:
+<pre>
+        H'110' - H'011F' (has ram at 110-11F)
+</pre>
+
+        Changed __BADRAM locations:
+<pre>
+            H'18D' - H'019F'
+</pre>
+        to
+<pre>
+            H'18D' - H'018F' (has ram at 190-19F)
+</pre>
+        </DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-322</b>)</DT>
+        <DD>Config bit value corrected in INC files for 16F723A/16F722A Family.
+        CONFIG 1 _BOR_NSLEEP setting changed from 3DFF to 3EFF.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-324</b>)</DT>
+        <DD>Bit in existing INC files that has been removed (16F727 Family).
+        PIC16F726, PIC16F723, PIC16F722, PIC16LF726, PIC16LF723, PIC16LF722:
+        CPSCON1<CPSCH3> has been removed (channel 3 does not exist on 28-pin
+        parts).</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-325</b>)</DT>
+        <DD>_BOR_NSLEEP CONFIG value in existing INC files for 16F727 Family
+        needs to be corrected from 3DFF to 3EFF.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-326</b>)</DT>
+        <DD>Registers/bits removed from 16F687.<br />
+        EEADRH has been removed (register does not exist on this device).<br />
+        EEDATH has been removed (register does not exist on this device).<br />
+        EECON1<EEPGD> has been removed (bit does not exist on this device).</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-335</b>)</DT>
+        <DD>Removed erroneous bits from LCD registers from PIC18F87K90,
+        PIC18F86K90, PIC18F85K90, PIC18F67K90, PIC18F66K90, and PIC18F65K90.<br />
+        LCDDATA11: Removed bits ADMSK<5:1>, bits do not exist in register.<br />
+        LCDDATA12: Removed bits SSPM<3:0>, bits do not exist in register.<br />
+        LCDDATA14: Removed bits MSK<7:0>, bits do not exist in register.<br />
+        LCDDATA16: Removed bits T4OUTPS<3:0>, T4CKPS<1:0>, bits do not exist
+        in register.<br />
+        LCDDATA19: Removed bits TMR3CS<1:0>, T3CKPS<1:0>, bits do not exist
+        in register.<br />
+        </DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-336</b>)</DT>
+        <DD>16C715 is missing Config bit CP option. P16C715.INC has 3 options:
+<pre>
+            _CP_ALL EQU H'00CF'
+            _CP_50 EQU H'15DF'
+            _CP_OFF EQU H'3FFF'
+</pre>
+        But data sheet shows 4 options
+<pre>
+            11 = Code protection off
+            10 = Upper half of program memory code protected
+            01 = Upper 3/4th of program memory code protected
+            00 = All memory is code protected
+</pre>
+        </DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-343</b>)</DT>
+        <DD>16F872 CP1:CP0 config bits not supported for 01 and 10 settings but
+        settings are in header file.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.36 and v5.37:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-300</b>)</DT>
+        <DD>INTCON bits <TMR0IF> and <TMR0IE> Do Not Match Datasheet for 12F617</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-312</b>)</DT>
+        <DD>'Assembler Warning' caused by incorrect CONFIG values defined in
+        *.inc file for 12F617
+            <br /><br />
+
+        <DT>(<b>MPASM-313</b>)</DT>
+        <DD>Several bit field definition in header file does not match
+        datasheet for 12F617. Add: STATUS bits RP0 and RP1; PMDATL bits
+        PMDATL0..PMDATL7; INTCON bits T0IF and T0IE; PIR1 bits CMIF and CCPIF;
+        PIE1 bits CMIE and CCPIE; VRCON bits FVREN and CMVREN; WPU bits
+        WPU0..WPU5; CMCON0 bits CMCH, CMR, CMPOL, CMOE, COUT and CMON;
+        CMCON1 bits CMSYNC and CMHYS.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-314</b>)</DT>
+        <DD>Several bit field definitions in header file do not match the
+        datasheet for 16F707.
+        Add: SSPMSK, TACON bits TAPSA, TASE, TACS, TAPS0..TAPS2; TBCON
+        bits TBPSA, PBSE, TBCS, and TBPS0..TBPS2.
+        Correct: T3CON bit TMR2CS1 should be bit TMR3CS1.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-315</b>)</DT>
+        <DD>Several bit field definitions in header file do not match the
+        datasheet for 16F/LF1946/47. Add: CPSCON0 bit CPSRM. Correct:
+        LCDSE0 bits SEG0..SEG7 should be bits SE0..SE7; LCDSE1 bits
+        SEG8..SEG15 should be SE8..SE15; LCDSE2 bits SEG16..SEG23 should
+        be bits SE16..SE23.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-316</b>)</DT>
+        <DD>Several bit field definitions in header file do not match the
+        datasheet for 12F/LF1822 and 16F/LF1823. Add: T1GCON bit
+        T1GG0_NOT_DONE; ADCON0 bit NOT_DONE; CPSCON0 bit CPSRM 16F/LF1823 ONLY;
+        APFCON bit CCP1SEL 16F/LF1823 ONLY; APFCON bit P1BSEL. Correct: APFCON
+        bit SS1SEL should be bit SSSEL; MDCARH bits MDCL0..MDCL3 should be bits
+        MDCH0..MDCH3, bit MDCLSYNC should be bit MDCHSYNC, bit MDCLPOL should
+        be bit MDCHPOL, and bit MDCLODIS should be bit MDCHLODIS.
+            <br /><br />
+
+        <DT>(<b>MPASM-317</b>)</DT>
+        <DD>Several bit field definitions in header file do not match the
+        datasheet for 16F193x/LF193x. Add: T1GCON bit T1GG0_NOT_DONE; ADCON0
+        bit NOT_DONE; TRISE bit TRISE3; and LATE bit LATE3; Correct: LCDSE0
+        bits SEG0..SEG7 should be bits SE0..SE7; LCDSE1 bits SEG8..SEG15 should
+        be SE8..SE15; LCDSE2 bits SEG16..SEG23 should be bits SE16..SE23.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-318</b>)</DT>
+        <DD>Several bit field definitions in header file do not match the
+        datasheet for 16F/LF722A/723A. Add ADCON0 bit GO_NOT_DONE; T1GCON bit
+        T1GGO_NOT_DONE; SSPSTAT bits R_NOT_W and D_NOT_A; FVRCON bit FVRRDY</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.35 and v5.36:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-105 / 27914</b>)</DT>
+        <DD>The assembler gives an error when the FILL macro is used with
+        Address - $.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-163</b>)</DT>
+        <DD>__IDLOCS directive does not put the User ID locations at the
+        correct address (0x440) for these devices. Instead it writes the
+        User ID locations to address 0x400.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-292</b>)</DT>
+        <DD>Make both FSRn and INDFn available for ADDFSR and MOVIW.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-298</b>)</DT>
+        <DD>Accept '-' as well as '/' in the commandline.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-301</b>)</DT>
+        <DD>MPASM Produces incorrect config section for EEPROM devices.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-303</b>)</DT>
+        <DD>The behaviour of the HIGH operator in an absolute code for PIC16
+        extended devices is incorrect.</DD>
+            <br /><br />
+
+        <DT>(<b>UDBC-205</b>)</DT>
+        <DD>VCAPEN config bit settings for 16F1947 are not correct. RF0 is
+        the only pin VCAP goes on.</DD>
+            <br /><br />
+
+
+</DL>
+
+        <LI>Problems resolved between v5.34 and v5.35:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-36 / 18811</b>)</DT>
+        <DD>MPASMWIN.exe generates incorrect code for 'goto' targeting a local
+        label.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-175</b>)</DT>
+        <DD>Improve the error message, "Address exceeds maximum range for this
+        processor".</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-273</b>)</DT>
+        <DD>Warning is generated when defining EEDATA for [16F19xx] devices in
+        absolute mode.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.33 and v5.34:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-280</b>)</DT>
+        <DD>MPASMWIN hangs with /q- command line option.</DD>
+            <br /><br />
+
+        <DT>(<b>MPASM-285</b>)</DT>
+        <DD>Ambiguities in include file for the device family 18F87K90.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.32 and v5.33:</LI>
+<DL style="font-weight:normal;"><br />
+        <DT><b>None</b></DT>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.31 and v5.32:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-271</b>)</DT>
+        <DD>Errors in INC file for the device family 16F1827.</DD>
+            <br /><br />
+
+</DL>
+
+        <LI>Problems resolved between v5.30 and v5.31:</LI>
+<DL style="font-weight:normal;"><br />
+
+        <DT>(<b>MPASM-257</b>)</DT>
+        <DD>Assembler hangs upon building a program, where the __CONFIG
+            directives using the config words defined in the .INC file, are
+            being followed by "include" directive.</DD>
+        <br /><br />
+
+        <DT>(<b>MPASM-262</b>)</DT>
+        <DD>Add new option to allow user to see the window that used to
+            appear with old behaviour of /q option</DD>
+        <br /><br />
+
+</DL>
+
+</UL>
+</span>
+
+<LI class="Heading0"><h1><A NAME="KnownProblems">Known Problems</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+        <p> The following is a list of known problems. For a list of
+        limitations, please see MPASM Assembler Help, Troubleshooting,
+        Assembler Limitations.</p>
+<DL>
+
+        <DT>(<b>MPASM-4 / 1008</b>)
+        <DD>There are no warnings when overflow or underflow occurs during
+        expression evaluation.  </DT><br /><br />
+
+        <DT>(<b>MPASM-34 / 18510</b>)
+        <DD>A file register operand which is greater than the absolute max
+        ram address does not generate a message of any kind.<br />
+        For example,
+<pre>
+        LIST P=18F452
+        MOVWF 0x1000
+        END
+</pre>
+        will assemble without warning. </DT><br /><br />
+
+        <DT>(<b>MPASM-40 / 19703</b>)
+        <DD>The Japanese directory delimiter character on Windows XP-J and
+        Windows ME-J is not accepted by MPASM Assembler.<br />
+        The workaround is to invoke MPASM Assembler on the command line with a
+        source file path which does not contain any directory delimiters.
+        </DT><br /><br />
+
+        <DT>(<b>MPASM-44 / 20776</b>)
+        <DD>The return value of the MPASMWIN.EXE process (returned by
+        'spawnvp') does not get stored in the DOS environment variable
+        ERRORLEVEL.  </DT><br /><br />
+
+        <DT>(<b>MPASM-47 / 20986</b>)
+        <DD>When assembling with the '/o' option, a duplicate address label
+        declaration causes no error, warning, or message. For example, the
+        program fragment
+<pre>
+        U1 IDATA
+        X  DB 1
+        U2 IDATA
+        X  DB 2
+            CODE
+           MOVWF X
+</pre>
+        assembles quietly, but the definition of X which is used in the MOVWF
+        instruction is not well defined. </DT><br /><br />
+
+        <DT>(<b>MPASM-52 / 21798</b>)
+        <DD>The length of the command line argument string to mpasm.exe is
+        limited to about 120 characters. Anything beyond that is truncated.
+        Suggest using mpasmwin.exe or mpasmx.exe.
+        </DT><br /><br />
+
+        <DT>(<b>MPASM-54 / 22227</b>)
+        <DD>Error messages are not emitted to standard out. </DT><br /><br />
+
+        <DT>(<b>MPASM-56 / 22387</b>)
+        <DD>MPASM Assembler cannot assemble files in Unicode format.
+        </DT><br /><br />
+
+        <DT>(<b>MPASM-57 / 22541</b>)
+        <DD>A warning is not emitted if the operand for the PUSHL instruction
+        is less than -128, only if it is less than -255.  A warning should be
+        emitted if the operand is less than -128, since the operand is 8 bits
+        wide. </DT><br /><br />
+
+        <DT>(<b>MPASM-58 / 22660</b>)
+        <DD>When assembling with '/o' and the operand of a DT directive is
+        relocatable but more than 8 bits wide, the linker will fill both
+        bytes of the directive with 16 bits of the operand (instead of
+        truncating the operand to 8 bits for a RETLW instruction):
+<pre>
+        UDATA 0x124
+        X RES 1
+        CODE 0x100
+        DT X
+</pre>
+        will generate 0x0124 at address 0x100 instead of 0x3424 (RETLW 0x24).
+        </DT><br /><br />
+
+        <DT>(<b>MPASM-63 / 23071</b>)
+        <DD>The LIST n=nnn directive does not properly format the listing file.
+        </DT><br /><br />
+
+        <DT>(<b>MPASM-67 / 23490</b>)
+        <DD>As MPASM Assembler rescans macro expressions, it searches the
+        substituted arguments for parameters. E.g.,
+<pre>
+        #define F(X,Y) X + Y
+        Y EQU 2
+        movlw F(Y,1)
+</pre>
+        will yield movlw 2 instead of movlw 3. After Y is substituted in
+        place of X, it is replaced itself by the second argument upon
+        rescanning. </DT><br /><br />
+
+        <DT>(<b>MPASM-77 / 24560</b>)
+        <DD>No error or warning is produced for the following code:
+<pre>
+        bsf   ,1
+        END
+</pre>
+        This assembles as if "bsf 0,1" was given. </DT><br /><br />
+
+        <DT>(<b>MPASM-81 / 24794</b>)
+        <DD>MPASM Assembler generates invalid PIC18 relocation for
+        $+&lt;odd offset&gt;.
+        The following code, containing an invalid goto destination address,
+        assembles without error when generating an object file (18f452):
+<pre>
+                      code 0
+                      bra start
+
+        startscn      code 0x100
+        start         nop
+                      goto $-1
+                      bra $
+
+                      end
+</pre>
+        causing a link-time error:<br />
+<code><br />
+Error - file 'C:\test\mpasm\gotoneg1.o', section 'startscn', Symbol '_startscn_0102' is not word-aligned.<br />
+It can not be used as the target of a call or goto instruction.<br />
+</code><br />
+        However, the assembler generates a warning when assembling equivalent
+        code in absolute mode:
+<pre>
+                      org 0
+                      bra start
+
+                      org 0x100
+        start         nop
+                      goto $-1
+                      bra $
+
+                      end
+</pre>
+<br /><code>
+Warning[226] C:\TEST\MPASM\GOTONEG1.ASM 8 : Destination address must be word aligned<br />
+</code><br />
+
+        <DT>(<b>MPASM-99 / 27088</b>)
+        <DD>MPASM Assembler may generate an invalid COFF file when passing an
+        undefined constant as a macro parameter.<br />
+        For example:
+<pre>
+        RM          MACRO Name,Size
+                    LOCAL i    =0
+        Name        RES   0
+                    GLOBAL Name
+                    WHILE i &lt;Size
+        Name#v(i)     RES 1
+                      i +=1
+                    ENDW
+                    ENDM
+        myuscn      UDATA
+                    RM hello,myconstsz ; Should cause an assembly error
+        myconstsz  equ  2
+                    CODE
+                    lfsr  0,hello0
+                    END
+</pre>
+        Assembly of this code causes only a warning, but MPLINK Linker gives an
+        error message "reloc[0] has an invalid r_symndx." while trying to
+        link the COFF file.<br />
+        MPASM Assembler should give an error.<br />
+        To avoid this problem, the code should define 'myconstsz' before
+        calling the macro, as shown:
+<pre>
+        myconstsz  equ 2
+        RM hello, myconstsz
+</pre>
+
+        <DT>(<b>MPASM-101 / 27165</b>)
+        <DD>MPASM Assembler does not give an error when ENDIF is missing; it
+        gives only a warning.<br />
+        With a macro like:
+<pre>
+        IF (CONST)
+        ; no ENDIF
+</pre>
+        MPASM Assembler assembles it and gives no error, only a warning.
+        <br /><br />
+
+        <DT>(<b>MPASM-106 / 28228</b>)
+        <DD>Running the assembler on a file with a '.' in the name, other
+        than the '.' separating the file extension from the base name, for
+        example foo.bar.asm, results in a DOS error:
+<pre>
+        File not found.
+</pre>
+        Any resulting intermediate or output files will not include the
+        portion of the file name after the first '.' For example, the file
+        name above may cause files named foo.ERR, foo.COD, or foo.LST to be
+        created.<br /><br />
+
+        <DT>(<b>MPASM-372</b>)
+        <DD>MPASM fails to set MSB for Extended 16F1xxx devices for indirect
+        addressing mode, when using the HIGH directive with a program memory
+        label defined in a different source file using the extern qualifier.
+        </DT><br /><br />
+		<DT>(<b>MPASM-409</b>)
+        <DD>When __CONFIG macro is used to set the configuration words for PIC12F1xxx and 
+		PIC16F1xxx devices,then MPASM v5.48 generates a warning : "Program word too large.
+		Truncated to core size." This can be ignored.</DT>  <br /><br />
+
+
+</DL>
+</span>
+
+<LI class="Heading0"><h1><A NAME="UsingMPASM">Using MPASM Assembler</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+
+        <p>To invoke the assembler from the command line, execute either:</p>
+
+		<p><tt>mpasmwin</tt> (MPLAB IDE)</p>
+		<p>or</p>
+		<p><tt>mpasmx</tt> (MPLAB X IDE)</p>
+
+        <p>On a Windows system, you will then be given a GUI interface window.
+        Help on using the interface is provided on-line. The assembler can also
+        be invoked with parameters or through drag-and-drop. In these cases,
+        the interface screen is not displayed and assembly begins immediately.
+        </p>
+
+        <p>On a Linux or Mac system (MPASMX only), no GUI screen is displayed,
+        but a list of command-line options is presented.</p>
+
+        <p>Correct any syntax problems, referring to the <i>MPASM Assembler,
+        MPLINK Object Linker, MPLIB Object Librarian User's Guide</i> (DS33014)
+        for syntax help. MPASM Assembler assembles with INHX32 as the default
+        hex output, and generates a listing file, error file, and .COD file.
+        </p>
+
+<p><b>Serial EEPROM Support:</b></p>
+
+        <p>Two "processor" selections are provided to generate byte data -
+        EEPROM8 and EEPROM16. Both generate data in terms of bytes, but
+        EEPROM8 considers a "word" to be 8 bits wide, while EEPROM16
+        considers a "word" to be 16 bits wide. The "program counter" is
+        always incremented in terms of bytes.</p>
+
+        <p>The default size for memory products is 128 bytes. This can be
+        overridden by using the LIST M=&lt;max address&gt; directive. Note
+        that &lt;max address&gt; is always evaluated as a decimal number.
+        The header file MEMORY.INC is provided to define the maximum address
+        for available memory devices. The format of the defined symbols is
+        _&lt;device&gt;; for example, to set the maximum memory size for a
+        24LCS21, use the directive LIST M=_24LCS21.</p>
+
+        <p>The following data generation directives are supported for
+        memory products:
+<pre>
+        DW           FILL        ORG
+</pre>
+        The behavior of other data generation directives is not guaranteed.
+        All other directives are unchanged.</p>
+
+        <p>An example of generating a file for programming a memory device is
+        as follows:</p>
+<pre>
+;*************************************************
+; Generate data for a 8-bit wide memory device.
+
+        LIST    P=EEPROM8, R=DECIMAL
+        INCLUDE "MEMORY.INC"
+        LIST    M=_24LCS21
+
+#DEFINE MAX_VALUE       255
+
+        ORG     0
+
+;-------------------------------------------------
+; Create a packed-byte, null terminated string.
+
+        DW      "Hello World", 0
+
+;-------------------------------------------------
+; Create data representing a line.  The X position
+; is implied from the position of the data in the
+; device.  The Y values are stored in the device.
+
+; First, define an equation for the line.
+
+#DEFINE Line( X )       Slope * X + Y_Intercept
+
+; Now define the values needed for the equation.
+
+Slope                   EQU     10
+Y_Intercept             EQU     5
+
+; Declare and initialize the X and Y values.
+
+        VARIABLE        X = 0, Y = Line( X )
+
+; Generate values until the maximum Y value is
+; reached or the device is filled up.
+
+        WHILE (Y &lt;= MAX_VALUE) &amp;&amp; ($ &lt;= _24LCS21)
+           DW   Y
+X = X + 1
+Y = Line( X )
+        ENDW
+
+;-------------------------------------------------
+; Perform some checking based on the line data
+; generated above.
+
+; If the device filled up before the end of the
+; line was reached, generate an error. Otherwise,
+; if the device is almost out of room, generate a
+; message.
+
+        IF (Y &lt; MAX_VALUE)
+           ERROR        "Device is full."
+        ELSE
+           IF (($+10) &gt; _24LCS21)
+              MESSG     "Device is nearly full."
+           ENDIF
+        ENDIF
+
+;-------------------------------------------------
+; Fill the rest of the device with zeroes.
+
+        FILL    0, _24LCS21 - $ + 1
+
+        END
+</pre>
+
+<p><b>CLRW COMMAND:</b></p>
+
+        <p>The CLRW encoding was changed on all 14-bit core devices from
+        0x0100 to 0x0103 (v1.40 and later). This will not affect the expected
+        operation of the instruction, but it will change the value for the
+        instruction in the hex file and therefore the checksum.</p>
+
+<p><b>WARNING MESSAGE:</b></p>
+
+        <p>The text for Message #302 was modified to explain more clearly that
+        bank indication bits are stripped when assembling instructions that
+        access file registers. The appropriate bank must be selected by the
+        appropriate bank selection bits. For example, 14-bit core devices
+        contain the lower seven bits of the file register address in the
+        opcode, with two bank selection bits in the STATUS register. The
+        message was changed from:</p>
+<pre>
+        Argument out of range. Least significant bits used.
+</pre>
+        <p>to:</p>
+<pre>
+        Register in operand not in bank 0. Ensure that bank bits are correct.
+</pre>
+
+<p><b>END DIRECTIVE:</b></p>
+
+        <p>Take care to not use the END directive in a macro. If the END
+        directive is encountered in a macro, it can cause the assembler to
+        loop indefinitely. Macros should be terminated with the ENDM
+        directive.</p>
+
+<p><b>HIGH DIRECTIVE:</b></p>
+ 	 
+        <p>While using the assembler for enhanced mid-range devices and
+        the HIGH directive with the <tt>movlw</tt> instruction (i.e., <tt>movlw high xx</tt>),
+        the value returned has its most-significant bit (MSb) set if
+        <tt>xx</tt> is in program memory. This makes it easier to read
+        the program flash memory through the FSR by using the value loaded
+        to the working register. However, when the HIGH directive is used with
+        the <tt>movlp</tt> instruction, the most significant bit is ignored as
+        the <tt>movlp</tt> instruction encodes a 7-bit wide literal.</p>
+
+</span>
+				 
+<LI class="Heading0"><h1><A NAME="Support">Customer Support</A></h1></LI>
+<span style="font-size:10pt;font-weight:normal;">
+<br />
+        Microchip provides online support via our home page at:<br />
+        <A HREF="http://www.microchip.com">http://www.microchip.com</A><br />
+<br />
+        Technical support is available through the web site at:<br />
+        <A HREF="http://support.microchip.com">http://support.microchip.com</A><br />
+<br />
+        A forum for discussion of Microchip products and tools is
+        available at:<br />
+        <A HREF="http://forum.microchip.com">http://forum.microchip.com</A><br />
+</span>
+</OL>
+</span>
+</body>
+</html>

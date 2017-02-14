@@ -1,0 +1,46 @@
+<!-- file_open -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>file_open</h2>
+	<body>
+		<p>
+			file_open() opens a file for subsequent reading.    
+		</p>
+		<code>
+			<pre class="precode">file_open(fileOpenStatus,     <i>// file_open_status variable</i></pre>
+			<pre class="precode">          fileVar,            <i>// file variable</i></pre>
+			<pre class="precode">          fileName,           <i>// file name, String variable</i></pre>
+			<pre class="precode">          fileMode)           <i>// file mode (must be read_mode)</i></pre>
+		</code>
+		<p>
+			<b>fileOpenStatus</b> is a variable of type file_open_status.  It 
+			receives the status result of the file open operation.  It's values
+			can be
+		</p>
+		<code>
+			<pre class="precode">mode_error       <i>// no longer used</i></pre>
+			<pre class="precode">name_error       <i>// file not found</i></pre>
+			<pre class="precode">open_ok          <i>// file successfully opened</i></pre>
+			<pre class="precode">status_error     <i>// file already opened</i></pre>
+		</code>
+		<p>
+			<b>fileVar</b> is a variable of type file.  It is the internal 
+			variable that tracks the file state.  It is used in other file
+			methods like 
+			<a href="../content/endfile.html" target="sclTextFrame">endfile</a>
+			and
+			<a href="../content/fileclose.html" target="sclTextFrame">file_close</a>.
+		</p>
+		<p>
+			<b>fileName</b> is a string containing the file name.  It must contain
+			the complete absolute path.
+		</p>
+		<p>
+			<b>fileMode</b> is a constant of type file_mode, however at this 
+			time the value must be "read_mode"
+		</p>
+	</body>
+</html>

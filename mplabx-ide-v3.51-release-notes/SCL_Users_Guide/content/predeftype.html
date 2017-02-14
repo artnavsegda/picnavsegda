@@ -1,0 +1,107 @@
+<!-- Predefined Types -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Predefined Types</h2>
+	<body>
+		<p>
+			SCL automatically provides several predefined 
+			<a href="../content/type.html" target="sclTextFrame">types</a></li>
+			.  
+		</p>
+		<code>
+            <pre class="precode">type <b>bit</b> is ('0','1');</pre>
+			<br>
+            <pre class="precode">type <b>bit_vector</b> is array (integer range <>) of bit;</pre>
+			<br>
+            <pre class="precode">type <b>boolean</b> is (false,true);</pre>
+			<br>
+            <pre class="precode">type <b>byte</b> is range 0 to 16#FF#;</pre>
+			<br>
+            <pre class="precode">type <b>character</b> is</pre>
+            <pre class="precode">   (</pre>
+            <pre class="precode">   nul , soh , stx , etx , eot , enq , ack , bel ,</pre>
+            <pre class="precode">    bs ,  ht ,  lf ,  vt ,  ff ,  cr ,  so ,  si ,</pre>
+            <pre class="precode">   dle , dc1 , dc2 , dc3 , dc4 , nak , syn , etb ,</pre>
+            <pre class="precode">   can ,  em , sub , esc , fsp , gsp , rsp , usp ,</pre>
+            <pre class="precode">   ' ' , '!' ,'\"' , '#' , '$' , '%' , '&' , ''' ,</pre>
+            <pre class="precode">   '(' , ')' , '*' , '+' , ',' , '-' , '.' , '/' ,</pre>
+            <pre class="precode">   '0' , '1' , '2' , '3' , '4' , '5' , '6' , '7' ,</pre>
+            <pre class="precode">   '8' , '9' , ':' , ';' , '<' , '=' , '>' , '?' ,</pre>
+            <pre class="precode">   '@' , 'A' , 'B' , 'C' , 'D' , 'E' , 'F' , 'G' ,</pre>
+            <pre class="precode">   'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'N' , 'O' ,</pre>
+            <pre class="precode">   'P' , 'Q' , 'R' , 'S' , 'T' , 'U' , 'V' , 'W' ,</pre>
+            <pre class="precode">   'X' , 'Y' , 'Z' , '[' ,'\\' , ']' , '^' , '_' ,</pre>
+            <pre class="precode">   '`' , 'a' , 'b' , 'c' , 'd' , 'e' , 'f' , 'g' ,</pre>
+            <pre class="precode">   'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o' ,</pre>
+            <pre class="precode">   'p' , 'q' , 'r' , 's' , 't' , 'u' , 'v' , 'w' ,</pre>
+            <pre class="precode">   'x' , 'y' , 'z' , '{' , '|' , '}' , '~' , del ,</pre>
+            <pre class="precode">   c128, c129, c130, c131, c132, c133, c134, c135,</pre>
+            <pre class="precode">   c136, c137, c138, c139, c140, c141, c142, c143,</pre>
+            <pre class="precode">   c144, c145, c146, c147, c148, c149, c150, c151,</pre>
+            <pre class="precode">   c152, c153, c154, c155, c156, c157, c158, c159,</pre>
+            <pre class="precode">   ' ' , '¡' , '¢' , '£' , '€' , '¥' , 'Š' , '§' ,</pre>
+            <pre class="precode">   'š' , '©' , 'ª' , '«' , '¬' , '­' , '®' , '¯' ,</pre>
+            <pre class="precode">   '°' , '±' , '²' , '³' , 'Ž' , 'µ' , '¶' , '·' ,</pre>
+            <pre class="precode">   'ž' , '¹' , 'º' , '»' , 'Œ' , 'œ' , 'Ÿ' , '¿' ,</pre>
+            <pre class="precode">   'À' , 'Á' , 'Â' , 'Ã' , 'Ä' , 'Å' , 'Æ' , 'Ç' ,</pre>
+            <pre class="precode">   'È' , 'É' , 'Ê' , 'Ë' , 'Ì' , 'Í' , 'Î' , 'Ï' ,</pre>
+            <pre class="precode">   'Ð' , 'Ñ' , 'Ò' , 'Ó' , 'Ô' , 'Õ' , 'Ö' , '×' ,</pre>
+            <pre class="precode">   'Ø' , 'Ù' , 'Ú' , 'Û' , 'Ü' , 'Ý' , 'Þ' , 'ß' ,</pre>
+            <pre class="precode">   'à' , 'á' , 'â' , 'ã' , 'ä' , 'å' , 'æ' , 'ç' ,</pre>
+            <pre class="precode">   'è' , 'é' , 'ê' , 'ë' , 'ì' , 'í' , 'î' , 'ï' ,</pre>
+            <pre class="precode">   'ð' , 'ñ' , 'ò' , 'ó' , 'ô' , 'õ' , 'ö' , '÷' ,</pre>
+            <pre class="precode">   'ø' , 'ù' , 'ú' , 'û' , 'ü' , 'ý' , 'þ' , 'ÿ'  </pre>
+            <pre class="precode">   );</pre>
+			<br>
+            <pre class="precode">type <b>cycle</b> is range -9223372036854775807 to 9223372036854775807</pre>
+            <pre class="precode">   units ic;</pre>
+            <pre class="precode">   end units;</pre>
+			<br>
+            <pre class="precode">type <b>daddress</b> is range 0 to 16#FF_FFFF#;</pre>
+			<br>
+            <pre class="precode">type <b>file_open_kind</b> is (read_mode,write_mode,append_mode);</pre>
+			<br>
+            <pre class="precode">type <b>file_open_status</b> is (open_ok,status_error,name_error,mode_error);</pre>
+			<br>
+            <pre class="precode">type <b>frequency</b> is range 0 to 1e9</pre>
+            <pre class="precode">   units hz;</pre>
+            <pre class="precode">      khz = 1000 hz;</pre>
+            <pre class="precode">      mhz = 1000 khz;</pre>
+            <pre class="precode">   end units;</pre>
+			<br>
+            <pre class="precode">type <b>integer</b> is range -10#2_147_483_647# to 10#2_147_483_647#;</pre>
+			<br>
+            <pre class="precode">type <b>line</b> is access string;</pre>
+			<br>
+            <pre class="precode">type <b>paddress</b> is range 0 to 16#FF_FFFF#;</pre>
+			<br>
+            <pre class="precode">type <b>severity_level</b> is (note,warning,error,failure);</pre>
+			<br>
+            <pre class="precode">type <b>string</b> is array (integer range <>) of character;</pre>
+			<br>
+            <pre class="precode">type <b>text</b> is file of string;</pre>
+			<br>
+            <pre class="precode">type <b>time</b> is range -9223372036854775807 to 9223372036854775807</pre>
+            <pre class="precode">   units ps;</pre>
+            <pre class="precode">      ns = 1000 ps;</pre>
+            <pre class="precode">      us = 1000 ns;</pre>
+            <pre class="precode">      ms = 1000 us;</pre>
+            <pre class="precode">      sec = 1000 ms;</pre>
+            <pre class="precode">      min = 60 sec;</pre>
+            <pre class="precode">      hr = 60 min;</pre>
+            <pre class="precode">   end units;</pre>
+			<br>
+            <pre class="precode">type <b>vector_file_mode</b> is (binary_mode,hex_mode,formatted_mode,dec_mode);</pre>
+			<br>
+            <pre class="precode">type <b>voltage</b> is range -9223372036854775807 to 9223372036854775807</pre>
+            <pre class="precode">   units mV;</pre>
+            <pre class="precode">      V = 1000 mV;</pre>
+            <pre class="precode">   end units;</pre>
+			<br>
+            <pre class="precode">type <b>word</b> is range 0 to 16#FFFF#;</pre>
+		</code>
+	</body>
+</html>

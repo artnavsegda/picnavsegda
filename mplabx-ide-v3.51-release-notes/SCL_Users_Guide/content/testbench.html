@@ -1,0 +1,28 @@
+<!-- TestBench -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Testbench</h2>
+	<body>
+		<p>
+			Every SCL program must contain one and only one testbench.  
+			Testbenches contain processes, variables, constants etc.  It can 
+			also be empty, though there is little reason to do so.
+		</p>
+		<p>
+			Here is an empty testbench to show the basic syntax:
+		</p>
+		<code>
+			<pre class="precode">testbench for PIC32MX360F512L is</pre>
+			<pre class="precode">   <i>// processes, variables, etc. go here</i></pre>
+			<pre class="precode">end testbench;</pre>
+		</code>
+		<p>
+		In earlier versions of MPLAB IDE the device name had to match the device
+		of the project the SCL code was ran against.  But in MPLAB X the device
+		name is ignored and is decorative only.
+		</p>
+	</body>
+</html>

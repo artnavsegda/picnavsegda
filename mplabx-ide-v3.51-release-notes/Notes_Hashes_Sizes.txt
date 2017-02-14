@@ -1,0 +1,15 @@
+MPLAB X IDE v3.51 features:
+
+
+
+md5 checksums:
+----------------
+e2ef9753af072543717d27549da923f8  linux/MPLABX-v3.51-linux-installer.tar
+1fe510ad102109fcbeea97eafd5e5293  mac/MPLABX-v3.51-osx-installer.dmg
+7c653dc15b9cfcbdf79418eb27a2203f  windows/MPLABX-v3.51-windows-installer.exe
+
+Size in bytes:
+----------------
+-rw-rw-r-- 1 bamboo bamboo 549928960 Jan 12 10:37 linux/MPLABX-v3.51-linux-installer.tar
+-rw-rw-r-- 1 bamboo bamboo 452194304 Jan 12 10:41 mac/MPLABX-v3.51-osx-installer.dmg
+-rwxr-xr-x 1 bamboo bamboo 579085269 Jan 12 10:33 windows/MPLABX-v3.51-windows-installer.exe

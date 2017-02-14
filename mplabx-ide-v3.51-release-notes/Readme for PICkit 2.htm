@@ -1,0 +1,1047 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>PICkit 2 Release Notes for X</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"NKMNCA+TimesNewRoman\,Bold";}
+@font-face
+	{font-family:"MS Shell Dlg";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.6in;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Heading0, li.Heading0, div.Heading0
+	{mso-style-name:"Heading 0";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.Computer, li.Computer, div.Computer
+	{mso-style-name:Computer;
+	mso-style-link:"Computer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.NormalNoSpace, li.NormalNoSpace, div.NormalNoSpace
+	{mso-style-name:NormalNoSpace;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.DeviceList, li.DeviceList, div.DeviceList
+	{mso-style-name:"Device List";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"NKMNCA+TimesNewRoman\,Bold";
+	color:black;}
+p.ListBullet2NoSpace, li.ListBullet2NoSpace, div.ListBullet2NoSpace
+	{mso-style-name:"List Bullet 2 NoSpace";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.ListBulletNoSpace, li.ListBulletNoSpace, div.ListBulletNoSpace
+	{mso-style-name:"List Bullet No Space";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.ComputerChar
+	{mso-style-name:"Computer Char";
+	mso-style-link:Computer;
+	font-family:"Courier New";}
+p.Answers, li.Answers, div.Answers
+	{mso-style-name:Answers;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{mso-style-name:TableTitle;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:1.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.ListBullet2NoSpace0, li.ListBullet2NoSpace0, div.ListBullet2NoSpace0
+	{mso-style-name:"List Bullet 2 No Space";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.75in .75in .75in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=Heading0>Release Notes for PICkit<span style='font-size:12.0pt'>®</span>
+2<br>
+Development (Nonproduction) Programmer &amp;<br>
+In-Circuit Debugger</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>MPLAB<sup><span
+style='font-size:12.0pt'>®</span></sup> X IDE v3.51</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><p style='font-size:10.0pt;font-family:Arial;font-weight:bold;'>DLL and Firmware versions:</p><table style='font-size:10.0pt;font-family:Arial;font-weight:normal;' border=0 cellspacing=2 cellpadding=0><tr><td>&nbsp;PICkit 2 (OS, FW)&nbsp;</td><td>&nbsp;&nbsp;v02.32.00</td><td>&nbsp;&nbsp;(PK2V023200.hex)</td></tr></table></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>January 13, 2017</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=Heading0>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338849999">1<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Device Support</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338850000">2<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Other Support</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338850001">3<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Reference Documents</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338850002">4<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>What's New in v1.5</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338850003">5<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Repairs and Enhancements
+Made in v1.5</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc338850004">6<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Known Problems</a></span></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc338849999"></a><a name="_Toc232304325"></a><a
+name="_Toc231887373">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Device Support</a></h1>
+
+<p class=MsoNormal>Click the link below to see device support for “PICkit 2
+Debugging” (PK2D) and “PICkit 2 Programming” (PK2P).</p>
+
+<p class=MsoListBullet><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><a href="Device%20Support.htm">Device Support List</a></p>
+
+<h2>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Debugging Considerations</h2>
+
+<p class=MsoNormal style='text-autospace:none'>For low pin-count devices (8 to
+28 pins), a <b>Header board</b> is usually required. See the <i>Header Board
+Specification</i> (DS51292) or Header help file (hlpHeader.chm) for a list of
+available headers by device.</p>
+
+<p class=MsoNormal style='text-autospace:none'>For high pin-count devices (40
+to 100 pins), a <b>Header board</b> may be available, but is not required. See
+the <i>Header Board Specification</i> (DS51292) or Header help file
+(hlpHeader.chm) for a list of available headers for a particular device.</p>
+
+<p class=MsoNormal style='text-autospace:none'>PICkit 2 does not support the
+optional header for the following devices at this time:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>dsPIC33F</p>
+  </td>
+  <td width=132 valign=top style='width:99.0pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>PIC24F/H</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-autospace:none'><b>NOTE:</b> To connect PICkit 2
+to a debug header board requires the <a
+href="http://www.microchipdirect.com/productsearch.aspx?Keywords=AC164110">AC164110
+RJ-11 to ICSP Adapter</a>.</p>
+
+<p class=MsoNormal style='text-autospace:none'><b>NOTE: </b>PICkit 2 reserves
+64 bytes less flash memory than the MPLAB ICD 2 for the following devices:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>PIC18F2682</p>
+  </td>
+  <td width=150 valign=top style='width:112.5pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>PIC18F2685</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>PIC18F4682</p>
+  </td>
+  <td width=133 valign=top style='width:99.75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='text-autospace:none'>PIC18F4685</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc232304327"></a><a name="_Toc231887375"></a><a
+name="_Toc338850000"></a><a name="_Toc309378043"></a><a name="_Toc301510412">2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Other
+Support</a></h1>
+
+<p class=MsoNormal>See the <a href="Readme%20for%20MPLAB%20X%20IDE.htm">Readme
+for MPLAB X IDE.htm</a> for other support information.</p>
+
+<h1><a name="_Toc338850001">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reference Documents</a></h1>
+
+<p class=MsoNormal style='text-autospace:none'>The following documents may be
+found on our website or MPLAB IDE CD-ROM:</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>PICkit 2 Development Programmer/Debugger User's Guide for MPLAB X
+IDE (Help Only)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Low Pin Count User's Guide (DS51556)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>44-Pin Demo Board User’s Guide (DS41296)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Development Tools Design Advisory (DS51764)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Header Specification (DS51292)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Transition Socket Specification (DS51194)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Programming Specifications for devices (various DS numbers)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Development Tools Selector (<a href="http://www.microchip.com/dts">http://www.microchip.com/dts</a>)
+</p>
+
+<p class=MsoNormal>On-line help may be found in MPLAB X IDE under <i><u>Help&gt;Help
+Contents</u></i>.</p>
+
+<h1><a name="_Toc338850002"></a><a name="_Toc232304328"></a><a
+name="_Ref206995379"></a><a name="_Toc231887376"></a>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>What's New in v1.5</h1>
+
+<p class=MsoNormal><a name="_Toc232304329"></a><a name="_Toc185042654"></a><a
+name="_Toc231887377"></a>None.</p>
+
+<h1><a name="_Toc338850003">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Repairs and Enhancements Made in v</a>1.5</h1>
+
+<p class=MsoNormal style='text-autospace:none'>None.</p>
+
+<h1><a name="_Toc338850004"></a><a name="_Toc232304330"></a><a
+name="_Ref206995407"></a><a name="_Toc231887378"></a>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Known Problems</h1>
+
+<p class=MsoNormal style='text-autospace:none'>The following is a list of known
+problems. For more information on operation, please see the on-line help file
+for the PICkit 2. Bolded prefix represents internal tracking numbers.</p>
+
+<h2>6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>General Issues</h2>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Do not change the selected device in the Project Properties when
+PICkit 2 is actively selected as the Debugger. Doing so may cause PICkit 2 to
+hang at the next debug operation. Deselect PICkit 2 as the Hardware tool (e.g.
+select the Simulator) before changing the device, and then reselect PICkit 2 as
+the Hardware tool afterwards to ensure proper operation.</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The Programming Executive (PE) for PIC24H and dsPIC33F parts may
+fail on certain programming ports of certain 44-Pin devices. Known problems
+exist with using the PGC3/PGD3 port on the following devices:<br>
+<br>
+PIC24HJ16GP304, PIC24HJ32GP204, dsPIC33FJ16GP304, dsPIC33FJ32GP204,
+dsPIC33FJ16MC304, dsPIC33FJ32MC204<br>
+<br>
+If a “PE Error” is frequently encountered in the MPLAB X IDE Output Window, try
+using a different PGC/PGD programming port pair on the device.</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>To use the PICkit 2 as a debugger, two 4.7KW pull-down resistors
+are needed on pins ICSPDAT and ICSPCLK for units with a black pushbutton. Units
+with a red pushbutton have the pull-down resistors already internal to the
+unit.</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Freeze Peripherals for PIC16F devices are not supported at this
+time.</p>
+
+<p class=MsoListBullet2><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>PIC18F2520 MCUs: Table Read Protect (EBTRx) will not work
+unless&nbsp;Code Protect (CPx) is enabled. Also, once Table Read Protect is
+enabled, you cannot perform a Verify on the protected block.</p>
+
+<h2>6.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>System Service Requests</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=673
+ style='width:505.0pt;margin-left:4.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-102</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>GUI does not
+  restore test memory when performing chip erase on Baseline devices</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Baseline
+  architecture</p>
+  </td>
+ </tr>
+ <tr style='height:33.75pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-100</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>GUI exports
+  EEPROM data in hex file incorrectly. &quot;Export&quot; feature does not
+  correctly export EEPROM data for Midrange devices.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Standalone GUI</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-99</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Filenames are not
+  properly escaped in &quot;recently used&quot; list</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>Standalone GUI</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-98</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit 2 is
+  having problems programming certain revisions of PIC16F628A</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F628A</p>
+  </td>
+ </tr>
+ <tr style='height:67.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:67.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-96</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:67.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Firmware changes
+  necessary to support K80 devices</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:67.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC18F66K80
+  datasheet family, PIC18F87K90 datasheet family, PIC18F87K22 datasheet family</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-95</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Program Exec
+  fails to read or verify with certain PIC24 devices</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC24FJ64GA004, PIC24FJ64GA002</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-94</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit 2 does not
+  detect the device ID of aPIC16F884 device</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F884</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-93</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICKit 2 fails to
+  program a PIC12F629 device</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>General</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-92</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Programming
+  frequently fails for dsPIC33FJ256GP710 if not using PE</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>dsPIC33FJ256GP710</p>
+  </td>
+ </tr>
+ <tr style='height:33.75pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-90</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit2 has the
+  max Vdd for the PIC18F14K50 as 3.6V when in actuality 5.5 is the max Vdd. It
+  won't let you program if the board Vdd is detected above 3.6V.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:33.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC18F14K50</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-89</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit 2 settings
+  does not have a checkbox to program in High Voltage mode.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-87</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>MPLAB PICkit 2
+  hangs when target is self-powered but PK2 set to a low voltage</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-85</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>pk2cmd does not
+  correctly program the MCP25050</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>MCP25050</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-84</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit2 GUI
+  crashes when selecting Word or Byte View of memory</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>MCP250xx</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-82</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit 2 does not
+  enter debug mode with PIC16F722 at 20 MHz</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F722</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-81</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>MPLAB IDE hangs
+  because a message box is not Modal and waiting for a response from the user</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-80</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Data EEPROM
+  written into in the code fails to program the first specified location.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F690</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-79</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit 2 emits
+  PK2 error 30 when the internal oscillator frequency is changed to 16MHz</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F722</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-77</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Failed PICkit2
+  operation: Halt</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F914</p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-70</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Programming the
+  device after Download OS, gives Failed verify</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC24FJ Device</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-50</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Unable to change
+  values in SPBRG and SPBRGH when using PICkit2 with the PIC18F4620 device</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC18F4620</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-46</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Unable to enter
+  debug mode with the clock frequency as 32kHz</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PIC16F505, PIC12F508,
+  PIC12F509</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-26</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Download OS
+  operation brings MCLR to VDD when PICKit2 is selected as programmer</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>All</p>
+  </td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'>PK2-17</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>PICkit2 can't do
+  a verify successfully for the PIC18F8680 when the oscillator is HS x4 PLL and
+  the PWRT is on.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin-left:.05in'>ICD2-81</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>MPLAB
+  PICkit 2 fails to program/verify the PIC24FJ128GA010 device when user code
+  does runtime flash erase /write operation. It appears the device is executing
+  code before the full programming cycle is complete.</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>For PIC24F
+  devices during a programming/verify operation (or subsequent verification
+  operation) of user code that performs self-writes and/or self-erases to program
+  space, a verify sequence may fail if the code execution occurs within the
+  first execution cycles following reset.</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'><b>Workaround:
+  </b>Place a delay in your code before the code section that performs the
+  self-write and/or self-erase.</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>The
+  specific delay value may need to be adjusted, but 100 ms would be a
+  conservative value to start</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>out with.
+  Here is a C language example that illustrates the workaround:</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>int main
+  (void)</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>{</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>// Place
+  100 ms delay here before any self-write/self-erase code</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>. . .</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>. . .</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>. . .</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>}</p>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+ <tr style='height:22.5pt'>
+  <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin-left:.05in'>RI-412</p>
+  </td>
+  <td width=456 valign=top style='width:342.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'>
+  <p class=MsoNormal style='margin-left:5.85pt;text-autospace:none'>PIC<span
+  style='color:black'>24FJ256DA210 Family: </span>Data Memory not functional
+  unless 96 MHz PLL is enabled. This is a silicon issue that is being worked
+  on.</p>
+  </td>
+  <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:22.5pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!-- Pin -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Pin</h2>
+	<body>
+		<p>
+			The MPLAB X simulator models the device pins (MPLAB 8 did not)
+			and SCL allows injection of values to these pins.
+		</p>
+		<p>
+			Pins are pretty complex entities.  To begin with, most pins
+			multiplex several signals.  The simulator models this
+			multiplexing and keeps track of which signal is currently
+			driving the pin.
+		</p>
+		<code>
+			<pre class="precode">RA5/CLKIN/OSC1/T1OSI/T1CKI/SRNQ/P1A/CCP1/DT/RX</pre>
+		</code>
+		<p>
+			When accessing a pin in SCL, the signal name is used.  So for
+			example, to set RA5 high.
+		</p>
+		<code>
+			<pre class="precode">RA5 <= '1';</pre>
+			<pre class="precode">RA6 <= '0';     <i>// example of setting a pin low</i></pre>
+		</code>
+		<p>
+			Further, pins can be in input or ouput mode, and digital or
+			analog mode.  Again the simulator keeps track of the current 
+			pin state.
+		</p>
+		<p>
+			Input verus output is perhaps the most "interesting" characteristic
+			of a pin with regards to SCL.  When SCL assigns a value to a pin
+			that value is considered to be the value being driven to the pin
+			from an external source.  So if we assign RA5 to high as in the 
+			above example, but the pin is currently in output mode and driving
+			low, we'll still read the pin as low.
+		</p>
+		<p>
+			But if the RA5 pin is subsequently switched to input mode, the
+			high that had been previously injected via SCL will become the
+			value of RA5.
+		</p>
+		<p>
+			Analog versus digital is an issue of interpretation instead of
+			state of the pin.  In other words, pins always have a voltage, 
+			which can be interpreted as digital high or low.  In the 
+			simulator the nominal VDD voltage (from the datasheet) is
+			used to model the digital state.  If the voltage is greater than
+			or equal to half the nominal VDD voltage the pin is considered
+			digital high, otherwise the pin is digital low.
+		</p>
+		<p>
+			SCL allows pins to be set by voltage in addition to being set
+			digitially.
+		</p>
+		<code>
+			<pre class="precode">AN0 <= 3 V;</pre>
+			<pre class="precode">AN1 <= 3500 mV;     <i>// 3.5V (no decimal voltages allowed)</i></pre>
+		</code>
+		<p>
+			Pins can be used in
+			<a href="../content/boolexp.html" target="sclTextFrame">boolean expressions</a></li>
+		</p>
+		<code>
+			<pre class="precode">if RA1 == '1' then</pre>
+			<pre class="precode">while AN0 <= 3500 mV loop</pre>
+		</code>
+		<p>
+			Sometimes a pin name contains a + or a - as part of it's name.  These
+			two characters are illegal as part of variable names in SCL.  In
+			this case +'s are replaced with P and -'s replaced with N.  So 
+			Vref+ and Vref- become VREFP and VREFN.
+		</p>
+	</body>
+</html>

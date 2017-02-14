@@ -1,0 +1,35 @@
+<!-- Constants -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Constants</h2>
+	<body>
+		<p>
+			SCL has many ways of representing constants in code.
+		</p>
+		<code>
+            <pre class="precode">intVar    = 1;              <i>// decimal 1</i></pre>
+            <pre class="precode">intVar    = B"10";          <i>// binary 10</i></pre>
+            <pre class="precode">intVar    = 8#70#;         <i>// octal 70</i></pre>
+            <pre class="precode">intVar    = 10#10#;        <i>// decimal 10</i></pre>
+            <pre class="precode">intVar    = 16#FFFFFFFF#;  <i>// hexadecimal FFFFFFFF</i></pre>
+            <pre class="precode">intVar    = 16#FFFF_FFFF#; <i>// '_'s ignored!</i></pre>
+            <pre class="precode">intVar    = 1e9;            <i>// decimal 1 billion in scientific notation</i></pre>
+            <pre class="precode">charVar   = 'a';            <i>// character 'a'</i></pre>
+            <pre class="precode">stringVar = "SCL";          <i>// String example</i></pre>
+            <pre class="precode">boolVar   = true;           <i>// enumeration type example</i></pre>
+            <pre class="precode">pin       = '1';            <i>// pin hi</i></pre>
+            <pre class="precode">pin       = '0';            <i>// pin lo</i></pre>
+		</code>
+		<p>
+			Note that SCL does not support any decimal or floating point types.
+			This can lead to some strange situtations.  For example to set
+			VDD to 3.5 V use the following
+		</p>
+		<code>
+            <pre class="precode">VDD = 3500 mv;</pre>
+		</code>
+	</body>
+</html>

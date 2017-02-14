@@ -1,0 +1,35 @@
+<!-- shared label -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Shared Label</h2>
+	<body>
+		<p>
+			SCL allows the reading and writing of program memory location 
+			label names from the software running on the processor.  To 
+			access these labels, you have to tell SCL about the labels by 
+			declaring shared labels in the configuration section.
+		</p>
+		<code>
+			<pre class="precode">shared label <i>labelName</i>;</pre>
+		</code>
+		<p>
+			"main" is a popular label.  Here is an example.
+		</p>
+		<code>
+			<pre class="precode">configuration for "PIC16F877" is</pre>
+			<pre class="precode">   shared label main;</pre>
+			<pre class="precode">   end configuration;</pre>
+			<pre class="precode">testbench for "PIC16F877" is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">   process is</pre>
+			<pre class="precode">      begin</pre>
+			<pre class="precode">      wait until PC == main;</pre>
+			<pre class="precode">      report("reached main");</pre>
+			<pre class="precode">      end process;</pre>
+			<pre class="precode">   end testbench;</pre>
+		</code>
+	</body>
+</html>

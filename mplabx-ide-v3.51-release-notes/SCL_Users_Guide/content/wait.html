@@ -1,0 +1,86 @@
+<!-- Wait -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Wait</h2>
+	<body>
+		<p>
+			A wait statement instructs SCL to stop executing instructions from
+			the containing process.
+		</p>
+		<p>
+			SCL executes statements in a process until it encounters a wait statement.
+			If the end of the process is encountered, SCL simply wraps to the 
+			beginning of the process and starts over.
+			So every process must have at least one wait statement.  Without it 
+			the process will perform an infinite loop and hang the simulator.  
+			Fortunately, the SCL parser detects processes without
+			a wait statement, issues the following warning, and refuses to load.
+		</p>
+		<p class="warning">
+			SIM004:  Failed to parse SCL SCL022:  Process contains neither a wait 
+			statement nor a sensitivity list line(#)
+		</p>
+		<p>
+			There are 4 forms of the wait statement.
+		</p>
+		<code>
+			<pre class="precode">wait;                    <i></i><i>//unadorned</i></pre>
+			<pre class="precode">wait on <i>sensitivity</i>;     <i>//sensitivity wait</i></pre>
+			<pre class="precode">wait until <i>condition</i>;    <i>//condition wait</i></pre>
+			<pre class="precode">wait for <i>timeout</i>;        <i>//timeout wait</i></pre>
+		</code>
+		<h3>Unadorned Wait</h3>
+		<p>
+			The simplest form of wait is unadorned with no argument.  It
+			tells SCL to not only stop executing the process statements, but
+			that the process is complete and is terminating.
+		</p>
+		<code>
+			<pre class="precode">process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      wait;  <i>// terminate the process now!</i></pre>
+			<pre class="precode">   end process;</pre>
+		</code>
+		<h3>Sensitivity Wait</h3>
+		<p>
+			The sensitivity wait statment waits for a value to change.  There can be several
+			types of values.
+		</p>
+		<code>
+			<pre class="precode">wait on RD1;          <i>//wait on pin RD1 to change</i></pre>
+			<pre class="precode">wait on userVar;      <i>//wait on a user var to change</i></pre>
+			<pre class="precode">wait on STATUS;       <i>//wait on the STATUS SFR to change</i></pre>
+			<pre class="precode">wait on PORTD.RD0;    <i>//wait on the RD0 bit of PORTD to change</i></pre>
+		</code>
+		<h3>Condition Wait</h3>
+		<p>
+			The condition wait statment waits for an expression to be true.
+		</p>
+		<code>
+			<pre class="precode">wait until PORTA == 128;          <i>//wait until SFR PORTA equals 128 (0x80)</i></pre>
+			<pre class="precode">wait until RD1 == '1';            <i>//wait until pin RD1 is high</i></pre>
+			<pre class="precode">wait until ADCON.ADON == '1';     <i>//wait until field ADON in SFR ADCON is 1</i></pre>
+			<pre class="precode">wait until PC == 4;               <i>//wait until PC is 4</i></pre>
+		</code>
+		<h3>Timeout Wait</h3>
+		<p>
+			The timeout wait statment waits for a specified amount of time.
+		</p>
+		<code>
+			<pre class="precode">wait for 10 ic;        <i>//wait 10 instruction cycles</i></pre>
+			<pre class="precode">wait for 10 ms;        <i>//wait 10 milliseconds</i></pre>
+		</code>
+		<h3>Combined wait</h3>
+		<p>
+			The timeout wait can be combined with either a sensitivity or condition
+			wait.  When used this way the timeout becomes a true timeout.
+		</p>
+		<code>
+			<pre class="precode">wait on RD1 for 10 ms;            <i>//wait for pin RD1 to change or 10 ms to pass</i></pre>
+			<pre class="precode">wait until PC = 20 for 20 ic;     <i>//wait until PC is 20 or for 20 instruction cycles</i></pre>
+		</code>
+	</body>
+</html>

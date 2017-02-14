@@ -1,0 +1,34 @@
+<!-- A Simple SCL File-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>A Simple SCL File</h2>
+	<body>
+		<p>
+			SCL files are simply text files, any text editor can be used to 
+			create and edit them.
+		</p>
+		<p>
+			Here is a simple SCL program that will be used as an example in
+			the following sections.  Put this program in a file called 
+			<b>mySCL.scl</b>:
+		</p>
+		<code>
+			<pre class="precode">testbench for "pic18f4620" is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      process is</pre>
+            <pre class="precode">         begin</pre>
+            <pre class="precode">            ADRESH <= 16#BB#;</pre>
+            <pre class="precode">            wait;</pre>
+            <pre class="precode">         end process;</pre>
+			<pre class="precode">   end testbench;</pre>
+		</code>
+		<p>
+			The details of this SCL program, along with the rest of the SCL
+			language, will be described in detail later.  For now it is enough
+			to know that this SCL program will set the ADRESH SFR to 0xBB.
+		</p>
+	</body>
+</html>

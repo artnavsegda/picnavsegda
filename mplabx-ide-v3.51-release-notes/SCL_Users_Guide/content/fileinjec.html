@@ -1,0 +1,25 @@
+<!-- Example:  File Injection -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Example:  File Injection</h2>
+	<body>
+		<p>
+			Injecting file data to an SFR automatically whenever the processor
+			reads that SFR is very easy.
+		</p>
+		<code>
+			<pre class="precode">process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      accessin("C:\example\data.txt", hex_mode, ADC1BUF0, true);</pre>
+			<pre class="precode">      wait;</pre>
+			<pre class="precode">   end process;</pre>
+		</code>
+		<p>
+			See 
+			<a href="../content/accessin.html" target="sclTextFrame">accessin</a>
+		</p>
+	</body>
+</html>

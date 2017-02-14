@@ -1,0 +1,747 @@
+<html>
+<head>
+  <title>PICkit 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>PICkit 3 Reserved Resources By Device</p>
+<h2><a name="PIC32MZ">PIC32MZ Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<p>Some devices have built-in trace capabilities.</p>
+<h3>General Resources Used - Devices</h3>
+<ul>
+  <li>MCLR pin reserved for debugging, i.e., you cannot use this pin as digital I/O while debugging.
+  <li>MCLR/Vpp shared for programming.
+  <li>PGCx and PGDx reserved for programming and debugging. Therefore, other functions multiplexed on these pins will not be available during debug.
+</ul>
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Table</h3>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC32MZ_Devices">PIC32MZ Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFE064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFE100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFE124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFE144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFF064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFF100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFF124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFF144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFK064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFK100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFK124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ0512EFK144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECG064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECG100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECG124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECG144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECH064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECH100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECH124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECH144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECM064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECM100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECM124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024ECM144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFE064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFE100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFE124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFE144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFF064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFF100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFF124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFF144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFG064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFG100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFG124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFG144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFH064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFH100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFH124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFH144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFK064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFK100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFK124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFK144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFM064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFM100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFM124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1024EFM144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAA169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAA176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAA288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAB169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAB176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAB288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAG169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAG176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAH169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1025DAH176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAA169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAA176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAA288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAB169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAB176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAB288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAG169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAG176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAH169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ1064DAH176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAA169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAA176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAA288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAB169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAB176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAB288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAG169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAG176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAH169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2025DAH176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECG064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECG100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECG124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECG144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECH064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECH100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECH124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECH144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECM064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECM100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECM124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048ECM144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFG064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFG100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFG124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFG144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFH064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFH100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFH124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFH144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFM064</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFM100</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFM124</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2048EFM144</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x037F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAA169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAA176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAA288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAB169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAB176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAB288</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAG169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAG176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAH169</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC32MZ2064DAH176</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0x0000-0x027F<br/></td>
+  </tr>
+</table>
+<br/>
+2016/12/05 03:25:48 PM
+</body></html>

@@ -1,0 +1,57 @@
+<!-- Configuration -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Process</h2>
+	<body>
+		<p>
+			The process is the fundamental code element in SCL.  It represents a
+			sequence of events to be performed.
+		</p>
+		<p>
+			Here is the basic syntax of a process.
+		</p>
+		<code>
+			<pre class="precode">process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      <i>// process statements go here</i></pre>
+			<pre class="precode">   end process;</pre>
+		</code>
+		<p>
+			A 
+			<a href="../content/testbench.html"     target="sclTextFrame">testbench</a>
+			may have more than one process in it.
+		</p>
+		<code>
+			<pre class="precode">testbench for PIC32MX360F512L is</pre>
+			<pre class="precode">   process is <i>// 1st process</i></pre>
+			<pre class="precode">      begin</pre>
+			<pre class="precode">      end process;</pre>
+			<pre class="precode">   process is <i>// 2nd process</i></pre>
+			<pre class="precode">      begin</pre>
+			<pre class="precode">      end process;</pre>
+			<pre class="precode">   end testbench;</pre>
+		</code>
+		<p>
+			Finally, a process may have a name
+		</p>
+		<code>
+			<pre class="precode"><b>processName:</b> process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">end process <b>processName</b>;</pre>
+		</code>
+		<p>
+			or, alternatively
+		</p>
+		<code>
+			<pre class="precode">processName: <b>is</b> process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">end process processName;</pre>
+		</code>
+		<p>
+			The process name is decorative only but must be unique.  The process name may be used in future versions of SCL.
+		</p>
+	</body>
+</html>

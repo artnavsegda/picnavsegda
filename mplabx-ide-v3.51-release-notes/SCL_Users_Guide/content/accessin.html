@@ -1,0 +1,58 @@
+<!-- accessin -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>accessin</h2>
+	<body>
+		<p>
+			accessin() assigns a data file to an    
+			<a href="../content/sfr.html" target="sclTextFrame">SFR</a>.
+		</p>
+		<code>
+			<pre class="precode">accessin(filename,     <i>// filename (String)</i></pre>
+			<pre class="precode">         mode,         <i>// data format</i></pre>
+			<pre class="precode">         sfr,          <i>// sfr to receive file data</i></pre>
+			<pre class="precode">         rewind);      <i>// true => reuse file data after eof</i></pre>
+			<br>
+			<pre class="precode">accessin("C:/MyProj/MyData.dat", hex_mode, RXB0D0, true);</pre>
+		</code>
+		<p>
+			This method injects the data in the file to the SFR.  The injections
+			occur "on demand".  Specifically the injection occurs each time 
+			the processor reads the sfr.  For example
+		</p>
+		<code>
+			<pre class="precode">movf     RXB0D0, W    <i>// execution causes injection of next</i></pre>
+			<pre class="precode">                      <i>// file data value to the RXB0D0 register</i></pre>
+		</code>
+		<p>
+			The <b>filename</b> must have a complete absolute pathname.  We hope
+			to have this fixed in a future release.
+		</p>
+		<p>
+			The <b>mode</b> specifies the format of the data in the file.  It can be
+			one of the following values:
+		</p>
+		<code>
+			<pre class="precode">binary_mode       <i>// non text numeric data (64 bits per word)</i></pre>
+			<pre class="precode">dec_mode          <i>// text dec:  13 156</i></pre>
+			<pre class="precode">formatted_mode    <i>// text variable format</i></pre>
+			<pre class="precode">                  <i>//            #16#0FE3#</i></pre>
+			<pre class="precode">                  <i>//            #10#136#</i></pre>
+			<pre class="precode">                  <i>//            B"010011"</i></pre>
+			<pre class="precode">                  <i>//            O"70534""</i></pre>
+			<pre class="precode">                  <i>//            X"3F5"</i></pre>
+			<pre class="precode">hex_mode          <i>// text hex:  064 FE3 </i></pre>
+		</code>
+		<p>
+			The <b>sfr</b> is just the SFR that will receive the injection 
+			values.
+		</p>
+		<p>
+			<b>rewind</b> if true register injection will start over from the 
+			file beginning once all the file data has been consumed.
+		</p>
+	</body>
+</html>

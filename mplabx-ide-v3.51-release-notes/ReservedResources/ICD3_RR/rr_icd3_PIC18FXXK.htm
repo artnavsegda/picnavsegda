@@ -1,0 +1,832 @@
+<html>
+<head>
+  <title>MPLAB ICD 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>MPLAB ICD 3 Reserved Resources By Device</p>
+<h2><a name="PIC18FK">PIC18FXXK Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<h3>General Resources Used</h3>
+<p><b>Devices</b></p>
+<ul>
+  <li>MCLR pin reserved for debugging, i.e., you cannot use this pin as digital I/O while debugging.
+  <li>MCLR/Vpp shared for programming.
+  <li>Low-voltage ICSP programming disabled for devices that support this type of programming.<br/><b>NOTE:</b> The in-circuit debugger does not support Low Voltage Programming (LVP) and will disable this function. You cannot enable it through programming using the debugger. However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+  <li>PGD and PGD reserved for programming and in-circuit debugging. Therefore, other functions multiplexed on these pins will not be available during debug.
+  <li>Two stacks level not available. Also, because the debugger needs to control the stack, TOS registers (TOSL, TOSH, TOSU) are reserved.
+</ul>
+<p><b>Debug Headers (-ICE/-ICD)*</b></p>
+<ul>
+  <li>MCLR/Vpp shared for programming.
+  <li>Low-voltage ICSP programming disabled for devices that support this type of programming.<br/><b>NOTE:</b> The in-circuit debugger does not support Low Voltage Programming (LVP) and will disable this function. You cannot enable it through programming using the debugger. However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+  <li>Two stacks level not available. Also, because the debugger needs to control the stack, TOS registers (TOSL, TOSH, TOSU) are reserved.
+</ul>
+
+* Examine the device on the header to determine its type.
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Tables</h3>
+<a href="#PIC18F1XK_Devices">PIC18F1XK Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC18F2XK_Devices">PIC18F2XK Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC18F4XK_Devices">PIC18F4XK Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC18F6XK_Devices">PIC18F6XK Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC18F8XK_Devices">PIC18F8XK Devices</a>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F1XK_Devices">PIC18F1XK Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC18F13K22</td>
+	<td>Opt</td>
+	<td>0x1E00-0x1FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244033 (Opt)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC18LF13K22</td>
+	<td>Opt</td>
+	<td>0x1E00-0x1FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244034 (Opt)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F13K50</td>
+	<td>AC244023 (Req)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF13K50</td>
+	<td>AC244024 (Req)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC18F14K22</td>
+	<td>Opt</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244033 (Opt)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC18LF14K22</td>
+	<td>Opt</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244034 (Opt)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F14K22LIN</td>
+	<td>None</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F14K50</td>
+	<td>AC244023 (Req)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF14K50</td>
+	<td>AC244024 (Req)</td>
+	<td>0x3E00-0x3FFF<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F2XK_Devices">PIC18F2XK Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+	<th>SW BP</br>Program Memory Used</th>
+	<th>SW BP</br>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F23K20</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x1D30-0x1FFF<br/></td>
+	<td>0x1EF-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F23K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF23K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F24K20</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x3D30-0x3FFF<br/></td>
+	<td>0x2EF-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F24K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF24K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F24K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF24K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F24K42</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF24K42</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F24K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF24K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K20</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x7D30-0x7FFF<br/></td>
+	<td>0x5EF-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF25K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF25K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K42</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF25K42</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF25K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F25K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF25K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F26K20</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEEF-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F26K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF26K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F26K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF26K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F26K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF26K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F27K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF27K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F4XK">PIC18F4XK</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+	<th>SW BP</br>Program Memory Used</th>
+	<th>SW BP</br>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F43K20</td>
+	<td>None</td>
+	<td>0x1DC0-0x1FFF<br/></td>
+	<td>0x1F4-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x1D30-0x1FFF<br/></td>
+	<td>0x1EF-0x1FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F43K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF43K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F44K20</td>
+	<td>None</td>
+	<td>0x3DC0-0x3FFF<br/></td>
+	<td>0x2F4-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x3D30-0x3FFF<br/></td>
+	<td>0x2EF-0x2FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F44K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF44K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F45K20</td>
+	<td>None</td>
+	<td>0x7DC0-0x7FFF<br/></td>
+	<td>0x5F4-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0x7D30-0x7FFF<br/></td>
+	<td>0x5EF-0x5FF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F45K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF45K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F45K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF45K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F45K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF45K50</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F45K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF45K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F46K20</td>
+	<td>None</td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEF4-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFD-0xFFF<br/></td>
+	<td>0xFD30-0xFFFF<br/></td>
+	<td>0xEEF-0xEFF<br/>0xF9C<br/>0xFD4<br/>0xFDB-0xFDF<br/>0xFE3-0xFE7<br/>0xFEB-0xFEF<br/>0xFFC<br/>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F46K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF46K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F46K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF46K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F46K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF46K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F47K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF47K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F6XK_Devices">PIC18F6XK Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+	<th>SW BP</br>Program Memory Used</th>
+	<th>SW BP</br>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F65K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F65K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF65K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F65K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF65K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F65K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F66K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F66K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF66K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F66K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF66K80</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F66K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F67K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F67K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18LF67K40</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+	<td>N/A</td>
+	<td>N/A</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F67K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC18F8XK_Devices">PIC18F8XK Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+	<th>SW BP</br>Program Memory Used</th>
+	<th>SW BP</br>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F85K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F85K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F86K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F86K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F87K22</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC18F87K90</td>
+	<td>None</td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+	<td>None<br/></td>
+	<td>0xFFD-0xFFF<br/></td>
+  </tr>
+</table>
+<br/>
+2016/12/05 03:25:19 PM
+</body></html>

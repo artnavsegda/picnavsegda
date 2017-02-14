@@ -1,0 +1,50 @@
+<!-- If -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>If</h2>
+	<body>
+		<p>
+			The if statement provides decision based branching.
+		</p>
+		<code>
+            <pre class="precode">if <i>booleanExpression</i> then</pre>
+            <pre class="precode">   <i>scl statements</i></pre>
+            <pre class="precode">else   <i>// optional</i></pre>
+            <pre class="precode">   <i>scl statements</i></pre>
+            <pre class="precode">end if;</pre>
+		</code>
+		<p>
+			The 
+			<a href="../content/boolexp.html" target="sclTextFrame">boolean expression</a>
+			is what you would expect it to be.  Here are a few examples
+		</p>
+		<code>
+			<pre class="precode"><i>//make RD1 echo the inverse of RD0</i></pre>
+            <pre class="precode">wait on RD0;</pre>
+            <pre class="precode">if RD0 == '1' then</pre>
+            <pre class="precode">   RD1 <= '0';</pre>
+			<pre class="precode">else</pre>
+			<pre class="precode">   RD1 <= '1';</pre>
+			<pre class="precode">end if;</pre>
+		</code>
+		<br>
+		<code>
+			<pre class="precode"><i>//test pin voltage</i></pre>
+            <pre class="precode">if RD0 > 2500 mv then</pre>
+            <pre class="precode">   RD1 <= '0';</pre>
+            <pre class="precode">   RD2 <= '0';</pre>
+			<pre class="precode">end if;</pre>
+		</code>
+		<br>
+		<code>
+			<pre class="precode"><i>//test boolean var</i></pre>
+            <pre class="precode">if testBool then</pre>
+            <pre class="precode">   RD1 <= '0';</pre>
+            <pre class="precode">   RD2 <= '0';</pre>
+			<pre class="precode">end if;</pre>
+		</code>
+	</body>
+</html>

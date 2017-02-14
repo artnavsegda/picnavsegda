@@ -1,0 +1,32 @@
+<!-- random_time -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>random_time</h2>
+	<body>
+		<p>
+			random_time() generates a random time value
+		</p>
+		<code>
+			<pre class="precode">random_time(lower,       <i>// lower range value for random value</i></pre>
+			<pre class="precode">            upper,       <i>// upper range value for random value</i></pre>
+			<pre class="precode">            units,       <i>// units of desired time value (ns, ms, s)</i></pre>
+			<pre class="precode">            seed1,       <i>// random generator seed #1</i></pre>
+			<pre class="precode">            seed2,       <i>// random generator seed #2</i></pre>
+			<pre class="precode">            result);     <i>// result variable</i></pre>
+			<br>
+			<br>
+			<pre class="precode"><i>// wait 1-100 ms</i></pre>
+			<pre class="precode">variable lower    : integer := 1;</pre>
+			<pre class="precode">variable upper    : integer := 100;</pre>
+			<pre class="precode">variable units    : string  := "ms";</pre>
+			<pre class="precode">variable seed1    : integer := 13457;</pre>
+			<pre class="precode">variable seed2    : integer := 24563;</pre>
+			<pre class="precode">variable randTime : time;</pre>
+			<pre class="precode">random_time(lower, upper, units, seed1, seed2, randTime);</pre>
+			<pre class="precode">wait for randTime</pre>
+		</code>
+	</body>
+</html>

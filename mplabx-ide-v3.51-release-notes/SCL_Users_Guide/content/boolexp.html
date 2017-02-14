@@ -1,0 +1,32 @@
+<!-- Boolean Expression -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Boolean Expression</h2>
+	<body>
+		<p>
+			Boolean expressions are used by several different SCL statement
+			types that make decisions (e.g.
+			<a href="../content/if.html" target="sclTextFrame">if</a>
+			, 
+			<a href="../content/loop.html" target="sclTextFrame">loop</a>
+			, 
+			<a href="../content/while.html" target="sclTextFrame">while</a>
+			).  These expressions will always evaluate to a boolean true or
+			false value.
+		</p>
+		<code>
+			<pre class="precode">boolVar            <i>// true if boolean variable boolVar is true</i></pre>
+			<pre class="precode">RA1 == '1'         <i>// true if pin RA1 is high</i></pre>
+			<pre class="precode">RA1 <= 3500 mv     <i>// true if pin RA1 is less than or equal to 3.5 V</i></pre>
+			<pre class="precode">intVar > 123       <i>// true if int variable intVar greater than 123</i></pre>
+			<pre class="precode">intVar - 34 < 123  <i>// true if int variable intVar minus 34 less than 123</i></pre>
+		</code>
+		<p>
+			Note that the logical operators AND, OR, XOR etc are not currently
+			supported by SCL.
+		</p>
+	</body>
+</html>

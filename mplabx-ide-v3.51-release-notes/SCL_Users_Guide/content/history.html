@@ -1,0 +1,42 @@
+<!-- History -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>History</h2>
+	<body>
+		<p>
+			Certain aspects of SCL’s implementation may seem counter-intuitive.
+			As with most engineering endeavors, a short history can help 
+			explain how SCL arrived at where it is today.
+		</p>
+		<p>
+			SCL has been a part of the MPLAB IDE Simulator for some time, dating 
+			back to at least 2005.  Unfortunately, the Microchip engineer who 
+			developed SCL left the company shortly after completing the task.  
+			This left the MPLAB IDE Simulator team somewhat reticent to take on 
+			maintenance of the poorly understood, and somewhat complex, SCL software.  
+			So the MPLAB IDE Simulator team built a front-end GUI to SCL called 
+			Stimulus.  The idea was that Stimulus would only ever generate SCL code
+			that the team was confident would work.  Unfortunately, many of the
+			SCL capabilities are not exposed by the Stimulus GUI.
+		</p>
+		<p>
+			The MPLAB X project, which ported the MPLAB IDE to operating systems 
+			other than Windows, required a complete rewrite of the entire Simulator, 
+			including the SCL portion.  The rewrite effort provided an excellent 
+			opportunity to learn and document the SCL software.  This manual is 
+			part of that effort.
+		</p>
+		<p>
+			Despite being somewhat hidden by the Stimulus GUI, MPLAB IDE Simulator 
+			users quickly discovered the underlying SCL language and began writing 
+			their own SCL processes.  The Microchip Forums contain many detailed 
+			discussions of SCL, including a fairly detailed 
+			<a href="http://www.microchip.com/forums/m111255.aspx" target="_blank">user deconstruction of the SCL language</a>
+			and an 
+			<a href="http://www.microchip.com/forums/m109149.aspx" target="_blank">SCL code repository</a>.
+		</p>
+	</body>
+</html>

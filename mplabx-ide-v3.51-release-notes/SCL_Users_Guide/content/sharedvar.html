@@ -1,0 +1,41 @@
+<!-- shared variable -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Shared Variable</h2>
+	<body>
+		<p>
+			SCL allows the reading and writing of variables from the software
+			running on the processor, by name.  To access these variables, 
+			you have to tell SCL about the variables by declaring shared 
+			variables in the configuration section.
+		</p>
+		<code>
+			<pre class="precode">shared variable <i>varName</i>;</pre>
+		</code>
+		<p>
+			At this time, shared variables have to be global and static.
+		</p>
+		<p>
+			Here is an example.
+		</p>
+		<code>
+			<pre class="precode">configuration for "PIC16F877" is</pre>
+			<pre class="precode">   shared variable stateVar;</pre>
+			<pre class="precode">   end configuration;</pre>
+			<pre class="precode">testbench for "PIC16F877" is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">   process is</pre>
+			<pre class="precode">      begin</pre>
+			<pre class="precode">      if stateVar == 0 then</pre>
+			<pre class="precode">         RD0 <= '1';</pre>
+			<pre class="precode">      else</pre>
+			<pre class="precode">         RD1 <= '0';</pre>
+			<pre class="precode">      end if;</pre>
+			<pre class="precode">      end process;</pre>
+			<pre class="precode">   end testbench;</pre>
+		</code>
+	</body>
+</html>

@@ -1,0 +1,1107 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>MPLAB IPE Release Notes for X</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"MS Shell Dlg";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.6in;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Body Text Char";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.BoxNote, li.BoxNote, div.BoxNote
+	{mso-style-name:"Box Note";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:red;}
+p.Heading0, li.Heading0, div.Heading0
+	{mso-style-name:"Heading 0";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.Bullet3, li.Bullet3, div.Bullet3
+	{mso-style-name:Bullet3;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.DeviceList, li.DeviceList, div.DeviceList
+	{mso-style-name:"Device List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.NormalNoSpace, li.NormalNoSpace, div.NormalNoSpace
+	{mso-style-name:NormalNoSpace;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Computer, li.Computer, div.Computer
+	{mso-style-name:Computer;
+	mso-style-link:"Computer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+span.ComputerChar
+	{mso-style-name:"Computer Char";
+	mso-style-link:Computer;
+	font-family:"Courier New";}
+p.ListBullet2NoSpace, li.ListBullet2NoSpace, div.ListBullet2NoSpace
+	{mso-style-name:"List Bullet 2 No Space";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Body Text";
+	color:red;}
+p.HeadingRunIn, li.HeadingRunIn, div.HeadingRunIn
+	{mso-style-name:HeadingRunIn;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:14.0pt;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;
+	font-weight:bold;}
+p.Body, li.Body, div.Body
+	{mso-style-name:Body;
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+p.Bulletindent, li.Bulletindent, div.Bulletindent
+	{mso-style-name:"Bullet indent";
+	mso-style-link:"Bullet indent Char";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.BulletindentChar
+	{mso-style-name:"Bullet indent Char";
+	mso-style-link:"Bullet indent";
+	font-family:"Arial","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.75in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=Heading0>Release Notes for MPLAB<sup>®</sup> IPE <br>
+Integrated Programming Environment</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>MPLAB<sup><span
+style='font-size:12.0pt'>®</span></sup> X IDE v3.51</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>January 13, 2017</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=Heading0>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452497">1<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Device Support</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452498">2<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Other Support</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452499">3<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Reference Documents</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452500">4<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>What's New in v3.50</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452501">5<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Repairs and Enhancements
+in v3.50</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452502">6<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Known Problems</a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='color:blue'><a
+href="#_Toc468452503">7<span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Important Notes</a></span></span></p>
+
+<h1>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><a name="_Toc468452497"></a><a name="_Ref123095768">Device Support</a></h1>
+
+<p class=MsoNormal>Click the link below to see device support for the MPLAB IPE.
+Note that only UNI/O (11XXXX) devices support ICSP while other SEE devices do
+not.</p>
+
+<p class=MsoListBullet2><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><a href="Device%20Support.htm">Device Support List</a></p>
+
+<h1><a name="_Ref123095918"></a><a name="_Toc468452498"></a><a
+name="_Toc301510412">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Other Support</a></h1>
+
+<p class=MsoNormal>See the <a
+href="../../Users/C11393/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/2LYWDFH9/Readme%20for%20MPLAB%20X%20IDE.htm">Readme
+for MPLAB X IDE.htm</a> for other support information and system requirements.</p>
+
+<p class=Body style='margin-top:4.0pt;margin-right:0in;margin-bottom:4.0pt;
+margin-left:0in;line-height:12.0pt'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif"'>These programming tools work with the MPLAB IPE. Refer to
+their respective readmes for additional information.</span></p>
+
+<p class=HeadingRunIn style='margin-top:2.0pt;margin-right:0in;margin-bottom:
+2.0pt;margin-left:9.0pt;text-indent:-9.0pt;line-height:12.0pt;page-break-after:
+auto'><span style='font-size:10.0pt;font-family:"Arial","sans-serif";
+font-weight:normal'>•	<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";font-weight:normal'>MPLAB
+ICD 3 In-Circuit Debugger</span></p>
+
+<p class=HeadingRunIn style='margin-top:2.0pt;margin-right:0in;margin-bottom:
+2.0pt;margin-left:9.0pt;text-indent:-9.0pt;line-height:12.0pt;page-break-after:
+auto'><span style='font-size:10.0pt;font-family:"Arial","sans-serif";
+font-weight:normal'>•	<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";font-weight:normal'>MPLAB
+PICkit™ 3 Debugger/Programmer</span></p>
+
+<p class=HeadingRunIn style='margin-top:2.0pt;margin-right:0in;margin-bottom:
+2.0pt;margin-left:9.0pt;text-indent:-9.0pt;line-height:12.0pt;page-break-after:
+auto'><span style='font-size:10.0pt;font-family:"Arial","sans-serif";
+font-weight:normal'>•	<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";font-weight:normal'>MPLAB
+PM3 Programmer</span></p>
+
+<p class=HeadingRunIn style='margin-top:2.0pt;margin-right:0in;margin-bottom:
+2.0pt;margin-left:9.0pt;text-indent:-9.0pt;line-height:12.0pt;page-break-after:
+auto'><span style='font-size:10.0pt;font-family:"Arial","sans-serif";
+font-weight:normal'>•	<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";font-weight:normal'>MPLAB
+REAL ICE™ In-Circuit Emulator</span></p>
+
+<h1><a name="_Toc468452499">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reference Documents</a></h1>
+
+<p class=MsoNormal>The following documents may be found on our website:</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>MPLAB Integrated Programming Environment (IPE)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Programming Specifications for devices (various DS numbers)</p>
+
+<p class=ListBullet2NoSpace><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Development Tools Selector (<a href="http://www.microchip.com/dts">http://www.microchip.com/dts</a>)</p>
+
+<p class=MsoNormal>On-line help may be found in MPLAB IPE under <i><u>Help&gt;User
+Guide</u></i>.</p>
+
+<h1><a name="_Toc468452500">4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>What's New in v3.50</a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:red'>Reminder: Windows XP operating system is
+no longer supported</span> – MPLAB X IDE is no longer supported on Windows XP.
+This means MPLAB X IDE will no longer be tested on Windows XP and JRE8 will be
+the new default JRE. To continue using Windows XP, JRE 7 will need to be
+installed. The MPLAB X IDE installer will search for JRE 7 on your system, and
+if it is not found will recommend sites for download.</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Reminder: In v3.45, support was added for the 4-wire J-TAG
+accessory board on the REAL ICE In-Circuit Emulator. For the PIC32 devices that
+support JTAG programming (specified in the Device Support list) a new checkbox
+“JTAG driver board” is available. This feature does not require the user to be
+in advanced mode.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<h1 style='margin-right:.5in'><a name="_Toc468452501">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Repairs and Enhancements in v3.50</a></h1>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=817
+ style='width:490.2pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Key</b></p>
+  </td>
+  <td width=435 valign=top style='width:261.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Summary</b></p>
+  </td>
+  <td width=268 valign=top style='width:160.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Device Affected</b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-703</p>
+  </td>
+  <td width=435 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Environment files do not remember the Memory Model and
+  defaults to single partition mode.</p>
+  </td>
+  <td width=268 valign=top style='width:160.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>33EP64GS505 and family</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-679</p>
+  </td>
+  <td width=435 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>When preserve memory for DUAL partition is enabled, device
+  always read 0xFFFF.</p>
+  </td>
+  <td width=268 valign=top style='width:160.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP64GS805, dsPIC33EP128GS705, dspic33ep128GS805, dspic33EP64GS505</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-676</p>
+  </td>
+  <td width=435 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Range Read for DUAL partition enabled device is always
+  reading 0xFFFF</p>
+  </td>
+  <td width=268 valign=top style='width:160.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dsPIC33EP64GS504 and similar devices</p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-653</p>
+  </td>
+  <td width=435 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>In the undocked memory view, the config bits
+  &quot;category&quot; column width resets itself after any config bit change</p>
+  </td>
+  <td width=268 valign=top style='width:160.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<h1 style='margin-right:.5in'><a name="_Toc468452502">6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Known Problems</a></h1>
+
+<p class=MsoNormal style='margin-right:.5in'>The following is a list of known
+problems.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=819
+ style='width:491.45pt;margin-left:-1.25pt;border-collapse:collapse;border:
+ none'>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Key</b></p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Summary</b></p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Device Affected</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-719</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Loading an SQTP file clears the FICD configuration bit
+  settings for PIC32MM devices</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MM0016GPL028 and similar variants</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-718</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Preserve Program Memory space not functional at this
+  time for this device family.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MZ2064DAB288 and others in the family</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-707</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Changes made to memory ranges in &quot;Memory&quot; option
+  is not reflected in &quot;Memory Settings&quot; window</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC24FV16KA302 and possibly others devices.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-701</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Low Voltage programming is not yet functional for the
+  18F24K42 device family for PM3.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC18F24K42 and 18F25K42</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-690</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Loading a SQTP number in User ID location pops up a dialog
+  to choose byte grouping. The order should not matter since the PIC32 family
+  has only a 2 byte location for USER ID. The message should be ignored.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32 family</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-680</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Serial port communication does not work using PM3 on MAC
+  OSx</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-673</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>While performing user id SQTP programming , SQTP values
+  are not updated in user id memory window, but the SQTP values are getting
+  updated in configuration memory window.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MMxxxGPM048, PIC32MMxxxGPM028, PIC32MMxxxGPM064</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-589</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Program range/ Read range and preserve memory range fails
+  for these devices families: 32MX470F512LB, 32MX450F256HB, 32MX270F256DB.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MX470F512LB, 32MX450F256HB, 32MX270F256DB,
+  PIC32MMxxxGPM0xx, PIC32MMxxxGPL0xx</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-580</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>For this device family, to disable debug, either '11' or
+  '10' can be used. The programming will always program '11', which may cause a
+  change in the checksum when reading back the device.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MX120F032D</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-551</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SQTP is not supported for devices with size more than 1MB
+  in PM3 standalone mode</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MZ2048EFH100 and others that have more than 1MB of
+  memory.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-521</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SQTP in FLASH Data is not working and fails during SQTP
+  loading. The SQTP files will need to be regenerated under MPLAB X IDE v2.20
+  or higher.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC12F529T39A,16F1831x</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-436</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>If there are any failures during verification, the Verify
+  report will show the address in word addressing, but the Memory view is in
+  byte addressing. These are byte quantities, therefore the report should
+  reflect the same.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>93AA76B, 93AA86B, 93C46B, 93C66B</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-415</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The device may run after programming, causing a separate
+  Verify to fail if code is modifying itself. The Hold in Reset selection may
+  not hold the device in reset. The work-around will be to reselect the Hold in
+  Reset selection.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>PIC32MX795F512L</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 nowrap valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>IPE-403</p>
+  </td>
+  <td width=419 valign=top style='width:251.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Under MAC OSx, the environment to PM3 SD Card will not be
+  able to be saved unless the IPE is launched as an administrator. Clicking
+  &quot;Save to PM3 SD Card&quot; showed &quot;Access denied&quot; error
+  message.</p>
+  </td>
+  <td width=273 valign=top style='width:163.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:430.8pt'>&nbsp;</p>
+
+<h2>6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Other Tool SSRs (System Service Requests)</h2>
+
+<p class=MsoNormal>The following is a list of issues that are being tracked for
+other tools but are related to this tool.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=819
+ style='width:491.4pt;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Key</b></p>
+   </td>
+   <td width=435 valign=top style='width:261.0pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Summary</b></p>
+   </td>
+   <td width=270 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b>Device Affected</b></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=114 nowrap valign=top style='width:.95in;border:solid windowtext 1.0pt;
+   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>ICD3-376</p>
+   </td>
+   <td width=435 valign=top style='width:261.0pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>USB communication issues for 8-bit devices can be caused
+   by noise on the ground. If experiencing communication issues, such as:&nbsp;
+   </p>
+   <p class=MsoNormal>Blank Checking...</p>
+   <p class=MsoNormal>&nbsp; :</p>
+   <p class=MsoNormal>2014-08-12T12:47:28-0700- Blank check failed</p>
+   <p class=MsoNormal>There are several possible work-arounds:</p>
+   <p class=MsoNormal>Power the board externally.</p>
+   <p class=MsoNormal>Under settings, select the programming method to apply
+   Vdd before Vpp.</p>
+   <p class=MsoNormal>Lower the voltage below 3V.</p>
+   <p class=MsoNormal>Change tools.</p>
+   <p class=MsoNormal>ETN-35 found on <a href="http://www.microchip.com/icd3">www.microchip.com/icd3</a>
+   may resolve this issue.</p>
+   <p class=MsoNormal>&nbsp;</p>
+   <p class=MsoNormal>Using the MPLAB IPE and the ICD 3, an erase may fail when
+   using power from the ICD 3, and the programming method of Applying Vpp
+   before Vdd.  To work-around the issue:</p>
+   <p class=MsoNormal>1)  Power the board externally</p>
+   <p class=MsoNormal>2)  Change the programming method found in the MPLAB IPE
+   settings to Apply Vdd before Vdd.</p>
+   <p class=MsoNormal>&nbsp;</p>
+   <p class=MsoNormal>PICkit 3 does not exhibit this behavior.</p>
+   </td>
+   <td width=270 valign=top style='width:2.25in;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>PIC12F752</p>
+   </td>
+  </tr>
+ </thead>
+</table>
+
+<h1 style='margin-right:.5in'><a name="_Toc468452503">7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Important Notes</a></h1>
+
+<h2 style='margin-right:.5in'>7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Switcher Use</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>If switching from MPLAB IDE v8.xx,
+you must use the Switcher to switch the PM3 drivers.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>If MPLAB IDE v8.xx or earlier is
+already installed on your computer, you need to run the Switcher program to
+switch from MPLAB IDE v8 drivers to MPLAB X IDE drivers, which are installed
+the first time your switch.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>The Switcher program is a GUI
+application called MPDDSwitch (32-bit operating system) or MPDDSwitch64 (64-bit
+operating system). This should be available as the desktop icon MPLAB Driver
+Switcher.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>For more information on the
+Switcher program, refer to the MPLAB X IDE online help.</p>
+
+<h2 style='margin-right:.5in'>7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Checksums</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>Refer to the MPLAB X IDE readme
+for any important updates on checksums.</p>
+
+<h2 style='margin-right:.5in'>7.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SST Memory Devices</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>SST memory devices with large memories
+(&gt;1MB) will take time for the hex file image to import.  Please allow the
+time needed for the import to occur.</p>
+
+<h2 style='margin-right:.5in'>7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Blank Check</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>In version 2.25 for dsPIC33EV
+devices, the Blank Check function will check all memory areas including the
+USER OTP memory.  Future versions of the blank check operation will separate
+out the USER OTP memory section from all other sections.</p>
+
+<h2 style='margin-right:.5in'>7.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Timestamp</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>The Output window displays a
+timestamp for events. For example, </p>
+
+<p class=MsoNormal style='margin-right:.5in'>2015-02-19T11:02:41-0700-
+Completed loading IPE.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>This indicates the date
+(year-month-day), time (hour:minute:second), and the GMT (Greenwich Mean Time) plus
+or minus offset.</p>
+
+<h2 style='margin-right:.5in'>7.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SQTP Files</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>SQTP files for Flash Data memory
+generated prior to MPLAB IPE v2.20 will work with MPLAB PM3 firmware up to
+v3.00. SQTP file generation for Flash Data memory has been modified to the
+32-bit byte order (12345678) and the firmware is updated accordingly. A new
+SQTP file must be regenerated to work with MPLAB IPE v3.00.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>For PIC32 devices only, MPLAB IPE
+v3.15 provides a dialog box to choose either 32-bit byte order (12345678) or
+16-bit byte order (56781234) when loading an SQTP file.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>The MPLAB PM3 does not support
+SQTP for devices with a RAM size of more than 1 MB of memory. Devices affected
+include PIC32MX2048EFH100 and others that have more than 1MB of memory.</p>
+
+<h2 style='margin-right:.5in'><a name="_Ref458693497"></a><a
+name="_Ref458250020"></a><a name="_Ref458179596">7.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Saving Split Operating S</a>ystems to the PM3 SD Card</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>In production houses, there may be
+a need to program several different device family architectures without having
+access to a computer.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>Between MPLAB IPE v3.25 – v3.40
+the PM3 operating system was split into two parts based on the device
+architecture (32-bit vs all other devices). Now with MPLAB IPE v3.40, the PM3
+operating system and database are split into three parts based on the
+architectures for 8-, 16- and 32-bit devices.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>MPLAB IPE v3.40 includes the
+feature to save the three PM3 operating system firmwares supporting each of the
+device family architectures into a PM3 SD card. </p>
+
+<p class=MsoNormal style='margin-right:.5in'>When the PM3 environment is
+selected in Stand-Alone mode, the MPLAB PM3 programmer will load the correct
+operating system and database from the PM3 SD Card to support the device.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>This new feature is available only
+in the MPLAB IPE v3.40, not in the MPLAB X IDE. The MPLAB X IDE will download
+one of the split PM3 operating systems based on the architecture of the device
+chosen in the project when connected to a computer.&nbsp; To download all three
+operating systems to the PM3 SD card to allow for complete stand-alone mode,
+please use the MPLAB IPE v3.40 (or greater).</p>
+
+<p class=MsoNormal style='margin-right:.5in'>To save all three operating
+systems into the PM3 SD card:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='margin-right:.5in'>Insert any supported SD card
+     into PM3 SD card slot.</li>
+ <li class=MsoNormal style='margin-right:.5in'>Open MPLAB IPE v3.40 or greater
+     and connect the MPLAB PM3 programmer to the computer.</li>
+ <li class=MsoNormal style='margin-right:.5in'>Select <i><u>Settings &gt;Save
+     firmware into SD Card</u></i>.</li>
+ <li class=MsoNormal style='margin-right:.5in'>On the MPLAB PM3 unit, select a
+     PM3 environment to open.&nbsp; </li>
+ <li class=MsoNormal style='margin-right:.5in'>Once opened, the PM3 will
+     automatically download the correct PM3 operating system split based on the
+     device saved in the PM3 environment.</li>
+</ul>
+
+<p class=MsoNormal style='margin-right:.5in'><b>Points To Be Considered:</b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='margin-right:.5in'>Please ensure the PM3 operating
+     system firmware version stored on the SD card matches the operating system
+     firmware version on the MPLAB PM3 programmer. A mismatch may occur if an
+     upgrade of the PM3 operating system was performed but the SD card firmware
+     was not updated. Use the MPLAB IPE v3.40 or greater to select the <i><u>Settings&gt;Save
+     firmware into SD Card</u></i> option to load the PM3 SD card with the
+     desired PM3 operating system firmware version.</li>
+ <li class=MsoNormal style='margin-right:.5in'>Any firmware versions of v3.40
+     or greater are not compatible with earlier versions of MPLAB IPE. It is
+     highly recommended that the MPLAB PM3 use the firmware packaged within the
+     same MPLAB IPE version. </li>
+</ul>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:41.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>Prior to MPLAB IPE v3.25</p>
+  </td>
+  <td width=414 valign=top style='width:3.45in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>One operating system supported</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>MPLAB IPE v3.25-3.35</p>
+  </td>
+  <td width=414 valign=top style='width:3.45in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>Two operating systems supported
+  (32-bit and all other devices)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>MPLAB IPE v3.40 or greater</p>
+  </td>
+  <td width=414 valign=top style='width:3.45in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.5in'>Three operating systems
+  supported (8-, 16-, 32-bit devices)</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-right:.5in'>7.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Vdd_App and Vdd_Nom</h2>
+
+<p class=MsoNormal style='margin-right:.5in'>In the power option for PM3, MPLAB
+8 uses Vdd_App for Verification and Vdd_Nom is used for all other operation
+(program, read, erase, blank check). But in MPLAB X IPE, it is the other way
+around (Vdd_Nom is used for verification and Vdd_App is used for all other
+operation). Note that in a future release this difference will be removed and
+MPLAB X IPE will be modified to match with MPLAB v8.</p>
+
+<p class=MsoNormal style='margin-right:.5in'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

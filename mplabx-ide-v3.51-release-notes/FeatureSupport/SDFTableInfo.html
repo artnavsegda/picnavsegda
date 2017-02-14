@@ -1,0 +1,91 @@
+<html>
+<head><title>Simulator Debug Features Table - Heading Descriptions</title></head>
+<body style="font-family:sans-serif; font-size:10pt" bgcolor="#FFFFE0">
+
+<h1>Simulator Debug Features Table - Heading Descriptions</h1>
+
+<table style="font-family: sans-serif; font-size: 10pt;" border=1 cellspacing=5 cellpadding=5 width="75%">
+
+  <tr bgcolor="#A8C6FD">
+    <th>Feature</th>
+    <th>Feature Description*</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Device</b></td>
+    <td>Device has either yellow or green light support in MPLAB<sup>®</sup> X IDE.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Prog/Data BPs</b></td>
+    <td>Maximum number of Program and Data Memory breakpoints.<br>
+    X Total: X breakpoints are shared between program and data memory.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Data BP Access</b></td>
+    <td>Break on data fetch, data write or either data fetch or write.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Tuples (ANDed BPs)</b></td>
+    <td>Maximum number of Tuples (ANDed breakpoints). A tuple consists of one program memory breakpoint
+    ANDed with one data memory breakpoint.
+    Breakpoint 1 AND breakpoint 2 must occur at the same time before a program halt.
+    </td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Sequenced BPs</b></td>
+    <td>Maximum number of sequences and sequenced breakpoints.<br>
+    X/Y: X is the maximum number of a breakpoint sequences. Y is the maximum number of breakpoints in the sequence.<br>
+    A breakpoint sequence is a list of breakpoints that execute but do not halt until the last breakpoint is executed.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Range BPs</b></td>
+    <td>Break on a range of program or data memory addresses.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Table R/W BPs</b></td>
+    <td>Break on a table read or write.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Pass Counter</b></td>
+    <td>Break after a specified number of passes occur, specified by a counter.</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Clock Switch Break</b></td>
+    <td>Break on clock switching</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Sleep Wake Break</b></td>
+    <td>Break on wake from Sleep</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>Stack Over/Under Break</b></td>
+    <td>Break on stack overflow/underflow</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td><b>WDT Timeout Break</b></td>
+    <td>Break on Watchdog Timer timeout</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Stopwatch</b></td>
+    <td>Use the stopwatch with breakpoints to time code execution.
+    Stopwatch uses 1-2 breakpoint resources</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Trace</b></td>
+    <td>Simulator Trace<br>
+    Simulation speed is reduced by up to 50% when using trace.</td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+    <td><b>Analyzer</b></td>
+    <td>Simulator Logic Analyzer</td>
+  </tr>
+  <tr bgcolor="FBFBFB">
+    <td colspan="2">
+    * See simulator documentation (PDF or Help file) for details on debug features.
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

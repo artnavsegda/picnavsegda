@@ -1,0 +1,359 @@
+<html>
+<head>
+  <title>PICkit 3 Reserved Resources By Device</title>
+  <style type="text/css">
+    h2, h3 {color: #000099;}
+    table {font-family: sans-serif; 
+      font-size: 10pt; 
+      margin-top: 2px; 
+      border: 1px solid black;}
+    th, td {padding: 5px; 
+      border: 1px solid black;}
+  </style>
+</head>
+<body style="font-family:sans-serif; font-size:10pt" text="#000000" bgcolor="#FFFFE0" link="#3300FF" vlink="#990099" alink="#0000CC">
+<p>PICkit 3 Reserved Resources By Device</p>
+<h2><a name="PIC16F7">PIC12F/16F7XX Devices</a></h2>
+<p>These devices, and any related debug headers, may require general device resources, as well as specific program and data memory resources, to perform debug. Please see the sections below for details. For more information on debug headers, see the "Processor Extention Pak (PEP) and Debug Header Specification" (DS50001292), the "PEP and Debug Header Help" file or the <a href="https://microchip.wikidot.com/pep:start">PEP and Debug Header</a> wiki.For more information on emulation headers, see the "Emulation Extention Pak (EEP) and Emulation Header User's Guide" (DS50002243), the "EEP and Emulation Header Help" file or the <a href="https://microchip.wikidot.com/emhead:start">EEP and Emulation Header</a> wiki.</p>
+<h3>General Resources Used</h3>
+<p><b>Devices</b></p>
+<ul>
+  <li>MCLR pin reserved for debugging, i.e., you cannot use this pin as digital I/O while debugging.
+  <li>MCLR/Vpp shared for programming.
+  <li>Low-voltage ICSP programming disabled for devices that support this type of programming.<br/><b>NOTE:</b> The in-circuit debugger does not support Low Voltage Programming (LVP) and will disable this function. You cannot enable it through programming using the debugger. However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+  <li>RB6 and RB7 reserved for programming and in-circuit debugging. Therefore, other functions multiplexed on these pins will not be available during debug.
+  <li>One stack level not available.
+</ul>
+<p><b>Debug Headers (-ICE/-ICD)*</b></p>
+<ul>
+  <li>MCLR/Vpp shared for programming.
+  <li>Low-voltage ICSP programming disabled for devices that support this type of programming.<br/><b>NOTE:</b> The in-circuit debugger does not support Low Voltage Programming (LVP) and will disable this function. You cannot enable it through programming using the debugger. However, you can enable it through a dedicated programmer, such as MPLAB PM3.
+  <li>One stack level not available.
+</ul>
+
+* Examine the device on the header to determine its type.
+<h3>Program and Data Memory Used</h3>
+<p><b>In MPLAB X IDE</b>: Program memory and data memory (file register) windows will show an “R” to denote each nibble of data that represents a reserved resource.</p>
+<p><b>In the Device Table</b>: Program memory and data memory (file register) reserved resources are listed by device.</p>
+<p><b>Table 'Header(s)' column</b>:
+<table>
+  <tr bgcolor="#DCDCDC">
+	<th>Column Text</th>
+	<th>Device Has Built-in<br>Debug Circuitry</th>
+	<th>Header(s) Available<br>for this Device</th>
+	<th>Reserved Resources<br>Apply To</th>
+  </tr>
+  <tr>
+	<td>None</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td>Opt</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Device</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Opt)</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  <tr>
+	<td><i>Header</i> (Req)</td>
+	<td style="text-align:center;">No</td>
+	<td style="text-align:center;">Yes</td>
+	<td style="text-align:center;">Header</td>
+  </tr>
+  </table>
+</p>
+<p><b>Table 'SW BP' columns</b>: Entries represent resources required for software breakpoints. Devices that do not support SW BP are specified as N/A (Not Applicable).</p>
+<h3>Device Tables</h3>
+<a href="#PIC12F7XX_Devices">PIC12F7XX Devices</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PIC16F7XX_Devices">PIC16F7XX Devices</a>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC12F7XX_Devices">PIC12F7XX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC12F752</td>
+	<td>Opt</td>
+	<td>0x300-0x3FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244049 (Opt)</td>
+	<td>0x300-0x3FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC12HV752</td>
+	<td>Opt</td>
+	<td>0x300-0x3FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244050 (Opt)</td>
+	<td>0x300-0x3FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+</table>
+<br/>
+<p style="font-weight:bold; color:#000099; margin-bottom:2px"><a name="PIC16F7XX_Devices">PIC16F7XX Devices</p>
+<table>
+  <tr bgcolor="#A8C6FD">
+	<th>Device</th>
+	<th>Header(s)</th>
+	<th>Program Memory Used</th>
+	<th>File Registers Used</th>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F707</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF707</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F716</td>
+	<td>AC162054 (Req)</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0xF0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F720</td>
+	<td>None</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF720</td>
+	<td>None</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F721</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x16F<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF721</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x16F<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16F722</td>
+	<td>Opt</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244026 (Opt)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16LF722</td>
+	<td>Opt</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244027 (Opt)</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F722A</td>
+	<td>None</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF722A</td>
+	<td>None</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xB5-0xBF<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16F723</td>
+	<td>Opt</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244026 (Opt)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16LF723</td>
+	<td>Opt</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244027 (Opt)</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F723A</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF723A</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16F724</td>
+	<td>Opt</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244026 (Opt)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16LF724</td>
+	<td>Opt</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x125-0x12F<br/>0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244027 (Opt)</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16F726</td>
+	<td>Opt</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244026 (Opt)</td>
+	<td>None<br/></td>
+	<td>None<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16LF726</td>
+	<td>Opt</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244027 (Opt)</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16LF727</td>
+	<td>Opt</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244027 (Opt)</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x170<br/>0x180<br/>0x1E5-0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F737</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F747</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF747</td>
+	<td>None</td>
+	<td>0xF00-0xFFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16F753</td>
+	<td>Opt</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244060 (Opt)</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td rowspan="2">PIC16HV753</td>
+	<td>Opt</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>AC244060 (Opt)</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0x100<br/>0x180<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F767</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF767</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F777</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16LF777</td>
+	<td>None</td>
+	<td>0x1F00-0x1FFF<br/></td>
+	<td>0x0<br/>0x70<br/>0x80<br/>0xF0<br/>0x100<br/>0x165-0x170<br/>0x180<br/>0x1F0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16F785</td>
+	<td>AC162060 (Req)</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0xF0<br/></td>
+  </tr>
+  <tr bgcolor="#FBFBFB">
+	<td>PIC16HV785</td>
+	<td>AC162060 (Req)</td>
+	<td>0x700-0x7FF<br/></td>
+	<td>0x0<br/>0x65-0x70<br/>0x80<br/>0xF0<br/></td>
+  </tr>
+</table>
+<br/>
+2016/12/05 03:25:48 PM
+</body></html>

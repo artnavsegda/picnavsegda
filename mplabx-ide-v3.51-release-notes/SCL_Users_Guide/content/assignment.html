@@ -1,0 +1,38 @@
+<!-- Assignment Statement -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Assignment</h2>
+	<body>
+		<p>
+			Probably the most common SCL statement is the assignment statement,
+			used to assign a value to a 
+			<a href="../content/pin.html" target="sclTextFrame">pin</a></li>
+			, 
+			<a href="../content/sfr.html" target="sclTextFrame">SFR</a></li>
+			, SFR field, or memory location.
+		</p>
+		<code>
+			<pre class="precode">RA1 <= '1';                 <i>// set pin RA1 high</i></pre>
+			<pre class="precode">AN0 <= 3500 mv;             <i>// set pin AN0 to 3.5 V</i></pre>
+			<pre class="precode">ADDRESH <= 128;             <i>// set SFR ADDRESH to 128</i></pre>
+			<pre class="precode">ADDRESH <= 16#80#;         <i>// set SFR ADDRESH to 0x80</i></pre>
+			<pre class="precode">ADDRESH <= B"10000000";     <i>// set SFR ADDRESH to binary 10000000</i></pre>
+			<pre class="precode">SSPCON1.CKP <= '1';         <i>// set field SSPCON1.CKP to 1</i></pre>
+		</code>
+		<p>
+			Assignment to a user
+			<a href="../content/variable.html" target="sclTextFrame">variable</a></li>
+			uses a different syntax.  And of course depends on the user variable 
+			<a href="../content/type.html" target="sclTextFrame">type</a></li>
+			.
+		</p>
+		<code>
+			<pre class="precode">intVar  := 123;             <i>// set intVar to 123</i></pre>
+			<pre class="precode">timeVar := 10 ms;           <i>// set timeVar to 10 ms</i></pre>
+			<pre class="precode">strVar  := "test";          <i>// set strVar to "test"</i></pre>
+		</code>
+	</body>
+</html>

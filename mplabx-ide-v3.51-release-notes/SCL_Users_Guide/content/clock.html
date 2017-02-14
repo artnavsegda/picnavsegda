@@ -1,0 +1,27 @@
+<!-- Example:  Input Clock -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css"/>
+		<title>SCL User's Guide</title>
+	</head>
+	<h2>Example:  Input Clock</h2>
+	<body>
+		<p>
+			This example brings a 40 ms clock in on pin RD0.
+		</p>
+		<code>
+			<pre class="precode">process is</pre>
+			<pre class="precode">   begin</pre>
+			<pre class="precode">      RD0 <= '0';     <i>// clock low</i></pre>
+			<pre class="precode">      wait for 20 ms;</pre>
+			<pre class="precode">      RD0 <= '1';     <i>// clock high</i></pre>
+			<pre class="precode">      wait for 20 ms;</pre>
+			<pre class="precode">   end process;       <i>// wrap back to start</i></pre>
+		</code>
+		<p>
+			Notice there is no unadorned wait which would terminate the process.
+			So once the four process statements have executed SCL will simply 
+			wrap back to the beginning of the process and continue execution.
+		</p>
+	</body>
+</html>
