@@ -1,0 +1,2 @@
+Warning[226] C:\PROGRAM FILES\MICROCHIP\MPASM SUITE\TEMPLATE\OBJECT\18F46K20TMPO.ASM 153 : Destination address must be word aligned
+Error[115]   C:\PROGRAM FILES\MICROCHIP\MPASM SUITE\TEMPLATE\OBJECT\18F46K20TMPO.ASM 219 : Duplicate label ("START" or redefining symbol that cannot be redefined)
