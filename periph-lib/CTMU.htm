@@ -1,0 +1,3987 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="CTMU_files/filelist.xml">
+<title>PIC18 Peripheral Libraries</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceType"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceName"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	layout-grid-mode:char;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	layout-grid-mode:char;
+	font-size:11.0pt;
+	font-family:Arial;}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	layout-grid-mode:char;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:7;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:8;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:9;
+	layout-grid-mode:char;
+	font-size:11.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p.bulleted, li.bulleted, div.bulleted
+	{mso-style-name:bulleted;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote, li.footnote, div.footnote
+	{mso-style-name:footnote;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented, li.indented, div.indented
+	{mso-style-name:indented;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered, li.numbered, div.numbered
+	{mso-style-name:numbered;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered1, li.numbered1, div.numbered1
+	{mso-style-name:numbered1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote, li.tablefootnote, div.tablefootnote
+	{mso-style-name:tablefootnote;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle, li.tabletitle, div.tabletitle
+	{mso-style-name:tabletitle;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold, li.normalbold, div.normalbold
+	{mso-style-name:normalbold;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note, li.note, div.note
+	{mso-style-name:note;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents, li.tableofcontents, div.tableofcontents
+	{mso-style-name:tableofcontents;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted1, li.bulleted1, div.bulleted1
+	{mso-style-name:bulleted1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody1, li.cellbody1, div.cellbody1
+	{mso-style-name:cellbody1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading1, li.cellheading1, div.cellheading1
+	{mso-style-name:cellheading1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote1, li.footnote1, div.footnote1
+	{mso-style-name:footnote1;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented1, li.indented1, div.indented1
+	{mso-style-name:indented1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered2, li.numbered2, div.numbered2
+	{mso-style-name:numbered2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered11, li.numbered11, div.numbered11
+	{mso-style-name:numbered11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote1, li.tablefootnote1, div.tablefootnote1
+	{mso-style-name:tablefootnote1;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle1, li.tabletitle1, div.tabletitle1
+	{mso-style-name:tabletitle1;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold1, li.normalbold1, div.normalbold1
+	{mso-style-name:normalbold1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note1, li.note1, div.note1
+	{mso-style-name:note1;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents1, li.tableofcontents1, div.tableofcontents1
+	{mso-style-name:tableofcontents1;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted2, li.bulleted2, div.bulleted2
+	{mso-style-name:bulleted2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody2, li.cellbody2, div.cellbody2
+	{mso-style-name:cellbody2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading2, li.cellheading2, div.cellheading2
+	{mso-style-name:cellheading2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote2, li.footnote2, div.footnote2
+	{mso-style-name:footnote2;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented2, li.indented2, div.indented2
+	{mso-style-name:indented2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered3, li.numbered3, div.numbered3
+	{mso-style-name:numbered3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered12, li.numbered12, div.numbered12
+	{mso-style-name:numbered12;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote2, li.tablefootnote2, div.tablefootnote2
+	{mso-style-name:tablefootnote2;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle2, li.tabletitle2, div.tabletitle2
+	{mso-style-name:tabletitle2;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold2, li.normalbold2, div.normalbold2
+	{mso-style-name:normalbold2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note2, li.note2, div.note2
+	{mso-style-name:note2;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents2, li.tableofcontents2, div.tableofcontents2
+	{mso-style-name:tableofcontents2;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.tableofcontents3, li.tableofcontents3, div.tableofcontents3
+	{mso-style-name:tableofcontents3;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.cellbody3, li.cellbody3, div.cellbody3
+	{mso-style-name:cellbody3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading3, li.cellheading3, div.cellheading3
+	{mso-style-name:cellheading3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.tabletitle3, li.tabletitle3, div.tabletitle3
+	{mso-style-name:tabletitle3;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold3, li.normalbold3, div.normalbold3
+	{mso-style-name:normalbold3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.bulleted3, li.bulleted3, div.bulleted3
+	{mso-style-name:bulleted3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody4, li.cellbody4, div.cellbody4
+	{mso-style-name:cellbody4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading4, li.cellheading4, div.cellheading4
+	{mso-style-name:cellheading4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote3, li.footnote3, div.footnote3
+	{mso-style-name:footnote3;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented3, li.indented3, div.indented3
+	{mso-style-name:indented3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered4, li.numbered4, div.numbered4
+	{mso-style-name:numbered4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered13, li.numbered13, div.numbered13
+	{mso-style-name:numbered13;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote3, li.tablefootnote3, div.tablefootnote3
+	{mso-style-name:tablefootnote3;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle4, li.tabletitle4, div.tabletitle4
+	{mso-style-name:tabletitle4;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold4, li.normalbold4, div.normalbold4
+	{mso-style-name:normalbold4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note3, li.note3, div.note3
+	{mso-style-name:note3;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents4, li.tableofcontents4, div.tableofcontents4
+	{mso-style-name:tableofcontents4;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted4, li.bulleted4, div.bulleted4
+	{mso-style-name:bulleted4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody5, li.cellbody5, div.cellbody5
+	{mso-style-name:cellbody5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading5, li.cellheading5, div.cellheading5
+	{mso-style-name:cellheading5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote4, li.footnote4, div.footnote4
+	{mso-style-name:footnote4;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented4, li.indented4, div.indented4
+	{mso-style-name:indented4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered5, li.numbered5, div.numbered5
+	{mso-style-name:numbered5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered14, li.numbered14, div.numbered14
+	{mso-style-name:numbered14;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote4, li.tablefootnote4, div.tablefootnote4
+	{mso-style-name:tablefootnote4;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle5, li.tabletitle5, div.tabletitle5
+	{mso-style-name:tabletitle5;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold5, li.normalbold5, div.normalbold5
+	{mso-style-name:normalbold5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note4, li.note4, div.note4
+	{mso-style-name:note4;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents5, li.tableofcontents5, div.tableofcontents5
+	{mso-style-name:tableofcontents5;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted5, li.bulleted5, div.bulleted5
+	{mso-style-name:bulleted5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody6, li.cellbody6, div.cellbody6
+	{mso-style-name:cellbody6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading6, li.cellheading6, div.cellheading6
+	{mso-style-name:cellheading6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote5, li.footnote5, div.footnote5
+	{mso-style-name:footnote5;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented5, li.indented5, div.indented5
+	{mso-style-name:indented5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered6, li.numbered6, div.numbered6
+	{mso-style-name:numbered6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered15, li.numbered15, div.numbered15
+	{mso-style-name:numbered15;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote5, li.tablefootnote5, div.tablefootnote5
+	{mso-style-name:tablefootnote5;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle6, li.tabletitle6, div.tabletitle6
+	{mso-style-name:tabletitle6;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold6, li.normalbold6, div.normalbold6
+	{mso-style-name:normalbold6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note5, li.note5, div.note5
+	{mso-style-name:note5;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents6, li.tableofcontents6, div.tableofcontents6
+	{mso-style-name:tableofcontents6;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted6, li.bulleted6, div.bulleted6
+	{mso-style-name:bulleted6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody7, li.cellbody7, div.cellbody7
+	{mso-style-name:cellbody7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading7, li.cellheading7, div.cellheading7
+	{mso-style-name:cellheading7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote6, li.footnote6, div.footnote6
+	{mso-style-name:footnote6;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented6, li.indented6, div.indented6
+	{mso-style-name:indented6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered7, li.numbered7, div.numbered7
+	{mso-style-name:numbered7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered16, li.numbered16, div.numbered16
+	{mso-style-name:numbered16;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote6, li.tablefootnote6, div.tablefootnote6
+	{mso-style-name:tablefootnote6;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle7, li.tabletitle7, div.tabletitle7
+	{mso-style-name:tabletitle7;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold7, li.normalbold7, div.normalbold7
+	{mso-style-name:normalbold7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note6, li.note6, div.note6
+	{mso-style-name:note6;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents7, li.tableofcontents7, div.tableofcontents7
+	{mso-style-name:tableofcontents7;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted7, li.bulleted7, div.bulleted7
+	{mso-style-name:bulleted7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody8, li.cellbody8, div.cellbody8
+	{mso-style-name:cellbody8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading8, li.cellheading8, div.cellheading8
+	{mso-style-name:cellheading8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote7, li.footnote7, div.footnote7
+	{mso-style-name:footnote7;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented7, li.indented7, div.indented7
+	{mso-style-name:indented7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered8, li.numbered8, div.numbered8
+	{mso-style-name:numbered8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered17, li.numbered17, div.numbered17
+	{mso-style-name:numbered17;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote7, li.tablefootnote7, div.tablefootnote7
+	{mso-style-name:tablefootnote7;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle8, li.tabletitle8, div.tabletitle8
+	{mso-style-name:tabletitle8;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold8, li.normalbold8, div.normalbold8
+	{mso-style-name:normalbold8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note7, li.note7, div.note7
+	{mso-style-name:note7;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents8, li.tableofcontents8, div.tableofcontents8
+	{mso-style-name:tableofcontents8;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.tableofcontents9, li.tableofcontents9, div.tableofcontents9
+	{mso-style-name:tableofcontents9;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.tabletitle9, li.tabletitle9, div.tabletitle9
+	{mso-style-name:tabletitle9;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.cellbody9, li.cellbody9, div.cellbody9
+	{mso-style-name:cellbody9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading9, li.cellheading9, div.cellheading9
+	{mso-style-name:cellheading9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.bulleted8, li.bulleted8, div.bulleted8
+	{mso-style-name:bulleted8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody10, li.cellbody10, div.cellbody10
+	{mso-style-name:cellbody10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading10, li.cellheading10, div.cellheading10
+	{mso-style-name:cellheading10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote8, li.footnote8, div.footnote8
+	{mso-style-name:footnote8;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented8, li.indented8, div.indented8
+	{mso-style-name:indented8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered9, li.numbered9, div.numbered9
+	{mso-style-name:numbered9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered18, li.numbered18, div.numbered18
+	{mso-style-name:numbered18;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote8, li.tablefootnote8, div.tablefootnote8
+	{mso-style-name:tablefootnote8;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle10, li.tabletitle10, div.tabletitle10
+	{mso-style-name:tabletitle10;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold9, li.normalbold9, div.normalbold9
+	{mso-style-name:normalbold9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note8, li.note8, div.note8
+	{mso-style-name:note8;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents10, li.tableofcontents10, div.tableofcontents10
+	{mso-style-name:tableofcontents10;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.tableofcontents11, li.tableofcontents11, div.tableofcontents11
+	{mso-style-name:tableofcontents11;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.tabletitle11, li.tabletitle11, div.tabletitle11
+	{mso-style-name:tabletitle11;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.cellbody11, li.cellbody11, div.cellbody11
+	{mso-style-name:cellbody11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading11, li.cellheading11, div.cellheading11
+	{mso-style-name:cellheading11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.normalbold10, li.normalbold10, div.normalbold10
+	{mso-style-name:normalbold10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.bulleted9, li.bulleted9, div.bulleted9
+	{mso-style-name:bulleted9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody12, li.cellbody12, div.cellbody12
+	{mso-style-name:cellbody12;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading12, li.cellheading12, div.cellheading12
+	{mso-style-name:cellheading12;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote9, li.footnote9, div.footnote9
+	{mso-style-name:footnote9;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented9, li.indented9, div.indented9
+	{mso-style-name:indented9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered10, li.numbered10, div.numbered10
+	{mso-style-name:numbered10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered19, li.numbered19, div.numbered19
+	{mso-style-name:numbered19;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote9, li.tablefootnote9, div.tablefootnote9
+	{mso-style-name:tablefootnote9;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle12, li.tabletitle12, div.tabletitle12
+	{mso-style-name:tabletitle12;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold11, li.normalbold11, div.normalbold11
+	{mso-style-name:normalbold11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note9, li.note9, div.note9
+	{mso-style-name:note9;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableofcontents12, li.tableofcontents12, div.tableofcontents12
+	{mso-style-name:tableofcontents12;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.bulleted10, li.bulleted10, div.bulleted10
+	{mso-style-name:bulleted10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody13, li.cellbody13, div.cellbody13
+	{mso-style-name:cellbody13;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading13, li.cellheading13, div.cellheading13
+	{mso-style-name:cellheading13;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote10, li.footnote10, div.footnote10
+	{mso-style-name:footnote10;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented10, li.indented10, div.indented10
+	{mso-style-name:indented10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered20, li.numbered20, div.numbered20
+	{mso-style-name:numbered20;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered110, li.numbered110, div.numbered110
+	{mso-style-name:numbered110;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote10, li.tablefootnote10, div.tablefootnote10
+	{mso-style-name:tablefootnote10;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle13, li.tabletitle13, div.tabletitle13
+	{mso-style-name:tabletitle13;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold12, li.normalbold12, div.normalbold12
+	{mso-style-name:normalbold12;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note10, li.note10, div.note10
+	{mso-style-name:note10;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.bulleted11, li.bulleted11, div.bulleted11
+	{mso-style-name:bulleted11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody14, li.cellbody14, div.cellbody14
+	{mso-style-name:cellbody14;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading14, li.cellheading14, div.cellheading14
+	{mso-style-name:cellheading14;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.footnote11, li.footnote11, div.footnote11
+	{mso-style-name:footnote11;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.indented11, li.indented11, div.indented11
+	{mso-style-name:indented11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered21, li.numbered21, div.numbered21
+	{mso-style-name:numbered21;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.numbered111, li.numbered111, div.numbered111
+	{mso-style-name:numbered111;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote11, li.tablefootnote11, div.tablefootnote11
+	{mso-style-name:tablefootnote11;
+	margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle14, li.tabletitle14, div.tabletitle14
+	{mso-style-name:tabletitle14;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.normalbold13, li.normalbold13, div.normalbold13
+	{mso-style-name:normalbold13;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.note11, li.note11, div.note11
+	{mso-style-name:note11;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.cellbody0, li.cellbody0, div.cellbody0
+	{mso-style-name:cellbody0;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.cellheading0, li.cellheading0, div.cellheading0
+	{mso-style-name:cellheading0;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.tabletitle0, li.tabletitle0, div.tabletitle0
+	{mso-style-name:tabletitle0;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.element10, li.element10, div.element10
+	{mso-style-name:element10;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.computer
+	{mso-style-name:computer;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar
+	{mso-style-name:normalboldchar;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char
+	{mso-style-name:heading2char;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred
+	{mso-style-name:stylecomputerbolditalicred;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer1
+	{mso-style-name:computer1;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar1
+	{mso-style-name:normalboldchar1;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char1
+	{mso-style-name:heading2char1;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred1
+	{mso-style-name:stylecomputerbolditalicred1;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer2
+	{mso-style-name:computer2;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar2
+	{mso-style-name:normalboldchar2;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char2
+	{mso-style-name:heading2char2;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred2
+	{mso-style-name:stylecomputerbolditalicred2;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer3
+	{mso-style-name:computer3;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar3
+	{mso-style-name:normalboldchar3;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char3
+	{mso-style-name:heading2char3;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.computer4
+	{mso-style-name:computer4;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar4
+	{mso-style-name:normalboldchar4;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.stylecomputerbolditalicred3
+	{mso-style-name:stylecomputerbolditalicred3;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer5
+	{mso-style-name:computer5;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar5
+	{mso-style-name:normalboldchar5;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char4
+	{mso-style-name:heading2char4;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred4
+	{mso-style-name:stylecomputerbolditalicred4;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer6
+	{mso-style-name:computer6;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar6
+	{mso-style-name:normalboldchar6;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char5
+	{mso-style-name:heading2char5;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred5
+	{mso-style-name:stylecomputerbolditalicred5;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.heading2char6
+	{mso-style-name:heading2char6;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.computer7
+	{mso-style-name:computer7;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar7
+	{mso-style-name:normalboldchar7;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.stylecomputerbolditalicred6
+	{mso-style-name:stylecomputerbolditalicred6;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer8
+	{mso-style-name:computer8;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar8
+	{mso-style-name:normalboldchar8;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char7
+	{mso-style-name:heading2char7;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred7
+	{mso-style-name:stylecomputerbolditalicred7;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer9
+	{mso-style-name:computer9;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.computer10
+	{mso-style-name:computer10;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar9
+	{mso-style-name:normalboldchar9;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char8
+	{mso-style-name:heading2char8;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred8
+	{mso-style-name:stylecomputerbolditalicred8;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer11
+	{mso-style-name:computer11;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar10
+	{mso-style-name:normalboldchar10;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.computer12
+	{mso-style-name:computer12;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar11
+	{mso-style-name:normalboldchar11;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char9
+	{mso-style-name:heading2char9;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred9
+	{mso-style-name:stylecomputerbolditalicred9;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer13
+	{mso-style-name:computer13;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar12
+	{mso-style-name:normalboldchar12;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char10
+	{mso-style-name:heading2char10;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred10
+	{mso-style-name:stylecomputerbolditalicred10;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer14
+	{mso-style-name:computer14;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.normalboldchar13
+	{mso-style-name:normalboldchar13;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.heading2char11
+	{mso-style-name:heading2char11;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.stylecomputerbolditalicred11
+	{mso-style-name:stylecomputerbolditalicred11;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+span.computer0
+	{mso-style-name:computer0;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:windowtext;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoTitle>Charge Time Measurement Unit</p>
+
+<p class=MsoTitle>&nbsp;</p>
+
+<p class=tableofcontents>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc207688658">1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-weight:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;
+</span>Introduction<span style='color:windowtext;display:none;mso-hide:all;
+text-decoration:none;text-underline:none'>. 2</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc207688659">2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-weight:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;
+</span>CTMU Function Descriptions<span style='color:windowtext;display:none;
+mso-hide:all;text-decoration:none;text-underline:none'>. 2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc207688660">2.1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-style:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=SpellE>OpenCTMU</span><span style='color:windowtext;
+display:none;mso-hide:all;text-decoration:none;text-underline:none'>. 2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc207688661">2.2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-style:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=SpellE>CurrentControlCTMU</span><span style='color:windowtext;
+display:none;mso-hide:all;text-decoration:none;text-underline:none'>. 6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc207688662">2.3<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-style:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=SpellE>CloseCTMU</span><span style='color:windowtext;
+display:none;mso-hide:all;text-decoration:none;text-underline:none'>. 8</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc207688663">3<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;font-weight:normal;text-decoration:none;text-underline:none'>&nbsp;&nbsp;&nbsp;
+</span>Macro definitions<span style='color:windowtext;display:none;mso-hide:
+all;text-decoration:none;text-underline:none'>. 8</span></a></span></p>
+
+<p class=MsoToc2><span style='font-size:12.0pt;line-height:200%;font-family:
+"Times New Roman";font-style:normal'>&nbsp;</span></p>
+
+<b><span style='font-size:12.0pt;font-family:Arial;mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA;layout-grid-mode:line'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc207688658">1</a><span style='mso-bookmark:_Toc207688658'><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</span></h1>
+
+<p class=MsoNormal>The CTMU peripheral is supported with the following
+functions:</p>
+
+<p class=tabletitle0>Table:&nbsp;&nbsp;CTMU<span class=GramE>&nbsp; Functions</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:15.1pt'>
+  <td width=190 valign=top style='width:142.45pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in;height:15.1pt'>
+  <p class=cellheading0>Function</p>
+  </td>
+  <td width=370 valign=top style='width:277.6pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:15.1pt'>
+  <p class=cellheading0>Description</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:12.55pt'>
+  <td width=190 style='width:142.45pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=MsoNormal><span class=SpellE><span class=computer0>OpenCTMU</span></span></p>
+  </td>
+  <td width=370 valign=top style='width:277.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=cellbody0>This function configures the CTMU.&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:12.55pt'>
+  <td width=190 style='width:142.45pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=MsoNormal><span class=SpellE><span class=computer0>CurrentControlCTMU</span></span><span
+  class=computer0> &nbsp;&nbsp;</span></p>
+  </td>
+  <td width=370 valign=top style='width:277.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=cellbody0>This function selects the current source range and trims
+  the current source of CTMU.&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes;height:12.55pt'>
+  <td width=190 style='width:142.45pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=MsoNormal><span class=SpellE><span class=computer0>CloseCTMU</span></span></p>
+  </td>
+  <td width=370 valign=top style='width:277.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.55pt'>
+  <p class=cellbody0>This function turns off the CTMU module and disables the
+  CTMU interrupts.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Based on the different control registers, configuration bits
+and their positions in the control register, all PIC18 devices are divided into
+the following different versions. Wherever required, separate functions have
+been designed to support these versions, so before calling the LIB functions
+care has to be taken to know the version of the configured device and to call
+the appropriate function with correct number of arguments.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Below is the table to find the CTMU version for the
+configured device:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>TABLE: VERSION vs. DEVICES </b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=158 valign=top style='width:1.65in;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=cellheading0>Version name</p>
+  </td>
+  <td width=345 valign=top style='width:258.45pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=cellheading0>Device number</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=158 style='width:1.65in;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>CTMU_V1</p>
+  </td>
+  <td width=345 valign=top style='width:258.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>18F24J50, 18F25J50, 18F26J50, 18F44J50, 18F45J50,
+  18F46J50, 18F24J11, 18F25J11, 18F26J11, 18F44J11, 18F45J11, 18F46J11,
+  18LF24J50, 18LF25J50, 18LF26J50, 18LF44J50, 18LF45J50, 18LF46J50, </p>
+  <p class=MsoNormal>18LF24J11, 18LF25J11, 18LF26J11, 18LF44J11, 18LF45J11,
+  18LF46J11, 18F66J90, 18F67J90, 18F86J90, 18F87J90</p>
+  </td>
+ </tr>
+</table>
+
+<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
+
+<h1><a name="_Toc196905294"></a><a name="_Toc207688659"></a><span
+style='mso-bookmark:_Toc196905294'>2</span><span style='mso-bookmark:_Toc196905294'><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CTMU Function Descriptions</span></h1>
+
+<h2><a name="_Toc196905295"></a><a name="_2.1__"></a>2.1<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><a name="_Toc207688660"></a><span class=SpellE><span
+style='mso-bookmark:_Toc207688660'>OpenCTMU</span></span><span
+style='mso-bookmark:_Toc207688660'></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:15.8pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0><b>Function:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0>Configure the CTMU.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:15.8pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0><b>Include:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0><span class=computer0>ctmu.h;</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:.45in'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:.45in'>
+  <p class=cellbody0><b>Prototype:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:.45in'>
+  <p class=cellbody0><span class=computer0>void <span class=SpellE>OpenCTMU</span>(unsigned
+  char <b>config1</b>, unsigned char <b>config2</b>,unsigned char <b>config3</b>)</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:27.0pt'>
+  <td width=90 rowspan=17 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:27.0pt'>
+  <p class=cellbody0><b>Arguments:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:27.0pt'>
+  <p class=cellbody0><span class=computer0><b><i><u>config1:</u></i></b></span></p>
+  <p class=cellbody0>&nbsp;</p>
+  <p class=cellbody0>This contains the parameters to be configured in the
+  CTMUCONH register</p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:45.0pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:45.0pt'>
+  <p class=cellbody0><b>CTMU Enable/Disable:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </p>
+  <p class=cellbody0>CTMU_ENABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU is enabled</p>
+  <p class=cellbody0>CTMU_DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU is disabled</p>
+  <p class=cellbody0>&nbsp;</p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:11.8pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:11.8pt'>
+  <p class=cellbody0><b>Idle Mode bit:</b></p>
+  <p class=cellbody0>CTMU_IDLE_STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU discontinue module operation in Idle mode</p>
+  <p class=cellbody0>CTMU_IDLE_CONTINUE&nbsp;&nbsp;&nbsp; CTMU Operate in Idle
+  mode</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:11.8pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:11.8pt'>
+  <p class=cellbody0><b>Time Generation Enable bit:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp; </p>
+  <p class=cellbody0>CTMU_TIME_GEN_ENABLE&nbsp;&nbsp;&nbsp;&nbsp; CTMU enables
+  edge delay generation</p>
+  <p class=cellbody0>CTMU_TIME_GEN_DISABLE&nbsp;&nbsp;&nbsp; CTMU disables edge
+  delay generation</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:11.8pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:11.8pt'>
+  <p class=cellbody0><b>Edge Enable bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE_ENABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU edges are not blocked </p>
+  <p class=cellbody0>CTMU_EDGE_DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU edges are blocked</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:10.6pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.6pt'>
+  <p class=cellbody0><b>Edge sequence Enable bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE_SEQUENCE_ON&nbsp;&nbsp;&nbsp;&nbsp; Edge1 event
+  must occur before edge2
+  event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Can occur</p>
+  <p class=cellbody0>CTMU_EDGE_SEQUENCE_OFF&nbsp;&nbsp; No edge sequence is
+  needed</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:10.5pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.5pt'>
+  <p class=cellbody0><b>Analog Current Source Control bit:</b></p>
+  <p class=cellbody0>CTMU_AN_CURR_SOURCE_GND&nbsp; CTMU Analog current source
+  output</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  is grounded</p>
+  <p class=cellbody0>CTMU_AN_CURR_SOURCE_NOT_GND&nbsp;&nbsp;&nbsp;&nbsp; CTMU
+  Analog current
+  source&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output is not grounded</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:10.5pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.5pt'>
+  <p class=cellbody0><b>Trigger Control bit:</b></p>
+  <p class=cellbody0>CTMU_TRIG_OUTPUT_ENABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Trigger output is enabled</p>
+  <p class=cellbody0>CTMU_TRIG_OUTPUT_DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Trigger output is disabled</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:10.5pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.5pt'>
+  <p class=cellbody0><b>Enable/Disable&nbsp; Interrupt:&nbsp; </b></p>
+  <p class=cellbody0>CTMU_INT_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Enable CTMU interrupts</p>
+  <p class=cellbody0>CTMU_INT_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Disable CTMU interrupts</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;height:10.5pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.5pt'>
+  <p class=cellbody0><b><i><u>config2&nbsp;:</u></i></b></p>
+  <p class=cellbody0>This contains the parameters to be configured in the
+  CTMUCONL register</p>
+  <p class=cellbody0><b>&nbsp;</b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:10.5pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:10.5pt'>
+  <p class=cellbody0><b>Edge2 Polarity select bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE2_POLARITY_POS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Edge 2 programmed for a positive edge </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response</p>
+  <p class=cellbody0>CTMU_EDGE2_POLARITY_NEG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Edge 2 programmed for a negative edge </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;height:17.7pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:17.7pt'>
+  <p class=cellbody0><b>Edge2 Source Select bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE2_SOURCE_CTED1&nbsp;&nbsp;&nbsp;&nbsp; CTED1 is a
+  source select for Edge2</p>
+  <p class=cellbody0>CTMU_EDGE2_SOURCE_CTED2&nbsp;&nbsp;&nbsp;&nbsp; CTED is a
+  source select for Edge2</p>
+  <p class=cellbody0>CTMU_EDGE2_SOURCE_OC1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  OC1 is a source select for Edge2</p>
+  <p class=cellbody0>CTMU_EDGE2_SOURCE_TIMER1&nbsp;&nbsp;&nbsp; TIMER1 is a
+  source select for Edge2</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:17.7pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:17.7pt'>
+  <p class=cellbody0><b>Edge1 Polarity select bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE1_POLARITY_POS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Edge 1 programmed for a positive edge </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;response</p>
+  <p class=cellbody0>CTMU_EDGE1_POLARITY_NEG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Edge 1 programmed for a negative edge </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;height:17.7pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:17.7pt'>
+  <p class=cellbody0><b>Edge2 Source Select bit:</b></p>
+  <p class=cellbody0>CTMU_EDGE1_SOURCE_CTED1&nbsp; CTED1 is a source select for
+  Edge1</p>
+  <p class=cellbody0>CTMU_EDGE1_SOURCE_CTED2&nbsp; CTED is a source select for
+  Edge1</p>
+  <p class=cellbody0>CTMU_EDGE1_SOURCE_OC1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  OC1 is a source select for Edge1</p>
+  <p class=cellbody0>CTMU_EDGE1_SOURCE_TIMER1 &nbsp;&nbsp;&nbsp;TIMER1 is a
+  source select for Edge1</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;height:17.7pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:17.7pt'>
+  <p class=cellbody0><b><i><u>config3 :</u></i> </b></p>
+  <p class=cellbody0>This contains the parameters to be configured in the
+  CTMUICON register</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18;height:103.15pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:103.15pt'>
+  <p class=cellbody0><b>Current Source Trim bits:</b></p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  62% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  60% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  58% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  56% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  54% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  52% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  50% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  48% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  46% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  44% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  42% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  40% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  38% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  36% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  34% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  32% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  30% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  28% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  26% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  24% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  22% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  20% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  18% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  16% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  14% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  12% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  10% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  8% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  6% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  4% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  2% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_NOMINAL_CURRENT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Nominal Current output specified by </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  IRNG1:IRNG0</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  2% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  4% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  6% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  8% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  10% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  12% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  14% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  16% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  18% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  20% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  22% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  24% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  26% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  28% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_30
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30% of Negative change from nominal
+  current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  32% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  34% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36%
+  of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  38% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  40% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  42% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  44% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  46% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  48% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  50% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  52% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  54% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  56% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  58% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  60% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  62% of Negative change from nominal current</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19;height:103.15pt'>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:103.15pt'>
+  <p class=cellbody0><st1:place w:st="on"><st1:PlaceName w:st="on"><b>Current</b></st1:PlaceName><b>
+   <st1:PlaceName w:st="on">Source</st1:PlaceName> <st1:PlaceType w:st="on">Range</st1:PlaceType></b></st1:place><b>
+  Select bits:</b></p>
+  <p class=cellbody0>CTMU_CURR_RANGE_100_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  100*Base current (55uA)</p>
+  <p class=cellbody0>CTMU_CURR_RANGE_10_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  10*Base current (5.5uA)</p>
+  <p class=cellbody0>CTMU_CURR_RANGE_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is Base</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current (0.55uA)</p>
+  <p class=cellbody0>CTUM_CURR_SOURCE_DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source disabled</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20;height:15.85pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.85pt'>
+  <p class=cellbody0><b>Return Value:</b></p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.85pt'>
+  <p class=cellbody0>None</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;height:15.8pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0><b>Remarks:</b></p>
+  <p class=cellbody0><b>&nbsp;</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.8pt'>
+  <p class=cellbody0>This function configures the CTMU for the following
+  parameters: Operating mode, Sleep mode behavior, Edge Select, Delay
+  generation, Current source&nbsp; trim and current source range select.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22;height:15.75pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.75pt'>
+  <p class=cellbody0><b>File Name:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.75pt'>
+  <p class=cellbody0><span class=SpellE><span class=computer0>OpenCTMU.c</span></span><span
+  class=computer0>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23;mso-yfti-lastrow:yes;height:15.75pt'>
+  <td width=90 valign=top style='width:67.5pt;padding:0in 0in 0in 0in;
+  height:15.75pt'>
+  <p class=cellbody0><b>Code Example:</b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;padding:0in 0in 0in 0in;
+  height:15.75pt'>
+  <p class=cellbody0><span class=computer0>&nbsp;<span class=SpellE>OpenCTMU</span>((
+  </span>CTMU_TRIG_OUTPUT_DISABLE |</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_EDGE_SEQUENCE_OFF |</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_TIME_GEN_DISABLE |</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_EDGE_DISABLE ) ,</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ( CTMU_EDGE1_POLARITY_POS |</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_EDGE2_POLARITY_POS |</p>
+  <p class=cellbody0>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CTMU_EDGE1_SOURCE_CTED1
+  |</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_EDGE2_SOURCE_CTED1 ) ,</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  (&nbsp; CTMU_NOMINAL_CURRENT | </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CTMU_CURR_RANGE_BASE_CURR )&nbsp; ) ;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc196905296"></a><a name="_2.2__"></a>2.2<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;</span><a name="_Toc207688661"></a><span class=SpellE><span
+style='mso-bookmark:_Toc207688661'>CurrentControlCTMU</span></span><span
+style='mso-bookmark:_Toc207688661'></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>Function:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0>This function selects the current source range and trims
+  the current source of CTMU.</p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>Include:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><span class=computer0>ctmu.h</span></p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:15.0pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Prototype:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><span class=computer0>void <span class=SpellE>CurrentControlCTMU</span>(unsigned
+  char <span class=SpellE>config</span>)</span></p>
+  <p class=cellbody0><span class=computer0>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:22.5pt'>
+  <td width=96 rowspan=2 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:22.5pt'>
+  <p class=cellbody0><b>Argument:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:22.5pt'>
+  <p class=cellbody0><span class=SpellE><span class=computer0><b><i><u>Config</u></i></b></span></span><span
+  class=computer0><b><i><u>:</u></i></b></span></p>
+  <p class=cellbody0><span class=computer0>This contains the parameters to be
+  configured in the CTMUICON register</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:22.5pt'>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:22.5pt'>
+  <p class=cellbody0><b>Current Source Trim bits:</b></p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 62% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 58% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 56% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 54% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 48% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 46% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10% of
+  Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  8% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  6% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  4% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_POS_CURR_TRIM_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  2% of Positive change from nominal current</p>
+  <p class=cellbody0>CTMU_NOMINAL_CURRENT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Nominal Current output specified by </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IRNG1:IRNG0</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  2% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  4% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  6% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  8% of Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_10&nbsp;&nbsp;&nbsp;&nbsp; 10% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_12&nbsp;&nbsp;&nbsp;&nbsp; 12% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_14&nbsp;&nbsp;&nbsp;&nbsp; 14% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_16&nbsp;&nbsp;&nbsp;&nbsp; 16% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_18&nbsp;&nbsp;&nbsp;&nbsp; 18% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_20&nbsp;&nbsp;&nbsp;&nbsp; 20% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_22&nbsp;&nbsp;&nbsp;&nbsp; 22% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_24&nbsp;&nbsp;&nbsp;&nbsp; 24% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_26&nbsp;&nbsp;&nbsp;&nbsp; 26% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_28&nbsp;&nbsp;&nbsp;&nbsp; 28% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_30&nbsp;&nbsp;&nbsp;&nbsp; 30% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_32&nbsp;&nbsp;&nbsp;&nbsp; 32% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_34&nbsp;&nbsp;&nbsp;&nbsp; 34% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_36&nbsp;&nbsp;&nbsp;&nbsp; 36% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_38&nbsp;&nbsp;&nbsp;&nbsp; 38% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_40&nbsp;&nbsp;&nbsp;&nbsp; 40% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_42&nbsp;&nbsp;&nbsp;&nbsp; 42% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_44&nbsp;&nbsp;&nbsp;&nbsp; 44% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_46&nbsp;&nbsp;&nbsp;&nbsp; 46% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_48&nbsp;&nbsp;&nbsp;&nbsp; 48% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_50&nbsp;&nbsp;&nbsp;&nbsp; 50% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_52&nbsp;&nbsp;&nbsp;&nbsp; 52% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_54&nbsp;&nbsp;&nbsp;&nbsp; 54% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_56&nbsp;&nbsp;&nbsp;&nbsp; 56% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_58&nbsp;&nbsp;&nbsp;&nbsp; 58% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_60&nbsp;&nbsp;&nbsp;&nbsp; 60% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>CTMU_NEG_CURR_TRIM_62&nbsp;&nbsp;&nbsp;&nbsp; 62% of
+  Negative change from nominal current</p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:97.5pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:97.5pt'>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:97.5pt'>
+  <p class=cellbody0><st1:place w:st="on"><st1:PlaceName w:st="on"><b>Current</b></st1:PlaceName><b>
+   <st1:PlaceName w:st="on">Source</st1:PlaceName> <st1:PlaceType w:st="on">Range</st1:PlaceType></b></st1:place><b>
+  Select bits:</b></p>
+  <p class=cellbody0>CTMU_CURR_RANGE_100_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  100*Base current (55uA)</p>
+  <p class=cellbody0>CTMU_CURR_RANGE_10_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  10*Base current (5.5uA)</p>
+  <p class=cellbody0>CTMU_CURR_RANGE_BASE_CURR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source Range is Base</p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current (0.55uA)</p>
+  <p class=cellbody0>CTUM_CURR_SOURCE_DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Current source disabled</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:15.0pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Return Value:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0>None</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:15.0pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Remarks:</b></p>
+  <p class=cellbody0><b>&nbsp;</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0>The level of current is user-selectable across three
+  ranges or a total of two orders of magnitude, with the ability to trim the
+  output in ±2% increments</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:15.0pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>File Name:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><span class=SpellE><span class=computer0>CurrentControlCTMU.c</span></span><span
+  class=computer0>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes;height:15.0pt'>
+  <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Code Example:</b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><span class=computer0>&nbsp;<span class=SpellE>CurrentControlCTMU</span></span>(&nbsp;
+  CTMU_NOMINAL_CURRENT | </p>
+  <p class=cellbody0>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CTMU_CURR_RANGE_BASE_CURR&nbsp;&nbsp;
+  ) ;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc196905297"></a><a name="_2.3__"></a>2.3<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;</span><a name="_Toc207688662"></a><span class=SpellE><span
+style='mso-bookmark:_Toc207688662'>CloseCTMU</span></span><span
+style='mso-bookmark:_Toc207688662'></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0>This function turns off the CTMU module and disables the
+  CTMU interrupts.</p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><span class=computer0>ctmu.h</span></p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:15.0pt'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><span class=computer0>void <span class=SpellE>CloseCTMU</span>(
+  void )</span></p>
+  <p class=cellbody0>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:15.0pt'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><b>Return Value:</b></p>
+  <p class=cellbody0><b>&nbsp;</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in;
+  height:15.0pt'>
+  <p class=cellbody0><span class=computer0>None</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0>This function first disables the CTMU interrupt and then
+  turns off the CTMU module. The Interrupt Flag bit is also cleared.</p>
+  <p class=element10>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=cellbody0><span class=SpellE><span class=computer0>CloseCTMU.c</span></span></p>
+  <p class=cellbody0><span class=computer0>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc196905309"></a><a name="_3__"></a>3<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; </span><a name="_Toc207688663">Macro definitions</a></h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=275 valign=top style='width:206.2pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=cellheading0>Macros</p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=cellheading0>Description</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=275 style='width:206.2pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span class=computer0>CTMU_INT_ENABLE()</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=cellbody0>Enables CTMU interrupt i.e. sets PEIE and ADIE bits.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:2.5pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:2.5pt'>
+  <p class=MsoNormal><span class=computer0>CTMU_INT_DISABLE()</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:2.5pt'>
+  <p class=cellbody0>Disables the CTMU interrupt.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:2.5pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:2.5pt'>
+  <p class=MsoNormal><span class=computer0>Enbl_CTMUEdge1</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:2.5pt'>
+  <p class=cellbody0>By setting edge1 status bit current source enables</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:2.5pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:2.5pt'>
+  <p class=MsoNormal><span class=computer0>Enbl_CTMUEdge2</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:2.5pt'>
+  <p class=cellbody0>By setting edge2 status bit current source enables</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:2.5pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:2.5pt'>
+  <p class=MsoNormal><span class=computer0>Disbl_CTMUEdge1</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:2.5pt'>
+  <p class=cellbody0>By clearing edge1 status bit disable the current source</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:.25in'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:.25in'>
+  <p class=MsoNormal><span class=computer0>Disbl_CTMUEdge2</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.25in'>
+  <p class=cellbody0>By clearing edge2 status bit disable the current source</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:3.0pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:3.0pt'>
+  <p class=MsoNormal><span class=computer0>CTMUEdge1_Status</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:3.0pt'>
+  <p class=cellbody0>Returns the status of CTMU edge1</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:3.0pt'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:3.0pt'>
+  <p class=MsoNormal><span class=computer0>CTMUEdge2_Status</span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:3.0pt'>
+  <p class=cellbody0>Returns the status of CTMU edge2</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes;height:.25in'>
+  <td width=275 style='width:206.2pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 0in 0in 0in;
+  height:.25in'>
+  <p class=MsoNormal><span class=SpellE><span class=computer0>CTMU_Clear_Intr_Status_Bit</span></span></p>
+  </td>
+  <td width=331 valign=top style='width:248.25pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.25in'>
+  <p class=cellbody0>Macro to Clear CTMU Interrupt Status bit</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

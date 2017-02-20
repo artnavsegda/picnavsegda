@@ -1,0 +1,1412 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>PIC18 Peripheral Libraries</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	layout-grid-mode:line;}
+span.Computer
+	{font-family:"Courier New";
+	color:windowtext;}
+p.Bulleted, li.Bulleted, div.Bulleted
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.CellBody, li.CellBody, div.CellBody
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading, li.CellHeading, div.CellHeading
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.Footnote, li.Footnote, div.Footnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Indented, li.Indented, div.Indented
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered, li.Numbered, div.Numbered
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered1, li.Numbered1, div.Numbered1
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableFootnote, li.TableFootnote, div.TableFootnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.NormalBold, li.NormalBold, div.NormalBold
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.NormalBoldChar
+	{font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.Heading2Char
+	{font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.StyleComputerBoldItalicRed
+	{font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+p.TableofContents, li.TableofContents, div.TableofContents
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoTitle>Microwire Functions</p>
+
+<p class=MsoTitle>&nbsp;</p>
+
+<p class=TableofContents>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc177998167">1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-weight:normal;text-decoration:none'>    </span>Introduction<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc177998168">2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-weight:normal;text-decoration:none'>    </span>Function
+Descriptions<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998169">2.1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>CloseMwire
+CloseMwire1 CloseMwire2<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998170">2.2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>DataRdyMwire
+DataRdyMwire1 DataRdyMwire2<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998171">2.3<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>getcMwire
+getcMwire1 getcMwire2<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998172">2.4<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>getsMwire
+getsMwire1 getsMwire2<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998173">2.5<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>OpenMwire
+OpenMwire1 OpenMwire2<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998174">2.6<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>putcMwire
+putcMwire1 putcMwire2<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998175">2.7<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>ReadMwire
+ReadMwire1 ReadMwire2 getcMwire getcMwire1 getcMwire2<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177998176">2.8<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>WriteMwire
+WriteMwire1 WriteMwire2 putcMwire putcMwire1 putcMwire2<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<b><span style='font-size:12.0pt;font-family:Arial;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc177998167">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h1>
+
+<p class=MsoNormal>The following routines are provided for devices with a
+single Microwire peripheral:</p>
+
+<p class=TableTitle>Table:             Single Microwire Peripheral Functions</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=CellHeading>Function</p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellHeading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>CloseMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Disable the SSP module used for Microwire communication.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>DataRdyMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Indicate completion of the internal write cycle.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>getcMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a byte from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>getsMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a string from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>OpenMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Configure the SSP module for Microwire use.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>putcMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Write a byte to the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>ReadMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a byte from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>WriteMwire</span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Write a byte to the Microwire device.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The following routines are provided for devices with multiple
+Microwire peripherals:</p>
+
+<p class=TableTitle>Table:             Multiple Microwire Peripheral Functions</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=CellHeading>Function</p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellHeading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>CloseMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Disable the SSP<b><i>x</i></b> module used for Microwire
+  communication.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>DataRdyMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Indicate completion of the internal write cycle.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>getcMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a byte from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>getsMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a string from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>OpenMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Configure the SSP<b><i>x</i></b> module for Microwire use.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>putcMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Write a byte to the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>ReadMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a byte from the Microwire device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>WriteMwire<b><i>x</i></b></span></p>
+  </td>
+  <td width=371 valign=top style='width:277.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody>Write a byte to the Microwire device.</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc177998168">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Function Descriptions</a></h1>
+
+<h2><a name="_Toc177998169">2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CloseMwire<br>
+CloseMwire1<br>
+CloseMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Disable the SSP<b><i>x</i></b> module. </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>void CloseMwire( void );</span></p>
+  <p class=CellBody><span class=Computer>void CloseMwire1( void );</span></p>
+  <p class=CellBody><span class=Computer>void CloseMwire2( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Pin I/O returns under control of the <span class=Computer>TRISC</span>
+  and <span class=Computer>LATC</span> register settings.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_close.c</span></p>
+  <p class=CellBody><span class=Computer>mw1close.c</span></p>
+  <p class=CellBody><span class=Computer>mw2close.c</span></p>
+  <p class=CellBody>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc177998170">2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DataRdyMwire<br>
+DataRdyMwire1<br>
+DataRdyMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Indicate whether the Microwire<b><i>x</i></b> device has
+  completed the internal write cycle.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>unsigned char DataRdyMwire( void );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char DataRdyMwire1( void );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char DataRdyMwire2( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Determines if Microwire<b><i>x</i></b> device is ready.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Return Value:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>1 if the Microwire<b><i>x</i></b> device is ready</p>
+  <p class=CellBody>0 if the internal write cycle is not complete or a bus
+  error occurred</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_drdy.c</span></p>
+  <p class=CellBody><span class=Computer>mw1drdy.c</span></p>
+  <p class=CellBody><span class=Computer>mw2drdy.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>while (!DataRdyMwire());</span></p>
+  <p class=CellBody><span class=Computer>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc177998171">2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>getcMwire<br>
+getcMwire1<br>
+getcMwire2</a></h2>
+
+<p class=MsoNormal><span class=Computer><span style='layout-grid-mode:both'>getcMwirex</span></span>
+is defined as <span class=Computer><span style='layout-grid-mode:both'>ReadMwirex</span></span>.
+<i>See</i> <b>ReadMwire<i>x</i></b>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc177998172">2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>getsMwire<br>
+getsMwire1<br>
+getsMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a string from the Microwire<b><i>x</i></b> device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>void getsMwire( unsigned char * <b><i>rdptr</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>                unsigned char <b><i>length</i></b>);</span></p>
+  <p class=CellBody><span class=Computer>void getsMwire1( unsigned char * <b><i>rdptr</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>                unsigned char <b><i>length</i></b>);</span></p>
+  <p class=CellBody><span class=Computer>void getsMwire2( unsigned char * <b><i>rdptr</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>                unsigned char <b><i>length</i></b>);</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Arguments:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer><b><i>rdptr</i></b></span></p>
+  <p class=CellBody>Pointer to PICmicro MCU RAM for placement of data read from
+  Microwire<b><i>x</i></b> device.</p>
+  <p class=CellBody><span class=Computer><b><i>length</i></b></span></p>
+  <p class=CellBody>Number of bytes to read from Microwire<b><i>x</i></b>
+  device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>This function is used to read a predetermined length of
+  data from a Microwire<b><i>x</i></b> device. Before using this function, a
+  Read<b><i>x</i></b> command with the appropriate address must be issued.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_gets.c</span></p>
+  <p class=CellBody><span class=Computer>mw1gets.c</span></p>
+  <p class=CellBody><span class=Computer>mw2gets.c</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>unsigned char arryrd[LENGTH];</span></p>
+  <p class=CellBody><span class=Computer>putcMwire(READ);</span></p>
+  <p class=CellBody><span class=Computer>putcMwire(address);</span></p>
+  <p class=CellBody><span class=Computer>getsMwire(arrayrd, LENGTH);</span></p>
+  <p class=CellBody><span class=Computer>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc177998173">2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>OpenMwire<br>
+OpenMwire1<br>
+OpenMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Configure the SSP<b><i>x</i></b> module.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>void OpenMwire(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>sync_mode</i></b>
+  );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Arguments:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer><b><i>sync_mode</i></b></span></p>
+  <p class=CellBody>One of the following values defined in mwire.h:</p>
+  <p class=CellBody>            <span class=Computer>MWIRE_FOSC_4</span>            clock
+  = F<span style='text-transform:uppercase'>osc</span>/4</p>
+  <p class=CellBody>            <span class=Computer>MWIRE_FOSC_16</span>          clock
+  = F<span style='text-transform:uppercase'>osc</span>/16</p>
+  <p class=CellBody>            <span class=Computer>MWIRE_FOSC_64</span>          clock
+  = F<span style='text-transform:uppercase'>osc</span>/64</p>
+  <p class=CellBody>            <span class=Computer>MWIRE_FOSC_TMR2</span>      clock = TMR2 output/2</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>OpenMwire<b><i>x</i></b></span> resets
+  the SSP<b><i>x</i></b> module to the <span class=Computer>POR</span> state
+  and then configures the module for Microwire communications.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_open.c</span></p>
+  <p class=CellBody><span class=Computer>mw1open.c</span></p>
+  <p class=CellBody><span class=Computer>mw2open.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>OpenMwire(MWIRE_FOSC_16);</span></p>
+  <p class=CellBody><span class=Computer>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc177998174">2.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>putcMwire<br>
+putcMwire1<br>
+putcMwire2</a></h2>
+
+<p class=MsoNormal><span class=Computer><span style='layout-grid-mode:both'>putcMwirex</span></span>
+is defined as <span class=Computer><span style='layout-grid-mode:both'>WriteMwirex.</span></span>
+<i>See</i> <b>WriteMwir</b>e<b><i>x</i></b>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc177998175">2.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ReadMwire<br>
+ReadMwire1<br>
+ReadMwire2<br>
+getcMwire<br>
+getcMwire1<br>
+getcMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>Read a byte from a Microwire<b><i>x</i></b> device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>unsigned char ReadMwire(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char ReadMwire1(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char ReadMwire2(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char getcMwire(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char getcMwire1(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char getcMwire2(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>high_byte</i></b>,</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>low_byte</i></b>
+  );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Arguments:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer><b><i>high_byte</i></b></span></p>
+  <p class=CellBody>First byte of 16-bit instruction word.</p>
+  <p class=CellBody><span class=Computer><b><i>low_byte</i></b></span></p>
+  <p class=CellBody>Second byte of 16-bit instruction word.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>This function reads in a single byte from a Microwirex
+  device. The Start bit, opcode and address compose the high and low bytes
+  passed into this function. getcMwire<i>x</i> is defined to be ReadMwire<i>x</i>
+  in mwire.h.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Return Value:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>The return value is the data byte read from the Microwire<b><i>x</i></b>
+  device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_read.c</span></p>
+  <p class=CellBody><span class=Computer>mw1read.c</span></p>
+  <p class=CellBody><span class=Computer>mw2read.c</span></p>
+  <p class=CellBody><span class=Computer>getcMwire is a #define in mwire.h</span></p>
+  <p class=CellBody><span class=Computer>getcMwire1 is a #define in mwire.h</span></p>
+  <p class=CellBody><span class=Computer>getcMwire2 is a #define in mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Code Example:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>ReadMwire(0x03, 0x00);</span></p>
+  <p class=CellBody><span class=Computer>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc177998176">2.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>WriteMwire<br>
+WriteMwire1<br>
+WriteMwire2<br>
+putcMwire<br>
+putcMwire1<br>
+putcMwire2</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Function:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>This function is used to write out a single data byte (one
+  character).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Include:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Prototype:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>unsigned char WriteMwire(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char WriteMwire1(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char WriteMwire2(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char putcMwire(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char putcMwire1(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  <p class=CellBody><span class=Computer>unsigned char putcMwire2(</span></p>
+  <p class=CellBody><span class=Computer>        unsigned char <b><i>data_out</i></b>
+  );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Arguments:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer><b><i>data_out</i></b></span></p>
+  <p class=CellBody>Single byte of data to write to Microwire<b><i>x</i></b>
+  device.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Remarks:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>This function writes out single data byte to a Microwire<b><i>x</i></b>
+  device utilizing the SSP<b><i>x</i></b> module. putcMwirex is defined to be
+  WriteMwire<b><i>x</i></b> in mwire.h.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Return Value:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody>0 if the write was successful</p>
+  <p class=CellBody>-1 if there was a write collision</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>File Name:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>mw_write.c</span></p>
+  <p class=CellBody><span class=Computer>mw1write.c</span></p>
+  <p class=CellBody><span class=Computer>mw2write.c</span></p>
+  <p class=CellBody><span class=Computer>putcMwire is a #define in mwire.h</span></p>
+  <p class=CellBody><span class=Computer>putcMwire1 is a #define in mwire.h</span></p>
+  <p class=CellBody><span class=Computer>putcMwire2 is a #define in mwire.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody><b>Code Example:</b></p>
+  </td>
+  <td width=450 valign=top style='width:337.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody><span class=Computer>WriteMwire(0x55);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=NormalBold>Example of Use</p>
+
+<p class=MsoNormal>The following is a simple code example illustrating the SSP module communicating with a Microchip 93LC66 Microwire EE memory device.</p>
+
+<p class=MsoNormal><span class=Computer>#include &quot;p18cxxx.h&quot;</span></p>
+
+<p class=MsoNormal><span class=Computer>#include &quot;mwire.h&quot;</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>// 93LC66 x 8</span></p>
+
+<p class=MsoNormal><span class=Computer>// FUNCTION Prototypes </span></p>
+
+<p class=MsoNormal><span class=Computer>void main(void);</span></p>
+
+<p class=MsoNormal><span class=Computer>void ew_enable(void);</span></p>
+
+<p class=MsoNormal><span class=Computer>void erase_all(void);</span></p>
+
+<p class=MsoNormal><span class=Computer>void busy_poll(void);</span></p>
+
+<p class=MsoNormal><span class=Computer>void write_all(unsigned char data);</span></p>
+
+<p class=MsoNormal><span class=Computer>void byte_read(unsigned char address);</span></p>
+
+<p class=MsoNormal><span class=Computer>void read_mult(unsigned char address,</span></p>
+
+<p class=MsoNormal><span class=Computer>               unsigned char *rdptr,</span></p>
+
+<p class=MsoNormal><span class=Computer>               unsigned char length);</span></p>
+
+<p class=MsoNormal><span class=Computer>void write_byte(unsigned char address,</span></p>
+
+<p class=MsoNormal><span class=Computer>                unsigned char data);</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>// VARIABLE Definitions</span></p>
+
+<p class=MsoNormal><span class=Computer>unsigned char arrayrd[20];</span></p>
+
+<p class=MsoNormal><span class=Computer>unsigned char var;</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>// DEFINE 93LC66 MACROS -- see
+datasheet for details</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  READ   0x0C</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  WRITE  0x0A</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  ERASE  0x0E</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  EWEN1  0x09</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  EWEN2  0x80</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  ERAL1  0x09</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  ERAL2  0x00</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  WRAL1  0x08</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  WRAL2  0x80</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  EWDS1  0x08</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  EWDS2  0x00</span></p>
+
+<p class=MsoNormal><span class=Computer>#define  W_CS   LATCbits.LATC2</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void main(void)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  TRISCbits.TRISC2 = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;               //ensure CS
+is negated</span></p>
+
+<p class=MsoNormal><span class=Computer>  OpenMwire(MWIRE_FOSC_16);    
+//enable SSP peripheral</span></p>
+
+<p class=MsoNormal><span class=Computer>  ew_enable();            //send
+erase/write enable</span></p>
+
+<p class=MsoNormal><span class=Computer>  write_byte(0x13, 0x34); //write byte
+(address, data)</span></p>
+
+<p class=MsoNormal><span class=Computer>  busy_poll();</span></p>
+
+<p class=MsoNormal><span class=Computer>  Nop();</span></p>
+
+<p class=MsoNormal><span class=Computer>  byte_read(0x13);        //read single
+byte (address)</span></p>
+
+<p class=MsoNormal><span class=Computer>  read_mult(0x10, arrayrd, 10); //read
+multiple bytes</span></p>
+
+<p class=MsoNormal><span class=Computer>  erase_all();                  //erase
+entire array</span></p>
+
+<p class=MsoNormal><span class=Computer>  CloseMwire();                
+//disable SSP peripheral</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void ew_enable(void)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>   W_CS = 1;         //assert chip
+select</span></p>
+
+<p class=MsoNormal><span class=Computer>   putcMwire(EWEN1); //enable write
+command byte 1</span></p>
+
+<p class=MsoNormal><span class=Computer>   putcMwire(EWEN2); //enable write
+command byte 2</span></p>
+
+<p class=MsoNormal><span class=Computer>   W_CS = 0;         //negate chip
+select</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+<p class=MsoNormal><span class=Computer>void busy_poll(void)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 1;</span></p>
+
+<p class=MsoNormal><span class=Computer>  while(! DataRdyMwire() );</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void write_byte(unsigned char address,</span></p>
+
+<p class=MsoNormal><span class=Computer>                unsigned char data)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 1;</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(WRITE);    //write command</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(address);  //address</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(data);     //write single
+byte</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void byte_read(unsigned char address)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 1;</span></p>
+
+<p class=MsoNormal><span class=Computer>  getcMwire(READ,address);  //read one
+byte</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>} </span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void read_mult(unsigned char address,</span></p>
+
+<p class=MsoNormal><span class=Computer>               unsigned char *rdptr,</span></p>
+
+<p class=MsoNormal><span class=Computer>               unsigned char length)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 1;</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(READ);          //read
+command</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(address);       //address
+(A7 - A0)</span></p>
+
+<p class=MsoNormal><span class=Computer>  getsMwire(rdptr, length); //read
+multiple bytes</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+<p class=MsoNormal><span class=Computer>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer>void erase_all(void)</span></p>
+
+<p class=MsoNormal><span class=Computer>{</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 1;</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(ERAL1); //erase all command
+byte 1</span></p>
+
+<p class=MsoNormal><span class=Computer>  putcMwire(ERAL2); //erase all command
+byte 2</span></p>
+
+<p class=MsoNormal><span class=Computer>  W_CS = 0;</span></p>
+
+<p class=MsoNormal><span class=Computer>}</span></p>
+
+</div>
+
+</body>
+
+</html>
