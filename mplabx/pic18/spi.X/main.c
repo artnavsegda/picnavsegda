@@ -17,6 +17,7 @@
 
 #endif
 
+#include <stdio.h>
 #include <spi.h>
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
@@ -54,6 +55,7 @@ void main(void)
     {
         WriteSPI(0x38);
         getsSPI(adcdata,2);
+        printf("adcdata %x %x\r\n",adcdata[0],adcdata[1]);
     }
 
 }
