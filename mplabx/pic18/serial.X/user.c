@@ -17,6 +17,7 @@
 
 #endif
 
+#include <usart.h>
 #include "user.h"
 
 /******************************************************************************/
@@ -32,6 +33,12 @@ void InitApp(void)
     /* Setup analog functionality and port direction */
 
     /* Initialize peripherals */
+    OpenUSART(USART_TX_INT_OFF &
+              USART_RX_INT_OFF &
+              USART_ASYNCH_MODE &
+              USART_EIGHT_BIT &
+              USART_CONT_RX &
+              USART_BRGH_HIGH, 21);
 
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 
