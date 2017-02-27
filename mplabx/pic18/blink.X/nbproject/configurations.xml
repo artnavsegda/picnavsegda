@@ -236,7 +236,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>hi-tech-picc18</languageToolchain>
-        <languageToolchainVersion>9.63PL4</languageToolchainVersion>
+        <languageToolchainVersion>9.80</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -424,7 +424,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>hi-tech-picc18</languageToolchain>
-        <languageToolchainVersion>9.63PL4</languageToolchainVersion>
+        <languageToolchainVersion>9.80</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -724,7 +724,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>hi-tech-picc18</languageToolchain>
-        <languageToolchainVersion>9.63PL4</languageToolchainVersion>
+        <languageToolchainVersion>9.80</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -1024,7 +1024,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>hi-tech-picc18</languageToolchain>
-        <languageToolchainVersion>9.63PL4</languageToolchainVersion>
+        <languageToolchainVersion>9.80</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -1324,7 +1324,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>hi-tech-picc18</languageToolchain>
-        <languageToolchainVersion>9.63PL4</languageToolchainVersion>
+        <languageToolchainVersion>9.80</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
