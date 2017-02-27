@@ -45,3 +45,4 @@
 /******************************************************************************/
 
 /* TODO Fill in your configuration bits here using the config generator.      */
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)

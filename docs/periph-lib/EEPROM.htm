@@ -1,0 +1,817 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>PIC18 Peripheral Libraries</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	layout-grid-mode:line;}
+span.Computer
+	{font-family:"Courier New";
+	color:windowtext;}
+p.Bulleted, li.Bulleted, div.Bulleted
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.CellBody, li.CellBody, div.CellBody
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading, li.CellHeading, div.CellHeading
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.Footnote, li.Footnote, div.Footnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Indented, li.Indented, div.Indented
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered, li.Numbered, div.Numbered
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered1, li.Numbered1, div.Numbered1
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableFootnote, li.TableFootnote, div.TableFootnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.NormalBold, li.NormalBold, div.NormalBold
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.NormalBoldChar
+	{font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.Heading2Char
+	{font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.StyleComputerBoldItalicRed
+	{font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+p.TableofContents, li.TableofContents, div.TableofContents
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.Computer2
+	{font-family:"Courier New";
+	color:windowtext;}
+p.CellBody2, li.CellBody2, div.CellBody2
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading2, li.CellHeading2, div.CellHeading2
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.TableTitle2, li.TableTitle2, div.TableTitle2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.NormalBold2, li.NormalBold2, div.NormalBold2
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.TableofContents2, li.TableofContents2, div.TableofContents2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoTitle>EEPROM Functions</p>
+
+<p class=MsoTitle><span class=Computer2>&nbsp;</span></p>
+
+<p class=TableofContents><span class=Computer2><span style='font-family:Arial;
+color:black'>Table of Contents</span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc177997091">1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-weight:normal;text-decoration:none'>    </span>Introduction<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc177997092">2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-weight:normal;text-decoration:none'>    </span>Function
+Descriptions<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177997093">2.1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>Read_b_eep<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177997094">2.2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>Write_b_eep<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc177997095">2.3<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>Busy_eep<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<span class=Computer2><b><span style='font-size:12.0pt;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</span></b></span>
+
+<h1><a name="_Toc177997091">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h1>
+
+<p class=MsoNormal>The following routines are provided for devices with a
+single USART peripheral:</p>
+
+<p class=TableTitle2>Table:             EEPROM Functions</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=153 valign=top style='width:114.45pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=CellHeading2>Function</p>
+  </td>
+  <td width=350 valign=top style='width:3.65in;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellHeading2>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=153 valign=top style='width:114.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span class=Computer2>Read_b_eep</span></p>
+  </td>
+  <td width=350 valign=top style='width:3.65in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Read single byte from Internal EEP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=153 valign=top style='width:114.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span class=Computer2>Write_b_eep</span></p>
+  </td>
+  <td width=350 valign=top style='width:3.65in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Write single byte to Internal EEP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=153 valign=top style='width:114.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span class=Computer2>Busy_eep</span></p>
+  </td>
+  <td width=350 valign=top style='width:3.65in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Checks &amp; waits the status of ER bit in EECON1 register</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=CellBody2 style='text-align:justify'><span style='layout-grid-mode:
+line'>Based on the different control registers, configuration bits and their
+positions in the control register, all PIC18 devices are divided into 3
+different versions. Wherever required, separate functions have been designed to
+support these versions, so before calling the LIB functions care has to be
+taken to know the version of the configured device and to call the appropriate
+function with correct number of arguments. </span></p>
+
+<p class=CellBody2 style='text-align:justify'><span style='layout-grid-mode:
+line'>Below is the table to find the USART version for the configured device:</span></p>
+
+<p class=TableTitle2>TABLE:             VERSION vs. DEVICES </p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=582
+ style='width:436.6pt;margin-left:.4pt;border-collapse:collapse'>
+ <tr style='height:17.1pt'>
+  <td width=126 valign=top style='width:94.5pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in;height:17.1pt'>
+  <p class=CellHeading2>Version name</p>
+  </td>
+  <td width=456 valign=top style='width:342.1pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:17.1pt'>
+  <p class=CellHeading2>Device number</p>
+  </td>
+ </tr>
+ <tr style='height:13.65pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:13.65pt'>
+  <p class=MsoNormal><span class=Computer2>EEP</span><span class=Computer2>_V1</span></p>
+  </td>
+  <td width=456 valign=top style='width:342.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:13.65pt'>
+  <p class=MsoNormal>18F1230, 18F1330</p>
+  </td>
+ </tr>
+ <tr style='height:86.65pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:86.65pt'>
+  <p class=MsoNormal><span class=Computer2>EEP</span><span class=Computer2>_V2</span></p>
+  </td>
+  <td width=456 valign=top style='width:342.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:86.65pt'>
+  <p class=MsoNormal>18C242,  18C252, 18C442, 18C452, 18F242, 18F252, 18F442, 18F452,</p>
+  <p class=MsoNormal>18F248, 18F258, 18F448, 18F458, 18F2439, 18F2539, 18F4439,
+  18F4539,</p>
+  <p class=MsoNormal>18F1220, 18F1320, 18F2220, 18F2320, 18F4220, 18F4320, 18F2420,</p>
+  <p class=MsoNormal>18F2520, 18F4420, 18F4520, 18F2423, 18F2523, 18F4423, 18F4523,</p>
+  <p class=MsoNormal>18F2455, 18F2550, 18F4455, 18F4550, 18F2480, 18F2580, 18F4480,</p>
+  <p class=MsoNormal>18F4580, 18F2221, 18F2321, 18F4221, 18F4321, 18F2331, 18F2431,</p>
+  <p class=MsoNormal>18F4331, 18F4431, 18F23K20, 18F24K20, 18F25K20, 18F43K20,</p>
+  <p class=MsoNormal>18F44K20, 18F45K20, 18F13K50, 18LF13K50, 18F14K50,
+  18LF14K50, 18F13K22, 18F14K22, 18LF13K22, 18LF14K22</p>
+  </td>
+ </tr>
+ <tr style='height:23.85pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:23.85pt'>
+  <p class=MsoNormal><span class=Computer2>EEP</span><span class=Computer2>_V3</span></p>
+  </td>
+  <td width=456 valign=top style='width:342.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:23.85pt'>
+  <p class=MsoNormal>18F1220, 18F1320, 18F6585, 18F6680, 18F8585, 18F8680, 18F2331,</p>
+  <p class=MsoNormal>18F2431, 18F4331, 18F4431</p>
+  </td>
+ </tr>
+</table>
+
+<h1 style='margin-left:0in;text-indent:0in'><span class=Computer2>&nbsp;</span></h1>
+
+<h1><a name="_Toc177997092">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Function Descriptions</a></h1>
+
+<h2><a name="_Toc177997093">2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Read_b_eep</a></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Read single byte from Internal EEP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>eep.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>unsigned char Read_b_eep( unsigned
+  int badd );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Returns a value after reading the location passed as
+  parameter.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Return Value:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>This function returns the read value of the location.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>read_B.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>Temp = Read_b_eep(0x0000);</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='margin-left:0in;text-indent:0in'><span class=Computer2><span
+style='font-size:12.0pt'>&nbsp;</span></span></h2>
+
+<h2><a name="_Toc177997094">2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Write_b_eep</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Write single byte to Internal EEP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>eep.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>void Write_b_eep(unsigned int
+  badd,unsigned char bdata);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>This function writes data in to the specified location
+  inside the EEP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>write_B.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>Write_b_eep (0x0000,0x20);</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='margin-left:0in;text-indent:0in'><span class=Computer2>&nbsp;</span></h2>
+
+<h2><a name="_Toc177997095">2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Busy_eep</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>Checks &amp; waits the status of ER bit in EECON1 register<span
+  class=Computer2> </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>eep.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>void Busy_eep ( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2>This function waits until Write cycle to the EEPROM is
+  complete.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody2><span class=Computer2>busy_eep.c</span></p>
+  </td>
+ </tr>
+ <tr style='height:19.35pt'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in;
+  height:19.35pt'>
+  <p class=CellBody2><b>Code Example:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in;
+  height:19.35pt'>
+  <p class=CellBody2><span class=Computer2>while (!Busy_eep ());</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=NormalBold2><span class=Computer2>&nbsp;</span></p>
+
+<p class=NormalBold2><span class=Computer2>Example Use of the EEP Routines:</span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer2>#include &lt;p18Cxxx.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer2>#include &lt;eep.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer2>Void main (void)</span></p>
+
+<p class=MsoNormal><span class=Computer2>{</span></p>
+
+<p class=CellBody2><span class=Computer2>      /* Write single byte to Internal
+EEP*/</span></p>
+
+<p class=MsoNormal><span class=Computer2>      Write_b_eep (address, data);</span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer2>      /* Checks &amp; waits the status
+of ER bit in EECON1 register */</span></p>
+
+<p class=MsoNormal><span class=Computer2>      Busy_eep ();</span></p>
+
+<p class=MsoNormal><span class=Computer2>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer2>      /* Read single byte from
+Internal EEP*/</span></p>
+
+<p class=MsoNormal><span class=Computer2>      Temp = Read_b_eep (address);</span></p>
+
+<p class=MsoNormal><span class=Computer2>}</span></p>
+
+</div>
+
+</body>
+
+</html>

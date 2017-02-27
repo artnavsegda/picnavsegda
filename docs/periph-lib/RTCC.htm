@@ -1,0 +1,865 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>PIC18 Peripheral Libraries</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.TableofContents, li.TableofContents, div.TableofContents
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.Computer
+	{font-family:"Courier New";
+	color:windowtext;}
+p.CellBody, li.CellBody, div.CellBody
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading, li.CellHeading, div.CellHeading
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+span.Heading2Char
+	{font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+p.TableofContents9, li.TableofContents9, div.TableofContents9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.TableTitle9, li.TableTitle9, div.TableTitle9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.Computer9
+	{font-family:"Courier New";
+	color:windowtext;}
+p.CellBody9, li.CellBody9, div.CellBody9
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading9, li.CellHeading9, div.CellHeading9
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoTitle><a name="_Ref168734011">RTCC Functions</a></p>
+
+<p class=MsoTitle align=left style='text-align:left'>&nbsp;</p>
+
+<p class=TableofContents9>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><b><span style='font-size:10.0pt;
+font-family:Arial'><a href="#_Toc172016414">1<span style='color:windowtext;
+text-decoration:none'>      </span>Introduction<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></b></span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><b><span style='font-size:10.0pt;
+font-family:Arial'><a href="#_Toc172016415">2<span style='color:windowtext;
+text-decoration:none'>      </span>Function Descriptions<span style='color:
+windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></b></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc172016416">2.1<span
+style='color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:
+none'>      </span>Close_RTCC<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc172016417">2.2<span
+style='color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:
+none'>      </span>Open_RTCC<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc172016418">2.3<span
+style='color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:
+none'>      </span>update_RTCC<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=TableofContents9>&nbsp;</p>
+
+<b><span style='font-size:12.0pt;font-family:Arial;color:black;text-transform:
+uppercase'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=TableofContents9>&nbsp;</p>
+
+<h1><a name="_Toc172016414">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h1>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>These
+functions are designed to allow the implementation of an RTCC by using Timer1
+as the clock source. The following functions are provided.</span></p>
+
+<p class=TableTitle9>Table:             RTCC Functions</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=188 valign=top style='width:141.1pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=CellHeading9>Function</p>
+  </td>
+  <td width=315 valign=top style='width:236.15pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellHeading9>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=188 valign=top style='width:141.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>Close_RTCC</span></p>
+  </td>
+  <td width=315 valign=top style='width:236.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Disable Timer1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=188 valign=top style='width:141.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>Open_RTCC</span></p>
+  </td>
+  <td width=315 valign=top style='width:236.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Configure and enable Timer1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=188 valign=top style='width:141.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>update_RTCC</span></p>
+  </td>
+  <td width=315 valign=top style='width:236.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Checks for the Timer1 interrupt flag and refreshes TMR1H
+  register in case of interrupt</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc172016415">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Function Descriptions</a></h1>
+
+<h2><a name="_Toc172016416">2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Close_RTCC</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Disable Timer1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>rtcc.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>void Close_RTCC()</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Disable Timer1, clear TMR1 interrupt flag, disable TMR1
+  interrupt</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>close_rtcc.c</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc172016417">2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open_RTCC</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Configure and enable Timer1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>rtcc.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>void Open_RTCC()</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Configures Timer1 to work as clock source for RTCC, enables
+  Timer1 interrupts, and writes a value into TMR1H &amp; TMR1L registers to get 1second interrupt</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>open_rtcc.c</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc172016418">2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>update_RTCC</a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Function:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>Checks for the Timer1 interrupt flag and refreshes TMR1H
+  register in case of interrupt</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Include:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>rtcc.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Prototype:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>unsigned char update_RTCC(void)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Remarks:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>checks for the TMR1 interrupt flag, refreshes TMR1H if interrupt has occurred and returns the state of TMR1IF</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>Return Value:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9>The state of the TMR1IF</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><b>File Name:</b></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody9><span class=Computer9>update_rtcc.c</span>  </p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Example Of
+Use:</span></b></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>#include
+&lt;p18f4520.h&gt;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>#include
+&lt;rtcc.h&gt;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>#include
+&lt;usart.h&gt;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/*
+Function prototype declarations */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+update_Time(void);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+display_Time(void);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+Bin2BCD (unsigned char);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/*
+Global variable declarations */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>unsigned
+char gSeconds = 0;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>unsigned
+char gMinutes = 0;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>unsigned
+char gHours   = 0;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>unsigned
+char MSD = 0, MsD = 0, LSD = 0;    </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/* Your
+program execution starts here */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+main(void)</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>{</span></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=Computer9><span
+style='font-size:10.0pt'>/* routine to configure Timer1 to work as a cock
+source for RTCC */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      Open_RTCC();      </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      /*
+configure USART module */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      OpenUSART(
+USART_TX_INT_OFF          &amp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  USART_RX_INT_OFF         
+&amp; </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  USART_ASYNCH_MODE   
+&amp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  USART_EIGHT_BIT,
+</span></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in'><span
+class=Computer9><span style='font-size:10.0pt'>64                                             
+);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(1)
+{</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+class=Computer9><span style='font-size:10.0pt'>/* wait till Timer1 interrupt
+flag raises to 1 */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            while(
+!update_RTCC() ) ;     </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            update_Time();</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            display_Time();</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      }     </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      /*
+routine to disable Timer1, and to clear Timer1 interrupt flag */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      //Close_RTCC();   </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>}</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/*</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Function Name : update_Time</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Parameters        : void</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Return Value     : None</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Description   : updates the gSeconds, gMinutes, and gHours variables</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *                         
+based on Timer1 clock source  </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+update_Time(void)</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>{</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      gSeconds
++= 1;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      /*
+seconds has reached 60? */             </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      if(
+gSeconds &gt;= 60 )  { </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            gSeconds
+= 0;                          /* Clear seconds counter */      </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            gMinutes
++=1;                          /* Increment minutes register */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            /*
+Minutes counted 60? */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            if(
+gMinutes &gt;= 60 ) {</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  gMinutes
+= 0;                   /* Clear Minutes counter */       </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  gHours
++= 1;                    /* Increment Hours */ </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                  if(
+gHours &gt;= 13 )              /* Hours counted 13? */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                        gHours
+= 1;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>            }</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      }     </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>}</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/*</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Function Name : display_Time</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Parameters        : void</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Return Value     : None</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Description       : Displays hours, minutes, and seconds values</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *                            
+on hyperterminal </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+display_Time(void)</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>{</span></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=Computer9><span
+style='font-size:10.0pt'>WriteUSART('\r');       </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=Computer9><span
+style='font-size:10.0pt'>Bin2BCD(gHours);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(MsD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(LSD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(':');</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      Bin2BCD(gMinutes);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(MsD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(LSD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(':');</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      Bin2BCD(gSeconds);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(MsD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      WriteUSART(LSD);</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>      while(BusyUSART());</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>}</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>/*</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Function Name : Bin2BCD</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Parameters        : unsigned char</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Return Value     : None</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> *
+Description       :  Binary to BCD conversion routine</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'> */</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>void
+Bin2BCD (unsigned char data)      </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>{ </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   LSD
+= data; </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>                                      
+</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   //
+Do repeated subtraction with 100 until LSD &gt; 100, count iteration(MSD)</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   for
+(MSD = 0 ; LSD &gt;= 100 ; LSD&gt;=100?(LSD -= 100):LSD, MSD++ ); </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   //
+Do repeated subtraction with 10 until LSD &gt; 10, count iteration(MsD)</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   for
+(MsD = 0 ; LSD &gt;= 10  ; LSD&gt;=10?(LSD -= 10):LSD,  MsD++);  </span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   MSD
++= 0x30;   // Covert BCD value to ASCII</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   MsD
++= 0x30;   // Covert BCD value to ASCII</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>   LSD
++= 0x30;   // Covert BCD value to ASCII</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>}</span></span></p>
+
+<p class=MsoNormal><span class=Computer9><span style='font-size:10.0pt'>&nbsp;</span></span></p>
+
+</div>
+
+</body>
+
+</html>

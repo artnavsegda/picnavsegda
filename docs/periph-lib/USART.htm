@@ -1,0 +1,2251 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>PIC18 Peripheral Libraries</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	layout-grid-mode:line;}
+span.Computer
+	{font-family:"Courier New";
+	color:windowtext;}
+p.Bulleted, li.Bulleted, div.Bulleted
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.CellBody, li.CellBody, div.CellBody
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading, li.CellHeading, div.CellHeading
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.Footnote, li.Footnote, div.Footnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Indented, li.Indented, div.Indented
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered, li.Numbered, div.Numbered
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Numbered1, li.Numbered1, div.Numbered1
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableFootnote, li.TableFootnote, div.TableFootnote
+	{margin-top:3.0pt;
+	margin-right:.25in;
+	margin-bottom:3.0pt;
+	margin-left:42.5pt;
+	text-indent:-11.5pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.NormalBold, li.NormalBold, div.NormalBold
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.NormalBoldChar
+	{font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.Heading2Char
+	{font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;
+	font-style:italic;}
+span.StyleComputerBoldItalicRed
+	{font-family:"Courier New";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+p.TableofContents, li.TableofContents, div.TableofContents
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.Computer12
+	{font-family:"Courier New";
+	color:windowtext;}
+p.CellBody12, li.CellBody12, div.CellBody12
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.CellHeading12, li.CellHeading12, div.CellHeading12
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.TableTitle12, li.TableTitle12, div.TableTitle12
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.NormalBold11, li.NormalBold11, div.NormalBold11
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:14.0pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.TableofContents12, li.TableofContents12, div.TableofContents12
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoTitle><span class=Computer12><span style='font-family:Arial'>USART
+Functions</span></span></p>
+
+<p class=MsoTitle><span class=Computer12><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></span></p>
+
+<p class=TableofContents12>Table of Contents</p>
+
+<p class=MsoToc1><span
+class=MsoHyperlink><a href="#_Toc178000524">1<span style='font-size:12.0pt;
+line-height:200%;font-family:"Times New Roman";color:windowtext;layout-grid-mode:
+both;font-weight:normal;text-decoration:none'>    </span>Introduction<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc178000525">2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-weight:normal;text-decoration:none'>    </span>Function
+Descriptions<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000526">2.1<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>BusyUSART
+Busy1USART Busy2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000527">2.2<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>CloseUSART
+Close1USART Close2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000528">2.3<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>DataRdyUSART
+DataRdy1USART DataRdy2USART<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000529">2.4<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>getcUSART
+getc1USART getc2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000530">2.5<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>getsUSART
+gets1USART gets2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000531">2.6<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>OpenUSART
+Open1USART Open2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000532">2.7<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>putcUSART
+putc1USART putc2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000533">2.8<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>putsUSART
+puts1USART puts2USART putrsUSART putrs1USART putrs2USART<span style='color:
+windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000534">2.9<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>      </span>ReadUSART
+Read1USART Read2USART getcUSART getc1USART getc2USART<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000535">2.10<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>        </span>WriteUSART
+Write1USART Write2USART putcUSART putc1USART putc2USART<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc178000536">2.11<span
+style='font-size:12.0pt;line-height:200%;font-family:"Times New Roman";
+color:windowtext;layout-grid-mode:both;font-style:normal;text-decoration:none'>        </span>baudUSART
+baud1USART baud2USART<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<span class=Computer12><b><span style='font-size:10.0pt;font-family:Arial;
+layout-grid-mode:line'><br clear=all style='page-break-before:always'>
+</span></b></span>
+
+<h1><a name="_Toc178000524"><span class=Computer12><span style='font-size:10.0pt;
+font-family:Arial'>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Introduction</a></h1>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>The
+following routines are provided for devices with a single USART peripheral:</span></span></p>
+
+<p class=TableTitle12><span class=Computer12><span style='font-family:Arial'>Table:             Single
+USART Peripheral Functions</span></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr style='height:16.8pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in;height:16.8pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Function</span></span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:16.8pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Description</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.8pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.8pt'>
+  <p class=CellBody12><span class=Computer12>BusyUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.8pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  the USART transmitting?</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>CloseUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Disable
+  the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>DataRdyUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  data available in the USART read buffer?</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>getcUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a byte from the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>getsUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a string from the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.8pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.8pt'>
+  <p class=CellBody12><span class=Computer12>OpenUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.8pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Configure
+  the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>putcUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a byte to the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>putsUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a string from data memory to the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>putrsUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a string from program memory to the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>ReadUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a byte from the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.1pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12>WriteUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.1pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a byte to the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>baudUSART</span></p>
+  </td>
+  <td width=458 valign=top style='width:343.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Set
+  the baud rate configuration bits for enhanced USART.</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>The
+following routines are provided for devices with multiple USART peripherals:</span></span></p>
+
+<p class=TableTitle12>Table:             Multiple USART Peripheral Functions</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr style='height:17.55pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in;height:17.55pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Function</span></span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:17.55pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Description</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>BusyxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  USART x transmitting?</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.85pt'>
+  <p class=CellBody12><span class=Computer12>ClosexUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.85pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Disable
+  USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>DataRdyxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  data available in the read buffer of USART x?</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>getcxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a byte from USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>getsxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a string from USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>OpenxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Configure
+  USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>putcxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a byte to USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>putsxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a string from data memory to USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>putrsxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a string from program memory to USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>ReadxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a byte from USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12>WritexUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.15pt'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a byte to USART x.</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12>baudxUSART</span></p>
+  </td>
+  <td width=460 valign=top style='width:345.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Set
+  the baud rate configuration bits for enhanced USART x.</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>Based
+on the different control registers, configuration bits and their positions in
+the control register, all PIC18 devices are divided into following different
+versions. Wherever required, separate functions have been designed to support
+these versions, so before calling the LIB functions care has to be taken to
+know the version of the configured device and to call the appropriate function
+with correct number of arguments. For EAUSART_V11 user has to configure the I/O
+registers.</span></span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>Below
+is the table to find the USART version for the configured device:</span></span></p>
+
+<p class=TableTitle12>&nbsp;</p>
+
+<p class=TableTitle12>TABLE:             VERSION vs. DEVICES </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse'>
+ <tr style='height:17.7pt'>
+  <td width=126 valign=top style='width:94.5pt;border:solid windowtext 1.0pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in;height:17.7pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Version
+  name</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:17.7pt'>
+  <p class=CellHeading12><span class=Computer12><span style='font-family:Arial'>Device
+  number</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.7in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>AUSART_V1</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18C242,
+  18C252, 18C442, 18C452, 18F242, 18F252, 18F442, 18F452,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F248,
+  18F258, 18F448, 18F458, 18F2439, 18F2539, 18F4439,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F4539,
+  18C601, 18C801, 18C658, 18C858, 18F2220, 18F2320,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F4220,
+  18F4320</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.2in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:.2in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>AUSART_V2</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.2in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F6620,
+  18F6720, 18F8620, 18F8720, 18F6520, 18F8520</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:25.85pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:25.85pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V3</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:25.85pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F1220,
+  18F1320, 18F6585, 18F6680, 18F8585, 18F8680, 18F2331,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F2431,
+  18F4331, 18F4431</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:1.0in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V4</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:1.0in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F1230,
+  18F1330, 18F1231, 18F1331, 18F2420, 18F2520, 18F4420,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F4520,
+  18F2423, 18F2523, 18F4423, 18F4523, 18F2450, 18F4450,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F2480,
+  18F2580, 18F4480, 18F4580, 18F2410, 18F2510, 18F2515,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F2610,
+  18F4410, 18F4510, 18F4515, 18F4610, 18F2525, 18F2620,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F4525,
+  18F4620, 18F2585, 18F2680, 18F4585, 18F4680, 18F2682,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F2685,
+  18F4682, 18F4685, 18F24J10, 18F25J10, 18F44J10, 18F4510</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:37.4pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:37.4pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V5</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:37.4pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F2455,
+  18F2550, 18F4455, 18F4550, 18F2221, 18F2321, 18F4221,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F4321,
+  18F23K20, 18F24K20, 18F25K20, 18F43K20, 18F44K20,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F45K20,</span></span>
+  18F13K50, 18LF13K50, 18F14K50, 18LF14K50, 18F13K22, 18F14K22, 18LF13K22,
+  18LF14K22</p>
+  </td>
+ </tr>
+ <tr style='height:.7in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V6</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F6310,
+  18F6410, 18F8310, 18F8410, 18F6390, 18F6490, 18F8390,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F8490,
+  18F63J11, 18F64J11, 18F65J11, 18F8311, 18F84J11,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F85J11,
+  18F63J90, 18F64J90, 18F65J90, 18F83J90, 18F84J90,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F85J90,
+  18F66J90, 18F67J90, 18F86J90, 18F87J90</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.5in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:.5in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V7</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.5in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F6527,
+  18F6622, 18F6627, 18F6722, 18F8527, 18F8622, 18F8627,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F8722,
+  18F65J10, 18F65J15, 18F66J10, 18F6615, 18F67J10,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F85J10,
+  18F85J15, 18F86J10, 18F86J15, 18F87J10</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.25pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:14.25pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V8</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:14.25pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F6525,
+  18F6621, 18F8525, 18F8621</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:.7in'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V9</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:.7in'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F86J60,
+  18F86J65, 18F87J60, 18F96J60, 18F96J65, 18F7J60,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F66J11,
+  18F66J16, 18F67J11, 18F86J11, 18F86J1, , 18F87J11,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F65J50,
+  18F66J50, 18F66J55, 18F67J50, 18F, 5J50, 18F86J50,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F86J55,
+  18F87J50</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:11.55pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:11.55pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V10</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:11.55pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F66J60,
+  18F66J65, 18F67J60</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:11.55pt'>
+  <td width=126 style='width:94.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0in 0in 0in 0in;height:11.55pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>EAUSART_V11</span></span></p>
+  </td>
+  <td width=443 valign=top style='width:332.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:11.55pt'>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F24J11,
+  18F25J11, 18F26J11, 18F44J11, 18F45J11, 18F46J11,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18F24J50,
+  18F25J50, 18F26J50, 18F44J50, 18F45J50, 18F46J50, 18LF24J11, 18LF25J11,
+  18LF26J11, 18LF44J11, 18LF45J11, 18LF46J11,</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>18LF24J50,
+  18LF25J50, 18LF26J50, 18LF44J50, 18LF45J50, 18LF46J50</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h1 style='margin-left:0in;text-indent:0in'><span class=Computer12><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></span></h1>
+
+<h1><a name="_Toc178000525"><span class=Computer12><span style='font-size:10.0pt;
+font-family:Arial'>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-size:10.0pt;
+font-family:Arial'>Function Descriptions</span></span></a></h1>
+
+<h2><a name="_Toc178000526"><span class=Computer12><span style='font-family:
+Arial'>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>BusyUSART<br>
+Busy1USART<br>
+Busy2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  the USART transmitting?</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>char BusyUSART(  void );</span></p>
+  <p class=CellBody12><span class=Computer12>char Busy1USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>char Busy2USART( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Returns
+  a value indicating if the USART transmitter is currently busy. This function
+  should be used prior to commencing a new transmission.</span></span></p>
+  <p class=CellBody12><span class=Computer12>BusyUSART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with a single USART peripheral. </span>Busy1USART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>Busy2USART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Return
+  Value:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>0</span><span class=Computer12><span
+  style='font-family:Arial'> if the USART transmitter is idle</span></span></p>
+  <p class=CellBody12><span class=Computer12>1</span><span class=Computer12><span
+  style='font-family:Arial'> if the USART transmitter is in use</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>ubusy.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1busy.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2busy.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>while
+  (BusyUSART());</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000527"><span class=Computer12><span style='font-family:
+Arial'>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>CloseUSART<br>
+Close1USART<br>
+Close2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Disable
+  the specified USART.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>void CloseUSART(  void );</span></p>
+  <p class=CellBody12><span class=Computer12>void Close1USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>void Close2USART( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function disables the interrupts, transmitter and receiver for the specified
+  USART.</span></span></p>
+  <p class=CellBody12><span class=Computer12>CloseUSART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with a single USART peripheral. </span>Close1USART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>Close2USART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>uclose.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1close.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2close.c</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<h2><a name="_Toc178000528"><span class=Computer12><span style='font-family:
+Arial'>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>DataRdyUSART<br>
+DataRdy1USART<br>
+DataRdy2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Is
+  data available in the read buffer?</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>char DataRdyUSART(  void );</span></p>
+  <p class=CellBody12><span class=Computer12>char DataRdy1USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>char DataRdy2USART( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function returns the status of the RCIF flag bit in the PIR register.</span></span></p>
+  <p class=CellBody12><span class=Computer12>DataRdyUSART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with a single USART peripheral. </span>DataRdy1USART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>DataRdy2USART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Return
+  Value:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>1</span><span class=Computer12><span
+  style='font-family:Arial'> if data is available </span></span></p>
+  <p class=CellBody12><span class=Computer12>0</span><span class=Computer12><span
+  style='font-family:Arial'> if data is not available</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>udrdy.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1drdy.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2drdy.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>while (!DataRdyUSART());</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000529"><span class=Computer12><span style='font-family:
+Arial'>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>getcUSART<br>
+getc1USART<br>
+getc2USART</span></span></a></h2>
+
+<p class=MsoNormal><span class=Computer12>getcxUSART</span><span
+class=Computer12><span style='font-family:Arial'> is defined as </span>ReadxUSART</span><span
+class=Computer12><span style='font-family:Arial'>. See </span>ReadUSART</span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<h2><a name="_Toc178000530"><span class=Computer12><span style='font-family:
+Arial'>2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>getsUSART<br>
+gets1USART<br>
+gets2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a fixed-length string of characters from the specified USART.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>void getsUSART ( char * <b><i>buffer</i></b>,</span></p>
+  <p class=CellBody12><span class=Computer12>                 unsigned char <b><i>len</i></b>
+  );</span></p>
+  <p class=CellBody12><span class=Computer12>void gets1USART ( char * <b><i>buffer</i></b>,</span></p>
+  <p class=CellBody12><span class=Computer12>                  unsigned char <b><i>len</i></b>
+  );</span></p>
+  <p class=CellBody12><span class=Computer12>void gets2USART ( char * <b><i>buffer</i></b>,</span></p>
+  <p class=CellBody12><span class=Computer12>                  unsigned char <b><i>len</i></b>
+  );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Arguments:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>buffer</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>A
+  pointer to the location where incoming characters are to be stored.</span></span></p>
+  <p class=CellBody12><span class=Computer12><b><i>len</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>The
+  number of characters to read from the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function only works in 8-bit transmit/receive mode. This function waits for
+  and reads len number of characters out of the specified USART. There is no
+  time out when waiting for characters to arrive.</span></span></p>
+  <p class=CellBody12><span class=Computer12>getsUSART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with a single USART peripheral. </span>gets1USART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>gets2USART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>ugets.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1gets.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2gets.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=108 valign=top style='width:81.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=468 valign=top style='width:351.0pt;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>char inputstr[10];</span></p>
+  <p class=CellBody12><span class=Computer12>getsUSART( inputstr, 5 );</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000531"><span class=Computer12><span style='font-family:
+Arial'>2.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>OpenUSART<br>
+Open1USART<br>
+Open2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Configure
+  the specified USART module.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>void
+  OpenUSART( unsigned char </span></span><span class=Computer12><b><i>config</i></b></span><span
+  class=Computer12><span style='font-family:Arial'>,</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>               
+  unsigned int </span></span><span class=Computer12><b><i>spbrg</i></b></span><span
+  class=Computer12><span style='font-family:Arial'>);</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>void
+  Open1USART( unsigned char </span></span><span class=Computer12><b><i>config</i></b></span><span
+  class=Computer12><span style='font-family:Arial'>,</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>                
+  unsigned int </span></span><span class=Computer12><b><i>spbrg</i></b></span><span
+  class=Computer12><span style='font-family:Arial'>);</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>void
+  Open2USART( unsigned char </span></span><span class=Computer12><b><i>config</i></b></span><span
+  class=Computer12><span style='font-family:Arial'>,</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>                
+  unsigned int </span><b><i>spbrg</i></b></span><span class=Computer12><span
+  style='font-family:Arial'>);</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Arguments:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>config</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>A
+  bitmask that is created by performing a bitwise AND operation (‘&amp;’) or a
+  bitwise OR (‘|’), configurable either way as shown on the example at the end
+  of this file, with a value from each of the categories listed below. These
+  values are defined in the file usart.h.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Interrupt
+  on Transmission:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_TX_INT_ON</span><span
+  class=Computer12><span style='font-family:Arial'>      Transmit interrupt ON</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_TX_INT_OFF</span><span
+  class=Computer12><span style='font-family:Arial'>    Transmit interrupt OFF</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Interrupt
+  on Receipt:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_RX_INT_ON</span><span
+  class=Computer12><span style='font-family:Arial'>      Receive interrupt ON</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_RX_INT_OFF</span><span
+  class=Computer12><span style='font-family:Arial'>    Receive interrupt OFF</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>USART
+  Mode:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_ASYNCH_MODE</span><span
+  class=Computer12><span style='font-family:Arial'>  Asynchronous Mode</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_SYNCH_MODE</span><span
+  class=Computer12><span style='font-family:Arial'>    Synchronous Mode</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Transmission
+  Width:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_EIGHT_BIT</span><span
+  class=Computer12><span style='font-family:Arial'>      8-bit transmit/receive</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_NINE_BIT</span><span
+  class=Computer12><span style='font-family:Arial'>        9-bit
+  transmit/receive</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Slave/Master
+  Select*:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_SYNC_SLAVE</span><span
+  class=Computer12><span style='font-family:Arial'>    Synchronous Slave mode</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_SYNC_MASTER</span><span
+  class=Computer12><span style='font-family:Arial'>  Synchronous Master mode</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Reception
+  mode:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_SINGLE_RX</span><span
+  class=Computer12><span style='font-family:Arial'>      Single reception</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_CONT_RX</span><span
+  class=Computer12><span style='font-family:Arial'>          Continuous
+  reception</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Baud
+  rate:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_BRGH_HIGH</span><span
+  class=Computer12><span style='font-family:Arial'>      High baud rate</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span>USART_BRGH_LOW</span><span
+  class=Computer12><span style='font-family:Arial'>        Low baud rate</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>*
+  Applies to Synchronous mode only</span></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>&nbsp;</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>spbrg</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  is the value that is written to the baud rate generator register which
+  determines the baud rate at which the USART operates. The formulas for baud
+  rate are:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            Asynchronous
+  mode, high speed: </span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>                 
+  </span></span><span class=Computer12><span style='font-family:"Times New Roman"'>Fosc
+  / (16 * (spbrg + 1))</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            Asynchronous
+  mode, low speed: </span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>                 
+  </span></span><span class=Computer12><span style='font-family:"Times New Roman"'>Fosc
+  / (64 * (spbrg + 1))</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            Synchronous
+  mode:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>            </span></span><span
+  class=Computer12><span style='font-family:"Times New Roman"'>      Fosc / (4
+  * (spbrg + 1))</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Where
+  Fosc is the oscillator frequency.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function configures the USART module according to the specified configuration
+  options.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>OpenUSART
+  should be used on parts with a single USART peripheral. Open1USART and
+  Open2USART should be used on parts with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>uopen.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1open.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2open.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>OpenUSART1( USART_TX_INT_OFF 
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>            USART_RX_INT_OFF 
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>            USART_ASYNCH_MODE
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>            USART_EIGHT_BIT  
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>            USART_CONT_RX    
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>            USART_BRGH_HIGH,</span></p>
+  <p class=CellBody12><span class=Computer12>            25                );</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000532"><span class=Computer12><span style='font-family:
+Arial'>2.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>putcUSART<br>
+putc1USART<br>
+putc2USART</span></span></a></h2>
+
+<p class=MsoNormal><span class=Computer12>putcxUSART</span><span
+class=Computer12><span style='font-family:Arial'> is defined as </span>WritexUSART</span><span
+class=Computer12><span style='font-family:Arial'>. See </span>WriteUSART</span></p>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<h2><a name="_Toc178000533"><span class=Computer12><span style='font-family:
+Arial'>2.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>putsUSART<br>
+puts1USART<br>
+puts2USART<br>
+putrsUSART<br>
+putrs1USART<br>
+putrs2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Writes
+  a string of characters to the USART including the null character.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>void putsUSART(  char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void puts1USART( char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void puts2USART( char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putrsUSART(  const rom char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putrs1USART( const rom char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putrs2USART( const rom char *</span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Arguments:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>data</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Pointer
+  to a null-terminated string of data.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function only works in 8-bit transmit/receive mode. This function writes a
+  string of data to the USART including the null character.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Strings
+  located in data memory should be used with the “puts” versions of these
+  functions.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Strings
+  located in program memory, including string literals, should be used with the
+  “putrs” versions of these functions.</span></span></p>
+  <p class=CellBody12><span class=Computer12>putsUSART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>putrsUSART</span><span
+  class=Computer12><span style='font-family:Arial'> should be used on parts
+  with a single USART peripheral. The other functions should be used on parts
+  with multiple USART peripherals.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>uputs.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1puts.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2puts.c</span></p>
+  <p class=CellBody12><span class=Computer12>uputrs.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1putrs.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2putrs.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>PutrsUSART (“Hello World!”);</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000534"><span class=Computer12><span style='font-family:
+Arial'>2.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=Computer12><span style='font-family:Arial'>ReadUSART<br>
+Read1USART<br>
+Read2USART<br>
+getcUSART<br>
+getc1USART<br>
+getc2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Read
+  a byte (one character) out of the USART receive buffer, including the 9th bit
+  if enabled.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>char ReadUSART(  void );</span></p>
+  <p class=CellBody12><span class=Computer12>char Read1USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>char Read2USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>char getcUSART(  void );</span></p>
+  <p class=CellBody12><span class=Computer12>char getc1USART( void );</span></p>
+  <p class=CellBody12><span class=Computer12>char getc2USART( void );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function reads a byte out of the USART receive buffer. The Status bits and
+  the 9th data bits are saved in a union with the following declaration:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  <p class=CellBody12><span class=Computer12>  union USART</span></p>
+  <p class=CellBody12><span class=Computer12>  {</span></p>
+  <p class=CellBody12><span class=Computer12>    unsigned char val;</span></p>
+  <p class=CellBody12><span class=Computer12>    struct</span></p>
+  <p class=CellBody12><span class=Computer12>    {</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned RX_NINE:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned TX_NINE:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned FRAME_ERROR:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned OVERRUN_ERROR:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned fill:4;</span></p>
+  <p class=CellBody12><span class=Computer12>    };</span></p>
+  <p class=CellBody12><span class=Computer12>  };</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>The
+  9th bit is read-only if 9-bit mode is enabled. The Status bits are always
+  read.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>On
+  a part with a single USART peripheral, the </span>getcUSART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>ReadUSART</span><span
+  class=Computer12><span style='font-family:Arial'> functions should be used
+  and the status information is read into a variable named </span>USART_Status</span><span
+  class=Computer12><span style='font-family:Arial'> which is of the type USART
+  described above.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>On
+  a part with multiple USART peripherals, the </span>getcxUSART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>ReadxUSART</span><span
+  class=Computer12><span style='font-family:Arial'> functions should be used
+  and the status information is read into a variable named </span>USARTx_Status
+  </span><span class=Computer12><span style='font-family:Arial'>which is of the
+  type USART described above.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Return
+  Value:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function returns the next character in the USART receive buffer.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>uread.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1read.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2read.c</span></p>
+  <p class=CellBody12><span class=Computer12><span lang=DE>#define in usart.h</span></span></p>
+  <p class=CellBody12><span class=Computer12><span lang=DE>#define in usart.h</span></span></p>
+  <p class=CellBody12><span class=Computer12>#define in usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>int result;</span></p>
+  <p class=CellBody12><span class=Computer12>result = ReadUSART();</span></p>
+  <p class=CellBody12><span class=Computer12>result |= (unsigned int)</span></p>
+  <p class=CellBody12><span class=Computer12>          USART_Status.RX_NINE
+  &lt;&lt; 8;</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000535"><span class=Computer12><span style='font-family:
+Arial'>2.10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+class=Computer12><span style='font-family:Arial'>WriteUSART<br>
+Write1USART<br>
+Write2USART<br>
+putcUSART<br>
+putc1USART<br>
+putc2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Write
+  a byte (one character) to the USART transmit buffer, including the 9th bit if
+  enabled.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>void WriteUSART(  char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void Write1USART( char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void Write2USART( char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putcUSART(  char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putc1USART( char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void putc2USART( char </span><span
+  class=Computer12><b><i>data</i></b> );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Arguments:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>data</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>The
+  value to be written to the USART.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>This
+  function writes a byte to the USART transmit buffer. If 9-bit mode is
+  enabled, the 9th bit is written from the field TX_NINE, found in a variable
+  of type USART:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  <p class=CellBody12><span class=Computer12>  union USART</span></p>
+  <p class=CellBody12><span class=Computer12>  {</span></p>
+  <p class=CellBody12><span class=Computer12>    unsigned char val;</span></p>
+  <p class=CellBody12><span class=Computer12>    struct</span></p>
+  <p class=CellBody12><span class=Computer12>    {</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned RX_NINE:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned TX_NINE:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned FRAME_ERROR:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned OVERRUN_ERROR:1;</span></p>
+  <p class=CellBody12><span class=Computer12>      unsigned fill:4;</span></p>
+  <p class=CellBody12><span class=Computer12>    };</span></p>
+  <p class=CellBody12><span class=Computer12>  };</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>On
+  a part with a single USART peripheral, the </span>putcUSART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>WriteUSART</span><span
+  class=Computer12><span style='font-family:Arial'> functions should be used and
+  the Status register is named </span>USART_Status</span><span
+  class=Computer12><span style='font-family:Arial'> which is of the type USART
+  described above.</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>On
+  a part with multiple USART peripherals, the </span>putcxUSART</span><span
+  class=Computer12><span style='font-family:Arial'> and </span>WritexUSART</span><span
+  class=Computer12><span style='font-family:Arial'> functions should be used
+  and the status register is named </span>USARTx_Status </span><span
+  class=Computer12><span style='font-family:Arial'>which is of the type USART
+  described above.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>uwrite.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1write.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2write.c</span></p>
+  <p class=CellBody12><span class=Computer12><span lang=DE>#define in usart.h</span></span></p>
+  <p class=CellBody12><span class=Computer12><span lang=DE>#define in usart.h</span></span></p>
+  <p class=CellBody12><span class=Computer12>#define in usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>unsigned int outval;</span></p>
+  <p class=CellBody12><span class=Computer12>USART1_Status.TX_NINE = (outval
+  &amp; 0x0100)                   &gt;&gt; 8;</span></p>
+  <p class=CellBody12><span class=Computer12>Write1USART( (char) outval );</span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc178000536"><span class=Computer12><span style='font-family:
+Arial'>2.11<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+class=Computer12><span style='font-family:Arial'>baudUSART<br>
+baud1USART<br>
+baud2USART</span></span></a></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Function:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Set
+  the baud rate configuration bits for enhanced USART operation.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Include:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>usart.h</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Prototype:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>void baudUSART(  unsigned char </span><span
+  class=Computer12><b><i>baudconfig</i></b> );</span></p>
+  <p class=CellBody12><span class=Computer12>void baud1USART( unsigned char <b><i>baudconfig</i></b> 
+  );</span></p>
+  <p class=CellBody12><span class=Computer12>void baud2USART( unsigned char <b><i>baudconfig</i></b> 
+  );</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Arguments:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><i>baudconfig</i></b></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>A
+  bitmask that is created by performing a bitwise AND (‘&amp;’) operation with
+  a value from each of the categories listed below. These values are defined in
+  the file </span>usart.h</span><span class=Computer12><span style='font-family:
+  Arial'>:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>RX
+  Idle State:</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>In
+  Asynchronous mode:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_RX_PIN_STATE_HIGH</span><span
+  class=Computer12><span style='font-family:Arial'>   Receive data (RX) is
+  inverted.Idle <br>
+                                                            state for RX pin is
+  high level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_RX_PIN_STATE_LOW</span><span class=Computer12><span style='font-family:Arial'>     No inversion of receive
+  data(RX). <br>
+                                                            Idle state for RX
+  pin is low level</span></span></p>
+  <p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>In
+  Synchronous mode:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_RX_PIN_STATE_HIGH</span><span
+  class=Computer12><span style='font-family:Arial'>   Data (DT) is inverted.
+  Idle state for <br>
+                                                            DT pin is high
+  level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_RX_PIN_STATE_LOW</span><span class=Computer12><span style='font-family:Arial'>     No inversion of data (DT).
+  Idle state <br>
+                                                            for DT pin is low
+  level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>                                                            TX
+  Idle State (In Asynchronous<br>
+                                                              mode):</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_TX_PIN_STATE_HIGH</span><span
+  class=Computer12><span style='font-family:Arial'>   Transmit data (TX) is
+  inverted. <br>
+                                                            Idle state for TX
+  pin is high<br>
+                                                              level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_TX_PIN_STATE_LOW</span><span
+  class=Computer12><span style='font-family:Arial'>     No inversion of
+  transmit data <br>
+                                                            (TX). Idle state
+  for TX pin is<br>
+                                                            low level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Clock</span></span><span
+   class=Computer12><span style='font-family:Arial'> Idle State</span></span><span
+  class=Computer12><span style='font-family:Arial'>: (In Synchronous mode)</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_CLK_HIGH</span><span
+  class=Computer12><span style='font-family:Arial'>                     Clock
+  idle state is a high level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_IDLE_CLK_LOW</span><span
+  class=Computer12><span style='font-family:Arial'>                       Clock
+  idle state is a low level</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Baud
+  Rate Generation:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_16_BIT_RATE</span><span
+  class=Computer12><span style='font-family:Arial'>                         16-bit
+  baud generation rate</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_8_BIT_RATE</span><span
+  class=Computer12><span style='font-family:Arial'>                           8-bit
+  baud generation rate</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>RX
+  Pin Monitoring:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_WAKEUP_ON</span><span
+  class=Computer12><span style='font-family:Arial'>                             RX
+  pin monitored</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_WAKEUP_OFF</span><span
+  class=Computer12><span style='font-family:Arial'>                           RX
+  pin not monitored</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>Baud
+  Rate Measurement:</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_AUTO_ON</span><span
+  class=Computer12><span style='font-family:Arial'>                                 Auto
+  baud rate measurement<br>
+                                                              enabled</span></span></p>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>   </span>BAUD_AUTO_OFF</span><span
+  class=Computer12><span style='font-family:Arial'>                               Auto
+  baud rate measurement <br>
+                                                              disabled</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Remarks:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><span style='font-family:Arial'>These
+  functions are only available for processors with enhanced USART capability.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>File
+  Name:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>ubaud.c</span></p>
+  <p class=CellBody12><span class=Computer12>u1baud.c</span></p>
+  <p class=CellBody12><span class=Computer12>u2baud.c</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12><b><span style='font-family:Arial'>Code
+  Example:</span></b></span></p>
+  </td>
+  <td width=456 valign=top style='width:4.75in;padding:0in 0in 0in 0in'>
+  <p class=CellBody12><span class=Computer12>baudUSART (BAUD_IDLE_CLK_HIGH
+  &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>           BAUD_16_BIT_RATE &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>           BAUD_WAKEUP_ON &amp;</span></p>
+  <p class=CellBody12><span class=Computer12>           BAUD_AUTO_ON);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=Computer12><span style='font-family:Arial'>&nbsp;</span></span></p>
+
+<p class=NormalBold11><span class=Computer12>Example Use of the USART Routines
+with AND mask:</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>#include &lt;p18C452.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer12>#include &lt;usart.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>void main(void)</span></p>
+
+<p class=MsoNormal><span class=Computer12>{</span></p>
+
+<p class=MsoNormal><span class=Computer12>  // configure USART</span></p>
+
+<p class=MsoNormal><span class=Computer12>  OpenUSART( USART_TX_INT_OFF  &amp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_RX_INT_OFF  &amp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_ASYNCH_MODE &amp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_EIGHT_BIT   &amp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_CONT_RX     &amp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_BRGH_HIGH,25 );</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>  while(1)</span></p>
+
+<p class=MsoNormal><span class=Computer12>  {</span></p>
+
+<p class=MsoNormal><span class=Computer12>    while( ! PORTAbits.RA0 );  //wait
+for RA0 high</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>    WriteUSART( PORTD );      
+//write value of PORTD</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>    if(PORTD == 0x80)          //
+check for termination</span></p>
+
+<p class=MsoNormal><span class=Computer12>      break;                   //  
+value</span></p>
+
+<p class=MsoNormal><span class=Computer12>  }</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>  CloseUSART();</span></p>
+
+<p class=MsoNormal><span class=Computer12>}</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=NormalBold11><span class=Computer12>Example Use of the USART Routines
+with OR mask:</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>#include &lt;p18C452.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer12><b><span style='color:navy'>#define
+USE_OR_MASKS</span></b></span></p>
+
+<p class=MsoNormal><span class=Computer12>#include &lt;usart.h&gt;</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>void main(void)</span></p>
+
+<p class=MsoNormal><span class=Computer12>{</span></p>
+
+<p class=MsoNormal><span class=Computer12>  // configure USART</span></p>
+
+<p class=MsoNormal><span class=Computer12>  OpenUSART( USART_TX_INT_OFF  |</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_RX_INT_OFF  |</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_ASYNCH_MODE |</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_EIGHT_BIT   |</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_CONT_RX     |</span></p>
+
+<p class=MsoNormal><span class=Computer12>             USART_BRGH_HIGH,25 );</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>  while(1)</span></p>
+
+<p class=MsoNormal><span class=Computer12>  {</span></p>
+
+<p class=MsoNormal><span class=Computer12>    while( ! PORTAbits.RA0 );  //wait
+for RA0 high</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>    WriteUSART( PORTD );      
+//write value of PORTD</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>    if(PORTD == 0x80)          //
+check for termination</span></p>
+
+<p class=MsoNormal><span class=Computer12>      break;                   //  
+value</span></p>
+
+<p class=MsoNormal><span class=Computer12>  }</span></p>
+
+<p class=MsoNormal><span class=Computer12>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=Computer12>  CloseUSART();</span></p>
+
+<p class=MsoNormal><span class=Computer12>}</span></p>
+
+</div>
+
+</body>
+
+</html>
