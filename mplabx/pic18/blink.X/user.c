@@ -30,6 +30,7 @@ void InitApp(void)
     /* TODO Initialize User Ports/Peripherals/Project here */
 
     /* Setup analog functionality and port direction */
+    TRISD = 0b01111111;
 
     /* Initialize peripherals */
 
