@@ -31,6 +31,7 @@ void InitApp(void)
     /* TODO Initialize User Ports/Peripherals/Project here */
 
     /* Setup analog functionality and port direction */
+    TRISC = 0;
 
     /* Initialize peripherals */
     OpenUSART(USART_TX_INT_OFF &
