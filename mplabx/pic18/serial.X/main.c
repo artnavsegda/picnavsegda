@@ -17,6 +17,7 @@
 
 #endif
 
+#include <usart.h>
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
 
@@ -39,6 +40,7 @@ void main(void)
     InitApp();
 
     /* TODO <INSERT USER APPLICATION CODE HERE> */
+    putrsUSART("Hello World!");
 
     while(1)
     {
