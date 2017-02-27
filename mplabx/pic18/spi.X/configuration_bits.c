@@ -45,3 +45,4 @@
 /******************************************************************************/
 
 /* TODO Fill in your configuration bits here using the config generator.      */
+#pragma config FOSC = HSPLL     // Oscillator Selection bits (HS oscillator, PLL enabled (Clock Frequency = 4 x FOSC1))

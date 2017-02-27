@@ -17,6 +17,7 @@
 
 #endif
 
+#include <spi.h>
 #include "user.h"
 
 /******************************************************************************/
@@ -30,8 +31,10 @@ void InitApp(void)
     /* TODO Initialize User Ports/Peripherals/Project here */
 
     /* Setup analog functionality and port direction */
+    TRISC = 0;
 
     /* Initialize peripherals */
+    OpenSPI(SPI_FOSC_64, SPI_FOSC_64, SMPEND);
 
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 

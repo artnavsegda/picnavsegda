@@ -17,6 +17,7 @@
 
 #endif
 
+#include <spi.h>
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
 
@@ -39,6 +40,14 @@ void main(void)
     InitApp();
 
     /* TODO <INSERT USER APPLICATION CODE HERE> */
+    putsSPI("\xFF\xFF\xFF\xFF\xFF");
+    __delay_ms(10);
+    putsSPI("\x20\x0C\x10\x04");
+    __delay_ms(10);
+    putsSPI("\x60\x18\x3A\x00");
+    __delay_ms(10);
+    putsSPI("\x70\x89\x78\xD7");
+    __delay_ms(10);
 
     while(1)
     {
