@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c network.c enc28J60.c arpv4.c dhcp_client.c icmp.c ipv4.c mac_address.c syslog.c tcpv4.c udpv4.c mssp_spi_master.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c network.c enc28J60.c arpv4.c dhcp_client.c icmp.c ipv4.c mac_address.c syslog.c tcpv4.c udpv4.c mssp_spi_master.c rtcc.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/network.p1 ${OBJECTDIR}/enc28J60.p1 ${OBJECTDIR}/arpv4.p1 ${OBJECTDIR}/dhcp_client.p1 ${OBJECTDIR}/icmp.p1 ${OBJECTDIR}/ipv4.p1 ${OBJECTDIR}/mac_address.p1 ${OBJECTDIR}/syslog.p1 ${OBJECTDIR}/tcpv4.p1 ${OBJECTDIR}/udpv4.p1 ${OBJECTDIR}/mssp_spi_master.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/network.p1.d ${OBJECTDIR}/enc28J60.p1.d ${OBJECTDIR}/arpv4.p1.d ${OBJECTDIR}/dhcp_client.p1.d ${OBJECTDIR}/icmp.p1.d ${OBJECTDIR}/ipv4.p1.d ${OBJECTDIR}/mac_address.p1.d ${OBJECTDIR}/syslog.p1.d ${OBJECTDIR}/tcpv4.p1.d ${OBJECTDIR}/udpv4.p1.d ${OBJECTDIR}/mssp_spi_master.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/network.p1 ${OBJECTDIR}/enc28J60.p1 ${OBJECTDIR}/arpv4.p1 ${OBJECTDIR}/dhcp_client.p1 ${OBJECTDIR}/icmp.p1 ${OBJECTDIR}/ipv4.p1 ${OBJECTDIR}/mac_address.p1 ${OBJECTDIR}/syslog.p1 ${OBJECTDIR}/tcpv4.p1 ${OBJECTDIR}/udpv4.p1 ${OBJECTDIR}/mssp_spi_master.p1 ${OBJECTDIR}/rtcc.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/network.p1.d ${OBJECTDIR}/enc28J60.p1.d ${OBJECTDIR}/arpv4.p1.d ${OBJECTDIR}/dhcp_client.p1.d ${OBJECTDIR}/icmp.p1.d ${OBJECTDIR}/ipv4.p1.d ${OBJECTDIR}/mac_address.p1.d ${OBJECTDIR}/syslog.p1.d ${OBJECTDIR}/tcpv4.p1.d ${OBJECTDIR}/udpv4.p1.d ${OBJECTDIR}/mssp_spi_master.p1.d ${OBJECTDIR}/rtcc.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/network.p1 ${OBJECTDIR}/enc28J60.p1 ${OBJECTDIR}/arpv4.p1 ${OBJECTDIR}/dhcp_client.p1 ${OBJECTDIR}/icmp.p1 ${OBJECTDIR}/ipv4.p1 ${OBJECTDIR}/mac_address.p1 ${OBJECTDIR}/syslog.p1 ${OBJECTDIR}/tcpv4.p1 ${OBJECTDIR}/udpv4.p1 ${OBJECTDIR}/mssp_spi_master.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/network.p1 ${OBJECTDIR}/enc28J60.p1 ${OBJECTDIR}/arpv4.p1 ${OBJECTDIR}/dhcp_client.p1 ${OBJECTDIR}/icmp.p1 ${OBJECTDIR}/ipv4.p1 ${OBJECTDIR}/mac_address.p1 ${OBJECTDIR}/syslog.p1 ${OBJECTDIR}/tcpv4.p1 ${OBJECTDIR}/udpv4.p1 ${OBJECTDIR}/mssp_spi_master.p1 ${OBJECTDIR}/rtcc.p1
 
 # Source Files
-SOURCEFILES=main.c network.c enc28J60.c arpv4.c dhcp_client.c icmp.c ipv4.c mac_address.c syslog.c tcpv4.c udpv4.c mssp_spi_master.c
+SOURCEFILES=main.c network.c enc28J60.c arpv4.c dhcp_client.c icmp.c ipv4.c mac_address.c syslog.c tcpv4.c udpv4.c mssp_spi_master.c rtcc.c
 
 
 CFLAGS=
@@ -183,6 +183,14 @@ ${OBJECTDIR}/mssp_spi_master.p1: mssp_spi_master.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/mssp_spi_master.d ${OBJECTDIR}/mssp_spi_master.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/mssp_spi_master.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/rtcc.p1: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rtcc.p1.d 
+	@${RM} ${OBJECTDIR}/rtcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -DUSE_ENC28J60_SPI -P -N255 --warn=-3 --asmlist -DXPRJ_XC8_18F46K20=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/rtcc.p1  rtcc.c 
+	@-${MV} ${OBJECTDIR}/rtcc.d ${OBJECTDIR}/rtcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/rtcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -279,6 +287,14 @@ ${OBJECTDIR}/mssp_spi_master.p1: mssp_spi_master.c  nbproject/Makefile-${CND_CON
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -DUSE_ENC28J60_SPI -P -N255 --warn=-3 --asmlist -DXPRJ_XC8_18F46K20=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_spi_master.p1  mssp_spi_master.c 
 	@-${MV} ${OBJECTDIR}/mssp_spi_master.d ${OBJECTDIR}/mssp_spi_master.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/mssp_spi_master.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/rtcc.p1: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rtcc.p1.d 
+	@${RM} ${OBJECTDIR}/rtcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -DUSE_ENC28J60_SPI -P -N255 --warn=-3 --asmlist -DXPRJ_XC8_18F46K20=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/rtcc.p1  rtcc.c 
+	@-${MV} ${OBJECTDIR}/rtcc.d ${OBJECTDIR}/rtcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/rtcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

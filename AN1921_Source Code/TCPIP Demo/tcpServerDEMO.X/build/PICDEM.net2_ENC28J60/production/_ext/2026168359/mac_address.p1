@@ -1,11 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"52 ../../TCPIP Library/include\mac_address.h
+"52 ../../TCPIP Library/include/mac_address.h
 [s S2 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S2 . byte1 byte2 byte3 byte4 byte5 byte6 ]
 "50
 [u S1 `uc -> 6 `i `S2 1 ]
 [n S1 . mac_array s ]
-"67 ../../TCPIP Library/include\tcpip_config.h
+"67 ../../TCPIP Library/include/tcpip_config.h
 [v _dhcpName `Cuc ~T0 @X0 -> 0 `x e ]
 [i _dhcpName
 :U ..
@@ -32,7 +32,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;include\tcpip_config.h: 67: const char dhcpName[] = "PIC18F97J60 ETHERNET";
+[; ;tcpip_config.h: 67: const char dhcpName[] = "PIC18F97J60 ETHERNET";
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -61,14 +61,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;include\mac_address.h: 49: typedef union
-[; ;include\mac_address.h: 50: {
-[; ;include\mac_address.h: 51: uint8_t mac_array[6];
-[; ;include\mac_address.h: 52: struct { uint8_t byte1,byte2,byte3,byte4,byte5,byte6; } s;
-[; ;include\mac_address.h: 53: } mac48Address_t;
-[; ;include\mac_address.h: 55: extern const mac48Address_t broadcastMAC;
-[; ;include\mac_address.h: 56: extern const mac48Address_t macAddress;
-[; ;include\mac_address.h: 58: const mac48Address_t *MAC_getAddress(void);
+[; ;mac_address.h: 49: typedef union
+[; ;mac_address.h: 50: {
+[; ;mac_address.h: 51: uint8_t mac_array[6];
+[; ;mac_address.h: 52: struct { uint8_t byte1,byte2,byte3,byte4,byte5,byte6; } s;
+[; ;mac_address.h: 53: } mac48Address_t;
+[; ;mac_address.h: 55: extern const mac48Address_t broadcastMAC;
+[; ;mac_address.h: 56: extern const mac48Address_t macAddress;
+[; ;mac_address.h: 58: const mac48Address_t *MAC_getAddress(void);
 "42 ../../TCPIP Library/source/mac_address.c
 [v _macAddress `CS1 ~T0 @X0 1 e ]
 [i _macAddress

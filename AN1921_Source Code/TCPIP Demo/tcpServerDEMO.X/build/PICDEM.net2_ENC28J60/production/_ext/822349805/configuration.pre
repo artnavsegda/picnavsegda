@@ -1,17 +1,15 @@
 
 # 1 "../board_support_package/picdem2_net/configuration.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
+# 26 "/Applications/microchip/xc8/v1.34/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
-extern double __fpnormalize(double);
 
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\xc8debug.h"
+# 13 "/Applications/microchip/xc8/v1.34/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f97j60.h"
+# 49 "/Applications/microchip/xc8/v1.34/include/pic18f97j60.h"
 extern volatile unsigned char MAADR5 @ 0xE80;
 
 asm("MAADR5 equ 0E80h");
@@ -5334,17 +5332,12 @@ unsigned :4;
 unsigned NOT_RI :1;
 };
 struct {
-unsigned :5;
-unsigned NOT_CM :1;
-};
-struct {
 unsigned nBOR :1;
 unsigned nPOR :1;
 unsigned nPD :1;
 unsigned nTO :1;
 unsigned nRI :1;
-unsigned nCM :1;
-unsigned :1;
+unsigned :2;
 unsigned IPEN :1;
 };
 struct {
@@ -5353,12 +5346,11 @@ unsigned POR :1;
 unsigned PD :1;
 unsigned TO :1;
 unsigned RI :1;
-unsigned CM :1;
 };
 } RCONbits_t;
 extern volatile RCONbits_t RCONbits @ 0xFD0;
 
-# 14162
+# 14141
 extern volatile unsigned char WDTCON @ 0xFD1;
 
 asm("WDTCON equ 0FD1h");
@@ -5374,7 +5366,7 @@ unsigned SWDTE :1;
 } WDTCONbits_t;
 extern volatile WDTCONbits_t WDTCONbits @ 0xFD1;
 
-# 14189
+# 14168
 extern volatile unsigned char ECON1 @ 0xFD2;
 
 asm("ECON1 equ 0FD2h");
@@ -5393,7 +5385,7 @@ unsigned TXRST :1;
 } ECON1bits_t;
 extern volatile ECON1bits_t ECON1bits @ 0xFD2;
 
-# 14239
+# 14218
 extern volatile unsigned char OSCCON @ 0xFD3;
 
 asm("OSCCON equ 0FD3h");
@@ -5414,7 +5406,7 @@ unsigned SCS1 :1;
 } OSCCONbits_t;
 extern volatile OSCCONbits_t OSCCONbits @ 0xFD3;
 
-# 14286
+# 14265
 extern volatile unsigned char T0CON @ 0xFD5;
 
 asm("T0CON equ 0FD5h");
@@ -5437,7 +5429,7 @@ unsigned T0PS2 :1;
 } T0CONbits_t;
 extern volatile T0CONbits_t T0CONbits @ 0xFD5;
 
-# 14355
+# 14334
 extern volatile unsigned short TMR0 @ 0xFD6;
 
 asm("TMR0 equ 0FD6h");
@@ -5487,7 +5479,7 @@ unsigned ZERO :1;
 } STATUSbits_t;
 extern volatile STATUSbits_t STATUSbits @ 0xFD8;
 
-# 14451
+# 14430
 extern volatile unsigned short FSR2 @ 0xFD9;
 
 asm("FSR2 equ 0FD9h");
@@ -5673,7 +5665,7 @@ unsigned INT2P :1;
 } INTCON3bits_t;
 extern volatile INTCON3bits_t INTCON3bits @ 0xFF0;
 
-# 14718
+# 14697
 extern volatile unsigned char INTCON2 @ 0xFF1;
 
 asm("INTCON2 equ 0FF1h");
@@ -5703,7 +5695,7 @@ unsigned RBPU :1;
 } INTCON2bits_t;
 extern volatile INTCON2bits_t INTCON2bits @ 0xFF1;
 
-# 14804
+# 14783
 extern volatile unsigned char INTCON @ 0xFF2;
 
 asm("INTCON equ 0FF2h");
@@ -5758,7 +5750,7 @@ unsigned GIEH :1;
 } INTCONbits_t;
 extern volatile INTCONbits_t INTCONbits @ 0xFF2;
 
-# 14940
+# 14919
 extern volatile unsigned short PROD @ 0xFF3;
 
 asm("PROD equ 0FF3h");
@@ -5873,7 +5865,7 @@ unsigned SP4 :1;
 } STKPTRbits_t;
 extern volatile STKPTRbits_t STKPTRbits @ 0xFFC;
 
-# 15127
+# 15106
 extern volatile unsigned short long TOS @ 0xFFD;
 
 
@@ -5897,7 +5889,7 @@ extern volatile unsigned char TOSU @ 0xFFF;
 
 asm("TOSU equ 0FFFh");
 
-# 15158
+# 15137
 extern volatile __bit ABDEN1 @ (((unsigned) &BAUDCON1)*8) + 0;
 
 extern volatile __bit ABDEN2 @ (((unsigned) &BAUDCON2)*8) + 0;
@@ -6293,8 +6285,6 @@ extern volatile __bit CKP1 @ (((unsigned) &SSP1CON1)*8) + 4;
 extern volatile __bit CKP2 @ (((unsigned) &SSP2CON1)*8) + 4;
 
 extern volatile __bit CKTXP @ (((unsigned) &BAUDCON1)*8) + 4;
-
-extern volatile __bit CM @ (((unsigned) &RCON)*8) + 5;
 
 extern volatile __bit CM0 @ (((unsigned) &CMCON)*8) + 0;
 
@@ -6953,8 +6943,6 @@ extern volatile __bit NOT_A @ (((unsigned) &SSP1STAT)*8) + 5;
 extern volatile __bit NOT_BOR @ (((unsigned) &RCON)*8) + 0;
 
 extern volatile __bit NOT_CE @ (((unsigned) &PORTJ)*8) + 5;
-
-extern volatile __bit NOT_CM @ (((unsigned) &RCON)*8) + 5;
 
 extern volatile __bit NOT_CS @ (((unsigned) &PORTE)*8) + 2;
 
@@ -8090,8 +8078,6 @@ extern volatile __bit nBOR @ (((unsigned) &RCON)*8) + 0;
 
 extern volatile __bit nCE @ (((unsigned) &PORTJ)*8) + 5;
 
-extern volatile __bit nCM @ (((unsigned) &RCON)*8) + 5;
-
 extern volatile __bit nCS @ (((unsigned) &PORTE)*8) + 2;
 
 extern volatile __bit nDONE @ (((unsigned) &ADCON0)*8) + 1;
@@ -8134,17 +8120,16 @@ extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRL @ (((unsigned) &PORTJ)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h"
-__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+# 18 "/Applications/microchip/xc8/v1.34/include/pic18.h"
+__attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
 
-# 42
+# 41
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 
-# 151
+# 160
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)

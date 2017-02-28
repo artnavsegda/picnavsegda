@@ -2,5 +2,6 @@
 
 void main(void)
 {
+    Network_Init();
     return;
 }

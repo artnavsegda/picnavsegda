@@ -20,6 +20,7 @@
       <itemPath>ethernet_driver.h</itemPath>
       <itemPath>hardware.h</itemPath>
       <itemPath>mssp_spi_master.h</itemPath>
+      <itemPath>rtcc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -40,6 +41,7 @@
       <itemPath>tcpv4.c</itemPath>
       <itemPath>udpv4.c</itemPath>
       <itemPath>mssp_spi_master.c</itemPath>
+      <itemPath>rtcc.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -1,17 +1,15 @@
 
 # 1 "../../TCPIP Library/source/ipv4.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
+# 26 "/Applications/microchip/xc8/v1.34/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
-extern double __fpnormalize(double);
 
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\xc8debug.h"
+# 13 "/Applications/microchip/xc8/v1.34/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f97j60.h"
+# 49 "/Applications/microchip/xc8/v1.34/include/pic18f97j60.h"
 extern volatile unsigned char MAADR5 @ 0xE80;
 
 asm("MAADR5 equ 0E80h");
@@ -5334,17 +5332,12 @@ unsigned :4;
 unsigned NOT_RI :1;
 };
 struct {
-unsigned :5;
-unsigned NOT_CM :1;
-};
-struct {
 unsigned nBOR :1;
 unsigned nPOR :1;
 unsigned nPD :1;
 unsigned nTO :1;
 unsigned nRI :1;
-unsigned nCM :1;
-unsigned :1;
+unsigned :2;
 unsigned IPEN :1;
 };
 struct {
@@ -5353,12 +5346,11 @@ unsigned POR :1;
 unsigned PD :1;
 unsigned TO :1;
 unsigned RI :1;
-unsigned CM :1;
 };
 } RCONbits_t;
 extern volatile RCONbits_t RCONbits @ 0xFD0;
 
-# 14162
+# 14141
 extern volatile unsigned char WDTCON @ 0xFD1;
 
 asm("WDTCON equ 0FD1h");
@@ -5374,7 +5366,7 @@ unsigned SWDTE :1;
 } WDTCONbits_t;
 extern volatile WDTCONbits_t WDTCONbits @ 0xFD1;
 
-# 14189
+# 14168
 extern volatile unsigned char ECON1 @ 0xFD2;
 
 asm("ECON1 equ 0FD2h");
@@ -5393,7 +5385,7 @@ unsigned TXRST :1;
 } ECON1bits_t;
 extern volatile ECON1bits_t ECON1bits @ 0xFD2;
 
-# 14239
+# 14218
 extern volatile unsigned char OSCCON @ 0xFD3;
 
 asm("OSCCON equ 0FD3h");
@@ -5414,7 +5406,7 @@ unsigned SCS1 :1;
 } OSCCONbits_t;
 extern volatile OSCCONbits_t OSCCONbits @ 0xFD3;
 
-# 14286
+# 14265
 extern volatile unsigned char T0CON @ 0xFD5;
 
 asm("T0CON equ 0FD5h");
@@ -5437,7 +5429,7 @@ unsigned T0PS2 :1;
 } T0CONbits_t;
 extern volatile T0CONbits_t T0CONbits @ 0xFD5;
 
-# 14355
+# 14334
 extern volatile unsigned short TMR0 @ 0xFD6;
 
 asm("TMR0 equ 0FD6h");
@@ -5487,7 +5479,7 @@ unsigned ZERO :1;
 } STATUSbits_t;
 extern volatile STATUSbits_t STATUSbits @ 0xFD8;
 
-# 14451
+# 14430
 extern volatile unsigned short FSR2 @ 0xFD9;
 
 asm("FSR2 equ 0FD9h");
@@ -5673,7 +5665,7 @@ unsigned INT2P :1;
 } INTCON3bits_t;
 extern volatile INTCON3bits_t INTCON3bits @ 0xFF0;
 
-# 14718
+# 14697
 extern volatile unsigned char INTCON2 @ 0xFF1;
 
 asm("INTCON2 equ 0FF1h");
@@ -5703,7 +5695,7 @@ unsigned RBPU :1;
 } INTCON2bits_t;
 extern volatile INTCON2bits_t INTCON2bits @ 0xFF1;
 
-# 14804
+# 14783
 extern volatile unsigned char INTCON @ 0xFF2;
 
 asm("INTCON equ 0FF2h");
@@ -5758,7 +5750,7 @@ unsigned GIEH :1;
 } INTCONbits_t;
 extern volatile INTCONbits_t INTCONbits @ 0xFF2;
 
-# 14940
+# 14919
 extern volatile unsigned short PROD @ 0xFF3;
 
 asm("PROD equ 0FF3h");
@@ -5873,7 +5865,7 @@ unsigned SP4 :1;
 } STKPTRbits_t;
 extern volatile STKPTRbits_t STKPTRbits @ 0xFFC;
 
-# 15127
+# 15106
 extern volatile unsigned short long TOS @ 0xFFD;
 
 
@@ -5897,7 +5889,7 @@ extern volatile unsigned char TOSU @ 0xFFF;
 
 asm("TOSU equ 0FFFh");
 
-# 15158
+# 15137
 extern volatile __bit ABDEN1 @ (((unsigned) &BAUDCON1)*8) + 0;
 
 extern volatile __bit ABDEN2 @ (((unsigned) &BAUDCON2)*8) + 0;
@@ -6293,8 +6285,6 @@ extern volatile __bit CKP1 @ (((unsigned) &SSP1CON1)*8) + 4;
 extern volatile __bit CKP2 @ (((unsigned) &SSP2CON1)*8) + 4;
 
 extern volatile __bit CKTXP @ (((unsigned) &BAUDCON1)*8) + 4;
-
-extern volatile __bit CM @ (((unsigned) &RCON)*8) + 5;
 
 extern volatile __bit CM0 @ (((unsigned) &CMCON)*8) + 0;
 
@@ -6953,8 +6943,6 @@ extern volatile __bit NOT_A @ (((unsigned) &SSP1STAT)*8) + 5;
 extern volatile __bit NOT_BOR @ (((unsigned) &RCON)*8) + 0;
 
 extern volatile __bit NOT_CE @ (((unsigned) &PORTJ)*8) + 5;
-
-extern volatile __bit NOT_CM @ (((unsigned) &RCON)*8) + 5;
 
 extern volatile __bit NOT_CS @ (((unsigned) &PORTE)*8) + 2;
 
@@ -8090,8 +8078,6 @@ extern volatile __bit nBOR @ (((unsigned) &RCON)*8) + 0;
 
 extern volatile __bit nCE @ (((unsigned) &PORTJ)*8) + 5;
 
-extern volatile __bit nCM @ (((unsigned) &RCON)*8) + 5;
-
 extern volatile __bit nCS @ (((unsigned) &PORTE)*8) + 2;
 
 extern volatile __bit nDONE @ (((unsigned) &ADCON0)*8) + 1;
@@ -8134,17 +8120,16 @@ extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRL @ (((unsigned) &PORTJ)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h"
-__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+# 18 "/Applications/microchip/xc8/v1.34/include/pic18.h"
+__attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
 
-# 42
+# 41
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 
-# 151
+# 160
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
@@ -8152,7 +8137,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
+# 13 "/Applications/microchip/xc8/v1.34/include/stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -8242,10 +8227,12 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\__size_t.h"
+# 8 "/Applications/microchip/xc8/v1.34/include/stdio.h"
+typedef int ptrdiff_t;
 typedef unsigned size_t;
+typedef unsigned short wchar_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+# 7 "/Applications/microchip/xc8/v1.34/include/stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -8254,17 +8241,20 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+# 24 "/Applications/microchip/xc8/v1.34/include/stdio.h"
+extern int errno;
+
+# 55
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+# 17 "/Applications/microchip/xc8/v1.34/include/conio.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+
 extern void init_uart(void);
 
 extern char getch(void);
@@ -8274,11 +8264,11 @@ extern void ungetch(char);
 
 extern __bit kbhit(void);
 
-# 23
+# 31
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+# 100 "/Applications/microchip/xc8/v1.34/include/stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -8287,7 +8277,7 @@ extern int cprintf(char *, ...);
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
 
 
-# 180
+# 192
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -8305,10 +8295,10 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stddef.h"
-typedef int ptrdiff_t;
+# 13 "/Applications/microchip/xc8/v1.34/include/stddef.h"
+extern int errno;
 
-# 51 "../../TCPIP Library/include\tcpip_types.h"
+# 51 "../../TCPIP Library/include/tcpip_types.h"
 typedef enum {TCB_ERROR = -1, TCB_NO_ERROR = 0} tcbError_t;
 
 typedef union
@@ -8663,16 +8653,16 @@ typedef int8_t socklistsize_t;
 
 typedef void (*ip_receive_function_ptr)(int);
 
-# 62 "../../TCPIP Library/include\network.h"
+# 62 "../../TCPIP Library/include/network.h"
 void Network_Init(void);
 void Network_Read(void);
 void Network_Manage(void);
 void Network_WaitForLink(void);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
+# 12 "/Applications/microchip/xc8/v1.34/include/stdbool.h"
 typedef unsigned char bool;
 
-# 49 "../../TCPIP Library/include\mac_address.h"
+# 49 "../../TCPIP Library/include/mac_address.h"
 typedef union
 {
 uint8_t mac_array[6];
@@ -8684,7 +8674,7 @@ extern const mac48Address_t macAddress;
 
 const mac48Address_t *MAC_getAddress(void);
 
-# 51 "../../TCPIP Library/ethernet_drivers\ethernet_driver.h"
+# 51 "../../TCPIP Library/ethernet_drivers/ethernet_driver.h"
 typedef struct
 {
 uint16_t byteCount;
@@ -8760,7 +8750,7 @@ uint16_t ETH_GetByteCount(void);
 
 bool ETH_CheckLinkUp();
 
-# 63 "../../TCPIP Library/include\ipv4.h"
+# 63 "../../TCPIP Library/include/ipv4.h"
 extern uint32_t ipv4Address;
 extern uint32_t dstIPv4Address;
 extern uint32_t ipv4Gateway;
@@ -8788,10 +8778,10 @@ uint16_t IPV4_PseudoHeaderChecksum(uint16_t payloadLen);
 # 136
 error_msg IPV4_Send(uint16_t payloadLength);
 
-# 67 "../../TCPIP Library/include\tcpip_config.h"
+# 67 "../../TCPIP Library/include/tcpip_config.h"
 const char dhcpName[] = "PIC18F97J60 ETHERNET";
 
-# 62 "../../TCPIP Library/include\arpv4.h"
+# 62 "../../TCPIP Library/include/arpv4.h"
 void ARPV4_Init(void);
 
 # 74
@@ -8806,7 +8796,7 @@ mac48Address_t* ARPV4_Lookup(uint32_t ipAddress);
 # 104
 error_msg ARPV4_Request(uint32_t destAddress);
 
-# 58 "../../TCPIP Library/include\dhcp_client.h"
+# 58 "../../TCPIP Library/include/dhcp_client.h"
 typedef enum
 {
 DHCP_DISCOVER = 1,
@@ -8832,7 +8822,7 @@ void DHCP_Manage(void);
 # 104
 void DHCP_WriteZeros(uint16_t length);
 
-# 81 "../../TCPIP Library/include\udpv4.h"
+# 81 "../../TCPIP Library/include/udpv4.h"
 error_msg UDP_Start(uint32_t destIP, uint16_t destPort, uint16_t srcPort);
 
 # 95
@@ -8871,7 +8861,7 @@ uint32_t UDP_GetDestIP(void);
 # 195
 error_msg UDP_Receive(uint16_t udpcksm);
 
-# 54 "../../TCPIP Library/include\udpv4_port_handler_table.h"
+# 54 "../../TCPIP Library/include/udpv4_port_handler_table.h"
 void udp_test(int len);
 extern void DEMO_UDP_Recv(int len);
 extern void DEMO_UDP_IdlePkt(int length);
@@ -8890,7 +8880,7 @@ const udp_handler_t UDP_CallBackTable[] = {
 {68, &DHCP_Handler}
 };
 
-# 65 "../../TCPIP Library/include\tcpv4.h"
+# 65 "../../TCPIP Library/include/tcpv4.h"
 typedef enum
 {
 CLOSED = 0,
@@ -9023,11 +9013,11 @@ int16_t TCP_GetRxLength(tcpTCB_t *tcbPtr);
 # 411
 void TCP_Update(void);
 
-# 47 "../../TCPIP Library/include\syslog.h"
+# 47 "../../TCPIP Library/include/syslog.h"
 void SYSLOG_Init(void);
 void SYSLOG_Write(const char *message);
 
-# 62 "../../TCPIP Library/include\icmp.h"
+# 62 "../../TCPIP Library/include/icmp.h"
 error_msg ICMP_Receive(ipv4Header_t *ipv4Hdr);
 
 # 75

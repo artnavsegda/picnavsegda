@@ -1,10 +1,14 @@
 
 # 1 "../../TCPIP Library/source/syslog.c"
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\__size_t.h"
+# 6 "/Applications/microchip/xc8/v1.34/include/time.h"
+typedef int ptrdiff_t;
 typedef unsigned size_t;
+typedef unsigned short wchar_t;
 
-# 8 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\time.h"
+
+
+
 typedef long time_t;
 struct tm {
 int tm_sec;
@@ -18,14 +22,14 @@ int tm_yday;
 int tm_isdst;
 };
 
-# 25
+# 32
 extern int time_zone;
 
-# 30
+# 37
 extern time_t time(time_t *);
 extern int stime(time_t *);
 
-# 47
+# 54
 extern char * asctime(const struct tm *) ;
 extern char * ctime(const time_t *) ;
 extern struct tm * gmtime(const time_t *) ;
@@ -33,7 +37,7 @@ extern struct tm * localtime(const time_t *) ;
 extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
 extern time_t mktime(struct tm *);
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+# 7 "/Applications/microchip/xc8/v1.34/include/stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -42,17 +46,20 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+# 24 "/Applications/microchip/xc8/v1.34/include/stdio.h"
+extern int errno;
+
+# 55
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+# 17 "/Applications/microchip/xc8/v1.34/include/conio.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+
 extern void init_uart(void);
 
 extern char getch(void);
@@ -62,11 +69,11 @@ extern void ungetch(char);
 
 extern __bit kbhit(void);
 
-# 23
+# 31
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+# 100 "/Applications/microchip/xc8/v1.34/include/stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -75,7 +82,7 @@ extern int cprintf(char *, ...);
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
 
 
-# 180
+# 192
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
