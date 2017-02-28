@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>serial</name>
-            <creation-uuid>39d2e14d-59e2-49c9-8704-c9d7603e1c19</creation-uuid>
+            <name>spi</name>
+            <creation-uuid>0454d31a-13a0-44c3-8912-1c0fde7b8ce5</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
