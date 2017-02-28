@@ -1,0 +1,13 @@
+#
+# Generated - do not edit!
+#
+# NOCDDL
+#
+CND_BASEDIR=`pwd`
+# XC8_18F46K20 configuration
+CND_ARTIFACT_DIR_XC8_18F46K20=dist/XC8_18F46K20/production
+CND_ARTIFACT_NAME_XC8_18F46K20=ethernet.X.production.hex
+CND_ARTIFACT_PATH_XC8_18F46K20=dist/XC8_18F46K20/production/ethernet.X.production.hex
+CND_PACKAGE_DIR_XC8_18F46K20=${CND_DISTDIR}/XC8_18F46K20/package
+CND_PACKAGE_NAME_XC8_18F46K20=ethernet.x.tar
+CND_PACKAGE_PATH_XC8_18F46K20=${CND_DISTDIR}/XC8_18F46K20/package/ethernet.x.tar
