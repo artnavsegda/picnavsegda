@@ -49,6 +49,7 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "eusart.h"
 #include "spi.h"
 
 #define _XTAL_FREQ  40000000

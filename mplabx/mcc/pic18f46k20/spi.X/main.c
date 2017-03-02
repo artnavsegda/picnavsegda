@@ -80,9 +80,23 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    
+    SPI_Exchange8bitBuffer("\xFF\xFF\xFF\xFF\xFF",5,NULL);
+    __delay_ms(10);
+    SPI_Exchange8bitBuffer("\x20\x0C\x10\x04",4,NULL);
+    __delay_ms(10);
+    SPI_Exchange8bitBuffer("\x60\x18\x3A\x00",4,NULL);
+    __delay_ms(10);
+    SPI_Exchange8bitBuffer("\x70\x89\x78\xD7",4,NULL);
+    __delay_ms(10);
+    
+    uint8_t adcdata[2];
 
     while (1)
     {
+        SPI_Exchange8bit(0x38);
+        SPI_Exchange8bitBuffer(NULL,2,adcdata);
+        printf("adcdata %x %x\r\n",adcdata[0],adcdata[1]);
         // Add your application code
     }
 }
