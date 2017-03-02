@@ -47,7 +47,7 @@ void main(void)
 
     while(1)
     {
-        WriteUSART(0xAA);
+        //WriteUSART(0xAA);
     }
 
 }

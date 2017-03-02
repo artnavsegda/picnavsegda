@@ -80,6 +80,7 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    printf("hello world\r\n");
 
     while (1)
     {
