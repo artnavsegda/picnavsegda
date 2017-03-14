@@ -43,7 +43,7 @@ void main(void)
     while(1)
     {
         LATDbits.LATD7 = ~LATDbits.LATD7;
-        __delay_ms(40);
+        __delay_ms(1000);
     }
 
 }

@@ -45,4 +45,4 @@
 /******************************************************************************/
 
 /* TODO Fill in your configuration bits here using the config generator.      */
-#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config FOSC = INTIO67   // Oscillator Selection bits (Internal oscillator block, port function on RA6 and RA7)

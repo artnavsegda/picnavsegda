@@ -84,6 +84,8 @@ void main(void)
     while (1)
     {
         // Add your application code
+        LATDbits.LATD7 = ~LATDbits.LATD7;
+        __delay_ms(1000);
     }
 }
 /**

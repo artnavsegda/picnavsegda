@@ -20,17 +20,17 @@ PATH:=/Applications/microchip/mplabx/v3.55/mplab_ide.app/Contents/Resources/mpla
 # Path to java used to run MPLAB X when this makefile was created
 MP_JAVA_PATH="/Applications/microchip/mplabx/v3.55/sys/java/jre1.8.0_91.jre/Contents/Home/bin/"
 OS_CURRENT="$(shell uname -s)"
-MP_CC="/Applications/HI-TECH/picc-18/9.80/bin/picc18"
+MP_CC="/Applications/microchip/mplabc18/v3.47/bin/mcc18"
 # MP_CPPC is not defined
 # MP_BC is not defined
-MP_AS="/Applications/HI-TECH/picc-18/9.80/bin/picc18"
-MP_LD="/Applications/HI-TECH/picc-18/9.80/bin/picc18"
-MP_AR="/Applications/HI-TECH/picc-18/9.80/bin/picc18"
+MP_AS="/Applications/microchip/mplabc18/v3.47/bin/../mpasm/MPASMWIN"
+MP_LD="/Applications/microchip/mplabc18/v3.47/bin/mplink"
+MP_AR="/Applications/microchip/mplabc18/v3.47/bin/mplib"
 DEP_GEN=${MP_JAVA_PATH}java -jar "/Applications/microchip/mplabx/v3.55/mplab_ide.app/Contents/Resources/mplab_ide/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
-MP_CC_DIR="/Applications/HI-TECH/picc-18/9.80/bin"
+MP_CC_DIR="/Applications/microchip/mplabc18/v3.47/bin"
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
-MP_AS_DIR="/Applications/HI-TECH/picc-18/9.80/bin"
-MP_LD_DIR="/Applications/HI-TECH/picc-18/9.80/bin"
-MP_AR_DIR="/Applications/HI-TECH/picc-18/9.80/bin"
+MP_AS_DIR="/Applications/microchip/mplabc18/v3.47/bin/../mpasm"
+MP_LD_DIR="/Applications/microchip/mplabc18/v3.47/bin"
+MP_AR_DIR="/Applications/microchip/mplabc18/v3.47/bin"
 # MP_BC_DIR is not defined

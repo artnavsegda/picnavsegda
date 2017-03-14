@@ -54,6 +54,7 @@
 #include "tmr1.h"
 #include "eusart.h"
 #include "TCPIPLibrary/network.h"
+#include "syslog.h"
 
 #define _XTAL_FREQ  40000000
 
