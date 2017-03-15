@@ -67,8 +67,8 @@ void SPI_Initialize(void)
     // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP Middle; UA dontupdate; CKE Idle to Active; D_nA lastbyte_address; 
     SSPSTAT = 0x00;
     
-    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/64; SSPOV no_overflow; 
-    SSPCON1 = 0x22;
+    // SSPEN enabled; WCOL no_collision; CKP Idle:High, Active:Low; SSPM FOSC/64; SSPOV no_overflow; 
+    SSPCON1 = 0x32;
     
     // SSPADD 0; 
     SSPADD = 0x00;

@@ -49,10 +49,10 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "eusart.h"
 #include "spi.h"
+#include "eusart.h"
 
-#define _XTAL_FREQ  40000000
+#define _XTAL_FREQ  2000000
 
 
 /**
