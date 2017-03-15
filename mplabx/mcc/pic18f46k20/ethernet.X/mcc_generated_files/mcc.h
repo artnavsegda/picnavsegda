@@ -50,10 +50,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "tmr1.h"
+#include "spi.h"
 #include "eusart.h"
 #include "TCPIPLibrary/network.h"
-#include "spi.h"
-#include "tmr1.h"
 
 #define _XTAL_FREQ  16000000
 

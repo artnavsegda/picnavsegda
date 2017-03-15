@@ -3,8 +3,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [s S6 :4 `uc 1 :4 `uc 1 :2 `uc 1 :6 `uc 1 `ui 1 `ui 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `ul 1 `ul 1 ]
 [n S6 . ihl version ecn dscp length identifcation fragmentOffsetHigh . dontFragment moreFragments fragmentOffsetLow timeToLive protocol headerCksm srcIpAddress dstIpAddress ]
 "57 ../../TCPIP Library/source/icmp.c
-[c E367 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
-[n E367 . ERROR SUCCESS LINK_NOT_FOUND BUFFER_BUSY TX_LOGIC_NOT_IDLE MAC_NOT_FOUND IP_WRONG_VERSION IPV4_CHECKSUM_FAILS DEST_IP_NOT_MATCHED ICMP_CHECKSUM_FAILS UDP_CHECKSUM_FAILS TCP_CHECKSUM_FAILS DMA_TIMEOUT PORT_NOT_AVAILABLE ARP_IP_NOT_MATCHED  ]
+[c E366 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
+[n E366 . ERROR SUCCESS LINK_NOT_FOUND BUFFER_BUSY TX_LOGIC_NOT_IDLE MAC_NOT_FOUND IP_WRONG_VERSION IPV4_CHECKSUM_FAILS DEST_IP_NOT_MATCHED ICMP_CHECKSUM_FAILS UDP_CHECKSUM_FAILS TCP_CHECKSUM_FAILS DMA_TIMEOUT PORT_NOT_AVAILABLE ARP_IP_NOT_MATCHED  ]
 "126 ../../TCPIP Library/include/tcpip_types.h
 [s S10 `uc 1 `uc 1 ]
 [n S10 . code type ]
@@ -19,19 +19,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 "122
 [v _ETH_SaveRDPT `(v ~T0 @X0 0 ef ]
 "75 ../../TCPIP Library/include/icmp.h
-[v _ICMP_EchoReply `(E367 ~T0 @X0 0 ef2`*S8`*S6 ]
+[v _ICMP_EchoReply `(E366 ~T0 @X0 0 ef2`*S8`*S6 ]
 "63 ../../TCPIP Library/source/icmp.c
-[c E152 0 768 769 770 771 772 773 774 775 776 777 778 779 780 781 782 1024 1280 1281 1282 1283 1536 2048 2304 2560 12288 .. ]
-[n E152 . ECHO_REPLY DEST_NETWORK_UNREACHABLE DEST_HOST_UNREACHABLE DEST_PROTOCOL_UNREACHABLE DEST_PORT_UNREACHABLE FRAGMENTATION_REQUIRED SOURCE_ROUTE_FAILED DESTINATION_NETWORK_UNKNOWN SOURCE_HOST_ISOLATED NETWORK_ADMINISTRATIVELY_PROHIBITED HOST_ADMINISTRATIVELY_PROHIBITED NETWORK_UNREACHABLE_FOR_TOS HOST_UNREACHABLE_FOR_TOS COMMUNICATION_ADMINISTRATIVELY_PROHIBITED HOST_PRECEDENCE_VIOLATION PRECEDENCE_CUTOFF_IN_EFFECT SOURCE_QUENCH REDIRECT_DATAGRAM_FOR_THE_NETWORK REDIRECT_DATAGRAM_FOR_THE_HOST REDIRECT_DATAGRAM_FOR_THE_TOS_AND_NETWORK REDIRECT_DATAGRAM_FOR_THE_TOS_AND_HOST ALTERNATE_HOST_ADDRESS ECHO_REQUEST ROUTER_ADVERTISEMENT ROUTER_SOLICITATION TRACEROUTE  ]
+[c E151 0 768 769 770 771 772 773 774 775 776 777 778 779 780 781 782 1024 1280 1281 1282 1283 1536 2048 2304 2560 12288 .. ]
+[n E151 . ECHO_REPLY DEST_NETWORK_UNREACHABLE DEST_HOST_UNREACHABLE DEST_PROTOCOL_UNREACHABLE DEST_PORT_UNREACHABLE FRAGMENTATION_REQUIRED SOURCE_ROUTE_FAILED DESTINATION_NETWORK_UNKNOWN SOURCE_HOST_ISOLATED NETWORK_ADMINISTRATIVELY_PROHIBITED HOST_ADMINISTRATIVELY_PROHIBITED NETWORK_UNREACHABLE_FOR_TOS HOST_UNREACHABLE_FOR_TOS COMMUNICATION_ADMINISTRATIVELY_PROHIBITED HOST_PRECEDENCE_VIOLATION PRECEDENCE_CUTOFF_IN_EFFECT SOURCE_QUENCH REDIRECT_DATAGRAM_FOR_THE_NETWORK REDIRECT_DATAGRAM_FOR_THE_HOST REDIRECT_DATAGRAM_FOR_THE_TOS_AND_NETWORK REDIRECT_DATAGRAM_FOR_THE_TOS_AND_HOST ALTERNATE_HOST_ADDRESS ECHO_REQUEST ROUTER_ADVERTISEMENT ROUTER_SOLICITATION TRACEROUTE  ]
 "91
-[c E226 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 62 64 65 66 67 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 100 101 102 103 104 105 106 107 108 109 110 111 112 113 115 116 117 118 119 120 122 123 124 125 126 127 128 129 130 131 132 133 .. ]
-[n E226 . HOPOPT ICMP IGMP GGP IPV4 ST TCP CBT EGP IGP BBN_RCC_MON NVP_II PUP ARGUS EMCON XNET CHAOS UDP MUX DCN_MEAS HMP PRM XNS_IDP TRUNK_1 TRUNK_2 LEAF_1 LEAF_2 RDP IRTP ISO_TP4 NETBLT MFE_NSP MERIT_INP DCCP THREEPC IDPR XTP DDP IDPR_CMTP TPpp IL IPV6_TUNNEL SDRP IPV6_Route IPV6_Frag IDRP RSVP GRE DSR BNA ESP AH I_NLSP SWIPE NARP MOBILE TLSP SKIP IPV6_ICMP IPV6_NoNxt IPV6_Opts CFTP SAT_EXPAK KRYPTOLAN RVD IPPC SAT_MON VISA IPCV CPNX CPHB WSN PVP BR_SAT_MON SUN_ND WB_MON WB_EXPAK ISO_IP VMTP SECURE_VMTP VINES TTP IPTM NSFNET_IGP DGP TCF EIGRP OSPFIGP Sprite_RPC LARP MTP AX25 IPIP MICP SCC_SP ETHERIP ENCAP GMTP IFMP PNNI PIM ARIS SCPS QNX A_N IPComp SNP Compaq_Peer IPX_in_IP VRRP PGM L2TP DDX IATP STP SRP UTI SM PTP ISIS FIRE CRTP CRUDP SSCOPMCE IPLT SPS PIPE SCTP FC  ]
+[c E225 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 62 64 65 66 67 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 100 101 102 103 104 105 106 107 108 109 110 111 112 113 115 116 117 118 119 120 122 123 124 125 126 127 128 129 130 131 132 133 .. ]
+[n E225 . HOPOPT ICMP IGMP GGP IPV4 ST TCP CBT EGP IGP BBN_RCC_MON NVP_II PUP ARGUS EMCON XNET CHAOS UDP MUX DCN_MEAS HMP PRM XNS_IDP TRUNK_1 TRUNK_2 LEAF_1 LEAF_2 RDP IRTP ISO_TP4 NETBLT MFE_NSP MERIT_INP DCCP THREEPC IDPR XTP DDP IDPR_CMTP TPpp IL IPV6_TUNNEL SDRP IPV6_Route IPV6_Frag IDRP RSVP GRE DSR BNA ESP AH I_NLSP SWIPE NARP MOBILE TLSP SKIP IPV6_ICMP IPV6_NoNxt IPV6_Opts CFTP SAT_EXPAK KRYPTOLAN RVD IPPC SAT_MON VISA IPCV CPNX CPHB WSN PVP BR_SAT_MON SUN_ND WB_MON WB_EXPAK ISO_IP VMTP SECURE_VMTP VINES TTP IPTM NSFNET_IGP DGP TCF EIGRP OSPFIGP Sprite_RPC LARP MTP AX25 IPIP MICP SCC_SP ETHERIP ENCAP GMTP IFMP PNNI PIM ARIS SCPS QNX A_N IPComp SNP Compaq_Peer IPX_in_IP VRRP PGM L2TP DDX IATP STP SRP UTI SM PTP ISIS FIRE CRTP CRUDP SSCOPMCE IPLT SPS PIPE SCTP FC  ]
 "103 ../../TCPIP Library/include/ipv4.h
-[v _IPv4_Start `(E367 ~T0 @X0 0 ef2`ul`E226 ]
+[v _IPv4_Start `(E366 ~T0 @X0 0 ef2`ul`E225 ]
 "109 ../../TCPIP Library/ethernet_drivers/ethernet_driver.h
 [v _ETH_Write16 `(v ~T0 @X0 0 ef1`ui ]
 "113
-[v _ETH_Copy `(E367 ~T0 @X0 0 ef1`ui ]
+[v _ETH_Copy `(E366 ~T0 @X0 0 ef1`ui ]
 "69 ../../TCPIP Library/include/tcpip_types.h
 [u S5 `ui 1 `ui 1 `ui 1 ]
 [n S5 . type length tpid ]
@@ -43,7 +43,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "112
 [v _ETH_Insert `(v ~T0 @X0 0 ef3`*uc`ui`ui ]
 "136 ../../TCPIP Library/include/ipv4.h
-[v _IPV4_Send `(E367 ~T0 @X0 0 ef1`ui ]
+[v _IPV4_Send `(E366 ~T0 @X0 0 ef1`ui ]
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -72,40 +72,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdio.h: 8: typedef int ptrdiff_t;
-[; ;stdio.h: 9: typedef unsigned size_t;
-[; ;stdio.h: 10: typedef unsigned short wchar_t;
+[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 24: extern int errno;
-[; ;stdio.h: 55: struct __prbuf
-[; ;stdio.h: 56: {
-[; ;stdio.h: 57: char * ptr;
-[; ;stdio.h: 58: void (* func)(char);
-[; ;stdio.h: 59: };
-[; ;conio.h: 17: extern int errno;
-[; ;conio.h: 20: extern void init_uart(void);
-[; ;conio.h: 22: extern char getch(void);
-[; ;conio.h: 23: extern char getche(void);
-[; ;conio.h: 24: extern void putch(char);
-[; ;conio.h: 25: extern void ungetch(char);
-[; ;conio.h: 27: extern __bit kbhit(void);
-[; ;conio.h: 31: extern char * cgets(char *);
-[; ;conio.h: 32: extern void cputs(const char *);
-[; ;stdio.h: 100: extern int cprintf(char *, ...);
-[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 195: extern char * gets(char *);
-[; ;stdio.h: 196: extern int puts(const char *);
-[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 207: extern int printf(const char *, ...);
-[; ;stddef.h: 13: extern int errno;
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;tcpip_types.h: 51: typedef enum {TCB_ERROR = -1, TCB_NO_ERROR = 0} tcbError_t;
 [; ;tcpip_types.h: 53: typedef union
 [; ;tcpip_types.h: 54: {
@@ -514,7 +511,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;icmp.h: 62: error_msg ICMP_Receive(ipv4Header_t *ipv4Hdr);
 [; ;icmp.h: 75: error_msg ICMP_EchoReply(icmpHeader_t *icmpHdr, ipv4Header_t *ipv4Hdr);
 "56 ../../TCPIP Library/source/icmp.c
-[v _ICMP_Receive `(E367 ~T0 @X0 1 ef1`*S6 ]
+[v _ICMP_Receive `(E366 ~T0 @X0 1 ef1`*S6 ]
 "57
 {
 [; ;icmp.c: 56: error_msg ICMP_Receive(ipv4Header_t *ipv4Hdr)
@@ -527,10 +524,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "58
 [v _icmpHdr `S8 ~T0 @X0 1 a ]
 "59
-[v _ret `E367 ~T0 @X0 1 a ]
+[v _ret `E366 ~T0 @X0 1 a ]
 [; ;icmp.c: 58: icmpHeader_t icmpHdr;
 [; ;icmp.c: 59: error_msg ret = ERROR;
-[e = _ret . `E367 0 ]
+[e = _ret . `E366 0 ]
 [; ;icmp.c: 60: ETH_ReadBlock((char *)&icmpHdr, sizeof(icmpHeader_t));
 "60
 [e ( _ETH_ReadBlock (2 , -> -> &U _icmpHdr `*uc `*v -> # `S8 `ui ]
@@ -570,7 +567,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 27  ]
 "63
 [e :U 28 ]
-[e [\ | >> & -> -> . . _icmpHdr 0 0 `E152 `ui -> 65280 `ui -> 8 `i << & -> -> . . _icmpHdr 0 0 `E152 `ui -> -> 255 `i `ui -> 8 `i , $ -> . `E152 22 `ui 29
+[e [\ | >> & -> -> . . _icmpHdr 0 0 `E151 `ui -> 65280 `ui -> 8 `i << & -> -> . . _icmpHdr 0 0 `E151 `ui -> -> 255 `i `ui -> 8 `i , $ -> . `E151 22 `ui 29
  30 ]
 "72
 [e :U 27 ]
@@ -583,7 +580,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 26 ]
 }
 "86
-[v _ICMP_EchoReply `(E367 ~T0 @X0 1 ef2`*S8`*S6 ]
+[v _ICMP_EchoReply `(E366 ~T0 @X0 1 ef2`*S8`*S6 ]
 "87
 {
 [; ;icmp.c: 86: error_msg ICMP_EchoReply(icmpHeader_t *icmpHdr, ipv4Header_t *ipv4Hdr)
@@ -599,15 +596,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;icmp.c: 88: uint16_t cksm =0;
 [e = _cksm -> -> 0 `i `ui ]
 "89
-[v _ret `E367 ~T0 @X0 1 a ]
+[v _ret `E366 ~T0 @X0 1 a ]
 [; ;icmp.c: 89: error_msg ret = ERROR;
-[e = _ret . `E367 0 ]
+[e = _ret . `E366 0 ]
 [; ;icmp.c: 91: ret = IPv4_Start(ipv4Hdr->srcIpAddress, ipv4Hdr->protocol);
 "91
-[e = _ret ( _IPv4_Start (2 , . *U _ipv4Hdr 14 -> . *U _ipv4Hdr 12 `E226 ]
+[e = _ret ( _IPv4_Start (2 , . *U _ipv4Hdr 14 -> . *U _ipv4Hdr 12 `E225 ]
 [; ;icmp.c: 92: if(ret == SUCCESS)
 "92
-[e $ ! == -> _ret `i -> . `E367 1 `i 32  ]
+[e $ ! == -> _ret `i -> . `E366 1 `i 32  ]
 [; ;icmp.c: 93: {
 "93
 {
@@ -623,7 +620,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ipv4PayloadLength - . *U _ipv4Hdr 4 -> << -> . *U _ipv4Hdr 0 `i -> 2 `i `ui ]
 [; ;icmp.c: 99: ETH_Write16(ECHO_REPLY);
 "99
-[e ( _ETH_Write16 (1 -> . `E152 0 `ui ]
+[e ( _ETH_Write16 (1 -> . `E151 0 `ui ]
 [; ;icmp.c: 100: ETH_Write16(0);
 "100
 [e ( _ETH_Write16 (1 -> -> 0 `i `ui ]
@@ -638,7 +635,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _ETH_Copy (1 - _ipv4PayloadLength -> # `S8 `ui ]
 [; ;icmp.c: 106: if(ret==SUCCESS)
 "106
-[e $ ! == -> _ret `i -> . `E367 1 `i 33  ]
+[e $ ! == -> _ret `i -> . `E366 1 `i 33  ]
 [; ;icmp.c: 107: {
 "107
 {
@@ -654,9 +651,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;icmp.c: 112: cksm = ETH_TxComputeChecksum(icmp_cksm_start, ipv4PayloadLength, 0);
 "112
 [e = _cksm ( _ETH_TxComputeChecksum (3 , , _icmp_cksm_start _ipv4PayloadLength -> -> 0 `i `ui ]
-[; ;icmp.c: 113: ETH_Insert((char *)&cksm,sizeof(cksm),sizeof(ethernetFrame_t) + sizeof(ipv4Header_t) + (int)(((char*)&((icmpHeader_t *)1)->checksum)-1));
+[; ;icmp.c: 113: ETH_Insert((char *)&cksm,sizeof(cksm),sizeof(ethernetFrame_t) + sizeof(ipv4Header_t) + (size_t)(((char*)&((icmpHeader_t *)1)->checksum)-1));
 "113
-[e ( _ETH_Insert (3 , , -> &U _cksm `*uc -> # _cksm `ui + + -> # `S4 `ui -> # `S6 `ui -> -> - -> &U . *U -> -> 1 `i `*S8 1 `*uc * -> -> 1 `i `x -> -> # *U -> &U . *U -> -> 1 `i `*S8 1 `*uc `i `x `i `ui ]
+[e ( _ETH_Insert (3 , , -> &U _cksm `*uc -> # _cksm `ui + + -> # `S4 `ui -> # `S6 `ui -> - -> &U . *U -> -> 1 `i `*S8 1 `*uc * -> -> 1 `i `x -> -> # *U -> &U . *U -> -> 1 `i `*S8 1 `*uc `i `x `ui ]
 [; ;icmp.c: 114: ret = IPV4_Send(ipv4PayloadLength);
 "114
 [e = _ret ( _IPV4_Send (1 _ipv4PayloadLength ]

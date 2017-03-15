@@ -1,12 +1,10 @@
 
 # 1 "../../TCPIP Library/source/dhcp_client.c"
 
-# 8 "/Applications/microchip/xc8/v1.34/include/stdio.h"
-typedef int ptrdiff_t;
+# 4 "/Applications/microchip/xc8/v1.41/include/__size_t.h"
 typedef unsigned size_t;
-typedef unsigned short wchar_t;
 
-# 7 "/Applications/microchip/xc8/v1.34/include/stdarg.h"
+# 7 "/Applications/microchip/xc8/v1.41/include/stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -15,20 +13,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 24 "/Applications/microchip/xc8/v1.34/include/stdio.h"
-extern int errno;
-
-# 55
+# 43 "/Applications/microchip/xc8/v1.41/include/stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 17 "/Applications/microchip/xc8/v1.34/include/conio.h"
+# 29 "/Applications/microchip/xc8/v1.41/include/errno.h"
 extern int errno;
 
-
+# 12 "/Applications/microchip/xc8/v1.41/include/conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -38,11 +33,11 @@ extern void ungetch(char);
 
 extern __bit kbhit(void);
 
-# 31
+# 23
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 100 "/Applications/microchip/xc8/v1.34/include/stdio.h"
+# 88 "/Applications/microchip/xc8/v1.41/include/stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -51,7 +46,7 @@ extern int cprintf(char *, ...);
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
 
 
-# 192
+# 180
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -69,12 +64,12 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 22 "/Applications/microchip/xc8/v1.34/include/string.h"
+# 14 "/Applications/microchip/xc8/v1.41/include/string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
 
-# 42
+# 34
 extern char * strcat(char *, const char *);
 extern char * strcpy(char *, const char *);
 extern char * strncat(char *, const char *, size_t);
@@ -101,7 +96,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 13 "/Applications/microchip/xc8/v1.34/include/stdint.h"
+# 13 "/Applications/microchip/xc8/v1.41/include/stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -546,7 +541,7 @@ typedef int8_t socklistsize_t;
 
 typedef void (*ip_receive_function_ptr)(int);
 
-# 12 "/Applications/microchip/xc8/v1.34/include/stdbool.h"
+# 12 "/Applications/microchip/xc8/v1.41/include/stdbool.h"
 typedef unsigned char bool;
 
 # 49 "../../TCPIP Library/include/mac_address.h"
@@ -773,7 +768,7 @@ mac48Address_t* ARPV4_Lookup(uint32_t ipAddress);
 # 104
 error_msg ARPV4_Request(uint32_t destAddress);
 
-# 13 "/Applications/microchip/xc8/v1.34/include/time.h"
+# 8 "/Applications/microchip/xc8/v1.41/include/time.h"
 typedef long time_t;
 struct tm {
 int tm_sec;
@@ -787,14 +782,14 @@ int tm_yday;
 int tm_isdst;
 };
 
-# 32
+# 25
 extern int time_zone;
 
-# 37
+# 30
 extern time_t time(time_t *);
 extern int stime(time_t *);
 
-# 54
+# 47
 extern char * asctime(const struct tm *) ;
 extern char * ctime(const time_t *) ;
 extern struct tm * gmtime(const time_t *) ;

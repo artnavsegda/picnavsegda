@@ -1,5 +1,5 @@
 /**
-  Generated Interrupt Manager Source File
+  @Generated Interrupt Manager File
 
   @Company:
     Microchip Technology Inc.
@@ -50,14 +50,21 @@
 
 void  INTERRUPT_Initialize (void)
 {
-    // Disable Interrupt Priority Vectors (16CXXX Compatibility Mode)
-    RCONbits.IPEN = 0;
+    // Enable Interrupt Priority Vectors
+    RCONbits.IPEN = 1;
+
+    // Assign peripheral interrupt priority vectors
+
+    // TMRI - high priority
+    IPR1bits.TMR1IP = 1;
+
+
 }
 
-void interrupt INTERRUPT_InterruptManager (void)
+void interrupt INTERRUPT_InterruptManagerHigh (void)
 {
-    // interrupt handler
-    if(INTCONbits.PEIE == 1 && PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+   // interrupt handler
+    if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
     {
         TMR1_ISR();
     }
@@ -66,6 +73,7 @@ void interrupt INTERRUPT_InterruptManager (void)
         //Unhandled Interrupt
     }
 }
+
 /**
  End of File
 */

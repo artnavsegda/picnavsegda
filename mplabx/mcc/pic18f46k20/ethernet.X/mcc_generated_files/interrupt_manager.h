@@ -17,7 +17,7 @@
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15
         Device            :  PIC18F46K20
-        Driver Version    :  2.00
+        Driver Version    :  1.01
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
         MPLAB             :  MPLAB X 3.40
@@ -48,6 +48,17 @@
 #ifndef INTERRUPT_MANAGER_H
 #define INTERRUPT_MANAGER_H
 
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    This macro will enable high priority global interrupts.
+ * @Example
+    INTERRUPT_GlobalInterruptHighEnable();
+ */
+#define INTERRUPT_GlobalInterruptHighEnable() (INTCONbits.GIEH = 1)
 
 /**
  * @Param
@@ -55,11 +66,11 @@
  * @Returns
     none
  * @Description
-    This macro will enable global interrupts.
+    This macro will disable high priority global interrupts.
  * @Example
-    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptHighDisable();
  */
-#define INTERRUPT_GlobalInterruptEnable() (INTCONbits.GIE = 1)
+#define INTERRUPT_GlobalInterruptHighDisable() (INTCONbits.GIEH = 0)
 
 /**
  * @Param
@@ -67,11 +78,11 @@
  * @Returns
     none
  * @Description
-    This macro will disable global interrupts.
+    This macro will enable low priority global interrupts.
  * @Example
-    INTERRUPT_GlobalInterruptDisable();
+    INTERRUPT_GlobalInterruptLowEnable();
  */
-#define INTERRUPT_GlobalInterruptDisable() (INTCONbits.GIE = 0)
+#define INTERRUPT_GlobalInterruptLowEnable() (INTCONbits.GIEL = 1)
 
 /**
  * @Param
@@ -79,35 +90,12 @@
  * @Returns
     none
  * @Description
-    This macro will enable peripheral interrupts.
+    This macro will disable low priority global interrupts.
  * @Example
-    INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_GlobalInterruptLowDisable();
  */
-#define INTERRUPT_PeripheralInterruptEnable() (INTCONbits.PEIE = 1)
+#define INTERRUPT_GlobalInterruptLowDisable() (INTCONbits.GIEL = 0)
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    This macro will disable peripheral interrupts.
- * @Example
-    INTERRUPT_PeripheralInterruptDisable();
- */
-#define INTERRUPT_PeripheralInterruptDisable() (INTCONbits.PEIE = 0)
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Main interrupt service routine. Calls module interrupt handlers.
- * @Example
-    INTERRUPT_InterruptManager();
- */
-void interrupt INTERRUPT_InterruptManager(void);
 
 /**
  * @Param
@@ -120,6 +108,18 @@ void interrupt INTERRUPT_InterruptManager(void);
     INTERRUPT_Initialize();
  */
 void INTERRUPT_Initialize (void);
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt service routine. Calls module interrupt handlers.
+ * @Example
+    INTERRUPT_InterruptManager();
+ */
+void interrupt INTERRUPT_InterruptManager (void);
 
 #endif  // INTERRUPT_MANAGER_H
 /**

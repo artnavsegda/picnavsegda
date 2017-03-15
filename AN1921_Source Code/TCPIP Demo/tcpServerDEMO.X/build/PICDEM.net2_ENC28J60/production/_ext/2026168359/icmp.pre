@@ -1,7 +1,7 @@
 
 # 1 "../../TCPIP Library/source/icmp.c"
 
-# 13 "/Applications/microchip/xc8/v1.34/include/stdint.h"
+# 13 "/Applications/microchip/xc8/v1.41/include/stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -91,12 +91,10 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 8 "/Applications/microchip/xc8/v1.34/include/stdio.h"
-typedef int ptrdiff_t;
+# 4 "/Applications/microchip/xc8/v1.41/include/__size_t.h"
 typedef unsigned size_t;
-typedef unsigned short wchar_t;
 
-# 7 "/Applications/microchip/xc8/v1.34/include/stdarg.h"
+# 7 "/Applications/microchip/xc8/v1.41/include/stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -105,20 +103,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 24 "/Applications/microchip/xc8/v1.34/include/stdio.h"
-extern int errno;
-
-# 55
+# 43 "/Applications/microchip/xc8/v1.41/include/stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 17 "/Applications/microchip/xc8/v1.34/include/conio.h"
+# 29 "/Applications/microchip/xc8/v1.41/include/errno.h"
 extern int errno;
 
-
+# 12 "/Applications/microchip/xc8/v1.41/include/conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -128,11 +123,11 @@ extern void ungetch(char);
 
 extern __bit kbhit(void);
 
-# 31
+# 23
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 100 "/Applications/microchip/xc8/v1.34/include/stdio.h"
+# 88 "/Applications/microchip/xc8/v1.41/include/stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -141,7 +136,7 @@ extern int cprintf(char *, ...);
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
 
 
-# 192
+# 180
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -159,8 +154,8 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 13 "/Applications/microchip/xc8/v1.34/include/stddef.h"
-extern int errno;
+# 6 "/Applications/microchip/xc8/v1.41/include/stddef.h"
+typedef int ptrdiff_t;
 
 # 51 "../../TCPIP Library/include/tcpip_types.h"
 typedef enum {TCB_ERROR = -1, TCB_NO_ERROR = 0} tcbError_t;
@@ -523,7 +518,7 @@ void Network_Read(void);
 void Network_Manage(void);
 void Network_WaitForLink(void);
 
-# 12 "/Applications/microchip/xc8/v1.34/include/stdbool.h"
+# 12 "/Applications/microchip/xc8/v1.41/include/stdbool.h"
 typedef unsigned char bool;
 
 # 49 "../../TCPIP Library/include/mac_address.h"
@@ -698,7 +693,7 @@ ETH_SaveRDPT();
 cksm = sizeof(ethernetFrame_t) + sizeof(ipv4Header_t);
 icmp_cksm_start = sizeof(ethernetFrame_t) + sizeof(ipv4Header_t);
 cksm = ETH_TxComputeChecksum(icmp_cksm_start, ipv4PayloadLength, 0);
-ETH_Insert((char *)&cksm,sizeof(cksm),sizeof(ethernetFrame_t) + sizeof(ipv4Header_t) + (int)(((char*)&((icmpHeader_t *)1)->checksum)-1));
+ETH_Insert((char *)&cksm,sizeof(cksm),sizeof(ethernetFrame_t) + sizeof(ipv4Header_t) + (size_t)(((char*)&((icmpHeader_t *)1)->checksum)-1));
 ret = IPV4_Send(ipv4PayloadLength);
 }
 }
