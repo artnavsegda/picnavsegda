@@ -46,7 +46,7 @@
 // Configuration bits: selected in the GUI
 
 // CONFIG1H
-#pragma config FOSC = HSPLL    // Oscillator Selection bits->HS oscillator, PLL enabled (Clock Frequency = 4 x FOSC1)
+#pragma config FOSC = INTIO67    // Oscillator Selection bits->Internal oscillator block, port function on RA6 and RA7
 #pragma config FCMEN = OFF    // Fail-Safe Clock Monitor Enable bit->Fail-Safe Clock Monitor disabled
 #pragma config IESO = OFF    // Internal/External Oscillator Switchover bit->Oscillator Switchover mode disabled
 
@@ -118,8 +118,8 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS FOSC; OSTS intosc; IRCF 1MHz_HFINTOSC/16; IDLEN disabled; 
-    OSCCON = 0x30;
+    // SCS FOSC; OSTS intosc; IRCF 16MHz_HFINTOSC/4; IDLEN disabled; 
+    OSCCON = 0x70;
     // INTSRC disabled; PLLEN disabled; TUN 0; 
     OSCTUNE = 0x00;
     // Set the secondary oscillator

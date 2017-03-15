@@ -44,6 +44,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/TCPIPLibrary/syslog.h"
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
