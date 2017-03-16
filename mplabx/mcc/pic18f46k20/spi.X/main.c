@@ -82,6 +82,7 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     __delay_ms(100);
     
+    LATD1 = 0;
     SPI_Exchange8bitBuffer("\xFF\xFF\xFF\xFF\xFF",5,NULL);
     __delay_ms(10);
     SPI_Exchange8bitBuffer("\x20\x0C\x10\x04",4,NULL);
@@ -90,14 +91,17 @@ void main(void)
     __delay_ms(10);
     SPI_Exchange8bitBuffer("\x70\x89\x78\xD7",4,NULL);
     __delay_ms(10);
+    LATD1 = 1;
     
     uint8_t adcdata[2];
 
     while (1)
     {
+        LATD1 = 0;
         SPI_Exchange8bit(0x38);
         SPI_Exchange8bitBuffer(NULL,2,adcdata);
         printf("adcdata %x %x\r\n",adcdata[0],adcdata[1]);
+        LATD1 = 1;
         // Add your application code
         __delay_ms(100);
     }

@@ -59,6 +59,20 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set ETH_IRQ aliases
+#define ETH_IRQ_TRIS               TRISAbits.TRISA2
+#define ETH_IRQ_LAT                LATAbits.LATA2
+#define ETH_IRQ_PORT               PORTAbits.RA2
+#define ETH_IRQ_ANS                ANSELbits.ANS2
+#define ETH_IRQ_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define ETH_IRQ_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define ETH_IRQ_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define ETH_IRQ_GetValue()           PORTAbits.RA2
+#define ETH_IRQ_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define ETH_IRQ_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define ETH_IRQ_SetAnalogMode()  do { ANSELbits.ANS2 = 1; } while(0)
+#define ETH_IRQ_SetDigitalMode() do { ANSELbits.ANS2 = 0; } while(0)
+
 // get/set RC3 procedures
 #define RC3_SetHigh()    do { LATCbits.LATC3 = 1; } while(0)
 #define RC3_SetLow()   do { LATCbits.LATC3 = 0; } while(0)
@@ -98,6 +112,17 @@
 #define RC7_GetValue()         PORTCbits.RC7
 #define RC7_SetDigitalInput()   do { TRISCbits.TRISC7 = 1; } while(0)
 #define RC7_SetDigitalOutput()  do { TRISCbits.TRISC7 = 0; } while(0)
+
+// get/set ADC_CS aliases
+#define ADC_CS_TRIS               TRISDbits.TRISD1
+#define ADC_CS_LAT                LATDbits.LATD1
+#define ADC_CS_PORT               PORTDbits.RD1
+#define ADC_CS_SetHigh()            do { LATDbits.LATD1 = 1; } while(0)
+#define ADC_CS_SetLow()             do { LATDbits.LATD1 = 0; } while(0)
+#define ADC_CS_Toggle()             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0)
+#define ADC_CS_GetValue()           PORTDbits.RD1
+#define ADC_CS_SetDigitalInput()    do { TRISDbits.TRISD1 = 1; } while(0)
+#define ADC_CS_SetDigitalOutput()   do { TRISDbits.TRISD1 = 0; } while(0)
 
 // get/set RD3 procedures
 #define RD3_SetHigh()    do { LATDbits.LATD3 = 1; } while(0)

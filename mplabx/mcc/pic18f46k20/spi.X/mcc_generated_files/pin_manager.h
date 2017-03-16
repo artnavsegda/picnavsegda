@@ -99,6 +99,28 @@
 #define RC7_SetDigitalInput()   do { TRISCbits.TRISC7 = 1; } while(0)
 #define RC7_SetDigitalOutput()  do { TRISCbits.TRISC7 = 0; } while(0)
 
+// get/set IO_RD1 aliases
+#define IO_RD1_TRIS               TRISDbits.TRISD1
+#define IO_RD1_LAT                LATDbits.LATD1
+#define IO_RD1_PORT               PORTDbits.RD1
+#define IO_RD1_SetHigh()            do { LATDbits.LATD1 = 1; } while(0)
+#define IO_RD1_SetLow()             do { LATDbits.LATD1 = 0; } while(0)
+#define IO_RD1_Toggle()             do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0)
+#define IO_RD1_GetValue()           PORTDbits.RD1
+#define IO_RD1_SetDigitalInput()    do { TRISDbits.TRISD1 = 1; } while(0)
+#define IO_RD1_SetDigitalOutput()   do { TRISDbits.TRISD1 = 0; } while(0)
+
+// get/set IO_RD3 aliases
+#define IO_RD3_TRIS               TRISDbits.TRISD3
+#define IO_RD3_LAT                LATDbits.LATD3
+#define IO_RD3_PORT               PORTDbits.RD3
+#define IO_RD3_SetHigh()            do { LATDbits.LATD3 = 1; } while(0)
+#define IO_RD3_SetLow()             do { LATDbits.LATD3 = 0; } while(0)
+#define IO_RD3_Toggle()             do { LATDbits.LATD3 = ~LATDbits.LATD3; } while(0)
+#define IO_RD3_GetValue()           PORTDbits.RD3
+#define IO_RD3_SetDigitalInput()    do { TRISDbits.TRISD3 = 1; } while(0)
+#define IO_RD3_SetDigitalOutput()   do { TRISDbits.TRISD3 = 0; } while(0)
+
 /**
    @Param
     none

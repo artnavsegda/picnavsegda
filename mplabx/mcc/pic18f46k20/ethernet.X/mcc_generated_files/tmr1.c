@@ -66,11 +66,11 @@ void TMR1_Initialize(void)
     //T1CKPS 1:8; T1OSCEN disabled; TMR1CS FOSC/4; nT1SYNC synchronize; TMR1ON off; RD16 disabled; 
     T1CON = 0x30;
 
-    //TMR1H 158; 
-    TMR1H = 0x9E;
+    //TMR1H 243; 
+    TMR1H = 0xF3;
 
-    //TMR1L 88; 
-    TMR1L = 0x58;
+    //TMR1L 203; 
+    TMR1L = 0xCB;
 
     // Load the TMR value to reload variable
     timer1ReloadVal=TMR1;
