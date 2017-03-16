@@ -51,7 +51,7 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #define ETH_NCS_HIGH() do{LATD3 = 1;} while(0)  //Use the Ethernet Chip select as per your hardware specification here
 #define ETH_NCS_LOW()  do{LATD3 = 0;} while(0)  //Use the Ethernet Chip select as per your hardware specification here
         
-#define ETH_IRQ PORTAbits.RA2         
+#define ETH_IRQ PORTBbits.RB0         
 
 #define ETH_SPI_READ8()   SPI_Exchange8bit(0)
 #define ETH_SPI_WRITE8(a) SPI_Exchange8bit(a)
