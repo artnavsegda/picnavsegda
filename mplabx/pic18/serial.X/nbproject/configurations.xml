@@ -163,7 +163,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -724,7 +724,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -1135,7 +1135,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -1546,7 +1546,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -1957,7 +1957,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -2226,7 +2226,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
