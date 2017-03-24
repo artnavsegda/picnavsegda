@@ -49,6 +49,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include "modbus.h"
 
 /*******************************************************************************/
                             /* TCP Demo */
@@ -58,52 +59,52 @@
 void DEMO_TCP_EchoServer(void)
 {
     // create the socket for the TCP Server
-    static tcpTCB_t port7TCB;
+    static tcpTCB_t modbusTCB;
 
     // create the TX and RX Server's buffers
-    static uint8_t rxdataPort7[20];
-    static uint8_t txdataPort7[20];
+    static mbframestruct datamodbus;
+    static mbframestruct datamodbus;
 
     uint16_t rxLen, txLen, i;
     socketState_t socket_state;
 
-    socket_state = TCP_SocketPoll(&port7TCB);
+    socket_state = TCP_SocketPoll(&modbusTCB);
 
     switch(socket_state)
     {
         case NOT_A_SOCKET:
             // Inserting and initializing the socket
-            TCP_SocketInit(&port7TCB);
+            TCP_SocketInit(&modbusTCB);
             break;
         case SOCKET_CLOSED:
             //configure the local port
-            TCP_Bind(&port7TCB, 7);
+            TCP_Bind(&modbusTCB, 502);
             // add receive buffer
-            TCP_InsertRxBuffer(&port7TCB, rxdataPort7, sizeof(rxdataPort7));
+            TCP_InsertRxBuffer(&modbusTCB, (unsigned char *)&datamodbus, sizeof(datamodbus));
             // start the server
-            TCP_Listen(&port7TCB);
+            TCP_Listen(&modbusTCB);
             break;
         case SOCKET_CONNECTED:
             // check if the buffer was sent, if yes we can send another buffer
-            if(TCP_SendDone(&port7TCB))
+            if(TCP_SendDone(&modbusTCB))
             {
                 // check to see  if there are any received data
-                rxLen = TCP_GetRxLength(&port7TCB);
+                rxLen = TCP_GetRxLength(&modbusTCB);
                 if(rxLen > 0)
                 {
-                    rxLen = TCP_GetReceivedData(&port7TCB);
+                    rxLen = TCP_GetReceivedData(&modbusTCB);
 
                     //simulate some buffer processing
-                    for(i = 0; i < rxLen; i++)
-                    {
-                        txdataPort7[i] = rxdataPort7[i];
-                    }
+                    //for(i = 0; i < rxLen; i++)
+                    //{
+                    //    txdatamodbus[i] = rxdatamodbus[i];
+                    //}
 
-                    // reuse the RX buffer
-                    TCP_InsertRxBuffer(&port7TCB, rxdataPort7, sizeof(rxdataPort7));
-                    txLen = rxLen;
+                    txLen = modbus(&datamodbus);
                     //send data back to the source
-                    TCP_Send(&port7TCB, txdataPort7, txLen);
+                    TCP_Send(&modbusTCB, (unsigned char *)&datamodbus, txLen);
+                    // reuse the RX buffer
+                    TCP_InsertRxBuffer(&modbusTCB, (unsigned char *)&datamodbus, sizeof(datamodbus));
                 }
             }
             break;

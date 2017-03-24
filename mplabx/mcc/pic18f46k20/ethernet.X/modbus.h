@@ -55,3 +55,5 @@ typedef struct  {
         unsigned int length;
         pduframestruct pdu;
 }mbframestruct;
+
+unsigned int modbus(mbframestruct *askframe);
