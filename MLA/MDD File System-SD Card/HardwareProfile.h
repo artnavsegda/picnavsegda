@@ -272,16 +272,16 @@
         #define OUTPUT_PIN          0
     
         // Chip Select Signal
-        #define SD_CS               PORTBbits.RB3
-        #define SD_CS_TRIS          TRISBbits.TRISB3
+        #define SD_CS               PORTDbits.RD3
+        #define SD_CS_TRIS          TRISDbits.TRISD3
         
         // Card detect signal
-        #define SD_CD               PORTBbits.RB4
-        #define SD_CD_TRIS          TRISBbits.TRISB4
+        #define SD_CD               PORTBbits.RB0
+        #define SD_CD_TRIS          TRISBbits.TRISB0
         
         // Write protect signal
-        #define SD_WE               PORTAbits.RA4
-        #define SD_WE_TRIS          TRISAbits.TRISA4
+        #define SD_WE               PORTDbits.RD2
+        #define SD_WE_TRIS          TRISDbits.TRISD2
         
         // Registers for the SPI module you want to use
         #define SPICON1             SSPCON1
