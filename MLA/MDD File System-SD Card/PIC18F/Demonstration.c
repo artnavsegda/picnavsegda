@@ -98,6 +98,8 @@
      #pragma config WPDIS = OFF          //WPFP[5:0], WPEND, and WPCFG bits ignored 
 #elif defined(__18F8722)
 	#pragma config OSC=HSPLL, FCMEN=OFF, IESO=OFF, PWRT=OFF, WDT=OFF, LVP=OFF, XINST=OFF
+#elif defined(__18F46K20)
+    #pragma config FOSC=HSPLL
 #else
 #endif
 
