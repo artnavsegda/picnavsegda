@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="62">
   <projectmakefile>Makefile</projectmakefile>
-  <defaultConf>7</defaultConf>
+  <defaultConf>2</defaultConf>
   <confs>
     <conf name="PIC24FJ128GA010_PIM_Exp_16_Board" type="2">
       <platformToolSN></platformToolSN>
