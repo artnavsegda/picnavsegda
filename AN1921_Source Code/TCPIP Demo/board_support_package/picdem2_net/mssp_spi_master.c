@@ -1,50 +1,66 @@
 /**
-  Descriptive File Name
-	
-  Company:
+  MSSP Generated Driver File
+
+  @Company
     Microchip Technology Inc.
 
-  File Name:
-    mssp_spi_master.c
+  @File Name
+    spi.c
 
-  Summary:
-    Brief Description of the file (will placed in a table if using Doc-o-Matic)
+  @Summary
+    This is the generated driver implementation file for the MSSP driver using MPLAB(c) Code Configurator
 
-  Description:
-    This section is for a description of the file.  It should be in complete
-    sentences describing the purpose of this file.
-
- */
+  @Description
+    This source file provides APIs for MSSP.
+    Generation Information :
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15
+        Device            :  PIC18F46K20
+        Driver Version    :  2.00
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 1.35
+        MPLAB             :  MPLAB X 3.40
+*/
 
 /*
+    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    software and any derivatives exclusively with Microchip products.
 
-©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software 
-and any derivatives exclusively with Microchip products. 
-  
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER EXPRESS, 
-IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF 
-NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE, OR ITS 
-INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION WITH ANY OTHER PRODUCTS, OR USE 
-IN ANY APPLICATION. 
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
+    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
 
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL 
-OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED 
-TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY 
-OR THE DAMAGES ARE FORESEEABLE.  TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S 
-TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED 
-THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
-MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TERMS. 
+    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
+    TERMS.
+*/
 
+/**
+  Section: Included Files
 */
 
 #include <xc.h>
-#include "hardware.h"
 #include "mssp_spi_master.h"
+
+/**
+  Section: Macro Declarations
+*/
 
 #define SPI_RX_IN_PROGRESS 0x0
 
-void spi_init(void)
+/**
+  Section: Module APIs
+*/
+
+void SPI_Initialize(void)
 {
     // Set the SPI module to the options selected in the User Interface
     
@@ -58,12 +74,12 @@ void spi_init(void)
     SSPADD = 0x00;
 }
 
-char SPI_ExchangeByte(char v)
+uint8_t SPI_Exchange8bit(uint8_t data)
 {
     // Clear the Write Collision flag, to allow writing
     SSPCON1bits.WCOL = 0;
 
-    SSPBUF = v;
+    SSPBUF = data;
 
     while(SSPSTATbits.BF == SPI_RX_IN_PROGRESS)
     {
@@ -71,3 +87,60 @@ char SPI_ExchangeByte(char v)
 
     return (SSPBUF);
 }
+
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut)
+{
+    uint8_t bytesWritten = 0;
+
+    if(bufLen != 0)
+    {
+        if(dataIn != NULL)
+        {
+            while(bytesWritten < bufLen)
+            {
+                if(dataOut == NULL)
+                {
+                    SPI_Exchange8bit(dataIn[bytesWritten]);
+                }
+                else
+                {
+                    dataOut[bytesWritten] = SPI_Exchange8bit(dataIn[bytesWritten]);
+                }
+
+                bytesWritten++;
+            }
+        }
+        else
+        {
+            if(dataOut != NULL)
+            {
+                while(bytesWritten < bufLen )
+                {
+                    dataOut[bytesWritten] = SPI_Exchange8bit(DUMMY_DATA);
+
+                    bytesWritten++;
+                }
+            }
+        }
+    }
+
+    return bytesWritten;
+}
+
+bool SPI_IsBufferFull(void)
+{
+    return (SSPSTATbits.BF);
+}
+
+bool SPI_HasWriteCollisionOccured(void)
+{
+    return (SSPCON1bits.WCOL);
+}
+
+void SPI_ClearWriteCollisionStatus(void)
+{
+    SSPCON1bits.WCOL = 0;
+}
+/**
+ End of File
+*/

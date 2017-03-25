@@ -42,6 +42,7 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include <xc.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdio.h>
 #include "enc28j60.h"
 #include "hardware.h"
 #include "ethernet_driver.h"
@@ -49,8 +50,8 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include "network.h"
 
 
-#define ETH_SPI_READ8()   SPI_ExchangeByte(0)
-#define ETH_SPI_WRITE8(a) SPI_ExchangeByte(a)
+#define ETH_SPI_READ8()   SPI_Exchange8bit(0)
+#define ETH_SPI_WRITE8(a) SPI_Exchange8bit(a)
 
 #define ETH_IRQ_LOW()           ((ETH_IRQ == 0)?1:0)
 
@@ -130,11 +131,15 @@ void ETH_Init(void)
 
     __delay_us(100);
 
+    printf("Sending reset: ");
     ETH_SendSystemReset(); // software reset
     __delay_ms(10);
+    printf("done\r\n");
 
     // Wait for the OST
+    printf("Waiting for OST: ");
     while (!(ENC28_Rcr8(J60_ESTAT) & 0x01)); // wait for CLKRDY to go high
+    printf("done\r\n");
 
     // Initialize RX tracking variables and other control state flags
     nextPacketPointer = RXSTART;
@@ -184,7 +189,9 @@ void ETH_Init(void)
     ENC28_Wcr16(J60_PHIE, 0x12); //Enable PLNKIE and PGEIE  
 
     // check for a preexisting link
+    printf("Waiting for link: ");
     ETH_CheckLinkUp();
+    printf("done\r\n");
     
 }
 

@@ -39,6 +39,7 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 */
 
 #include <xc.h>
+#include <stdio.h>
 #include "rtcc.h"
 #include "uart.h"
 #include "mssp_spi_master.h"
@@ -47,11 +48,28 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 
 void initHW(void)
 {
-    // Oscillator
-    OSCCON = 0x02; // primary oscillator
+    // SCS FOSC; OSTS intosc; IRCF 16MHz_HFINTOSC/4; IDLEN disabled; 
+    OSCCON = 0x70;
+    // INTSRC disabled; PLLEN disabled; TUN 0; 
+    OSCTUNE = 0x00;
     
-    // Enable 41.6667MHz with PLL on PIC18F97J60
-    OSCTUNE = 0x40;
+    /**
+    LATx registers
+    */   
+    LATE = 0x00;    
+    LATD = 0x02;    
+    LATA = 0x00;    
+    LATB = 0x00;    
+    LATC = 0x00;    
+
+    /**
+    TRISx registers
+    */    
+    TRISE = 0x07;
+    TRISA = 0xFF;
+    TRISB = 0xFF;
+    TRISC = 0x97;
+    TRISD = 0xF5;
 
     // LED's
 /*    TRISJ = 0; // PORTJ is all the LED's
@@ -102,14 +120,18 @@ void initHW(void)
     rtcc_init();
 
       //SPI
-    spi_init();
+    SPI_Initialize();
 
     // UART to Debug
     uart_init();
+    
+    printf("\r\n\r\nStarting printf output\r\n");
 
     //EEPROM
 //    eeprom_init();
 
+    printf("Adc init: ");
     ADC_Initialize();
+    printf("done \r\n");
     
 }

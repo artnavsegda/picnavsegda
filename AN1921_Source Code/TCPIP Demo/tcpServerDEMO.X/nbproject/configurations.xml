@@ -43,7 +43,6 @@
         <logicalFolder name="picdem2_net" displayName="picdem2_net" projectFiles="true">
           <itemPath>../board_support_package/picdem2_net/adc.c</itemPath>
           <itemPath>../board_support_package/picdem2_net/configuration.c</itemPath>
-          <itemPath>../board_support_package/picdem2_net/eeprom.c</itemPath>
           <itemPath>../board_support_package/picdem2_net/hardware.c</itemPath>
           <itemPath>../board_support_package/picdem2_net/mssp_spi_master.c</itemPath>
           <itemPath>../board_support_package/picdem2_net/rtcc.c</itemPath>
@@ -1031,6 +1030,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
