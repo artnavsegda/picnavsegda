@@ -5,7 +5,7 @@
   <confs>
     <conf name="XC16-SD_Card" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>C:\Program Files\Microchip\xc16\v1.10\bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc16/v1.31/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -23,7 +23,7 @@
     </conf>
     <conf name="XC16-USB_Thumb_Drive" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>C:\Program Files\Microchip\xc16\v1.10\bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc16/v1.31/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>

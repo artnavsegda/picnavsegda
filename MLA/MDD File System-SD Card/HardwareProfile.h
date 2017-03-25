@@ -12,8 +12,8 @@
  * Software License Agreement
  *
  * The software supplied herewith by Microchip Technology Incorporated
- * (the “Company”) for its PICmicro® Microcontroller is intended and
- * supplied to you, the Company’s customer, for use solely and
+ * (the ï¿½Companyï¿½) for its PICmicroï¿½ Microcontroller is intended and
+ * supplied to you, the Companyï¿½s customer, for use solely and
  * exclusively on Microchip PICmicro Microcontroller products. The
  * software is owned by the Company and/or its supplier, and is
  * protected under applicable copyright laws. All rights are reserved.
@@ -22,7 +22,7 @@
  * civil liability for the breach of the terms and conditions of this
  * license.
  *
- * THIS SOFTWARE IS PROVIDED IN AN “AS IS” CONDITION. NO WARRANTIES,
+ * THIS SOFTWARE IS PROVIDED IN AN ï¿½AS ISï¿½ CONDITION. NO WARRANTIES,
  * WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED
  * TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
  * PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT,
@@ -56,6 +56,8 @@
         #define PIC18F46J50_PIM
         #define GetSystemClock()        48000000                        // System clock frequency (Hz)
     #elif defined(__18F8722)
+        #define GetSystemClock()        40000000                        // System clock frequency (Hz)
+    #elif defined(__18F46K20)
         #define GetSystemClock()        40000000                        // System clock frequency (Hz)
     #endif
 
@@ -235,6 +237,59 @@
         #define SPISTAT_RBF         SSP1STATbits.BF
         #define SPICON1bits         SSP1CON1bits
         #define SPISTATbits         SSP1STATbits
+    
+        #define SPI_INTERRUPT_FLAG  PIR1bits.SSPIF   
+    
+        // Defines for the HPC Explorer board
+        #define SPICLOCK            TRISCbits.TRISC3
+        #define SPIIN               TRISCbits.TRISC4
+        #define SPIOUT              TRISCbits.TRISC5
+    
+        // Latch pins for SCK/SDI/SDO lines
+        #define SPICLOCKLAT         LATCbits.LATC3
+        #define SPIINLAT            LATCbits.LATC4
+        #define SPIOUTLAT           LATCbits.LATC5
+    
+        // Port pins for SCK/SDI/SDO lines
+        #define SPICLOCKPORT        PORTCbits.RC3
+        #define SPIINPORT           PORTCbits.RC4
+        #define SPIOUTPORT          PORTCbits.RC5
+    
+        #define SPIENABLE           SSPCON1bits.SSPEN
+
+		#define SPI_INTERRUPT_FLAG_ASM  PIR1, 3
+
+        // Will generate an error if the clock speed is too low to interface to the card
+        #if (GetSystemClock() < 400000)
+            #error System clock speed must exceed 400 kHz
+        #endif
+	#elif defined(__18F46K20)
+    
+        #define USE_PIC18
+        #define USE_SD_INTERFACE_WITH_SPI
+    
+        #define INPUT_PIN           1
+        #define OUTPUT_PIN          0
+    
+        // Chip Select Signal
+        #define SD_CS               PORTBbits.RB3
+        #define SD_CS_TRIS          TRISBbits.TRISB3
+        
+        // Card detect signal
+        #define SD_CD               PORTBbits.RB4
+        #define SD_CD_TRIS          TRISBbits.TRISB4
+        
+        // Write protect signal
+        #define SD_WE               PORTAbits.RA4
+        #define SD_WE_TRIS          TRISAbits.TRISA4
+        
+        // Registers for the SPI module you want to use
+        #define SPICON1             SSPCON1
+        #define SPISTAT             SSPSTAT
+        #define SPIBUF              SSPBUF
+        #define SPISTAT_RBF         SSPSTATbits.BF
+        #define SPICON1bits         SSPCON1bits
+        #define SPISTATbits         SSPSTATbits
     
         #define SPI_INTERRUPT_FLAG  PIR1bits.SSPIF   
     

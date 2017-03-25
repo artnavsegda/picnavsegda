@@ -178,7 +178,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.10</languageToolchainVersion>
+        <languageToolchainVersion>1.31</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -186,10 +186,15 @@
           <linkerLibItems>
           </linkerLibItems>
         </linkerTool>
+        <archiverTool>
+        </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
+        <subordinates>
+        </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
@@ -203,6 +208,8 @@
       <item path="../../../Microchip/Include/USB/usb.h" ex="true" overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -215,6 +222,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -227,6 +236,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -239,6 +250,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -251,6 +264,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -263,6 +278,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -275,6 +292,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -287,6 +306,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -299,6 +320,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -309,6 +332,8 @@
       <item path="../../../Microchip/USB/usb_host.c" ex="true" overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -319,6 +344,8 @@
       <item path="../usb_config.c" ex="true" overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -329,6 +356,8 @@
       <item path="../usb_config.h" ex="true" overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -435,8 +464,6 @@
         <property key="oXC16glb-macros" value=""/>
         <property key="output-file-format" value="elf"/>
       </C30Global>
-      <Simulator>
-      </Simulator>
     </conf>
     <conf name="XC16-USB_Thumb_Drive" type="2">
       <toolsSet>
@@ -446,7 +473,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.10</languageToolchainVersion>
+        <languageToolchainVersion>1.31</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -454,10 +481,15 @@
           <linkerLibItems>
           </linkerLibItems>
         </linkerTool>
+        <archiverTool>
+        </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
+        <subordinates>
+        </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
@@ -473,6 +505,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -485,6 +519,8 @@
             overriding="false">
         <C30>
         </C30>
+        <C30-AR>
+        </C30-AR>
         <C30-AS>
         </C30-AS>
         <C30-LD>
@@ -584,8 +620,6 @@
         <property key="oXC16glb-macros" value=""/>
         <property key="output-file-format" value="elf"/>
       </C30Global>
-      <Simulator>
-      </Simulator>
     </conf>
   </confs>
 </configurationDescriptor>
