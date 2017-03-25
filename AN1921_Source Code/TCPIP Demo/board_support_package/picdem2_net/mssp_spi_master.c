@@ -42,19 +42,32 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include "hardware.h"
 #include "mssp_spi_master.h"
 
+#define SPI_RX_IN_PROGRESS 0x0
 
 void spi_init(void)
 {
-    SSP1STATbits.CKE = 1;
-    SSP1STATbits.SMP = 0;    
-
-    SSP1CON1 = 0x01;// SPI Master mode, Clock = FOSC/16
-    SSP1CON1bits.SSPEN = 1;
+    // Set the SPI module to the options selected in the User Interface
+    
+    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP Middle; UA dontupdate; CKE Active to Idle; D_nA lastbyte_address; 
+    SSPSTAT = 0x40;
+    
+    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/64; SSPOV no_overflow; 
+    SSPCON1 = 0x22;
+    
+    // SSPADD 0; 
+    SSPADD = 0x00;
 }
 
 char SPI_ExchangeByte(char v)
 {
-    SSP1BUF = v;
-    while (SSP1STATbits.BF == 0);
-    return SSPBUF;
+    // Clear the Write Collision flag, to allow writing
+    SSPCON1bits.WCOL = 0;
+
+    SSPBUF = v;
+
+    while(SSPSTATbits.BF == SPI_RX_IN_PROGRESS)
+    {
+    }
+
+    return (SSPBUF);
 }

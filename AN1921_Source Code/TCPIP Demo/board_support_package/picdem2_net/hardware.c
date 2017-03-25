@@ -41,11 +41,9 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include <xc.h>
 #include "rtcc.h"
 #include "uart.h"
-#include "lcd.h"
 #include "mssp_spi_master.h"
 #include "eeprom.h"
 #include "adc.h"
-#include "led_driver.h"
 
 void initHW(void)
 {
@@ -56,7 +54,7 @@ void initHW(void)
     OSCTUNE = 0x40;
 
     // LED's
-    TRISJ = 0; // PORTJ is all the LED's
+/*    TRISJ = 0; // PORTJ is all the LED's
     LATJ = 0;
 
     TRISDbits.TRISD3 = 0;
@@ -66,7 +64,7 @@ void initHW(void)
     TRISCbits.TRISC4 = 1;
     TRISCbits.TRISC5 = 0;
     
-    TRISA = 0b11111100;// RA0, RA1 are Ethernet LED's
+    TRISA = 0b11111100;// RA0, RA1 are Ethernet LED's*/
 
     // Enable internal PORTB pull-ups
 //    RBPU = 0;
@@ -109,15 +107,9 @@ void initHW(void)
     // UART to Debug
     uart_init();
 
-    // LCD
-    lcd_init();   
-   
-    
     //EEPROM
 //    eeprom_init();
 
     ADC_Initialize();
     
-    LED_Init();
- 
 }

@@ -342,7 +342,7 @@ typedef enum
     Compaq_Peer     = 110,    // Compaq Peer Protocol    [Victor_Volpe]
     IPX_in_IP       = 111,    // IPX in IP    [CJ_Lee]
     VRRP            = 112,    // Virtual Router Redundancy Protocol    [RFC5798]
-    PGM             = 113,    // PGM Reliable Transport Protocol    [Tony_Speakman]
+    PGM_TCPIP             = 113,    // PGM Reliable Transport Protocol    [Tony_Speakman]
     L2TP            = 115,    // Layer Two Tunneling Protocol    [RFC3931][Bernard_Aboba]
     DDX             = 116,    // D-II Data Exchange (DDX)    [John_Worley]
     IATP            = 117,    // Interactive Agent Transfer Protocol    [John_Murphy]

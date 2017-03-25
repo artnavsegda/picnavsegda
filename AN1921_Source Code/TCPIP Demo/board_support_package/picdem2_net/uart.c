@@ -54,24 +54,23 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
  */
 void uart_init(void)
 {
-    //PORT pins setup
-    TRISCbits.TRISC7 = 1; // RC7 is input
-    TRISCbits.TRISC6 = 0; // RC6 is output
-    
-    //UART registers setup
-    BAUDCON1 = 0x00;  // setup for 8-bit async.
+    // Set the EUSART module to the options selected in the user interface.
 
-#ifdef MCP2200_DEFAULT_BAUD
-    SPBRG1 = 135;   // 41.67MHz/(16(N+1) = 19200baud (default for MCP2200)
-    TXSTA1 = 0x24;
-#else
-    
-    SPBRG1 = 89;   // 41.67MHz/(4(N+1) = 115200baud
-    BAUDCON1bits.BRG16 = 1;
-    TXSTA1 = 0x26;
-#endif
-    CREN1 = 1;
-    SPEN1 = 1;   
+    // ABDOVF no_overflow; CKTXP async_noninverted_sync_fallingedge; BRG16 16bit_generator; WUE disabled; ABDEN disabled; DTRXP not_inverted; 
+    BAUDCON = 0x08;
+
+    // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN disabled; SREN disabled; 
+    RCSTA = 0x90;
+
+    // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave_mode; 
+    TXSTA = 0x24;
+
+    // Baud Rate = 9600; 
+    SPBRG = 0x11;
+
+    // Baud Rate = 9600; 
+    SPBRGH = 0x04;
+ 
 }
 
 void putch(char data)

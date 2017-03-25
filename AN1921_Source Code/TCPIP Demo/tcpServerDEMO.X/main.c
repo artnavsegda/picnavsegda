@@ -42,14 +42,12 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include <string.h>
 #include <time.h>
 #include "hardware.h"
-#include "lcd.h"
 #include "syslog.h"
 #include "tcpip_config.h"
 #include "network.h"
 #include "ipv4.h"
 #include "udpv4.h"
 #include "ethernet_driver.h"
-#include "led_driver.h"
 #include "tcpv4.h"
 #include "../board_support_package/picdem2_net/rtcc.h"
 
@@ -163,8 +161,6 @@ void main(void)
             old_ip = ip;
             memset(str,0,sizeof(str));
             sprintf(str,"%d.%d.%d.%d",((char*)&ip)[3],((char*)&ip)[2],((char*)&ip)[1],((char*)&ip)[0]);
-            lcd_goto1(0);
-            lcd_puts(str);
             SYSLOG_Write(str);
             no_ip_display = false;
         }

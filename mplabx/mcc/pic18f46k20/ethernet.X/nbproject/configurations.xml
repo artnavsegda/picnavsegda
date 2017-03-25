@@ -33,7 +33,6 @@
         <itemPath>mcc_generated_files/TCPIPLibrary/tcpip_config.h</itemPath>
         <itemPath>mcc_generated_files/TCPIPLibrary/ENC28J60.h</itemPath>
       </logicalFolder>
-      <itemPath>modbus.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -68,7 +67,6 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>modbus.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
