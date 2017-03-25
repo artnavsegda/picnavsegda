@@ -69,8 +69,8 @@
 //#define STACK_USE_HTTP2_SERVER			// New HTTP server with POST, Cookies, Authentication, etc.
 //#define STACK_USE_SSL_SERVER			// SSL server socket support (Requires SW300052)
 //#define STACK_USE_SSL_CLIENT			// SSL client socket support (Requires SW300052)
-#define STACK_USE_AUTO_IP               // Dynamic link-layer IP address automatic configuration protocol
-#define STACK_USE_DHCP_CLIENT			// Dynamic Host Configuration Protocol client for obtaining IP address and other parameters
+//#define STACK_USE_AUTO_IP               // Dynamic link-layer IP address automatic configuration protocol
+//#define STACK_USE_DHCP_CLIENT			// Dynamic Host Configuration Protocol client for obtaining IP address and other parameters
 //#define STACK_USE_DHCP_SERVER			// Single host DHCP server
 //#define STACK_USE_FTP_SERVER			// File Transfer Protocol (old)
 //#define STACK_USE_SMTP_CLIENT			// Simple Mail Transfer Protocol for sending email
@@ -78,7 +78,7 @@
 //#define STACK_USE_SNMPV3_SERVER			// Simple Network Management Protocol v3 Agent
 //#define STACK_USE_TFTP_CLIENT			// Trivial File Transfer Protocol client
 //#define STACK_USE_GENERIC_TCP_CLIENT_EXAMPLE	// HTTP Client example in GenericTCPClient.c
-//#define STACK_USE_GENERIC_TCP_SERVER_EXAMPLE	// ToUpper server example in GenericTCPServer.c
+#define STACK_USE_GENERIC_TCP_SERVER_EXAMPLE	// ToUpper server example in GenericTCPServer.c
 //#define STACK_USE_TELNET_SERVER			// Telnet server
 //#define STACK_USE_ANNOUNCE				// Microchip Embedded Ethernet Device Discoverer server/client
 //#define STACK_USE_DNS					// Domain Name Service Client for resolving hostname strings to IP addresses
@@ -92,6 +92,7 @@
 //#define STACK_USE_BERKELEY_API			// Berekely Sockets APIs are available
 //#define STACK_USE_ZEROCONF_LINK_LOCAL	// Zeroconf IPv4 Link-Local Addressing
 //#define STACK_USE_ZEROCONF_MDNS_SD		// Zeroconf mDNS and mDNS service discovery
+#define STACK_USE_MODBUS_TCP_SERVER
 
 
 // =======================================================================
@@ -157,23 +158,23 @@
 #define MY_DEFAULT_MAC_BYTE5            (0x00)	// internal factory programmed MAC
 #define MY_DEFAULT_MAC_BYTE6            (0x00)	// address instead.
 
-#define MY_DEFAULT_IP_ADDR_BYTE1        (169ul)
-#define MY_DEFAULT_IP_ADDR_BYTE2        (254ul)
+#define MY_DEFAULT_IP_ADDR_BYTE1        (192ul)
+#define MY_DEFAULT_IP_ADDR_BYTE2        (168ul)
 #define MY_DEFAULT_IP_ADDR_BYTE3        (1ul)
-#define MY_DEFAULT_IP_ADDR_BYTE4        (1ul)
+#define MY_DEFAULT_IP_ADDR_BYTE4        (150ul)
 
 #define MY_DEFAULT_MASK_BYTE1           (255ul)
 #define MY_DEFAULT_MASK_BYTE2           (255ul)
 #define MY_DEFAULT_MASK_BYTE3           (0ul)
 #define MY_DEFAULT_MASK_BYTE4           (0ul)
 
-#define MY_DEFAULT_GATE_BYTE1           (169ul)
-#define MY_DEFAULT_GATE_BYTE2           (254ul)
+#define MY_DEFAULT_GATE_BYTE1           (192ul)
+#define MY_DEFAULT_GATE_BYTE2           (168ul)
 #define MY_DEFAULT_GATE_BYTE3           (1ul)
 #define MY_DEFAULT_GATE_BYTE4           (1ul)
 
-#define MY_DEFAULT_PRIMARY_DNS_BYTE1	(169ul)
-#define MY_DEFAULT_PRIMARY_DNS_BYTE2	(254ul)
+#define MY_DEFAULT_PRIMARY_DNS_BYTE1	(192ul)
+#define MY_DEFAULT_PRIMARY_DNS_BYTE2	(168ul)
 #define MY_DEFAULT_PRIMARY_DNS_BYTE3	(1ul)
 #define MY_DEFAULT_PRIMARY_DNS_BYTE4	(1ul)
 
@@ -252,6 +253,7 @@
 		#define TCP_PURPOSE_DEFAULT 9
 		#define TCP_PURPOSE_BERKELEY_SERVER 10
 		#define TCP_PURPOSE_BERKELEY_CLIENT 11
+        #define TCP_PURPOSE_MODBUS_TCP_SERVER 12
 	#define END_OF_TCP_SOCKET_TYPES
 
 	#if defined(__TCP_C)
@@ -276,23 +278,24 @@
 			WORD wRXBufferSize;
 		} TCPSocketInitializer[] =
 		{		
-			{TCP_PURPOSE_GENERIC_TCP_CLIENT, TCP_ETH_RAM, 125, 100},
+			//{TCP_PURPOSE_GENERIC_TCP_CLIENT, TCP_ETH_RAM, 125, 100},
 			{TCP_PURPOSE_GENERIC_TCP_SERVER, TCP_ETH_RAM, 20, 20},
-			{TCP_PURPOSE_TELNET, TCP_ETH_RAM, 200, 150},
+			//{TCP_PURPOSE_TELNET, TCP_ETH_RAM, 200, 150},
 			//{TCP_PURPOSE_TELNET, TCP_ETH_RAM, 200, 150},
 			//{TCP_PURPOSE_TELNET, TCP_ETH_RAM, 200, 150},
 			//{TCP_PURPOSE_FTP_COMMAND, TCP_ETH_RAM, 100, 40},
 			//{TCP_PURPOSE_FTP_DATA, TCP_ETH_RAM, 0, 128},
-			{TCP_PURPOSE_TCP_PERFORMANCE_TX, TCP_ETH_RAM, 200, 1},
+			//{TCP_PURPOSE_TCP_PERFORMANCE_TX, TCP_ETH_RAM, 200, 1},
 			//{TCP_PURPOSE_TCP_PERFORMANCE_RX, TCP_ETH_RAM, 40, 1500},
-			{TCP_PURPOSE_UART_2_TCP_BRIDGE, TCP_ETH_RAM, 256, 256},
-			{TCP_PURPOSE_HTTP_SERVER, TCP_ETH_RAM, 200, 200},
-			{TCP_PURPOSE_HTTP_SERVER, TCP_ETH_RAM, 200, 200},
+			//{TCP_PURPOSE_UART_2_TCP_BRIDGE, TCP_ETH_RAM, 256, 256},
+			//{TCP_PURPOSE_HTTP_SERVER, TCP_ETH_RAM, 200, 200},
+			//{TCP_PURPOSE_HTTP_SERVER, TCP_ETH_RAM, 200, 200},
 			{TCP_PURPOSE_DEFAULT, TCP_ETH_RAM, 200, 200},
-			{TCP_PURPOSE_BERKELEY_SERVER, TCP_ETH_RAM, 25, 20},
+			//{TCP_PURPOSE_BERKELEY_SERVER, TCP_ETH_RAM, 25, 20},
 			//{TCP_PURPOSE_BERKELEY_SERVER, TCP_ETH_RAM, 25, 20},
 			//{TCP_PURPOSE_BERKELEY_SERVER, TCP_ETH_RAM, 25, 20},
 			//{TCP_PURPOSE_BERKELEY_CLIENT, TCP_ETH_RAM, 125, 100},
+            {TCP_PURPOSE_MODBUS_TCP_SERVER, TCP_ETH_RAM, 200, 200},
 		};
 		#define END_OF_TCP_CONFIGURATION
 	#endif
