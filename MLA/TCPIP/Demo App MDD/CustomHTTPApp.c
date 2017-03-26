@@ -1262,7 +1262,7 @@ static HTTP_IO_RESULT HTTPPostEmail(void)
 			    len = (WORD)ADRES;
 			    uitoa(len, (BYTE*)&curHTTP.data[1]);
 			#else
-				len = (WORD)ADC1BUF0;
+				len = (WORD)100;
 			    uitoa(len, (BYTE*)&curHTTP.data[1]);
 			#endif
 
@@ -1610,7 +1610,7 @@ void HTTPPrint_pot(void)
     //ADval /= (WORD)102;
     uitoa(ADval, AN0String);
 #else
-	ADval = (WORD)ADC1BUF0;
+	ADval = (WORD)100;
 	//ADval *= (WORD)10;
 	//ADval /= (WORD)102;
     uitoa(ADval, (BYTE*)AN0String);

@@ -58,15 +58,15 @@
 
 
 
-#if defined(__PIC24FJ128GA010__) 
+//#if defined(__PIC24FJ128GC010__) 
 	#define USE_SD_INTERFACE_WITH_SPI
 
-#elif defined(__PIC24FJ256GB110__)
-	#define USE_USB_INTERFACE
+//#elif defined(__PIC24FJ256GB110__)
+//	#define USE_USB_INTERFACE
 
-#else
-    #error Processor not supported.
-#endif
+//#else
+//    #error Processor not supported.
+//#endif
 
 #define EXPLORER_16				// PIC24FJ128GA010, PIC24FJ256GB110
 
@@ -79,6 +79,9 @@
             _CONFIG2(FNOSC_PRIPLL & POSCMOD_HS & PLL_96MHZ_ON & PLLDIV_DIV2) // Primary HS OSC with PLL, USBPLL /2
             _CONFIG1(JTAGEN_OFF & FWDTEN_OFF & ICS_PGx2)   // JTAG off, watchdog timer off
  
+        #elif defined(__PIC24FJ128GC010__)
+
+                    
         #else
         // Explorer 16 board
         _CONFIG2(FNOSC_PRIPLL & POSCMOD_XT)     // Primary XT OSC with 4x PLL
@@ -205,9 +208,9 @@
     #if defined __PIC24F__
 
 				// Description: SD-SPI Chip Select Output bit
-        #define SD_CS               PORTBbits.RB9
+        #define SD_CS               PORTBbits.RB7
 				// Description: SD-SPI Chip Select TRIS bit
-        #define SD_CS_TRIS          TRISBbits.TRISB9
+        #define SD_CS_TRIS          TRISBbits.TRISB7
 				
 				// Description: SD-SPI Card Detect Input bit
         #define SD_CD               PORTGbits.RG0
