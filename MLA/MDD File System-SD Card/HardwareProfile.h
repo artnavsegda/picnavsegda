@@ -518,6 +518,92 @@
 			// Description: The TRIS bit for the SDO pin
 			#define SPIOUT      TRISBbits.TRISB1
 
+		#elif defined (__PIC24FJ128GC010__)
+
+	        // Description: SD-SPI Chip Select Output bit
+	        #define SD_CS				LATBbits.LATB1
+	        // Description: SD-SPI Chip Select TRIS bit
+	        #define SD_CS_TRIS			TRISBbits.TRISB1
+	        
+	        // Description: SD-SPI Card Detect Input bit
+	        #define SD_CD               PORTFbits.RF0
+	        // Description: SD-SPI Card Detect TRIS bit
+	        #define SD_CD_TRIS          TRISFbits.TRISF0
+	        
+	        // Description: SD-SPI Write Protect Check Input bit
+	        #define SD_WE               PORTFbits.RF1
+	        // Description: SD-SPI Write Protect Check TRIS bit
+	        #define SD_WE_TRIS          TRISFbits.TRISF1
+	        
+	        // Registers for the SPI module you want to use
+
+	        // Description: The main SPI control register
+	        #define SPICON1             SPI1CON1
+	        // Description: The SPI status register
+	        #define SPISTAT             SPI1STAT
+	        // Description: The SPI Buffer
+	        #define SPIBUF              SPI1BUF
+	        // Description: The receive buffer full bit in the SPI status register
+	        #define SPISTAT_RBF         SPI1STATbits.SPIRBF
+	        // Description: The bitwise define for the SPI control register (i.e. _____bits)
+	        #define SPICON1bits         SPI1CON1bits
+	        // Description: The bitwise define for the SPI status register (i.e. _____bits)
+	        #define SPISTATbits         SPI1STATbits
+	        // Description: The enable bit for the SPI module
+	        #define SPIENABLE           SPISTATbits.SPIEN
+
+	        // Tris pins for SCK/SDI/SDO lines
+
+	        // Description: The TRIS bit for the SCK pin
+	        #define SPICLOCK            TRISBbits.TRISB0
+	        // Description: The TRIS bit for the SDI pin
+	        #define SPIIN               TRISDbits.TRISD2
+	        // Description: The TRIS bit for the SDO pin
+	        #define SPIOUT              TRISFbits.TRISF8
+
+		#elif defined (__PIC24FJ256GA702__)
+
+	        // Description: SD-SPI Chip Select Output bit
+	        #define SD_CS				LATBbits.LATB1
+	        // Description: SD-SPI Chip Select TRIS bit
+	        #define SD_CS_TRIS			TRISBbits.TRISB1
+	        
+	        // Description: SD-SPI Card Detect Input bit
+	        #define SD_CD               PORTFbits.RF0
+	        // Description: SD-SPI Card Detect TRIS bit
+	        #define SD_CD_TRIS          TRISFbits.TRISF0
+	        
+	        // Description: SD-SPI Write Protect Check Input bit
+	        #define SD_WE               PORTFbits.RF1
+	        // Description: SD-SPI Write Protect Check TRIS bit
+	        #define SD_WE_TRIS          TRISFbits.TRISF1
+	        
+	        // Registers for the SPI module you want to use
+
+	        // Description: The main SPI control register
+	        #define SPICON1             SPI1CON1
+	        // Description: The SPI status register
+	        #define SPISTAT             SPI1STATL
+	        // Description: The SPI Buffer
+	        #define SPIBUF              SPI1BUFL
+	        // Description: The receive buffer full bit in the SPI status register
+	        #define SPISTAT_RBF         SPI1STATLbits.SPIRBF
+	        // Description: The bitwise define for the SPI control register (i.e. _____bits)
+	        #define SPICON1bits         SPI1CON1Lbits
+	        // Description: The bitwise define for the SPI status register (i.e. _____bits)
+	        #define SPISTATbits         SPI1STATLbits
+	        // Description: The enable bit for the SPI module
+	        #define SPIENABLE           SPISTATbits.SPIEN
+
+	        // Tris pins for SCK/SDI/SDO lines
+
+	        // Description: The TRIS bit for the SCK pin
+	        #define SPICLOCK            TRISBbits.TRISB0
+	        // Description: The TRIS bit for the SDI pin
+	        #define SPIIN               TRISDbits.TRISD2
+	        // Description: The TRIS bit for the SDO pin
+	        #define SPIOUT              TRISFbits.TRISF8
+
 		#endif
 
         // Will generate an error if the clock speed is too low to interface to the card

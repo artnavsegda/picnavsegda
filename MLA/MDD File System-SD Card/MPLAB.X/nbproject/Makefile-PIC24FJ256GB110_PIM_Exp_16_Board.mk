@@ -83,8 +83,8 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-PIC24FJ256GB110_PIM_Exp_16_Board.mk dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=24FJ256GB110
-MP_LINKER_FILE_OPTION=,--script=p24FJ256GB110.gld
+MP_PROCESSOR_OPTION=24FJ256GA702
+MP_LINKER_FILE_OPTION=,--script=p24FJ256GA702.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -92,21 +92,21 @@ ${OBJECTDIR}/_ext/1850834999/Demonstration2.o: ../PIC24F/Demonstration2.c  nbpro
 	@${MKDIR} "${OBJECTDIR}/_ext/1850834999" 
 	@${RM} ${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1850834999/Demonstration2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  ../PIC24F/Demonstration2.c  -o ${OBJECTDIR}/_ext/1850834999/Demonstration2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1    -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ../PIC24F/Demonstration2.c  -o ${OBJECTDIR}/_ext/1850834999/Demonstration2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/_ext/65885567/FSIO.o: ../../Microchip/MDD\ File\ System/FSIO.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/65885567" 
 	@${RM} ${OBJECTDIR}/_ext/65885567/FSIO.o.d 
 	@${RM} ${OBJECTDIR}/_ext/65885567/FSIO.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/FSIO.c"  -o ${OBJECTDIR}/_ext/65885567/FSIO.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/FSIO.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1    -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/FSIO.c"  -o ${OBJECTDIR}/_ext/65885567/FSIO.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/FSIO.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/65885567/FSIO.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/_ext/65885567/SD-SPI.o: ../../Microchip/MDD\ File\ System/SD-SPI.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/65885567" 
 	@${RM} ${OBJECTDIR}/_ext/65885567/SD-SPI.o.d 
 	@${RM} ${OBJECTDIR}/_ext/65885567/SD-SPI.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/SD-SPI.c"  -o ${OBJECTDIR}/_ext/65885567/SD-SPI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1    -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/SD-SPI.c"  -o ${OBJECTDIR}/_ext/65885567/SD-SPI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
@@ -114,21 +114,21 @@ ${OBJECTDIR}/_ext/1850834999/Demonstration2.o: ../PIC24F/Demonstration2.c  nbpro
 	@${MKDIR} "${OBJECTDIR}/_ext/1850834999" 
 	@${RM} ${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1850834999/Demonstration2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  ../PIC24F/Demonstration2.c  -o ${OBJECTDIR}/_ext/1850834999/Demonstration2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d"        -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ../PIC24F/Demonstration2.c  -o ${OBJECTDIR}/_ext/1850834999/Demonstration2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1850834999/Demonstration2.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/_ext/65885567/FSIO.o: ../../Microchip/MDD\ File\ System/FSIO.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/65885567" 
 	@${RM} ${OBJECTDIR}/_ext/65885567/FSIO.o.d 
 	@${RM} ${OBJECTDIR}/_ext/65885567/FSIO.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/FSIO.c"  -o ${OBJECTDIR}/_ext/65885567/FSIO.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/FSIO.o.d"        -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/FSIO.c"  -o ${OBJECTDIR}/_ext/65885567/FSIO.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/FSIO.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/65885567/FSIO.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/_ext/65885567/SD-SPI.o: ../../Microchip/MDD\ File\ System/SD-SPI.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/65885567" 
 	@${RM} ${OBJECTDIR}/_ext/65885567/SD-SPI.o.d 
 	@${RM} ${OBJECTDIR}/_ext/65885567/SD-SPI.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/SD-SPI.c"  -o ${OBJECTDIR}/_ext/65885567/SD-SPI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d"        -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
+	${MP_CC} $(MP_EXTRA_CC_PRE)  "../../Microchip/MDD File System/SD-SPI.c"  -o ${OBJECTDIR}/_ext/65885567/SD-SPI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I".." -I"../PIC24F" -I"../../Include" -I"../../Include/MDD File System" -I"../../Microchip/Include" -I"../../Microchip/Include/MDD File System" -I"../../../Microchip/Include/MDD File System" -I"../../../MDD File System-SD Card" -I"../../../MDD File System-SD Card/PIC24F" -msmart-io=1 -Wall -msfr-warn=off   -fno-ivopts
 	@${FIXDEPS} "${OBJECTDIR}/_ext/65885567/SD-SPI.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
@@ -150,12 +150,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1  -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x800:0x81F -mreserve=data@0x820:0x821 -mreserve=data@0x822:0x823 -mreserve=data@0x824:0x825 -mreserve=data@0x826:0x84F   -Wl,,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_REAL_ICE=1,$(MP_LINKER_FILE_OPTION),--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--library-path="..",--no-force-link,--smart-io,-Map="$(BINDIR_)$(TARGETBASE).map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST) 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x800:0x81B -mreserve=data@0x81C:0x81D -mreserve=data@0x81E:0x81F -mreserve=data@0x820:0x821 -mreserve=data@0x822:0x823 -mreserve=data@0x824:0x827 -mreserve=data@0x82A:0x84F   -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_PK3=1,$(MP_LINKER_FILE_OPTION),--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--library-path="..",--no-force-link,--smart-io,-Map="$(BINDIR_)$(TARGETBASE).map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST) 
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -Wl,,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--library-path="..",--no-force-link,--smart-io,-Map="$(BINDIR_)$(TARGETBASE).map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST) 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_PIC24FJ256GB110_PIM_Exp_16_Board=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--library-path="..",--no-force-link,--smart-io,-Map="$(BINDIR_)$(TARGETBASE).map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST) 
 	${MP_CC_DIR}/xc16-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf  
 	
 endif

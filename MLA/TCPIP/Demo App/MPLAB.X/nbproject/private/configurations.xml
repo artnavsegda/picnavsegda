@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="62">
   <projectmakefile>Makefile</projectmakefile>
-  <defaultConf>31</defaultConf>
+  <defaultConf>13</defaultConf>
   <confs>
     <conf name="C18-PIC18EX_ENC28" type="2">
       <platformToolSN></platformToolSN>

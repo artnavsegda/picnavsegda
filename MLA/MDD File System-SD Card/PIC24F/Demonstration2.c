@@ -89,7 +89,7 @@ int main (void)
 	__asm__ ("MOV.b w0, [w1]");
 
 	// Activate the RTCC module
-	__asm__ ("mov #NVMKEY,W0");
+/*	__asm__ ("mov #NVMKEY,W0");
 	__asm__ ("mov #0x55,W1");
 	__asm__ ("mov #0xAA,W2");
 	__asm__ ("mov W1,[W0]");
@@ -106,7 +106,7 @@ int main (void)
 	RTCVAL = 0x0717;
 	RTCVAL = 0x0208;
 	RTCVAL = 0x2137;
-	RCFGCAL = 0x8000;
+	RCFGCAL = 0x8000;*/
 
 	#if defined(__PIC24FJ256DA210__)
 
@@ -140,6 +140,13 @@ int main (void)
 		//enable a pull-up for the card detect, just in case the SD-Card isn't attached
 		//  then lets have a pull-up to make sure we don't think it is there.
 		CNPU5bits.CN68PUE = 1; 
+        
+	#elif defined(__PIC24FJ256GA702__)
+
+		//Initialize the SPI
+		RPINR20bits.SDI1R = 23;
+		RPOR7bits.RP15R = 7;
+		RPOR0bits.RP0R = 8;    
 
 	#endif
 
