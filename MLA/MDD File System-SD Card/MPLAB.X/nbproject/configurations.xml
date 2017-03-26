@@ -793,6 +793,16 @@
         </C30Global>
       </item>
       <item path="../PIC18F/18f46k20_g.lkr" ex="true" overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
       </item>
       <item path="../PIC18F/18f8722_g.lkr" ex="true" overriding="false">
         <C30>
