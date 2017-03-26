@@ -222,7 +222,7 @@ void MACInit(void)
     ENC_SPICON2 = 0;
     ENC_SPICON1bits.CKE = 1;
     ENC_SPICON1bits.MSTEN = 1;
-    ENC_SPISTATbits.SPIEN = 1;
+    ENC_SPICON1bits.SPIEN = 1;
 #elif defined(__C32__)
     ENC_SPIBRG = (GetPeripheralClock()-1ul)/2ul/ENC_MAX_SPI_FREQ;
 	ENC_SPICON1bits.SMP = 1;	// Delay SDI input sampling (PIC perspective) by 1/2 SPI clock
@@ -1147,14 +1147,14 @@ BYTE MACGet()
     #elif defined(__C30__)
     {
         // Send the opcode and read a byte in one 16-bit operation
-        ENC_SPISTATbits.SPIEN = 0;
+        ENC_SPICON1bits.SPIEN = 0;
         ENC_SPICON1bits.MODE16 = 1;
-        ENC_SPISTATbits.SPIEN = 1;
+        ENC_SPICON1bits.SPIEN = 1;
         ENC_SSPBUF = RBM<<8 | 0x00; // Send Read Buffer Memory command plus 8 dummy bits to generate clocks for the return result
         WaitForDataByte();          // Wait until WORD is transmitted
-        ENC_SPISTATbits.SPIEN = 0;
+        ENC_SPICON1bits.SPIEN = 0;
         ENC_SPICON1bits.MODE16 = 0;
-        ENC_SPISTATbits.SPIEN = 1;
+        ENC_SPICON1bits.SPIEN = 1;
     }
     #else
     {
@@ -1287,9 +1287,9 @@ WORD MACGetArray(BYTE *val, WORD len)
         // Read the data, 2 bytes at a time, for as long as possible
         if(len >= 2)
         {
-            ENC_SPISTATbits.SPIEN = 0;
+            ENC_SPICON1bits.SPIEN = 0;
             ENC_SPICON1bits.MODE16 = 1;
-            ENC_SPISTATbits.SPIEN = 1;
+            ENC_SPICON1bits.SPIEN = 1;
             while(1)
             {
                 ENC_SSPBUF = 0x0000;    // Send a dummy WORD to generate 32 clocks
@@ -1304,9 +1304,9 @@ WORD MACGetArray(BYTE *val, WORD len)
                 if(len - i < 2)
                     break;
             };
-            ENC_SPISTATbits.SPIEN = 0;
+            ENC_SPICON1bits.SPIEN = 0;
             ENC_SPICON1bits.MODE16 = 0;
-            ENC_SPISTATbits.SPIEN = 1;
+            ENC_SPICON1bits.SPIEN = 1;
         }
     }
     #endif
@@ -1373,14 +1373,14 @@ void MACPut(BYTE val)
     #elif defined(__C30__)
     {
         // Send the Write Buffer Memory and data, in on 16-bit write
-        ENC_SPISTATbits.SPIEN = 0;
+        ENC_SPICON1bits.SPIEN = 0;
         ENC_SPICON1bits.MODE16 = 1;
-        ENC_SPISTATbits.SPIEN = 1;
+        ENC_SPICON1bits.SPIEN = 1;
         ENC_SSPBUF = (WBM<<8) | (WORD)val;  // Start sending the WORD
         WaitForDataByte();                  // Wait until WORD is transmitted
-        ENC_SPISTATbits.SPIEN = 0;
+        ENC_SPICON1bits.SPIEN = 0;
         ENC_SPICON1bits.MODE16 = 0;
-        ENC_SPISTATbits.SPIEN = 1;
+        ENC_SPICON1bits.SPIEN = 1;
     }
     #else
     {
@@ -1499,9 +1499,9 @@ void MACPutArray(BYTE *val, WORD len)
         {
             wv.v[1] = *val++;
             wv.v[0] = *val++;
-            ENC_SPISTATbits.SPIEN = 0;
+            ENC_SPICON1bits.SPIEN = 0;
             ENC_SPICON1bits.MODE16 = 1;
-            ENC_SPISTATbits.SPIEN = 1;
+            ENC_SPICON1bits.SPIEN = 1;
             while(1)
             {
                 ENC_SSPBUF = wv.Val;        // Start sending the WORD
@@ -1515,9 +1515,9 @@ void MACPutArray(BYTE *val, WORD len)
             };
             WaitForDataByte();              // Wait until WORD is transmitted
             Dummy = ENC_SSPBUF;
-            ENC_SPISTATbits.SPIEN = 0;
+            ENC_SPICON1bits.SPIEN = 0;
             ENC_SPICON1bits.MODE16 = 0;
-            ENC_SPISTATbits.SPIEN = 1;
+            ENC_SPICON1bits.SPIEN = 1;
         }
     }
     #endif

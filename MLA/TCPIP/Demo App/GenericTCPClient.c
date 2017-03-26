@@ -247,7 +247,7 @@ void GenericTCPClient(void)
 	
 		case SM_DONE:
 			// Do nothing unless the user pushes BUTTON1 and wants to restart the whole connection/download process
-			if(BUTTON1_IO == 0u)
+			//if(BUTTON1_IO == 0u)
 				GenericTCPExampleState = SM_HOME;
 			break;
 	}

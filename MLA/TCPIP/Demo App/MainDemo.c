@@ -838,15 +838,15 @@ static void InitializeBoard(void)
 		#endif
 		
 		// ADC
-	    #if defined(__PIC24FJ256DA210__) || defined(__PIC24FJ256GB210__)
+	    #if defined(__PIC24FJ256DA210__) || defined(__PIC24FJ256GB210__) || defined(__PIC24FJ256GA702__)
 	    	// Disable analog on all pins
 	    	ANSA = 0x0000;
 	    	ANSB = 0x0000;
-	    	ANSC = 0x0000;
-	    	ANSD = 0x0000;
-	    	ANSE = 0x0000;
-	    	ANSF = 0x0000;
-	    	ANSG = 0x0000;
+	    	//ANSC = 0x0000;
+	    	//ANSD = 0x0000;
+	    	//ANSE = 0x0000;
+	    	//ANSF = 0x0000;
+	    	//ANSG = 0x0000;
 		#else
 		    AD1CHS = 0;					// Input to AN0 (potentiometer)
 			AD1PCFGbits.PCFG4 = 0;		// Disable digital input on AN4 (TC1047A temp sensor)

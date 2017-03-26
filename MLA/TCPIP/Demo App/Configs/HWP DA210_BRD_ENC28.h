@@ -54,13 +54,55 @@
 #include "Compiler.h"
 
 // Define a macro describing this hardware set up (used in other files)
-#define PIC24FJ256DA210_DEV_BOARD
+#define PIC24FJ256GA702_DEV_BOARD
 
 // Set configuration fuses (but only in MainDemo.c where THIS_IS_STACK_APPLICATION is defined)
 #if defined(THIS_IS_STACK_APPLICATION)
-	_CONFIG3(ALTPMP_ALTPMPEN & SOSCSEL_EC); 										// PMP in alternative location, disable Timer1 oscillator so that RC13 can be used as a GPIO
-	_CONFIG2(FNOSC_PRIPLL & POSCMOD_XT & IOL1WAY_OFF & PLL96MHZ_ON & PLLDIV_DIV2);	// Primary XT OSC with 96MHz PLL (8MHz crystal input), IOLOCK can be set and cleared
-	_CONFIG1(FWDTEN_OFF & ICS_PGx2 & JTAGEN_OFF & ALTVREF_ALTVREDIS);				// Watchdog timer off, ICD debugging on PGEC2/PGED2 pins, JTAG off, AVREF and CVREF in default locations
+    #pragma config BWRP = OFF    // Boot Segment Write-Protect bit->Boot Segment may be written
+    #pragma config BSS = DISABLED    // Boot Segment Code-Protect Level bits->No Protection (other than BWRP)
+    #pragma config BSEN = OFF    // Boot Segment Control bit->No Boot Segment
+    #pragma config GWRP = OFF    // General Segment Write-Protect bit->General Segment may be written
+    #pragma config GSS = DISABLED    // General Segment Code-Protect Level bits->No Protection (other than GWRP)
+    #pragma config CWRP = OFF    // Configuration Segment Write-Protect bit->Configuration Segment may be written
+    #pragma config CSS = DISABLED    // Configuration Segment Code-Protect Level bits->No Protection (other than CWRP)
+    #pragma config AIVTDIS = OFF    // Alternate Interrupt Vector Table bit->Disabled AIVT
+
+    // FOSCSEL
+    #pragma config FNOSC = FRC    // Oscillator Source Selection->Internal Fast RC (FRC)
+    #pragma config PLLMODE = DISABLED    // PLL Mode Selection->No PLL used; PLLEN bit is not available
+    #pragma config IESO = ON    // Two-speed Oscillator Start-up Enable bit->Start up device with FRC, then switch to user-selected oscillator source
+
+    // FOSC
+    #pragma config POSCMD = NONE    // Primary Oscillator Mode Select bits->Primary Oscillator disabled
+    #pragma config OSCIOFCN = OFF    // OSC2 Pin Function bit->OSC2 is clock output
+    #pragma config SOSCSEL = ON    // SOSC Power Selection Configuration bits->SOSC is used in crystal (SOSCI/SOSCO) mode
+    #pragma config PLLSS = PLL_PRI    // PLL Secondary Selection Configuration bit->PLL is fed by the Primary oscillator
+    #pragma config IOL1WAY = ON    // Peripheral pin select configuration bit->Allow only one reconfiguration
+    #pragma config FCKSM = CSDCMD    // Clock Switching Mode bits->Both Clock switching and Fail-safe Clock Monitor are disabled
+
+    // FWDT
+    #pragma config WDTPS = PS32768    // Watchdog Timer Postscaler bits->1:32768
+    #pragma config FWPSA = PR128    // Watchdog Timer Prescaler bit->1:128
+    #pragma config FWDTEN = OFF    // Watchdog Timer Enable bits->WDT and SWDTEN disabled
+    #pragma config WINDIS = OFF    // Watchdog Timer Window Enable bit->Watchdog Timer in Non-Window mode
+    #pragma config WDTWIN = WIN25    // Watchdog Timer Window Select bits->WDT Window is 25% of WDT period
+    #pragma config WDTCMX = WDTCLK    // WDT MUX Source Select bits->WDT clock source is determined by the WDTCLK Configuration bits
+    #pragma config WDTCLK = LPRC    // WDT Clock Source Select bits->WDT uses LPRC
+
+    // FPOR
+    #pragma config BOREN = ON    // Brown Out Enable bit->Brown Out Enable Bit
+    #pragma config LPCFG = OFF    // Low power regulator control->No Retention Sleep
+    #pragma config DNVPEN = ENABLE    // Downside Voltage Protection Enable bit->Downside protection enabled using ZPBOR when BOR is inactive
+
+    // FICD
+    #pragma config ICS = NONE    // ICD Communication Channel Select bits->Reserved, do not use
+    #pragma config JTAGEN = OFF    // JTAG Enable bit->JTAG is disabled
+
+    // FDEVOPT1
+    #pragma config ALTCMPI = DISABLE    // Alternate Comparator Input Enable bit->C1INC, C2INC, and C3INC are on their standard pin locations
+    #pragma config TMPRPIN = OFF    // Tamper Pin Enable bit->TMPRN pin function is disabled
+    #pragma config SOSCHP = ON    // SOSC High Power Enable bit (valid only when SOSCSEL = 1->Enable SOSC high power mode (default)
+    #pragma config ALTI2C1 = ALTI2CEN    // Alternate I2C pin Location->SDA1 and SCL1 on RB9 and RB8
 #endif
 
 
@@ -73,72 +115,26 @@
 
 // Hardware I/O pin mappings
 
-// LEDs
-#define LED0_TRIS			(TRISAbits.TRISA7)				// Ref D4: Jumper JP11 must have a shunt shorting pins 1 and 2 together
-#define LED0_IO				(LATAbits.LATA7)
-#define LED1_TRIS			(((unsigned char*)&NVMKEY)[1])	// No such LED, map to dummy register.  D3 is the natural choice for LED0, but the D3 pin (RB5) is multiplexed with R3 potentiometer and MDIX signal on Fast 100Mbps Ethernet PICtail Plus, so it cannot be used
-#define LED1_IO				(((unsigned char*)&NVMKEY)[1])
-#define LED2_TRIS			(TRISEbits.TRISE9)				// Ref D2.  NOTE: When using the Fast 100Mbps Ethernet PICtail Plus PSP interface, this RE9 signal also controls the POR (SHDN) signal.
-#define LED2_IO				(LATEbits.LATE9)
-#define LED3_TRIS			(TRISGbits.TRISG8)				// Ref D1.  NOTE: When using the Fast 100Mbps Ethernet PICtail PlusPSP interface, this RG8 signal also controls the CS signal.
-#define LED3_IO				(LATGbits.LATG8)
-#define LED4_TRIS			(((unsigned char*)&NVMKEY)[1])	// No such LED, map to dummy register
-#define LED4_IO				(((unsigned char*)&NVMKEY)[1])
-#define LED5_TRIS			(((unsigned char*)&NVMKEY)[1])	// No such LED, map to dummy register
-#define LED5_IO				(((unsigned char*)&NVMKEY)[1])
-#define LED6_TRIS			(((unsigned char*)&NVMKEY)[1])	// No such LED, map to dummy register
-#define LED6_IO				(((unsigned char*)&NVMKEY)[1])
-#define LED7_TRIS			(((unsigned char*)&NVMKEY)[1])	// No such LED, map to dummy register
-#define LED7_IO				(((unsigned char*)&NVMKEY)[1])
-#define LED_GET()			((LATGbits.LATG8<<3) | (LATEbits.LATE9<<2) | LATAbits.LATA7)
-#define LED_PUT(a)			do{unsigned char vTemp = (a); LED0_IO = vTemp&0x1; LED2_IO = vTemp&0x4; LED3_IO = vTemp&0x8;} while(0)
-
-// Momentary push buttons
-#define BUTTON0_TRIS		(((unsigned char*)&NVMKEY)[1])	// Ref S3: NOTE: This pin is multiplexed with D3 and cannot be used simulatneously.  Therefore, we will pretend there is no such button.
-#define	BUTTON0_IO			(1)
-#define BUTTON1_TRIS		(((unsigned char*)&NVMKEY)[1])	// Ref S2: NOTE: This pin is multiplexed with D2 and cannot be used simulatneously.  Therefore, we will pretend there is no such button.
-#define	BUTTON1_IO			(1)
-#define BUTTON2_TRIS		(((unsigned char*)&NVMKEY)[1])	// Ref S1: NOTE: This pin is multiplexed with D1 and cannot be used simulatneously.  Therefore, we will pretend there is no such button.
-#define	BUTTON2_IO			(1)
-#define BUTTON3_TRIS		(((unsigned char*)&NVMKEY)[1])	// No such button
-#define	BUTTON3_IO			(1)
-
-#define UARTTX_TRIS			(TRISFbits.TRISF3)
-#define UARTTX_IO			(PORTFbits.RF3)
-#define UARTRX_TRIS			(TRISDbits.TRISD0)
-#define UARTRX_IO			(PORTDbits.RD0)
-
-// SST SST25VF016B (16Mbit/2Mbyte) I/O pins
-// Jumper JP23 must have a shunt shorting pins 2-3 (not the default).
-#define SPIFLASH_CS_TRIS		(TRISAbits.TRISA14)
-#define SPIFLASH_CS_IO			(LATAbits.LATA14)
-#define SPIFLASH_SCK_TRIS		(TRISDbits.TRISD8)
-#define SPIFLASH_SDI_TRIS		(TRISBbits.TRISB0)
-#define SPIFLASH_SDI_IO			(PORTBbits.RB0)
-#define SPIFLASH_SDO_TRIS		(TRISBbits.TRISB1)
-#define SPIFLASH_SPI_IF			(IFS0bits.SPI1IF)
-#define SPIFLASH_SSPBUF			(SPI1BUF)
-#define SPIFLASH_SPICON1		(SPI1CON1)
-#define SPIFLASH_SPICON1bits	(SPI1CON1bits)
-#define SPIFLASH_SPICON2		(SPI1CON2)
-#define SPIFLASH_SPISTAT		(SPI1STAT)
-#define SPIFLASH_SPISTATbits	(SPI1STATbits)
+#define UARTTX_TRIS			(TRISBbits.TRISB3)
+#define UARTTX_IO			(PORTBbits.RB3)
+#define UARTRX_TRIS			(TRISBbits.TRISB0)
+#define UARTRX_IO			(PORTBbits.RB0)
 
 // ENC28J60 I/O pins
-#define ENC_CS_TRIS			(TRISGbits.TRISG6)
-#define ENC_CS_IO			(LATGbits.LATG6)
+#define ENC_CS_TRIS			(TRISBbits.TRISB6)
+#define ENC_CS_IO			(LATBbits.LATB6)
 //#define ENC_RST_TRIS		(TRISCbits.TRISC13)	// Not connected by default.  It is okay to leave this pin completely unconnected, in which case this macro should simply be left undefined.
 //#define ENC_RST_IO			(LATCbits.LATC13)
 // SPI SCK, SDI, SDO pins are automatically controlled by the 
 // PIC24 SPI module, but Peripheral Pin Select must be configured correctly.
 // MISO = RB0 (RP0); MOSI = RB1 (RP1); SCK = RD8 (RP2)
 #define ENC_SPI_IF			(IFS0bits.SPI1IF)
-#define ENC_SSPBUF			(SPI1BUF)
-#define ENC_SPISTAT			(SPI1STAT)
-#define ENC_SPISTATbits		(SPI1STATbits)
-#define ENC_SPICON1			(SPI1CON1)
-#define ENC_SPICON1bits		(SPI1CON1bits)
-#define ENC_SPICON2			(SPI1CON2)
+#define ENC_SSPBUF			(SPI1BUFL)
+#define ENC_SPISTAT			(SPI1STATL)
+#define ENC_SPISTATbits		(SPI1STATLbits)
+#define ENC_SPICON1			(SPI1CON1L)
+#define ENC_SPICON1bits		(SPI1CON1Lbits)
+#define ENC_SPICON2			(SPI1CON2L)
 
 
 //// ENC624J600 Interface Configuration
