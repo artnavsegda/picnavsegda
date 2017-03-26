@@ -67,6 +67,9 @@
 		// PIC24FJ256GB110 PIM
 		_CONFIG2(PLLDIV_DIV2 & PLL_96MHZ_ON & FNOSC_PRIPLL & IOL1WAY_OFF & POSCMOD_XT); // Primary XT OSC with 96MHz PLL (8MHz crystal input), IOLOCK can be set and cleared
 		_CONFIG1(JTAGEN_OFF & ICS_PGx2 & FWDTEN_OFF);									// Watchdog timer off, ICD debugging on PGEC2/PGED2 pins, JTAG off
+	#elif defined(__PIC24FJ128GC010__)
+		// PIC24FJ128GC010 PIM
+        
 	#elif defined(__PIC24FJ256GA110__)
 		// PIC24FJ256GA110 PIM
 		_CONFIG2(FNOSC_PRIPLL & IOL1WAY_OFF & POSCMOD_XT);	// Primary XT OSC with PLL, IOLOCK can be set and cleared

@@ -573,18 +573,18 @@ static void ProcessIO(void)
 {
 #if defined(__C30__) || defined(__C32__)
     // Convert potentiometer result into ASCII string
-    uitoa((WORD)ADC1BUF0, AN0String);
-    uitoa((WORD)ADC1BUF1, AN1String);
+    //uitoa((WORD)ADC1BUF0, AN0String);
+    //uitoa((WORD)ADC1BUF1, AN1String);
 
     // Copy potentiometer and temperature sensor results in to Input register
 
-    INPUT_REG[1] = (WORD)ADC1BUF0;  // Temp sensor
-    INPUT_REG[2] = (WORD)ADC1BUF1;  // pot
+    //INPUT_REG[1] = (WORD)ADC1BUF0;  // Temp sensor
+    //INPUT_REG[2] = (WORD)ADC1BUF1;  // pot
 
     /*
      */
-    INPUT_REG[1] = (WORD)((INPUT_REG[1] & 0xFF) << 8 | (INPUT_REG[1] & 0xFF00) >> 8);
-    INPUT_REG[2] = (WORD)((INPUT_REG[2] & 0xFF) << 8 | (INPUT_REG[2] & 0xFF00) >> 8);
+    //INPUT_REG[1] = (WORD)((INPUT_REG[1] & 0xFF) << 8 | (INPUT_REG[1] & 0xFF00) >> 8);
+    //INPUT_REG[2] = (WORD)((INPUT_REG[2] & 0xFF) << 8 | (INPUT_REG[2] & 0xFF00) >> 8);
 
 #else
     // AN0 should already be set up as an analog input
@@ -838,7 +838,7 @@ static void InitializeBoard(void)
 		#endif
 		
 		// ADC
-	    #if defined(__PIC24FJ256DA210__) || defined(__PIC24FJ256GB210__)
+	    #if defined(__PIC24FJ256DA210__) || defined(__PIC24FJ256GB210__) || defined(__PIC24FJ128GC010__)
 	    	// Disable analog on all pins
 	    	ANSA = 0x0000;
 	    	ANSB = 0x0000;
@@ -859,14 +859,14 @@ static void InitializeBoard(void)
 	#endif
 
 	// ADC
-	AD1CON1 = 0x84E4;			// Turn on, auto sample start, auto-convert, 12 bit mode (on parts with a 12bit A/D)
-	AD1CON2 = 0x0404;			// AVdd, AVss, int every 2 conversions, MUXA only, scan
-	AD1CON3 = 0x1003;			// 16 Tad auto-sample, Tad = 3*Tcy
+	ADCON1 = 0x84E4;			// Turn on, auto sample start, auto-convert, 12 bit mode (on parts with a 12bit A/D)
+	ADCON2 = 0x0404;			// AVdd, AVss, int every 2 conversions, MUXA only, scan
+	ADCON3 = 0x1003;			// 16 Tad auto-sample, Tad = 3*Tcy
 	#if defined(__32MX460F512L__) || defined(__32MX795F512L__)	// PIC32MX460F512L and PIC32MX795F512L PIMs has different pinout to accomodate USB module
 		AD1CSSL = 1<<2;				// Scan pot
 	#else
 		//AD1CSSL = 1<<5;				// Scan pot
-                AD1CSSL = 0x0030;           // Scan pot and temperature sensor
+                //AD1CSSL = 0x0030;           // Scan pot and temperature sensor
 	#endif
 
 	// UART

@@ -288,21 +288,21 @@ DWORD GenerateRandomDWORD(void)
 }
 #else
 {
-	WORD AD1CON1Save, AD1CON2Save, AD1CON3Save;
+	WORD ADCON1Save, ADCON2Save, ADCON3Save;
 	WORD T1CONSave, PR1Save;
 
 	// Save hardware SFRs
-	AD1CON1Save = AD1CON1;
-	AD1CON2Save = AD1CON2;
-	AD1CON3Save = AD1CON3;
+	ADCON1Save = ADCON1;
+	ADCON2Save = ADCON2;
+	ADCON3Save = ADCON3;
 	T1CONSave = T1CON;
 	PR1Save = PR1;
 
 	// Set up Timer and A/D converter module
-	AD1CON1 = 0x0000;		// Turn off the ADC so we can write to it
-	AD1CON3 = 0x9F00;		// Frc A/D clock, 31 Tad acquisition
-	AD1CON2 = 0x003F;		// Interrupt after every 16th sample/convert
-	AD1CON1 = 0x80E4;		// Turn on the A/D module, auto-convert
+	ADCON1 = 0x0000;		// Turn off the ADC so we can write to it
+	ADCON3 = 0x9F00;		// Frc A/D clock, 31 Tad acquisition
+	ADCON2 = 0x003F;		// Interrupt after every 16th sample/convert
+	ADCON1 = 0x80E4;		// Turn on the A/D module, auto-convert
 	T1CON = 0x8000;			// TON = 1, no prescalar
 	PR1 = 0xFFFF;			// Don't clear timer early
 	vBitCount = 0;
@@ -356,10 +356,10 @@ DWORD GenerateRandomDWORD(void)
 
 
 	// Restore hardware SFRs
-	AD1CON1 = 0x0000;		// Turn off the ADC so we can write to it
-	AD1CON3 = AD1CON3Save;
-	AD1CON2 = AD1CON2Save;
-	AD1CON1 = AD1CON1Save;
+	ADCON1 = 0x0000;		// Turn off the ADC so we can write to it
+	ADCON3 = ADCON3Save;
+	ADCON2 = ADCON2Save;
+	ADCON1 = ADCON1Save;
 	T1CON = T1CONSave;
 	PR1 = PR1Save;
 }
