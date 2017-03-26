@@ -1033,7 +1033,21 @@ static void InitializeBoard(void)
 
 	__builtin_write_OSCCONL(OSCCON | 0x40); // Lock PPS
 #endif
-
+    
+#if defined(__PIC24FJ256GA702__)
+    __builtin_write_OSCCONL(OSCCON & 0xBF);  // Unlock PPS
+    
+    // Configure SPI1 PPS pins (ENC28J60/ENCX24J600/MRF24W or other PICtail Plus cards)
+	RPOR0bits.RP0R = 8;		// Assign RP0 to SCK1 (output)
+	RPOR7bits.RP15R = 7;	// Assign RP15 to SDO1 (output)
+	RPINR20bits.SDI1R = 23;	// Assign RP23 to SDI1 (input)
+    
+	// Configure UART2 PPS pins (MAX3232 on Explorer 16)
+	RPINR19bits.U2RXR = 10;	// Assign RF4/RP10 to U2RX (input)
+	RPOR8bits.RP17R = 5;	// Assign RF5/RP17 to U2TX (output)
+    
+    __builtin_write_OSCCONL(OSCCON | 0x40); // Lock PPS
+#endif
 
 #if defined(DSPICDEM11)
 	// Deselect the LCD controller (PIC18F252 onboard) to ensure there is no SPI2 contention

@@ -38721,6 +38721,16 @@
         </C30Global>
       </item>
       <item path="../Configs/HWP GA702_ENC28.h" ex="true" overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
       </item>
       <item path="../Configs/HWP PIC18EX_ENC28.h" ex="true" overriding="false">
         <C30>
@@ -39226,6 +39236,16 @@
         <property key="save-temps" value="false"/>
       </C30Global>
       <item path="HWP F46K20_ENC28.h" ex="true" overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
       </item>
       <ICD3PlatformTool>
         <property key="ADC 1" value="true"/>
