@@ -1,40 +1,44 @@
 <config configVersion="1.1" device="PIC18F46K20">
    <usedClasses class="java.util.HashMap">
       <entry>
-         <string>TCP</string>
-         <string>class com.microchip.mcc.modules.mcu8.protocol.tcp.TCP</string>
-      </entry>
-      <entry>
          <string>UDP</string>
          <string>class com.microchip.mcc.modules.mcu8.protocol.udp.UDP</string>
+      </entry>
+      <entry>
+         <string>TCP</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.tcp.TCP</string>
       </entry>
       <entry>
          <string>WDT</string>
          <string>class com.microchip.mcc.mcu8.systemManager.wdt.WDT</string>
       </entry>
       <entry>
-         <string>IPV4</string>
-         <string>class com.microchip.mcc.modules.mcu8.protocol.ipv4.IPV4</string>
-      </entry>
-      <entry>
          <string>MSSP</string>
          <string>class com.microchip.mcc.mcu8.modules.mssp.MSSP</string>
       </entry>
       <entry>
-         <string>TFTP</string>
-         <string>class com.microchip.mcc.modules.mcu8.protocol.tftp.TFTP</string>
+         <string>IPV4</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.ipv4.IPV4</string>
+      </entry>
+      <entry>
+         <string>DNS</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.dns.DNS</string>
       </entry>
       <entry>
          <string>Pin Module</string>
          <string>class com.microchip.mcc.mcu8.pinManager.PinManager</string>
       </entry>
       <entry>
-         <string>RESET</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.reset.RESET</string>
+         <string>TFTP</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.tftp.TFTP</string>
       </entry>
       <entry>
          <string>NTP</string>
          <string>class com.microchip.mcc.modules.mcu8.protocol.ntp.NTP</string>
+      </entry>
+      <entry>
+         <string>RESET</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.reset.RESET</string>
       </entry>
       <entry>
          <string>Interrupt Module</string>
@@ -61,16 +65,16 @@
          <string>class com.microchip.mcc.modules.mcu8.TCPIPLibrary.TCPIPLibrary</string>
       </entry>
       <entry>
-         <string>ICMP</string>
-         <string>class com.microchip.mcc.modules.mcu8.protocol.icmp.ICMP</string>
+         <string>ARP</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.arp.ARP</string>
       </entry>
       <entry>
          <string>TMR1</string>
          <string>class com.microchip.mcc.mcu8.modules.tmr1.TMR1</string>
       </entry>
       <entry>
-         <string>ARP</string>
-         <string>class com.microchip.mcc.modules.mcu8.protocol.arp.ARP</string>
+         <string>ICMP</string>
+         <string>class com.microchip.mcc.modules.mcu8.protocol.icmp.ICMP</string>
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
@@ -111,12 +115,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="IPV4" name="SubnetMask"/>
-         <value>255.255.0.0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="nTSYNC" alias="do_not_synchronize"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="IPV4" name="SubnetMask"/>
+         <value>255.255.0.0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC7" alias="output"/>
@@ -587,12 +591,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MSSP" registerAlias="SSPCON2"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TCKPS" alias="1:8"/>
          <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MSSP" registerAlias="SSPCON2"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATA" settingAlias="LATA1" alias="clear"/>
@@ -1135,12 +1139,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="CSRC"/>
-         <value>slave_mode</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TCON"/>
          <value>49</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="CSRC"/>
+         <value>slave_mode</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA7"/>
@@ -1191,16 +1195,16 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UDP" name="ICMP_port_unreach"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MSSP" registerAlias="BCLI" settingAlias="priority"/>
          <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP" registerAlias="SSPCON1" settingAlias="CKP" alias="Idle:Low, Active:High"/>
          <value>0</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UDP" name="ICMP_port_unreach"/>
-         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELH" settingAlias="ANS12" alias="digital"/>
@@ -1299,12 +1303,12 @@
          <value>64</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP" name="ClkDividerValue"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="dependentModuleKey"/>
          <value>4</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP" name="ClkDividerValue"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="RESET" registerAlias="RCON" settingAlias="BOR" alias="did not occur"/>
@@ -1839,12 +1843,12 @@
          <value>POR or CLRWDT</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP" registerAlias="SSPSTAT" settingAlias="UA" alias="dontupdate"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TMRCS" alias="External"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP" registerAlias="SSPSTAT" settingAlias="UA" alias="dontupdate"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG5H" settingAlias="CPB"/>
@@ -1988,7 +1992,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MAC" name="pubSubSelectedMSSP"/>
-         <value>761.790751760939</value>
+         <value>3851.2997978353815</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELH" settingAlias="ANS8" alias="digital"/>
@@ -2112,7 +2116,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TCP/IP Lite" name="DNS"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISB" settingAlias="TRISB6"/>
@@ -2775,12 +2779,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="DTRXP" alias="not_inverted"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TOSCEN"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="DTRXP" alias="not_inverted"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG2L" settingAlias="BOREN" alias="NOSLP"/>
@@ -3407,11 +3411,11 @@
          <value>OFF</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP" registerAlias="SSPCON2" settingAlias="RCEN" alias="disabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TMRCS" alias="FOSC/4"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TMRCS" alias="FOSC/4"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP" registerAlias="SSPCON2" settingAlias="RCEN" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
@@ -3771,12 +3775,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="IPV4" name="AlternateDNS"/>
-         <value/>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="BAUDCON"/>
          <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="IPV4" name="AlternateDNS"/>
+         <value/>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATB" settingAlias="LATB1" alias="set"/>
@@ -4321,20 +4325,20 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/icmp.h</file>
-         <hash>41384efaefbdb784356f36581bc589db43209a8c0255f7f653d8c3dbf8e9342c</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/interrupt_manager.h</file>
          <hash>46478cfb3f989c351994b92c250a1d2b9a6cc7953e59f90fcea1919215fa82b8</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/tftp.h</file>
-         <hash>361a111bcf13266aaf001b85b680679279556f64196a4e279605595456cfcb3a</hash>
+         <file>mcc_generated_files/TCPIPLibrary/icmp.h</file>
+         <hash>41384efaefbdb784356f36581bc589db43209a8c0255f7f653d8c3dbf8e9342c</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/eusart.c</file>
          <hash>a38915035cb6ab6eb52396d5ffee63f665963cae3f0988eaad7d50ddeabd5e43</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/tftp.h</file>
+         <hash>361a111bcf13266aaf001b85b680679279556f64196a4e279605595456cfcb3a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/ip_database.c</file>
@@ -4369,6 +4373,10 @@
          <hash>cf6815fcde09f391088279175f4a727918e5f960cff544b5c12aa69fb420bd7c</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h</file>
+         <hash>d79478c6047243f1e3014c280a1a638b7798ac74e367d5c2db02bb4229a637ec</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/TCPIPLibrary/network.h</file>
          <hash>c4da0f996224a009b5d953ef686b383b2d2f2417df0669082e027fb7221b93a0</hash>
       </entry>
@@ -4381,8 +4389,8 @@
          <hash>9ab492b2748230d6f7fb986c7689ecb56c4702fd95b806fd97785629526536a6</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h</file>
-         <hash>d79478c6047243f1e3014c280a1a638b7798ac74e367d5c2db02bb4229a637ec</hash>
+         <file>mcc_generated_files/TCPIPLibrary/arpv4.h</file>
+         <hash>4c261edb5ee27dab30fdb913930aebe72b458a52cfbc23869b40ef099d8a9280</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/tcpip_types.h</file>
@@ -4393,10 +4401,6 @@
          <hash>d34b27a2384740ce0ab555006285657f8616466dfeac5f4a334b421274360ced</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/arpv4.h</file>
-         <hash>4c261edb5ee27dab30fdb913930aebe72b458a52cfbc23869b40ef099d8a9280</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/TCPIPLibrary/lfsr.c</file>
          <hash>c05da101532c71ee0d44593d81dc18387d8aa4827b83ced55e98eee593a5bf01</hash>
       </entry>
@@ -4405,20 +4409,20 @@
          <hash>10c32cdec50000205a519c43edf18b0e0e18a34797b30da502384d64f3f00cfc</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
-         <hash>68bef7b9af8bbface00ffb618b55bb4f2d079594dac6b023180b5831b7c7d5ef</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/spi.c</file>
-         <hash>cc512e2af02ddc738e55cc07c97228cf9632ebca76aedf89bce038e2f71b5072</hash>
+         <hash>35cb17cefc673e5a8c1f52da5909eae917b35fd7ed4a0c256e90a3d8bc535e14</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/arpv4.c</file>
          <hash>f54a5b63db5df8384c260f94e4fcda4b40784d6a5814e87df544440c0ba22a47</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
+         <hash>68bef7b9af8bbface00ffb618b55bb4f2d079594dac6b023180b5831b7c7d5ef</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c</file>
-         <hash>25bd2b62b86ed750a2eadb550cd50811d50eee837d11be7968bc2c16ff8e3b3a</hash>
+         <hash>74288fc1fcce59e50b7668f26c01237a1c8ef6c065eb0b59089691cbca4dfc52</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/mac_address.c</file>
@@ -4430,7 +4434,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>f939ba1543d8e68f92d5b4ee6265055af1bef3c269579c2885877068e24541f6</hash>
+         <hash>2420eda6bb9d1d70b5e81eae8f7455ae785a99b9fb9a6b00953bc15c5bc7d17b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/spi.h</file>
+         <hash>2bbb19b02c239aa8b1176ae2a1ca00d8e408389a278cec873587a24367195bd4</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
@@ -4439,10 +4447,6 @@
       <entry>
          <file>mcc_generated_files/eusart.h</file>
          <hash>457d47a7b1ae20b4cf05e5097dbc8a380a28d90cf069c1d7b08ad20dc6ad4361</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/spi.h</file>
-         <hash>2bbb19b02c239aa8b1176ae2a1ca00d8e408389a278cec873587a24367195bd4</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>
@@ -4481,6 +4485,10 @@
          <hash>348df4040ee0cb5f149d122f6c63d07206f43764caf5bf5e8bc85e62b9d15287</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4.h</file>
+         <hash>b723d1d84867a65d9b02691ca69ea8f23bc25eb50e7eb48c40a588d32600d8b6</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/TCPIPLibrary/tcpip_config.h</file>
          <hash>9e214f1f8059e7db7c9a9783e22311cdb77750def68f0d25eaa0a32cd14c1f69</hash>
       </entry>
@@ -4489,8 +4497,8 @@
          <hash>43f1a45298bd4a47127787c3c90a9a45086ecab9dec1e09f50e1271170dc9786</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4.h</file>
-         <hash>b723d1d84867a65d9b02691ca69ea8f23bc25eb50e7eb48c40a588d32600d8b6</hash>
+         <file>mcc_generated_files/TCPIPLibrary/dns_client.h</file>
+         <hash>75d9a4a5cbc829df0f2039d5790c5d7daddfa70f034bf5fbe1a845c218615ef3</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/ENC28J60.h</file>
@@ -4499,6 +4507,10 @@
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/udpv4.c</file>
          <hash>838c68b823f18611a2878d36d1ad4d6a5a0161228933d11854d0e3f7e33bbebe</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/dns_client.c</file>
+         <hash>9dc14acfee6adf65ecd830a8a9cdd0846dd555f86f6caf968bc6fa03953c1b45</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/ipv4.c</file>

@@ -106,8 +106,8 @@ void main(void)
             old_ip = ip;
             memset(str,0,sizeof(str));
             sprintf(str,"%d.%d.%d.%d",((char*)&ip)[3],((char*)&ip)[2],((char*)&ip)[1],((char*)&ip)[0]);
-            lcd_goto1(0);
-            lcd_puts(str);
+            //lcd_goto1(0);
+            //lcd_puts(str);
             SYSLOG_Write(str);
             no_ip_display = false;
         }

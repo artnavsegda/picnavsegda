@@ -160,9 +160,9 @@ void DEMO_UDP_Recv(int length)
                        UDP_WriteBlock(&local_ip, sizeof(local_ip));
                        UDP_Send();
                    }
-                   PORTJ = 0;
+                   //PORTJ = 0;
                    pot_init = 0;
-                   lcd_clear();
+                   //lcd_clear();
                    break;
                     /*  Case '1' represents to Toggles Led 1 (D1)  */
                 case '1':
@@ -171,14 +171,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                             if(PORTJbits.RJ0 == 0)
+                             /*if(PORTJbits.RJ0 == 0)
                              {
                                  PORTJbits.RJ0=1;
                              }
                              else
                              {
                                  PORTJbits.RJ0=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -191,14 +191,14 @@ void DEMO_UDP_Recv(int length)
                         dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                            if(PORTJbits.RJ1 == 0)
+                            /*if(PORTJbits.RJ1 == 0)
                              {
                                  PORTJbits.RJ1=1;
                              }
                              else
                              {
                                  PORTJbits.RJ1=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -211,14 +211,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                            if(PORTJbits.RJ2 == 0)
+                            /*if(PORTJbits.RJ2 == 0)
                              {
                                  PORTJbits.RJ2=1;
                              }
                              else
                              {
                                  PORTJbits.RJ2=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -231,14 +231,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                             if(PORTJbits.RJ3 == 0)
+                             /*if(PORTJbits.RJ3 == 0)
                              {
                                  PORTJbits.RJ3=1;
                              }
                              else
                              {
                                  PORTJbits.RJ3=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -251,14 +251,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                             if(PORTJbits.RJ4 == 0)
+                             /*if(PORTJbits.RJ4 == 0)
                              {
                                  PORTJbits.RJ4=1;
                              }
                              else
                              {
                                  PORTJbits.RJ4=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -271,14 +271,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                             if(PORTJbits.RJ5 == 0)
+                             /*if(PORTJbits.RJ5 == 0)
                              {
                                  PORTJbits.RJ5=1;
                              }
                              else
                              {
                                  PORTJbits.RJ5=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -291,14 +291,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                             if(PORTJbits.RJ6 == 0)
+                             /*if(PORTJbits.RJ6 == 0)
                              {
                                  PORTJbits.RJ6=1;
                              }
                              else
                              {
                                  PORTJbits.RJ6=0;
-                             }
+                             }*/
                          }
                      }
                     break;
@@ -311,14 +311,14 @@ void DEMO_UDP_Recv(int length)
                          dest_ip = UDP_GetDestIP();
                          if(claim_dest_ip == dest_ip)
                          {
-                            if(PORTJbits.RJ7 == 0)
+                            /*if(PORTJbits.RJ7 == 0)
                              {
                                  PORTJbits.RJ7=1;
                              }
                              else
                              {
                                  PORTJbits.RJ7=0;
-                             }
+                             }*/
                          }
                      }
                      break;
@@ -326,7 +326,7 @@ void DEMO_UDP_Recv(int length)
                      case 'D':
                      if(DEMO_UDP_ClaimIPCheck())
                      {
-                         lcd_clear();
+                         //lcd_clear();
                          memset(str,0,sizeof(str));
                          memset(str1,0,sizeof(str1));
                          memset(str2,0,sizeof(str2));
@@ -337,18 +337,18 @@ void DEMO_UDP_Recv(int length)
                              if(str_len > 16)
                              {
                                  UDP_ReadBlock(&str1,16);
-                                 lcd_goto1(0);
-                                 lcd_puts(str1);
+                                 //lcd_goto1(0);
+                                 //lcd_puts(str1);
                                  str_len-= 16;
                                  UDP_ReadBlock(&str2,str_len);   
-                                 lcd_goto2(0);
-                                 lcd_puts(str2);
+                                 //lcd_goto2(0);
+                                 //lcd_puts(str2);
                              }
                              else
                              {
                                  UDP_ReadBlock(&str,str_len);
-                                 lcd_goto1(0);
-                                 lcd_puts(str);
+                                 //lcd_goto1(0);
+                                 //lcd_puts(str);
                              }
                          }
                      }

@@ -32,6 +32,7 @@
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
         <itemPath>mcc_generated_files/TCPIPLibrary/tcpip_config.h</itemPath>
         <itemPath>mcc_generated_files/TCPIPLibrary/ENC28J60.h</itemPath>
+        <itemPath>mcc_generated_files/TCPIPLibrary/dns_client.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -65,6 +66,7 @@
         <itemPath>mcc_generated_files/TCPIPLibrary/udpv4.c</itemPath>
         <itemPath>mcc_generated_files/TCPIPLibrary/ipv4.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/TCPIPLibrary/dns_client.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

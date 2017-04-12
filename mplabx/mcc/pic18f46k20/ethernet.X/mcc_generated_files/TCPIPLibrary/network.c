@@ -53,19 +53,12 @@ time_t arpTimer;
 
 void Network_Init(void)
 {
-    printf("eth init\r\n");
     ETH_Init();
-    printf("arpv4 init\r\n");
     ARPV4_Init();
-    printf("ipv4 init\r\n");
     IPV4_Init();
-    printf("tcp init\r\n");
     TCP_Init();
-    printf("rtcc init\r\n");
     rtcc_init();
-    printf("wait for link\r\n");
     Network_WaitForLink();  
-    printf("timers init\r\n");
     timersInit();
 }
 
