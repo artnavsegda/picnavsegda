@@ -133,3 +133,7 @@
 /mplabx/pic24/blink.X/dist/XC16_24FJ256GB410/
 /mplabx/mcc/pic24fj256gb410/blink.X/build/default/
 /mplabx/mcc/pic24fj256gb410/blink.X/dist/default/
+/mplabx/mcc/pic24fj256gb410/serial.X/nbproject/private/
+/mplabx/mcc/pic24fj128ga010/serial.X/nbproject/private/
+/mplabx/mcc/pic24fj256gb410/serial.X/build/default/
+/mplabx/mcc/pic24fj256gb410/serial.X/dist/default/
