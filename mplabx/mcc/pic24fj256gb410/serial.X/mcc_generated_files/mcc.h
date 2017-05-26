@@ -52,7 +52,7 @@
 #include "traps.h"
 #include "uart1.h"
 
-#define _XTAL_FREQ  4000000UL
+#define _XTAL_FREQ  8000000UL
 
 /**
  * @Param

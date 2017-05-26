@@ -13,12 +13,12 @@
          <string>class com.microchip.mcc.mcu16.systemManager.clk.Clock</string>
       </entry>
       <entry>
-         <string>WATCHDOG</string>
-         <string>class com.microchip.mcc.mcu16.systemManager.wdt.Wdt</string>
-      </entry>
-      <entry>
          <string>Pin Module</string>
          <string>class com.microchip.mcc.mcu16.pinManager.PinManager</string>
+      </entry>
+      <entry>
+         <string>WATCHDOG</string>
+         <string>class com.microchip.mcc.mcu16.systemManager.wdt.Wdt</string>
       </entry>
       <entry>
          <string>ICD</string>
@@ -467,7 +467,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UBRG" settingAlias="BRG"/>
-         <value>51</value>
+         <value>103</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="CLKDIV" settingAlias="DOZEN" alias="enabled"/>
@@ -4107,7 +4107,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART1" registerAlias="UBRG"/>
-         <value>51</value>
+         <value>103</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RPINR18" settingAlias="U1CTSR"/>
@@ -4827,7 +4827,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON"/>
-         <value>1792</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UWTCL" settingAlias="WTCL"/>
@@ -4975,7 +4975,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CLOCK_FOSC2"/>
-         <value>2000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCPH" settingAlias="IOCPH8"/>
@@ -6507,7 +6507,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="FrcEnable"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet VSS1"/>
@@ -8767,7 +8767,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="FOSCSEL"/>
-         <value>255</value>
+         <value>248</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCD" settingAlias="ODCD15" alias="enabled"/>
@@ -9011,7 +9011,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="FrcPostscalerClock"/>
-         <value>4000000</value>
+         <value/>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="USCCON" settingAlias="T0PD" alias="2 ETU"/>
@@ -10015,7 +10015,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="InternalClock"/>
-         <value>2000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ODCH" settingAlias="ODCH14"/>
@@ -13183,7 +13183,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="FOSCSEL" settingAlias="FNOSC"/>
-         <value>FRCDIV</value>
+         <value>FRC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSB" settingAlias="ANSB11"/>
@@ -14643,7 +14643,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON" settingAlias="NOSC"/>
-         <value>FRCDIV</value>
+         <value>FRC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISB" settingAlias="TRISB14" alias="output"/>
@@ -15219,7 +15219,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="FeaturePllEnable"/>
-         <value>AVAILABLE</value>
+         <value>NOTAVAILABLE</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCFG" settingAlias="IOCFG1"/>
@@ -15947,7 +15947,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CLOCK_FOSC"/>
-         <value>4000000</value>
+         <value>8000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSB" settingAlias="ANSB2" alias="digital"/>
@@ -16005,7 +16005,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>f73a29dce681bc76eeba2a4b6018a8617a6a75158ae65143d24c35ccaff45a3a</hash>
+         <hash>d85f7e36ca00f8ffac5eb03523f607671e2da8953460f8605e2c5de95aaba1ce</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
@@ -16016,12 +16016,12 @@
          <hash>14fa6cd21e3f27ed08cb8c8c2660ecd3596e2c4b2446ceb76660dbaee9d15a7f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/mcc.c</file>
-         <hash>cc532c0c9c09a14332b0d8e830f9290b60bb32a84597bef836a1f890c2ec762e</hash>
+         <file>mcc_generated_files/uart1.c</file>
+         <hash>1db9fb2454abfaa6267f55d14b4c273ce84e395bf3f470624af4115d904a6ca6</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/uart1.c</file>
-         <hash>115fd1b4de6d0193b373553bad942a36788bb4828c68b587def1f3f09c2623f3</hash>
+         <file>mcc_generated_files/mcc.c</file>
+         <hash>a46c5eda5e03e236c068ab968806da863aff97feba56b7749e355187ee304764</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
