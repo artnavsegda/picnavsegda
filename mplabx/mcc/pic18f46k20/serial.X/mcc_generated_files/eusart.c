@@ -13,7 +13,7 @@
   @Description
     This header file provides implementations for driver APIs for EUSART.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC18F46K20
         Driver Version    :  2.00
     The generated drivers are tested against the following:
@@ -66,10 +66,10 @@ void EUSART_Initialize(void)
     TXSTA = 0x24;
 
     // Baud Rate = 9600; 
-    SPBRG = 0x11;
+    SPBRG = 0xA0;
 
     // Baud Rate = 9600; 
-    SPBRGH = 0x04;
+    SPBRGH = 0x01;
 
 }
 
@@ -77,7 +77,7 @@ void EUSART_Initialize(void)
 uint8_t EUSART_Read(void)
 {
 
-    while(!PIR1bits.RCIF)
+    while(!PIR1bits.RC1IF)
     {
     }
 
@@ -86,8 +86,8 @@ uint8_t EUSART_Read(void)
     {
         // EUSART error - restart
 
-        RCSTAbits.CREN = 0; 
-        RCSTAbits.CREN = 1; 
+        RCSTAbits.SPEN = 0; 
+        RCSTAbits.SPEN = 1; 
     }
 
     return RCREG;
@@ -95,7 +95,7 @@ uint8_t EUSART_Read(void)
 
 void EUSART_Write(uint8_t txData)
 {
-    while(0 == PIR1bits.TXIF)
+    while(0 == PIR1bits.TX1IF)
     {
     }
 

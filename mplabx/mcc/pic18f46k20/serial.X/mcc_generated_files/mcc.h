@@ -13,7 +13,7 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC18F46K20
         Version           :  1.02
     The generated drivers are tested against the following:
@@ -51,7 +51,7 @@
 #include <stdbool.h>
 #include "eusart.h"
 
-#define _XTAL_FREQ  40000000
+#define _XTAL_FREQ  16000000
 
 
 /**

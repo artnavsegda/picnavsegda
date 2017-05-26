@@ -13,7 +13,7 @@
   @Description
     This header file provides APIs for driver for EUSART.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC18F46K20
         Driver Version    :  2.00
     The generated drivers are tested against the following:
@@ -66,7 +66,7 @@
   Section: Macro Declarations
 */
 
-#define EUSART_DataReady  (PIR1bits.RCIF)
+#define EUSART_DataReady  (PIR1bits.RC1IF)
 
 /**
   Section: EUSART APIs
