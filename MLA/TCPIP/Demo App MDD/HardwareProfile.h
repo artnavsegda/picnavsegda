@@ -81,6 +81,7 @@
  
         #elif defined(__PIC24FJ128GC010__)
 
+        #elif defined(__PIC24FJ128GB410__)
                     
         #else
         // Explorer 16 board

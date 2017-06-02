@@ -55,7 +55,7 @@
 #pragma config AIVTDIS = DISABLE    // Alternate Interrupt Vector Table Disable bit->Disable AIVT
 
 // FOSCSEL
-#pragma config FNOSC = FRCDIV    // Oscillator Select->Fast RC Oscillator with divide-by-n (FRCDIV)
+#pragma config FNOSC = FRC    // Oscillator Select->Fast RC Oscillator (FRC)
 #pragma config PLLMODE = DISABLED    // Frequency Multiplier Select Bits->No PLL used; PLLEN bit is not available
 #pragma config IESO = ON    // Internal External Switchover->Start up device with FRC, then switch to user-selected oscillator source
 
@@ -106,14 +106,15 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
+    TMR1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // CF no clock failure; NOSC FRCDIV; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
-    __builtin_write_OSCCONL((uint8_t) (0x0700 & 0x00FF));
+    // CF no clock failure; NOSC FRC; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
+    __builtin_write_OSCCONL((uint8_t) (0x0000 & 0x00FF));
     // CPDIV 1:1; PLLEN disabled; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
     CLKDIV = 0x3100;
     // STOR disabled; STORPOL Interrupt when STOR is 1; STSIDL disabled; STLPOL Interrupt when STLOCK is 1; STLOCK disabled; STSRC SOSC; STEN disabled; TUN Center frequency; 

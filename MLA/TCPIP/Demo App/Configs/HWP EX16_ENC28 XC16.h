@@ -70,6 +70,9 @@
 	#elif defined(__PIC24FJ128GC010__)
 		// PIC24FJ128GC010 PIM
         
+	#elif defined(__PIC24FJ256GB410__)
+		// PIC24FJ256GB410 PIM
+        
 	#elif defined(__PIC24FJ256GA110__)
 		// PIC24FJ256GA110 PIM
 		_CONFIG2(FNOSC_PRIPLL & IOL1WAY_OFF & POSCMOD_XT);	// Primary XT OSC with PLL, IOLOCK can be set and cleared

@@ -50,8 +50,9 @@
 #include <stdbool.h>
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "tmr1.h"
 
-#define _XTAL_FREQ  4000000UL
+#define _XTAL_FREQ  8000000UL
 
 /**
  * @Param

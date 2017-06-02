@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="62">
   <projectmakefile>Makefile</projectmakefile>
-  <defaultConf>30</defaultConf>
+  <defaultConf>31</defaultConf>
   <confs>
     <conf name="C18-PIC18EX_ENC28" type="2">
       <platformToolSN></platformToolSN>
@@ -311,7 +311,7 @@
     </conf>
     <conf name="XC32-EX16_ENC28" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -329,7 +329,7 @@
     </conf>
     <conf name="XC32-EX16_ENC624" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -347,7 +347,7 @@
     </conf>
     <conf name="XC32-EX16_MRF24WB" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -365,7 +365,7 @@
     </conf>
     <conf name="XC32-EX16_MRF24WG" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -383,7 +383,7 @@
     </conf>
     <conf name="XC32-PIC32_ETH_SK_ETH795" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -401,7 +401,7 @@
     </conf>
     <conf name="XC32-PIC32_GP_SK_ENC28" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -419,7 +419,7 @@
     </conf>
     <conf name="XC32-PIC32_GP_SK_ENC624" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -437,7 +437,7 @@
     </conf>
     <conf name="XC32-PIC32_GP_SK_MRF24WB" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -455,7 +455,7 @@
     </conf>
     <conf name="XC32-PIC32_GP_SK_MRF24WG" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -473,7 +473,7 @@
     </conf>
     <conf name="XC32-PIC32_USB_SK_ENC28" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -491,7 +491,7 @@
     </conf>
     <conf name="XC32-PIC32_USB_SK_ENC624" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -509,7 +509,7 @@
     </conf>
     <conf name="XC32-PIC32_USB_SK_MRF24WB" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -527,7 +527,7 @@
     </conf>
     <conf name="XC32-PIC32_USB_SK_MRF24WG" type="2">
       <platformToolSN></platformToolSN>
-      <languageToolchainDir>/Applications/microchip/xc32/v1.42/bin</languageToolchainDir>
+      <languageToolchainDir>/Applications/microchip/xc32/v1.43/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -544,7 +544,7 @@
       </runprofile>
     </conf>
     <conf name="C18_F46K20_ENC28" type="2">
-      <platformToolSN>:=MPLABComm-USB-Microchip:=&lt;vid>04D8:=&lt;pid>900A:=&lt;rev>0002:=&lt;man>Microchip Technology Inc.:=&lt;prod>PICkit 3:=&lt;sn>BUR132284452:=&lt;drv>x:=&lt;xpt>h:=end</platformToolSN>
+      <platformToolSN></platformToolSN>
       <languageToolchainDir>/Applications/microchip/mplabc18/v3.47/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
@@ -562,6 +562,24 @@
       </runprofile>
     </conf>
     <conf name="XC16_GC010_ENC28" type="2">
+      <platformToolSN></platformToolSN>
+      <languageToolchainDir>/Applications/microchip/xc16/v1.31/bin</languageToolchainDir>
+      <mdbdebugger version="1">
+        <placeholder1>place holder 1</placeholder1>
+        <placeholder2>place holder 2</placeholder2>
+      </mdbdebugger>
+      <runprofile version="6">
+        <args></args>
+        <rundir></rundir>
+        <buildfirst>true</buildfirst>
+        <console-type>0</console-type>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="XC16_GB410_ENC28" type="2">
       <platformToolSN></platformToolSN>
       <languageToolchainDir>/Applications/microchip/xc16/v1.31/bin</languageToolchainDir>
       <mdbdebugger version="1">
