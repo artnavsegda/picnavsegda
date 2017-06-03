@@ -3,15 +3,15 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>adc</name>
-            <creation-uuid>711ded7e-6d47-4a70-b606-7b911b673ccb</creation-uuid>
+            <name>spi</name>
+            <creation-uuid>7d48207c-a4c2-488e-9781-3508f1b094b6</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions/>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
-            <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
+            <sourceEncoding>UTF-8</sourceEncoding>
         </data>
     </configuration>
 </project>
