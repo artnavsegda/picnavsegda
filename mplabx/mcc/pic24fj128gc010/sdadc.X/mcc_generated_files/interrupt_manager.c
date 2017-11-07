@@ -52,8 +52,5 @@
 */
 void INTERRUPT_Initialize (void)
 {
-    //    SDAI: Sigma Delta ADC 1 Interrupt
-    //    Priority: 1
-        IPC26bits.SDA1IP = 1;
 
 }

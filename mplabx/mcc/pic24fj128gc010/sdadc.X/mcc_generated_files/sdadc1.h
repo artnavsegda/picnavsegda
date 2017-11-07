@@ -210,7 +210,6 @@ int16_t SDADC1_ConversionRawResultGet(void);
 */
 float SDADC1_ConversionResultGet(void);
 
-void __attribute__ (( interrupt, no_auto_psv )) _ISR _SDA1Interrupt( void );
 #ifdef __cplusplus  // Provide C++ Compatibility
 }
 #endif

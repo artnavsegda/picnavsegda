@@ -96,21 +96,21 @@ static void SDADC1_WaitForSettling(void);
 void SDADC1_Initialize(void)
 {
     // Load the Register values, while SD ADC is disabled.
-    // SDGAIN 1; PWRLVL Normal; DITHER No dither; SDRST disabled; VOSCAL Normal operation; SDON enabled; SDREFP SVREF+; SDSIDL disabled; SDREFN SVSS; 
-    SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
-    // RNDRES Round result to 16 bits; SDWM Every interrupt when SDRDY=0; SDRDY disabled; CHOP enabled; SDINT Every sample; 
-    SD1CON2 = 0xF010;
-    // SDCH Differential Channel 0; SDDIV 4; SDCS FOSC/2; SDOSR 1024; 
-    SD1CON3 = 0x4000;
+    // SDGAIN 1; PWRLVL Normal; DITHER No dither; SDRST disabled; VOSCAL Normal operation; SDON enabled; SDREFP SVDD; SDSIDL disabled; SDREFN SVSS; 
+    SD1CON1 = 0x8000 & 0x7FFF; // Enable SD ADC later
+    // RNDRES Round result to 16 bits; SDWM Every interrupt; SDRDY disabled; CHOP enabled; SDINT Every 5th sample; 
+    SD1CON2 = 0xE110;
+    // SDCH Single-ended Channel 1; SDDIV 64; SDCS FRC; SDOSR 1024; 
+    SD1CON3 = 0xC102;
 
     // Perform SD ADC Calibration.
 	// Note: Calibration may update the register values.
     SDADC1_Calibrate();
 
     // After calibration, Re-Load the Register values, while SD ADC is disabled.
-    SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
-    SD1CON2 = 0xF010;
-    SD1CON3 = 0x4000;
+    SD1CON1 = 0x8000 & 0x7FFF; // Enable SD ADC later
+    SD1CON2 = 0xE110;
+    SD1CON3 = 0xC102;
 
     // Enable the SD ADC.
     SD1CON1bits.SDON = 1;  
@@ -212,13 +212,6 @@ static void SDADC1_WaitForSettling(void) {
         IFS6bits.SDA1IF = 0;
         //Wait for the result ready.
         while (0 == IFS6bits.SDA1IF);
-    }
-}
-void __attribute__ (( interrupt, no_auto_psv )) _ISR _SDA1Interrupt( void )
-{
-    if(IFS6bits.SDA1IF)
-    {
-        IFS6bits.SDA1IF = 0;
     }
 }
 

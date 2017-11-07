@@ -58,8 +58,8 @@ int main(void)
     while (1)
     {
         // Add your application code
-        printf("SDADC1 value %f\r\n",SDADC1_ConversionResultGet());
-        __delay_ms(1000);
+        printf("SDADC1 value %d\r\n",SDADC1_ConversionRawResultGet());
+        //__delay_ms(1000);
     }
 
     return -1;
