@@ -1,9 +1,0 @@
-Warning[2054] ../MODBUSTCPServer.c 315 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 369 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 371 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 398 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 402 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 451 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 453 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 473 : suspicious pointer conversion
-Warning[2054] ../MODBUSTCPServer.c 492 : suspicious pointer conversion
