@@ -55,13 +55,13 @@
 */
 /**
   @Summary
-    Sets the GPIO pin, RF0, high using LATF0.
+    Sets the GPIO pin, RE3, high using LATE3.
 
   @Description
-    Sets the GPIO pin, RF0, high using LATF0.
+    Sets the GPIO pin, RE3, high using LATE3.
 
   @Preconditions
-    The RF0 must be set to an output.
+    The RE3 must be set to an output.
 
   @Returns
     None.
@@ -71,21 +71,21 @@
 
   @Example
     <code>
-    // Set RF0 high (1)
+    // Set RE3 high (1)
     LAMP_ENABLE_SetHigh();
     </code>
 
 */
-#define LAMP_ENABLE_SetHigh()          _LATF0 = 1
+#define LAMP_ENABLE_SetHigh()          _LATE3 = 1
 /**
   @Summary
-    Sets the GPIO pin, RF0, low using LATF0.
+    Sets the GPIO pin, RE3, low using LATE3.
 
   @Description
-    Sets the GPIO pin, RF0, low using LATF0.
+    Sets the GPIO pin, RE3, low using LATE3.
 
   @Preconditions
-    The RF0 must be set to an output.
+    The RE3 must be set to an output.
 
   @Returns
     None.
@@ -95,21 +95,21 @@
 
   @Example
     <code>
-    // Set RF0 low (0)
+    // Set RE3 low (0)
     LAMP_ENABLE_SetLow();
     </code>
 
 */
-#define LAMP_ENABLE_SetLow()           _LATF0 = 0
+#define LAMP_ENABLE_SetLow()           _LATE3 = 0
 /**
   @Summary
-    Toggles the GPIO pin, RF0, using LATF0.
+    Toggles the GPIO pin, RE3, using LATE3.
 
   @Description
-    Toggles the GPIO pin, RF0, using LATF0.
+    Toggles the GPIO pin, RE3, using LATE3.
 
   @Preconditions
-    The RF0 must be set to an output.
+    The RE3 must be set to an output.
 
   @Returns
     None.
@@ -119,18 +119,18 @@
 
   @Example
     <code>
-    // Toggle RF0
+    // Toggle RE3
     LAMP_ENABLE_Toggle();
     </code>
 
 */
-#define LAMP_ENABLE_Toggle()           _LATF0 ^= 1
+#define LAMP_ENABLE_Toggle()           _LATE3 ^= 1
 /**
   @Summary
-    Reads the value of the GPIO pin, RF0.
+    Reads the value of the GPIO pin, RE3.
 
   @Description
-    Reads the value of the GPIO pin, RF0.
+    Reads the value of the GPIO pin, RE3.
 
   @Preconditions
     None.
@@ -145,18 +145,18 @@
     <code>
     uint16_t portValue;
 
-    // Read RF0
+    // Read RE3
     postValue = LAMP_ENABLE_GetValue();
     </code>
 
 */
-#define LAMP_ENABLE_GetValue()         _RF0
+#define LAMP_ENABLE_GetValue()         _RE3
 /**
   @Summary
-    Configures the GPIO pin, RF0, as an input.
+    Configures the GPIO pin, RE3, as an input.
 
   @Description
-    Configures the GPIO pin, RF0, as an input.
+    Configures the GPIO pin, RE3, as an input.
 
   @Preconditions
     None.
@@ -169,18 +169,18 @@
 
   @Example
     <code>
-    // Sets the RF0 as an input
+    // Sets the RE3 as an input
     LAMP_ENABLE_SetDigitalInput();
     </code>
 
 */
-#define LAMP_ENABLE_SetDigitalInput()  _TRISF0 = 1
+#define LAMP_ENABLE_SetDigitalInput()  _TRISE3 = 1
 /**
   @Summary
-    Configures the GPIO pin, RF0, as an output.
+    Configures the GPIO pin, RE3, as an output.
 
   @Description
-    Configures the GPIO pin, RF0, as an output.
+    Configures the GPIO pin, RE3, as an output.
 
   @Preconditions
     None.
@@ -193,12 +193,12 @@
 
   @Example
     <code>
-    // Sets the RF0 as an output
+    // Sets the RE3 as an output
     LAMP_ENABLE_SetDigitalOutput();
     </code>
 
 */
-#define LAMP_ENABLE_SetDigitalOutput() _TRISF0 = 0
+#define LAMP_ENABLE_SetDigitalOutput() _TRISE3 = 0
 
 /**
     Section: Function Prototypes
