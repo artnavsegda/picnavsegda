@@ -8,16 +8,16 @@
     main.c
 
   Summary:
-    This is the main file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the main file generated using MPLAB(c) Code Configurator
 
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 */
 
 /*
@@ -44,14 +44,13 @@
 
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
-#define FCY     (_XTAL_FREQ/2)
-#include <libpic30.h>
 
 /*
                          Main application
  */
 int main(void)
 {
+    int tempstate;
     // initialize the device
     SYSTEM_Initialize();
 
@@ -59,9 +58,26 @@ int main(void)
     {
         _LATE3 = _RG1; // LAMP_ENABLE = ASWITCH
         _LATE2 = _RE0; // PELTIER_ENABLE = BSWITCH
-        if 
-        printf("SDADC1 value %d\r\n",SDADC1_ConversionRawResultGet());
-        //__delay_ms(1000);
+        if (_RG14)
+        {
+            if (tempstate != _RG14)
+            {
+                SD1CON1bits.SDREFP = 0;
+                SDADC1_ChannelSelect(SDADC1_CH1_SINGLE);
+                tempstate = _RG14;
+            }
+            printf("CH1SE value: %d\r\n",SDADC1_ConversionRawResultGet());
+        }
+        else
+        {
+            if (tempstate != _RG14)
+            {
+                SD1CON1bits.SDREFP = 1;
+                SDADC1_ChannelSelect(SDADC1_CH0_DIFFERENTIAL);
+                tempstate = _RG14;
+            }
+            printf("CH0 value: %d\r\n",SDADC1_ConversionRawResultGet());
+        }
     }
 
     return -1;

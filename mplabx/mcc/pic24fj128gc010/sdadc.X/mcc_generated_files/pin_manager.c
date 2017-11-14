@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - 4.26
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -60,11 +60,11 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
     LATA = 0x0000;
-    LATB = 0x0020;
+    LATB = 0x0000;
     LATC = 0x0000;
     LATD = 0x0000;
-    LATE = 0x0008;
-    LATF = 0x0001;
+    LATE = 0x0000;
+    LATF = 0x0000;
     LATG = 0x0000;
 
     /****************************************************************************
@@ -72,9 +72,9 @@ void PIN_MANAGER_Initialize(void)
      ***************************************************************************/
     TRISA = 0xC6FF;
     TRISB = 0xF0DF;
-    TRISC = 0xF01E;
+    TRISC = 0x301E;
     TRISD = 0xFFFF;
-    TRISE = 0x03F7;
+    TRISE = 0x03F3;
     TRISF = 0x31BF;
     TRISG = 0xF3CF;
 
@@ -109,11 +109,11 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSA = 0xC6F6;
-    ANSB = 0xF0DC;
+    ANSB = 0xF01F;
     ANSC = 0x001A;
     ANSD = 0xFFFF;
     ANSE = 0x02F0;
-    ANSF = 0x21BC;
+    ANSF = 0x21BD;
     ANSG = 0x83C0;
 
     /****************************************************************************

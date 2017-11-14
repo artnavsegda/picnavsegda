@@ -4,13 +4,13 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>sdadc</name>
-            <creation-uuid>8b8bd2d9-28a5-4b4f-ae40-2dbbc0bdcada</creation-uuid>
+            <creation-uuid>50801ecc-1517-435d-9b09-c70db995ad12</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
         </data>
     </configuration>

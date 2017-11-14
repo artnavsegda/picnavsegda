@@ -8,17 +8,17 @@
     sdadc1.c
 
   Summary:
-    This is the generated driver implementation file for the SDADC1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated driver implementation file for the SDADC1 driver using MPLAB(c) Code Configurator
 
   Description:
     This source file provides implementations for driver APIs for SDADC1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ128GC010
         Version           :  1.0
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 *******************************************************************************/
 
 /*
@@ -100,8 +100,8 @@ void SDADC1_Initialize(void)
     SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
     // RNDRES Round result to 16 bits; SDWM Every interrupt; SDRDY disabled; CHOP enabled; SDINT Every 5th sample; 
     SD1CON2 = 0xE110;
-    // SDCH Differential Channel 0; SDDIV 64; SDCS FRC; SDOSR 1024; 
-    SD1CON3 = 0xC100;
+    // SDCH Differential Channel 0; SDDIV 64; SDCS FOSC/2; SDOSR 1024; 
+    SD1CON3 = 0xC000;
 
     // Perform SD ADC Calibration.
 	// Note: Calibration may update the register values.
@@ -110,7 +110,7 @@ void SDADC1_Initialize(void)
     // After calibration, Re-Load the Register values, while SD ADC is disabled.
     SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
     SD1CON2 = 0xE110;
-    SD1CON3 = 0xC100;
+    SD1CON3 = 0xC000;
 
     // Enable the SD ADC.
     SD1CON1bits.SDON = 1;  
