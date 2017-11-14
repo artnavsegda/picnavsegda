@@ -54,7 +54,8 @@ int main(void)
 
     while (1)
     {
-        // Add your application code
+        _LATE3 = _RG1; // LAMP_ENABLE = ASWITCH
+        _LATE2 = _RE0; // PELTIER_ENABLE = BSWITCH
     }
 
     return -1;

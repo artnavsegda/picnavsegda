@@ -57,7 +57,9 @@ int main(void)
 
     while (1)
     {
-        // Add your application code
+        _LATE3 = _RG1; // LAMP_ENABLE = ASWITCH
+        _LATE2 = _RE0; // PELTIER_ENABLE = BSWITCH
+        if 
         printf("SDADC1 value %d\r\n",SDADC1_ConversionRawResultGet());
         //__delay_ms(1000);
     }
