@@ -55,14 +55,14 @@
 #pragma config AIVTDIS = DISABLE    // Alternate Interrupt Vector Table Disable bit->Disable AIVT
 
 // FOSCSEL
-#pragma config FNOSC = FRC    // Oscillator Select->Fast RC Oscillator (FRC)
+#pragma config FNOSC = PRI    // Oscillator Select->Primary Oscillator (XT, HS, EC)
 #pragma config PLLMODE = DISABLED    // Frequency Multiplier Select Bits->No PLL used; PLLEN bit is not available
 #pragma config IESO = ON    // Internal External Switchover->Start up device with FRC, then switch to user-selected oscillator source
 
 // FOSC
-#pragma config POSCMOD = NONE    // Primary Oscillator Select->Primary Oscillator disabled
+#pragma config POSCMOD = XT    // Primary Oscillator Select->XT oscillator mode selected
 #pragma config OSCIOFCN = ON    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as port I/O (RC15)
-#pragma config SOSCSEL = OFF    // SOSC Power Selection Configuration bits->Digital (SCLKI) mode
+#pragma config SOSCSEL = ON    // SOSC Power Selection Configuration bits->SOSC is used in crystal (SOSCI/SOSCO) mode
 #pragma config PLLSS = PLL_PRI    // PLL Secondary Selection Configuration bit->PLL is fed by the Primary oscillator
 #pragma config IOL1WAY = ON    // IOLOCK One-Way Set Enable->Once set the IOLOCK bit cannot be cleared
 #pragma config FCKSM = CSDCMD    // Clock Switching and Monitor Selection->Clock switching and Fail-Safe Clock Monitor are disabled
@@ -114,14 +114,14 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // CF no clock failure; NOSC FRC; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
-    __builtin_write_OSCCONL((uint8_t) (0x0000 & 0x00FF));
+    // CF no clock failure; NOSC PRI; SOSCEN enabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
+    __builtin_write_OSCCONL((uint8_t) (0x0202 & 0x00FF));
     // CPDIV 1:1; PLLEN disabled; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
     CLKDIV = 0x3100;
     // STOR disabled; STORPOL Interrupt when STOR is 1; STSIDL disabled; STLPOL Interrupt when STLOCK is 1; STLOCK disabled; STSRC SOSC; STEN disabled; TUN Center frequency; 
     OSCTUN = 0x0000;
-    // ROEN disabled; ROSEL FOSC; ROSIDL disabled; ROSWEN disabled; ROOUT disabled; ROSLP disabled; 
-    REFOCONL = 0x0000;
+    // ROEN enabled; ROSEL Primary Oscillator; ROSIDL enabled; ROSWEN disabled; ROOUT enabled; ROSLP enabled; 
+    REFOCONL = 0xB802;
     // RODIV 0; 
     REFOCONH = 0x0000;
     // ROTRIM 0; 
