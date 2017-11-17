@@ -106,8 +106,8 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
     SPI1_Initialize();
     UART1_Initialize();
 }
@@ -120,8 +120,8 @@ void OSCILLATOR_Initialize(void)
     CLKDIV = 0x3100;
     // STOR disabled; STORPOL Interrupt when STOR is 1; STSIDL disabled; STLPOL Interrupt when STLOCK is 1; STLOCK disabled; STSRC SOSC; STEN disabled; TUN Center frequency; 
     OSCTUN = 0x0000;
-    // ROEN enabled; ROSEL Primary Oscillator; ROSIDL enabled; ROSWEN disabled; ROOUT enabled; ROSLP enabled; 
-    REFOCONL = 0xB802;
+    // ROEN enabled; ROSEL Primary Oscillator; ROSIDL disabled; ROSWEN disabled; ROOUT enabled; ROSLP disabled; 
+    REFOCONL = 0x9002;
     // RODIV 0; 
     REFOCONH = 0x0000;
     // ROTRIM 0; 
