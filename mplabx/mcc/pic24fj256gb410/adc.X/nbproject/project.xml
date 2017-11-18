@@ -4,11 +4,11 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>adc</name>
-            <creation-uuid>a0fde481-4114-4164-8ec3-48805fd7f7f9</creation-uuid>
+            <creation-uuid>2ff63268-7149-4eec-a009-dcf050dbe98f</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions/>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

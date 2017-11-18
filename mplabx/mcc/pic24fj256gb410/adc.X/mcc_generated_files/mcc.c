@@ -1,5 +1,5 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
+  @Generated MPLAB(c) Code Configurator Source File
 
   @Company:
     Microchip Technology Inc.
@@ -8,16 +8,16 @@
     mcc.c
 
   @Summary:
-    This is the mcc.c file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the mcc.c file generated using MPLAB(c) Code Configurator
 
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
-        Device            :  PIC24FJ256GB410
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 */
 
 /*
@@ -61,7 +61,7 @@
 
 // FOSC
 #pragma config POSCMOD = NONE    // Primary Oscillator Select->Primary Oscillator disabled
-#pragma config OSCIOFCN = OFF    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as CLKO (FOSC/2)
+#pragma config OSCIOFCN = ON    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as port I/O (RC15)
 #pragma config SOSCSEL = OFF    // SOSC Power Selection Configuration bits->Digital (SCLKI) mode
 #pragma config PLLSS = PLL_PRI    // PLL Secondary Selection Configuration bit->PLL is fed by the Primary oscillator
 #pragma config IOL1WAY = ON    // IOLOCK One-Way Set Enable->Once set the IOLOCK bit cannot be cleared
@@ -106,8 +106,8 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
     ADC1_Initialize();
     UART1_Initialize();
 }

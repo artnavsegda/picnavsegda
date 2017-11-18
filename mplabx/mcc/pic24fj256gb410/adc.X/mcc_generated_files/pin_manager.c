@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - 4.26
-        Device            :  PIC24FJ256GB410
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -71,7 +71,7 @@ void PIN_MANAGER_Initialize(void)
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
     TRISA = 0xC6FF;
-    TRISB = 0xFFDF;
+    TRISB = 0x7FDF;
     TRISC = 0x901E;
     TRISD = 0xFFFF;
     TRISE = 0x03FF;
@@ -131,6 +131,7 @@ void PIN_MANAGER_Initialize(void)
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
     RPOR9bits.RP18R = 0x0003;   //RB5->UART1:U1TX;
+    RPOR14bits.RP29R = 0x001C;   //RB15->INTERNAL OSCILLATOR:REFO1;
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock   PPS
 

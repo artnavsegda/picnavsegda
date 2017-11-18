@@ -9,16 +9,16 @@
 
   @Summary:
     This is the generated driver implementation file for handling traps
-    using PIC24 / dsPIC33 / PIC32MM MCUs
+    using MPLAB(c) Code Configurator
 
   @Description:
-    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs traps.
+    This source file provides implementations for MPLAB(c) Code Configurator traps.
     Generation Information : 
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
-        Device            :  PIC24FJ256GB410
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 */
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this

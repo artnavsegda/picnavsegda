@@ -8,16 +8,16 @@
     adc1.h
 
   @Summary
-    This is the generated header file for the ADC1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated header file for the ADC1 driver using MPLAB(c) Code Configurator
 
   @Description
     This header file provides APIs for driver for ADC1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
-        Device            :  PIC24FJ256GB410
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB 	          :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB 	          :  MPLAB X 3.45
 */
 
 /*
@@ -76,14 +76,26 @@
  */
 typedef enum 
 {
-    ADC1_CHANNEL_AN23 =  0x17,
+    ADC1_ADC_4 =  0x0,
+    ADC1_ADC_2_DIL =  0x1,
+    ADC1_ADC_3_BYP =  0x2,
+    ADC1_ADC_1_VAC =  0x3,
+    ADC1_ADC_5 =  0x4,
+    ADC1_CH0PLUS =  0x9,
+    ADC1_CH0MINUS =  0xA,
+    ADC1_SVREFPLUS =  0xB,
+    ADC1_PMT_I =  0xC,
+    ADC1_T_PELTIER =  0x13,
+    ADC1_LAMP_CURRENT_SENSE =  0x15,
+    ADC1_PELTIER_V =  0x16,
+    ADC1_SINUS_RECT =  0x17,
     ADC1_CHANNEL_CTMU_TEMPERATURE_SENSOR_INPUT =  0x18,
     ADC1_CHANNEL_CTMU =  0x19,
     ADC1_CHANNEL_VBG =  0x1C,
     ADC1_CHANNEL_AVSS =  0x1D,
     ADC1_CHANNEL_AVDD =  0x1E,
     ADC1_CHANNEL_VBAT_2 =  0x1F,
-    ADC1_MAX_CHANNEL_COUNT = 7
+    ADC1_MAX_CHANNEL_COUNT = 19
 } ADC1_CHANNEL;
 
 /**

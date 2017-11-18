@@ -9,16 +9,16 @@
     adc1.c
 
   @Summary
-    This is the generated header file for the ADC1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated header file for the ADC1 driver using MPLAB(c) Code Configurator
 
   @Description
     This header file provides APIs for driver for ADC1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
-        Device            :  PIC24FJ256GB410
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB 	          :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB 	          :  MPLAB X 3.45
 */
 
 /*
@@ -88,9 +88,9 @@ void ADC1_Initialize (void)
 
    AD1CON2 = 0x0000;
 
-    // SAMC 0; EXTSAM disabled; PUMPEN disabled; ADRC FOSC/2; ADCS 0; 
+    // SAMC 31; EXTSAM disabled; PUMPEN disabled; ADRC FOSC/2; ADCS 0; 
 
-   AD1CON3 = 0x0000;
+   AD1CON3 = 0x1F00;
 
     // CH0SA AN0; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
 
