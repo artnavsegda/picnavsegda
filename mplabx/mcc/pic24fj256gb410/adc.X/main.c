@@ -43,6 +43,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include <stdio.h>
 
 /*
                          Main application
@@ -51,6 +52,7 @@ int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    printf("MCU started\r\n");
 
     while (1)
     {
