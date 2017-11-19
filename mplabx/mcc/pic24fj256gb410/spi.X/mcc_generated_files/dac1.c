@@ -1,18 +1,19 @@
-/**
-  @Generated MPLAB(c) Code Configurator Header File
 
-  @Company:
+/**
+  DAC1 Generated Driver File 
+
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.h
+  @File Name
+    dac1.c
 
-  @Summary:
-    This is the mcc.h file generated using MPLAB(c) Code Configurator
+  @Summary
+    This is the generated driver implementation file for the DAC1 driver using MPLAB(c) Code Configurator
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
+  @Description
+    This header file provides implementations for driver APIs for DAC1. 
+    Generation Information : 
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
@@ -41,49 +42,25 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
-
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "uart1.h"
-#include "spi1.h"
+/**
+  Section: Included Files
+*/           
 #include "dac1.h"
-#include "interrupt_manager.h"
-#include "traps.h"
-
-#define _XTAL_FREQ  8000000UL
-
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-
-#endif	/* MCC_H */
-/**
- End of File
+  Section: Driver Interface
 */
+void DAC1_Initialize(void)
+{
+    // DACREF AVDD; DACOE disabled; DACFM Right; DACEN enabled; DACTSEL CMP1; DACTRIG disabled; DACSLP disabled; DACSIDL disabled; 
+    DAC1CON = 0x8002;
+}
+
+void DAC1_OutputSet(uint16_t inputData)
+{
+    DAC1DAT  = inputData;
+}
+
+/**
+  End of File
+*/ 
+

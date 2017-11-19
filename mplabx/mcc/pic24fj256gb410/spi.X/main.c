@@ -67,6 +67,7 @@ int main(void)
     uint32_t result = 0;
     // initialize the device
     SYSTEM_Initialize();
+    DAC1_OutputSet(0x3FF);
     
     while(_RD1);
     _LATD2 = 0;
@@ -80,6 +81,8 @@ int main(void)
 
     while (1)
     {
+        _LATE3 = _RG1; // LAMP_ENABLE = ASWITCH
+        _LATE2 = _RE0; // PELTIER_ENABLE = BSWITCH
         if (_RD1 == 0)
         {
             _LATD2 = 0;

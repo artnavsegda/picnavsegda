@@ -109,6 +109,7 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     OSCILLATOR_Initialize();
     SPI1_Initialize();
+    DAC1_Initialize();
     UART1_Initialize();
 }
 

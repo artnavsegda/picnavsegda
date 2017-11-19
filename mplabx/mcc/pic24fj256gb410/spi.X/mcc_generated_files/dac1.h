@@ -1,18 +1,19 @@
-/**
-  @Generated MPLAB(c) Code Configurator Header File
 
-  @Company:
+/**
+  DAC1 Generated Driver File 
+
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.h
+  @File Name
+    dac1.h
 
-  @Summary:
-    This is the mcc.h file generated using MPLAB(c) Code Configurator
+  @Summary
+    This is the generated header file for the DAC1 driver using MPLAB(c) Code Configurator
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
+  @Description
+    This header file provides implementations for driver APIs for DAC1. 
+    Generation Information : 
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
@@ -41,49 +42,77 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
-
-#ifndef MCC_H
-#define	MCC_H
+/**
+  Section: Included Files
+*/
 #include <xc.h>
-#include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "uart1.h"
-#include "spi1.h"
-#include "dac1.h"
-#include "interrupt_manager.h"
-#include "traps.h"
 
-#define _XTAL_FREQ  8000000UL
+#ifdef __cplusplus  // Provide C++ Compatibility
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
+    extern "C" {
+
+#endif
 
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-
-#endif	/* MCC_H */
-/**
- End of File
+  Section: Interface Routines
 */
+
+/**
+  @Summary
+    This function initializes DAC instance : 1
+
+  @Description
+    This routine initializes the DAC driver for instance : 1
+    index, making it ready for clients to open and use it. It also initializes any
+    internal data structures.
+
+  @Param
+    None.
+
+  @Returns 
+    None
+ 
+  @Comment
+    
+ 
+  @Example
+    <code>
+        int inputNumeber = 128;
+        DAC1_Initializer();
+        DAC1_OutputSet(inputNumber);
+        // Check converted output value at DACOUT pin
+    </code>
+  
+*/
+void DAC1_Initialize(void);
+
+/**
+  @Summary
+    This function inputs the digital data for conversion
+
+  @Description
+    This routine writes the input value into the DAC register to begin DAC 
+    conversion.
+  
+  @Param
+    inputData - Input value to be written to the DAC register 
+
+  @Returns 
+    None
+ 
+  @Example
+    Refer to DAC1_Initializer();
+ 
+*/
+void DAC1_OutputSet(uint16_t inputData);
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    }
+
+#endif
+
+/*
+  End of File
+*/ 
