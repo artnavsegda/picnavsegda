@@ -15,7 +15,7 @@
     This header file provides APIs for driver for ADC1.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
-        Device            :  PIC24FJ128GB410
+        Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB 	          :  MPLAB X 3.45
@@ -80,13 +80,13 @@ static ADC_OBJECT adc1_obj;
 
 void ADC1_Initialize (void)
 {
-    // ASAM disabled; DMABM disabled; ADSIDL disabled; DONE disabled; DMAEN disabled; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Clearing sample bit ends sampling and starts conversion; MODE12 12-bit; ADON enabled; 
+    // ASAM disabled; DMABM disabled; ADSIDL disabled; DONE disabled; DMAEN disabled; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Clearing sample bit ends sampling and starts conversion; MODE12 10-bit; ADON enabled; 
 
-   AD1CON1 = 0x8400;
+   AD1CON1 = 0x8000;
 
-    // CSCNA disabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI 1; OFFCAL disabled; BUFREGEN disabled; 
+    // CSCNA enabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI 1; OFFCAL disabled; BUFREGEN disabled; 
 
-   AD1CON2 = 0x0000;
+   AD1CON2 = 0x0400;
 
     // SAMC 31; EXTSAM disabled; PUMPEN disabled; ADRC FOSC/2; ADCS 0; 
 
@@ -100,9 +100,9 @@ void ADC1_Initialize (void)
 
    AD1CSSH = 0x0000;
 
-    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 disabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled; 
+    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 enabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled; 
 
-   AD1CSSL = 0x0000;
+   AD1CSSL = 0x0020;
 
     // CHH20 disabled; CHH22 disabled; CHH21 disabled; CHH24 disabled; CHH23 disabled; CHH25 disabled; CHH17 disabled; CHH16 disabled; CHH19 disabled; CHH18 disabled; 
 

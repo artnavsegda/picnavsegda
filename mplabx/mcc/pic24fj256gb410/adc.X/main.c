@@ -50,13 +50,26 @@
  */
 int main(void)
 {
+    int conversion, i;
     // initialize the device
     SYSTEM_Initialize();
     printf("MCU started\r\n");
+    ADC1_ChannelSelect(ADC1_POTENC);
 
     while (1)
     {
-        // Add your application code
+        ADC1_Start();
+        //Provide Delay
+        for(i=0;i <1000;i++)
+        {
+        }
+        ADC1_Stop();
+        while(!ADC1_IsConversionComplete())
+        {
+            ADC1_Tasks();   
+        }
+        conversion = ADC1_ConversionResultGet();
+        printf("value %d\r\n",conversion);
     }
 
     return -1;

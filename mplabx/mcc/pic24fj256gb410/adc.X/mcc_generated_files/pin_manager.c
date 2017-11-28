@@ -16,7 +16,7 @@
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
-        Device            :  PIC24FJ128GB410
+        Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
@@ -60,22 +60,22 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
     LATA = 0x0000;
-    LATB = 0x0020;
+    LATB = 0x0000;
     LATC = 0x0000;
     LATD = 0x0000;
     LATE = 0x0000;
-    LATF = 0x0000;
+    LATF = 0x0002;
     LATG = 0x0000;
 
     /****************************************************************************
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
     TRISA = 0xC6FF;
-    TRISB = 0x7FDF;
+    TRISB = 0x7FFF;
     TRISC = 0x901E;
-    TRISD = 0xFFFF;
+    TRISD = 0xFFF7;
     TRISE = 0x03FF;
-    TRISF = 0x31BF;
+    TRISF = 0x31BD;
     TRISG = 0xF3CF;
 
     /****************************************************************************
@@ -117,11 +117,11 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSA = 0xC6ED;
-    ANSB = 0xFF1F;
+    ANSB = 0xFF3F;
     ANSC = 0x001E;
-    ANSD = 0xFFFF;
+    ANSD = 0xEFFF;
     ANSE = 0x03FF;
-    ANSF = 0x313F;
+    ANSF = 0x313D;
     ANSG = 0xF3C3;
     ANSH = 0x001F;
 
@@ -130,8 +130,9 @@ void PIN_MANAGER_Initialize(void)
      ***************************************************************************/
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
-    RPOR9bits.RP18R = 0x0003;   //RB5->UART1:U1TX;
+    RPOR11bits.RP22R = 0x0003;   //RD3->UART1:U1TX;
     RPOR14bits.RP29R = 0x001C;   //RB15->INTERNAL OSCILLATOR:REFO1;
+    RPINR18bits.U1RXR = 0x002A;   //RD12->UART1:U1RX;
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock   PPS
 

@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
-        Device            :  PIC24FJ128GB410
+        Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
@@ -48,10 +48,10 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "uart1.h"
+#include "adc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "adc1.h"
-#include "uart1.h"
 
 #define _XTAL_FREQ  8000000UL
 

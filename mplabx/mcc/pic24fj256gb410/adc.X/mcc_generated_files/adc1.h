@@ -14,7 +14,7 @@
     This header file provides APIs for driver for ADC1.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
-        Device            :  PIC24FJ128GB410
+        Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB 	          :  MPLAB X 3.45
@@ -81,6 +81,7 @@ typedef enum
     ADC1_ADC_3_BYP =  0x2,
     ADC1_ADC_1_VAC =  0x3,
     ADC1_ADC_5 =  0x4,
+    ADC1_POTENC =  0x5,
     ADC1_CH0PLUS =  0x9,
     ADC1_CH0MINUS =  0xA,
     ADC1_SVREFPLUS =  0xB,
@@ -95,7 +96,7 @@ typedef enum
     ADC1_CHANNEL_AVSS =  0x1D,
     ADC1_CHANNEL_AVDD =  0x1E,
     ADC1_CHANNEL_VBAT_2 =  0x1F,
-    ADC1_MAX_CHANNEL_COUNT = 19
+    ADC1_MAX_CHANNEL_COUNT = 20
 } ADC1_CHANNEL;
 
 /**

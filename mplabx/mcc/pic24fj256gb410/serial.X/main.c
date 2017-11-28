@@ -52,13 +52,15 @@
  */
 int main(void)
 {
+    int i = 0;
     // initialize the device
     SYSTEM_Initialize();
+    printf("Hello world\r\n");
 
     while (1)
     {
         // Add your application code
-        printf("Hello world\r\n");
+        printf("%d\r\n",i++);
         __delay_ms(1000);
     }
 
