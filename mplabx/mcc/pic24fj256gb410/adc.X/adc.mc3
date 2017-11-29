@@ -33,12 +33,12 @@
          <string>class com.microchip.mcc.mcu16.interruptManager.InterruptManager</string>
       </entry>
       <entry>
-         <string>UART1</string>
-         <string>class com.microchip.mcc.mcu16.modules.uart.UART</string>
-      </entry>
-      <entry>
          <string>ADC1</string>
          <string>class com.microchip.mcc.mcu16.modules.adc.ADC</string>
+      </entry>
+      <entry>
+         <string>UART1</string>
+         <string>class com.microchip.mcc.mcu16.modules.uart.UART</string>
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
@@ -1271,7 +1271,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC1" registerAlias="ADCON2" settingAlias="CSCNA"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCFF" settingAlias="IOCFF0"/>
@@ -9055,7 +9055,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC1" registerAlias="ADCON2"/>
-         <value>1024</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRA10"/>
@@ -13355,7 +13355,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC1" registerAlias="ADCSSL"/>
-         <value>32</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCH" settingAlias="ODCH7" alias="disabled"/>
@@ -14675,7 +14675,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="Scan_Count"/>
-         <value>1</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCFE" settingAlias="IOCFE1" alias="enabled"/>
@@ -17487,7 +17487,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC1" registerAlias="ADCSSL" settingAlias="CSS5"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISB" settingAlias="TRISB10" alias="output"/>
@@ -18276,12 +18276,12 @@
          <hash>9eba79b02c465a58f5a5fab3d7e02257efa370c7e9ddb1674fd8ea9fbc464d80</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/uart1.h</file>
-         <hash>0b109607f14b89142d7ab460fce96b30809532c36d5bec6204991f8251e4798a</hash>
+         <file>mcc_generated_files/adc1.c</file>
+         <hash>46fe486a14834feca3500b4166522ee3b6081934b6b7dc900151a360439cb6b8</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/adc1.c</file>
-         <hash>c7803270b55a33b5c6382f0c1983dd3638bf71dca76584ead2fe5b18b929cd9f</hash>
+         <file>mcc_generated_files/uart1.h</file>
+         <hash>0b109607f14b89142d7ab460fce96b30809532c36d5bec6204991f8251e4798a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/adc1.h</file>
@@ -18293,7 +18293,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>73ce26c9b9a9fd9b39b89c851b49f30314b3e3b0f360aac158a225f8d82baf42</hash>
+         <hash>f91c28295a96686fe705823f2fbcf574fb1c9cbd5054a0c913e104e4237ee00b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>

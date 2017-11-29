@@ -45,19 +45,11 @@
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
 
-/*
-                         Main application
- */
-int main(void)
+int getadc(ADC1_CHANNEL channel)
 {
-    int conversion, i;
-    // initialize the device
-    SYSTEM_Initialize();
-    printf("MCU started\r\n");
-    ADC1_ChannelSelect(ADC1_POTENC);
-
-    while (1)
-    {
+        int conversion, i;
+        //ADC1_Initialize();
+        ADC1_ChannelSelect(channel);
         ADC1_Start();
         //Provide Delay
         for(i=0;i <1000;i++)
@@ -69,7 +61,21 @@ int main(void)
             ADC1_Tasks();   
         }
         conversion = ADC1_ConversionResultGet();
-        printf("value %d\r\n",conversion);
+        return conversion;
+}
+
+/*
+                         Main application
+ */
+int main(void)
+{
+    // initialize the device
+    SYSTEM_Initialize();
+    printf("MCU started\r\n");
+
+    while (1)
+    {
+        printf("value %d\r\n",getadc(ADC1_POTENC));
     }
 
     return -1;

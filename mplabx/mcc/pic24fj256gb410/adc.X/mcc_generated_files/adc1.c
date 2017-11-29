@@ -84,25 +84,25 @@ void ADC1_Initialize (void)
 
    AD1CON1 = 0x8000;
 
-    // CSCNA enabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI 1; OFFCAL disabled; BUFREGEN disabled; 
+    // CSCNA disabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI 1; OFFCAL disabled; BUFREGEN disabled; 
 
-   AD1CON2 = 0x0400;
+   AD1CON2 = 0x0000;
 
     // SAMC 31; EXTSAM disabled; PUMPEN disabled; ADRC FOSC/2; ADCS 0; 
 
    AD1CON3 = 0x1F00;
 
-    // CH0SA AN0; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
+    // CH0SA AN5; CH0SB AN5; CH0NB AVSS; CH0NA AVSS; 
 
-   AD1CHS = 0x0000;
+   AD1CHS = 0x0505;
 
     // CSS25 disabled; CSS24 disabled; CSS23 disabled; CSS22 disabled; CSS21 disabled; CSS20 disabled; CSS31 disabled; CSS30 disabled; CSS19 disabled; CSS18 disabled; CSS29 disabled; CSS17 disabled; CSS28 disabled; CSS16 disabled; 
 
    AD1CSSH = 0x0000;
 
-    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 enabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled; 
+    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 disabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled; 
 
-   AD1CSSL = 0x0020;
+   AD1CSSL = 0x0000;
 
     // CHH20 disabled; CHH22 disabled; CHH21 disabled; CHH24 disabled; CHH23 disabled; CHH25 disabled; CHH17 disabled; CHH16 disabled; CHH19 disabled; CHH18 disabled; 
 
