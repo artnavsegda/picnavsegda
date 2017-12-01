@@ -13,12 +13,12 @@
          <string>class com.microchip.mcc.mcu16.systemManager.clk.Clock</string>
       </entry>
       <entry>
-         <string>Pin Module</string>
-         <string>class com.microchip.mcc.mcu16.pinManager.PinManager</string>
-      </entry>
-      <entry>
          <string>WATCHDOG</string>
          <string>class com.microchip.mcc.mcu16.systemManager.wdt.Wdt</string>
+      </entry>
+      <entry>
+         <string>Pin Module</string>
+         <string>class com.microchip.mcc.mcu16.pinManager.PinManager</string>
       </entry>
       <entry>
          <string>RESET</string>
@@ -29,12 +29,12 @@
          <string>class com.microchip.mcc.mcu16.systemManager.icd.Icd</string>
       </entry>
       <entry>
-         <string>Interrupt Module</string>
-         <string>class com.microchip.mcc.mcu16.interruptManager.InterruptManager</string>
-      </entry>
-      <entry>
          <string>OC1</string>
          <string>class com.microchip.mcc.mcu16.modules.oc.OC</string>
+      </entry>
+      <entry>
+         <string>Interrupt Module</string>
+         <string>class com.microchip.mcc.mcu16.interruptManager.InterruptManager</string>
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
@@ -2707,7 +2707,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="OC1" name="Secondary Time"/>
-         <value>0.00006375</value>
+         <value>0.00025575</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OC1" registerAlias="OCCON2" settingAlias="SYNCSEL" alias="MCCP2 Sync\Trigger"/>
@@ -5123,7 +5123,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="OC1" registerAlias="OCR" settingAlias="OCR"/>
-         <value>127</value>
+         <value>511</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCFB" settingAlias="IOCFB3" alias="enabled"/>
@@ -9171,7 +9171,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="OC1" registerAlias="OCRS" settingAlias="OCRS"/>
-         <value>255</value>
+         <value>1023</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OC1" registerAlias="OCCON1" settingAlias="OCTSEL" alias="TMR1"/>
@@ -10367,7 +10367,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="OC1" registerAlias="OCR"/>
-         <value>127</value>
+         <value>511</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCPDE" settingAlias="IOCPDE5" alias="enabled"/>
@@ -11711,7 +11711,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="OC1" name="Primary Time"/>
-         <value>0.00003175</value>
+         <value>0.00012775</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRD15"/>
@@ -12655,7 +12655,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="OC1" registerAlias="OCRS"/>
-         <value>255</value>
+         <value>1023</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNG" settingAlias="IOCNG9" alias="enabled"/>
@@ -15763,7 +15763,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="OC1" name="DUTYCYCLE"/>
-         <value>49.80392 %</value>
+         <value>49.951122 %</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OC1" registerAlias="OCCON1" settingAlias="TRIGMODE" alias="Only Software"/>
@@ -15824,16 +15824,16 @@
          <hash>4e886b8015839d444eedcb379431b692e2ad8458b5af2f95c51e8040da9b03bc</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/oc1.c</file>
+         <hash>64c0a92c389d2739b9b84341d0f71ab2c042dd24b1fa0516bef7c542a32df23f</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/traps.h</file>
          <hash>11b1055cbe08b3f1553fca3540070843bbbc33256f0ef9c35bb2e76151e3fa75</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/oc1.c</file>
-         <hash>d86317c75c250ec8e4c35a9ee402c49890a80452707f5104a86dc28da0a32380</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>a1d5725ab9a7aad549ee1a3c4ef4b4cd21e8b9655be615ec6141c495cfc89759</hash>
+         <hash>d973ec968bef30fdc9d71fbe6368096bbd19f097997495451ac94be2ea68d055</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>

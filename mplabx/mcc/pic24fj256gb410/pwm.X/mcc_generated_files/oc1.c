@@ -72,10 +72,10 @@ void OC1_Initialize (void)
     OC1CON1 = 0x1C06;
     // SYNCSEL None; TRIGSTAT disabled; DCB Start of instruction cycle; OCINV disabled; OCTRIG Trigger; OC32 disabled; FLTOUT disabled; OCTRIS disabled; FLTMD Cycle; FLTTRIEN disabled; 
     OC1CON2 = 0x0080;
-    // OC1RS 255; 
-    OC1RS = 0x00FF;
-    // OC1R 127; 
-    OC1R = 0x007F;
+    // OC1RS 1023; 
+    OC1RS = 0x03FF;
+    // OC1R 511; 
+    OC1R = 0x01FF;
 	
     gOC1Mode = OC1CON1bits.OCM;
 }
