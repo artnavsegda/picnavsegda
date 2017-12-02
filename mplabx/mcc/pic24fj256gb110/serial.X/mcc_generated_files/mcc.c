@@ -51,12 +51,12 @@
 #pragma config WPEND = WPENDMEM    // Segment Write Protection End Page Select bit->Write Protect from WPFP to the last page of memory
 
 // CONFIG2
-#pragma config POSCMOD = NONE    // Primary Oscillator Select->Primary oscillator disabled
+#pragma config POSCMOD = XT    // Primary Oscillator Select->XT oscillator mode selected
 #pragma config DISUVREG = OFF    // Internal USB 3.3V Regulator Disable bit->Regulator is disabled
 #pragma config IOL1WAY = ON    // IOLOCK One-Way Set Enable bit->Write RP Registers Once
-#pragma config OSCIOFNC = OFF    // Primary Oscillator Output Function->OSCO functions as CLKO (FOSC/2)
+#pragma config OSCIOFNC = ON    // Primary Oscillator Output Function->OSCO functions as port I/O (RC15)
 #pragma config FCKSM = CSDCMD    // Clock Switching and Monitor->Both Clock Switching and Fail-safe Clock Monitor are disabled
-#pragma config FNOSC = FRCDIV    // Oscillator Select->Fast RC oscillator with Postscaler (FRCDIV)
+#pragma config FNOSC = PRI    // Oscillator Select->Primary oscillator (XT, HS, EC)
 #pragma config PLL_96MHZ = ON    // 96MHz PLL Disable->Enabled
 #pragma config PLLDIV = DIV10    // USB 96 MHz PLL Prescaler Select bits->Oscillator input divided by 10 (40MHz input)
 #pragma config IESO = ON    // Internal External Switch Over Mode->IESO mode (Two-speed start-up) enabled
@@ -66,7 +66,7 @@
 #pragma config FWPSA = PR128    // WDT Prescaler->Prescaler ratio of 1:128
 #pragma config WINDIS = OFF    // Watchdog Timer Window->Standard Watchdog Timer enabled,(Windowed-mode is disabled)
 #pragma config FWDTEN = OFF    // Watchdog Timer Enable->Watchdog Timer is disabled
-#pragma config ICS = PGx1    // Comm Channel Select->Emulator functions are shared with PGEC1/PGED1
+#pragma config ICS = PGx2    // Comm Channel Select->Emulator functions are shared with PGEC2/PGED2
 #pragma config COE = OFF    // Set Clip On Emulation Mode->Disabled
 #pragma config BKBUG = OFF    // Background Debug->Device resets into Operational mode
 #pragma config GWRP = OFF    // General Code Segment Write Protect->Writes to program memory are allowed
@@ -85,8 +85,8 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // NOSC FRCDIV; SOSCEN disabled; POSCEN disabled; OSWEN Switch is Complete; 
-    __builtin_write_OSCCONL((uint8_t) (0x0700 & 0x00FF));
+    // NOSC PRI; SOSCEN enabled; POSCEN disabled; OSWEN Switch is Complete; 
+    __builtin_write_OSCCONL((uint8_t) (0x0202 & 0x00FF));
     // CPDIV 1:1; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
     CLKDIV = 0x3100;
     // TUN Center frequency; 

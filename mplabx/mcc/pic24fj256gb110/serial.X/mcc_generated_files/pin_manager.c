@@ -72,7 +72,7 @@ void PIN_MANAGER_Initialize(void)
      ***************************************************************************/
     TRISA = 0xC6FF;
     TRISB = 0xFFDF;
-    TRISC = 0xF01E;
+    TRISC = 0x301E;
     TRISD = 0xFFFF;
     TRISE = 0x03FF;
     TRISF = 0x313F;
@@ -109,7 +109,7 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     AD1PCFGH = 0x0000;
-    AD1PCFGL = 0x0023;
+    AD1PCFGL = 0x00E0;
 
     /****************************************************************************
      * Set the PPS
