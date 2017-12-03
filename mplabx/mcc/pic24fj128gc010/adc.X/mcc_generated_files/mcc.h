@@ -1,5 +1,5 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
+  @Generated MPLAB(c) Code Configurator Header File
 
   @Company:
     Microchip Technology Inc.
@@ -8,16 +8,16 @@
     mcc.h
 
   @Summary:
-    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the mcc.h file generated using MPLAB(c) Code Configurator
 
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 */
 
 /*
@@ -48,12 +48,12 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "padc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "padc1.h"
 #include "uart1.h"
 
-#define _XTAL_FREQ  8000000UL
+#define _XTAL_FREQ  4000000UL
 
 /**
  * @Param

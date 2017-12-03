@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - 4.26
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -60,7 +60,7 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
     LATA = 0x0000;
-    LATB = 0x0020;
+    LATB = 0x0000;
     LATC = 0x0000;
     LATD = 0x0000;
     LATE = 0x0000;
@@ -109,7 +109,7 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSA = 0xC6F6;
-    ANSB = 0xF01F;
+    ANSB = 0xF0FC;
     ANSC = 0x001A;
     ANSD = 0xFFFF;
     ANSE = 0x02F0;

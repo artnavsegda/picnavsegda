@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.26
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -55,13 +55,13 @@
 */
 /**
   @Summary
-    Sets the GPIO pin, RA1, high using LATA1.
+    Sets the GPIO pin, RG8, high using LATG8.
 
   @Description
-    Sets the GPIO pin, RA1, high using LATA1.
+    Sets the GPIO pin, RG8, high using LATG8.
 
   @Preconditions
-    The RA1 must be set to an output.
+    The RG8 must be set to an output.
 
   @Returns
     None.
@@ -71,21 +71,21 @@
 
   @Example
     <code>
-    // Set RA1 high (1)
-    channel_AN26_SetHigh();
+    // Set RG8 high (1)
+    T_PELTIER_SetHigh();
     </code>
 
 */
-#define channel_AN26_SetHigh()          _LATA1 = 1
+#define T_PELTIER_SetHigh()          _LATG8 = 1
 /**
   @Summary
-    Sets the GPIO pin, RA1, low using LATA1.
+    Sets the GPIO pin, RG8, low using LATG8.
 
   @Description
-    Sets the GPIO pin, RA1, low using LATA1.
+    Sets the GPIO pin, RG8, low using LATG8.
 
   @Preconditions
-    The RA1 must be set to an output.
+    The RG8 must be set to an output.
 
   @Returns
     None.
@@ -95,21 +95,21 @@
 
   @Example
     <code>
-    // Set RA1 low (0)
-    channel_AN26_SetLow();
+    // Set RG8 low (0)
+    T_PELTIER_SetLow();
     </code>
 
 */
-#define channel_AN26_SetLow()           _LATA1 = 0
+#define T_PELTIER_SetLow()           _LATG8 = 0
 /**
   @Summary
-    Toggles the GPIO pin, RA1, using LATA1.
+    Toggles the GPIO pin, RG8, using LATG8.
 
   @Description
-    Toggles the GPIO pin, RA1, using LATA1.
+    Toggles the GPIO pin, RG8, using LATG8.
 
   @Preconditions
-    The RA1 must be set to an output.
+    The RG8 must be set to an output.
 
   @Returns
     None.
@@ -119,18 +119,18 @@
 
   @Example
     <code>
-    // Toggle RA1
-    channel_AN26_Toggle();
+    // Toggle RG8
+    T_PELTIER_Toggle();
     </code>
 
 */
-#define channel_AN26_Toggle()           _LATA1 ^= 1
+#define T_PELTIER_Toggle()           _LATG8 ^= 1
 /**
   @Summary
-    Reads the value of the GPIO pin, RA1.
+    Reads the value of the GPIO pin, RG8.
 
   @Description
-    Reads the value of the GPIO pin, RA1.
+    Reads the value of the GPIO pin, RG8.
 
   @Preconditions
     None.
@@ -145,18 +145,18 @@
     <code>
     uint16_t portValue;
 
-    // Read RA1
-    postValue = channel_AN26_GetValue();
+    // Read RG8
+    postValue = T_PELTIER_GetValue();
     </code>
 
 */
-#define channel_AN26_GetValue()         _RA1
+#define T_PELTIER_GetValue()         _RG8
 /**
   @Summary
-    Configures the GPIO pin, RA1, as an input.
+    Configures the GPIO pin, RG8, as an input.
 
   @Description
-    Configures the GPIO pin, RA1, as an input.
+    Configures the GPIO pin, RG8, as an input.
 
   @Preconditions
     None.
@@ -169,18 +169,18 @@
 
   @Example
     <code>
-    // Sets the RA1 as an input
-    channel_AN26_SetDigitalInput();
+    // Sets the RG8 as an input
+    T_PELTIER_SetDigitalInput();
     </code>
 
 */
-#define channel_AN26_SetDigitalInput()  _TRISA1 = 1
+#define T_PELTIER_SetDigitalInput()  _TRISG8 = 1
 /**
   @Summary
-    Configures the GPIO pin, RA1, as an output.
+    Configures the GPIO pin, RG8, as an output.
 
   @Description
-    Configures the GPIO pin, RA1, as an output.
+    Configures the GPIO pin, RG8, as an output.
 
   @Preconditions
     None.
@@ -193,12 +193,12 @@
 
   @Example
     <code>
-    // Sets the RA1 as an output
-    channel_AN26_SetDigitalOutput();
+    // Sets the RG8 as an output
+    T_PELTIER_SetDigitalOutput();
     </code>
 
 */
-#define channel_AN26_SetDigitalOutput() _TRISA1 = 0
+#define T_PELTIER_SetDigitalOutput() _TRISG8 = 0
 
 /**
     Section: Function Prototypes

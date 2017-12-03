@@ -8,16 +8,16 @@
     padc1.c
 
   Summary:
-    This is the generated driver implementation file for the PADC1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated driver implementation file for the PADC1 driver using MPLAB(c) Code Configurator
 
   Description:
     This source file provides implementations for driver APIs for PADC1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 *******************************************************************************/
 
 /*
@@ -67,13 +67,20 @@ void PADC1_Initialize(void)
     // BUFOE disabled; BUFSTBY Normal; BUFEN disabled; BUFSIDL disabled; BUFSLP disabled; BUFREF 1.2 V; 
     BUFCON1 = 0x0000;   
 
-    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 32; 
-    ADCON3 = 0x001F;
+    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 1; 
+    ADCON3 = 0x0000;
         
     //Set Sample lists
 
+    // MULCHEN One at a time; CTMEN disabled; CM Matching is disabled; SLINT No interrupt; WM All conversion results saved; SAMC 31 tad; ASEN enabled; 
+    ADL0CONH = 0x801F;
+    ADL0CONHbits.SLINT = 0x01; //interrupt after autoscan completion
+    // THSRC Buffer register; SLTSRC Manual Trigger:Single Trigger; SLEN enabled; SLENCLR disabled; SLSIZE 1; SAMP disabled; 
+    ADL0CONL = (0x8000 & 0x7FFF) | 0x4000;  // open manual switch and Enable sample list later
     
     //Set table registers
+    // UCTMU disabled; ADCH AN19; DIFF disabled; 
+    ADTBL0 =  0x13;
 
     // Set table pointer registers
     ADL0PTR =0;
@@ -104,6 +111,9 @@ void PADC1_Initialize(void)
     ADTMRPR = 0x0000;
 
    //Enable sample list
+
+    ADL0CONLbits.SLEN = 1; // Enable Sample list 1
+    ADL0CONLbits.SAMP = 0; // Close sample switch
 }
 
 bool PADC1_IsReadyForConversion(void)

@@ -8,16 +8,16 @@
     main.c
 
   Summary:
-    This is the main file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the main file generated using MPLAB(c) Code Configurator
 
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
+        Compiler          :  XC16 1.30
+        MPLAB             :  MPLAB X 3.45
 */
 
 /*
@@ -43,18 +43,37 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include <stdio.h>
+#define FCY     (_XTAL_FREQ/2)
+#include <libpic30.h>
 
 /*
                          Main application
  */
 int main(void)
 {
+    uint16_t sl0ResultBuffer[1];
+    uint8_t tableregindex;
+    uint8_t slsize;
+
+    tableregindex = 0;
+    slsize = 1;
+    
     // initialize the device
     SYSTEM_Initialize();
+    printf("MCU started\r\n");
 
     while (1)
     {
         // Add your application code
+        PADC1_SampleList0ManualConversionStart();
+        while (!PADC1_SampleList0IsConversionDone());
+        if( PADC1_SampleList1ConversionResultBufferGet(sl0ResultBuffer, tableregindex, slsize))
+        {
+            PADC1_Tasks();
+        }
+        printf("adc %d\r\n",sl0ResultBuffer[0]);
+        __delay_ms(1000);
     }
 
     return -1;

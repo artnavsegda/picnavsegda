@@ -21,12 +21,12 @@
          <string>class com.microchip.mcc.mcu16.systemManager.wdt.Wdt</string>
       </entry>
       <entry>
-         <string>ICD</string>
-         <string>class com.microchip.mcc.mcu16.systemManager.icd.Icd</string>
-      </entry>
-      <entry>
          <string>RESET</string>
          <string>class com.microchip.mcc.mcu16.systemManager.reset.RESET</string>
+      </entry>
+      <entry>
+         <string>ICD</string>
+         <string>class com.microchip.mcc.mcu16.systemManager.icd.Icd</string>
       </entry>
       <entry>
          <string>Interrupt Module</string>
@@ -6563,7 +6563,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="RedirectPrintf"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="AD1PCFGL" settingAlias="PCFG4" alias="analog"/>
@@ -11273,7 +11273,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>bec5bd571ccebbe57dd79867633453ebe09651ca94c9ab40b3b95b10f13b27ed</hash>
+         <hash>559bef77ffef1800b072db95c4d982b38d576901b9eda90812956b52f777442c</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
@@ -11284,12 +11284,12 @@
          <hash>0691d5a4c0d61d8a7eaffc325498468c6303f575ed892b0a06fd8c9280c8fbc8</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/mcc.c</file>
-         <hash>9e3c8f4bbda756f441e4733aa1d699d8df716b073dba9eb7910fe285051883c8</hash>
+         <file>mcc_generated_files/uart1.c</file>
+         <hash>2524d316c35841a361a76deeec6ce71cc95c6270a68ef807ba0a39b923effe32</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/uart1.c</file>
-         <hash>e33fa83e3dcdd69f477d9568b03cd7f43f2c22918b16abc9ef4e25fc2ad6f0d7</hash>
+         <file>mcc_generated_files/mcc.c</file>
+         <hash>9802bc2b14d4d3968f5e3ce1ba5451f27a0bbbd8d5ebb342f95724436a12658a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>

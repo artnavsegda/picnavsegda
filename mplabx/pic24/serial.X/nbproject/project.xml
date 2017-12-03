@@ -3,12 +3,12 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>adc</name>
-            <creation-uuid>dc5f60a8-1690-4621-96e1-04b78d259929</creation-uuid>
+            <name>serial</name>
+            <creation-uuid>4b71c273-2c83-43c2-827c-170c06e7bbe1</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions/>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
