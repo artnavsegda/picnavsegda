@@ -60,27 +60,39 @@ void PADC1_Initialize(void)
     // ADSLP disabled; ADSIDL disabled; PWRLVL Low-Power mode; PUMPEN disabled; FORM Integer, Raw Data; ADCAL disabled; ADON enabled; 
     ADCON1 = (0x8000 | 0x01) & 0x7FFF; //Full power mode, Enable ADC later
 
-    // NVCFG0 AVSS; PVCFG AVDD; REFPUMP disabled; BUFORG disabled; 
-    ADCON2 = (0x0000 | 0x0300);
+    // NVCFG0 AVSS; PVCFG AVDD; REFPUMP disabled; BUFORG enabled; 
+    ADCON2 = (0x0400 | 0x0300);
     ADCON2bits.BUFORG = 1;  // Result buffer organized as indexed mode
 
     // BUFOE disabled; BUFSTBY Normal; BUFEN disabled; BUFSIDL disabled; BUFSLP disabled; BUFREF 1.2 V; 
     BUFCON1 = 0x0000;   
 
-    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 1; 
-    ADCON3 = 0x0000;
+    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 32; 
+    ADCON3 = 0x001F;
         
     //Set Sample lists
 
-    // MULCHEN One at a time; CTMEN disabled; CM Matching is disabled; SLINT No interrupt; WM All conversion results saved; SAMC 31 tad; ASEN enabled; 
-    ADL0CONH = 0x801F;
+    // MULCHEN One at a time; CTMEN disabled; CM Matching is disabled; SLINT Interrupt after auto-scan completion on match; WM All conversion results saved; SAMC 15 tad; ASEN enabled; 
+    ADL0CONH = 0xA00F;
     ADL0CONHbits.SLINT = 0x01; //interrupt after autoscan completion
-    // THSRC Buffer register; SLTSRC Manual Trigger:Single Trigger; SLEN enabled; SLENCLR disabled; SLSIZE 1; SAMP disabled; 
-    ADL0CONL = (0x8000 & 0x7FFF) | 0x4000;  // open manual switch and Enable sample list later
+    // THSRC Buffer register; SLTSRC Manual Trigger:Single Trigger; SLEN enabled; SLENCLR disabled; SLSIZE 7; SAMP disabled; 
+    ADL0CONL = (0x8006 & 0x7FFF) | 0x4000;  // open manual switch and Enable sample list later
     
     //Set table registers
+    // DIFF disabled; UCTMU disabled; ADCH AN22; 
+    ADTBL5 =  0x16;
     // UCTMU disabled; ADCH AN19; DIFF disabled; 
     ADTBL0 =  0x13;
+    // UCTMU disabled; ADCH AN23; DIFF disabled; 
+    ADTBL4 =  0x17;
+    // UCTMU disabled; ADCH AN12; DIFF disabled; 
+    ADTBL2 =  0xc;
+    // UCTMU disabled; ADCH AN28; DIFF disabled; 
+    ADTBL3 =  0x1c;
+    // UCTMU disabled; ADCH AN21; DIFF disabled; 
+    ADTBL1 =  0x15;
+    // DIFF disabled; UCTMU disabled; ADCH AN5; 
+    ADTBL6 =  0x5;
 
     // Set table pointer registers
     ADL0PTR =0;

@@ -51,7 +51,7 @@
 #pragma config DSWDTEN = ON    // Deep Sleep Watchdog Timer Enable->DSWDT Enabled
 #pragma config DSSWEN = ON    // DSEN Bit Enable->Deep Sleep is controlled by the register bit DSEN
 #pragma config RTCBAT = ON    // RTC Battery Operation Enable->RTC operation is continued through VBAT
-#pragma config PLLDIV = DIS    // PLL Input Prescaler Select bits->PLL is disabled
+#pragma config PLLDIV = DIV2    // PLL Input Prescaler Select bits->Oscillator divided by 2 (8 MHz input)
 #pragma config I2C2SEL = PRI    // Alternate I2C2 Location Select bit->I2C2 is multiplexed to SDA2/RA3 and SCL2/RA2 
 #pragma config IOL1WAY = ON    // PPS IOLOCK Set Only Once Enable bit->Once set, the IOLOCK bit cannot be cleared
 
@@ -65,11 +65,11 @@
 #pragma config WPEND = WPENDMEM    // Segment Write Protection End Page Select->Write Protect from WPFP to the last page of memory
 
 // CONFIG2
-#pragma config POSCMD = NONE    // Primary Oscillator Select->Primary Oscillator Disabled
+#pragma config POSCMD = XT    // Primary Oscillator Select->XT Oscillator Enabled
 #pragma config WDTCLK = LPRC    // WDT Clock Source Select bits->WDT uses LPRC
 #pragma config OSCIOFCN = OFF    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as CLKO (FOSC/2)
 #pragma config FCKSM = CSDCMD    // Clock Switching and Fail-Safe Clock Monitor Configuration bits->Clock switching and Fail-Safe Clock Monitor are disabled
-#pragma config FNOSC = FRCDIV    // Initial Oscillator Select->Fast RC Oscillator with Postscaler (FRCDIV)
+#pragma config FNOSC = PRIPLL    // Initial Oscillator Select->Primary Oscillator with PLL module (XTPLL,HSPLL, ECPLL)
 #pragma config ALTADREF = AVREF_RA    // External 12-Bit A/D Reference Location Select bit->AVREF+/AVREF- are mapped to RA9/RA10
 #pragma config ALTCVREF = CVREF_RA    // External Comparator Reference Location Select bit->CVREF+/CVREF- are mapped to RA9/RA10
 #pragma config WDTCMX = WDTCLK    // WDT Clock Source Select bits->WDT clock source is determined by the WDTCLK Configuration bits
@@ -80,7 +80,7 @@
 #pragma config FWPSA = PR128    // WDT Prescaler Ratio Select->1:128
 #pragma config WINDIS = OFF    // Windowed WDT Disable->Standard Watchdog Timer
 #pragma config FWDTEN = WDT_DIS    // Watchdog Timer Enable->WDT disabled in hardware; SWDTEN bit disabled
-#pragma config ICS = PGx1    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC1/PGED1
+#pragma config ICS = PGx2    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC2/PGED2
 #pragma config LPCFG = OFF    // Low power regulator control->Disabled - regardless of RETEN
 #pragma config GWRP = OFF    // General Segment Write Protect->Disabled
 #pragma config GCP = OFF    // General Segment Code Protect->Code protection is disabled
@@ -91,18 +91,20 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
     PADC1_Initialize();
+    SDADC1_Initialize();
     UART1_Initialize();
+    OC1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // CF no clock failure; NOSC FRCDIV; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
-    __builtin_write_OSCCONL((uint8_t) (0x0700 & 0x00FF));
-    // CPDIV 1:1; PLLEN disabled; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
-    CLKDIV = 0x3100;
+    // CF no clock failure; NOSC PRIPLL; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
+    __builtin_write_OSCCONL((uint8_t) (0x0300 & 0x00FF));
+    // CPDIV 1:1; PLLEN enabled; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
+    CLKDIV = 0x3120;
     // STOR disabled; STORPOL Interrupt when STOR is 1; STSIDL disabled; STLPOL Interrupt when STLOCK is 1; STLOCK disabled; STSRC SOSC; STEN disabled; TUN Center frequency; 
     OSCTUN = 0x0000;
     // ROEN disabled; ROSEL disabled; RODIV Base clock value; ROSSLP disabled; 

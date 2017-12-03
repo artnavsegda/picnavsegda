@@ -52,29 +52,31 @@
  */
 int main(void)
 {
-    uint16_t sl0ResultBuffer[1];
+    uint16_t adc[7];
     uint8_t tableregindex;
     uint8_t slsize;
 
     tableregindex = 0;
-    slsize = 1;
+    slsize = 7;
     
     // initialize the device
     SYSTEM_Initialize();
+    
     printf("MCU started\r\n");
 
     while (1)
     {
         // Add your application code
         PADC1_SampleList0ManualConversionStart();
-        while (!PADC1_SampleList0IsConversionDone());
-        if( PADC1_SampleList1ConversionResultBufferGet(sl0ResultBuffer, tableregindex, slsize))
+        if( PADC1_SampleList0ConversionResultBufferGet(adc, tableregindex, slsize))
         {
             PADC1_Tasks();
         }
-        printf("adc %d\r\n",sl0ResultBuffer[0]);
-        __delay_ms(1000);
+        printf("adc %d %u %u %u %u %u %u %u\r\n",SDADC1_ConversionRawResultGet(), adc[0], adc[1], adc[2], adc[3], adc[4], adc[5], adc[6]);
+        OC1_PrimaryValueSet(adc[6]);
+        __delay_ms(500);
     }
+    
 
     return -1;
 }

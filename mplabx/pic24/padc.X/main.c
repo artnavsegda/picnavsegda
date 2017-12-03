@@ -1,8 +1,14 @@
-#include <p24FJ128GC010.h>
+#include <xc.h>
+#include "PPS.h"
+#include <stdio.h>
+#define FCY 8000000
+#include <libpic30.h> 
+
 // PIC24FJ128GC010 CONFIGURATION SETTINGS
+
 _CONFIG4(PLLDIV_DIV2 & IOL1WAY_OFF)
 _CONFIG3(BOREN_OFF)
-_CONFIG2(POSCMD_HS & FNOSC_PRIPLL & FCKSM_CSECME)
+_CONFIG2(POSCMD_HS & FNOSC_FRC & FCKSM_CSECME)
 _CONFIG1(FWDTEN_WDT_SW & ICS_PGx2)
         
 // The ADC conversion result. 
@@ -11,6 +17,16 @@ volatile unsigned int channel_38;
 
 int main()
 {
+    iPPSOutput(OUT_PIN_PPS_RP18,OUT_FN_PPS_U1TX);
+    
+    U1MODE = (0x8008 & ~(1<<15));
+    U1STA = 0x0000;
+    U1BRG = 0x0067;
+    U1MODEbits.UARTEN = 1;
+    U1STAbits.UTXEN = 1; 
+    
+    printf("MCU started\r\n");    
+    
     // ANALOG INPUTS CONFIGURATION
     // 2 analog inputs will be sampled.
     TRISBbits.TRISB2 = 1;                    // AN2(RB2)
@@ -53,8 +69,6 @@ int main()
     // ENABLE A/D
     ADCON1bits.ADON = 1;                  // Enable A/D.
     while(ADSTATHbits.ADREADY == 0);      // Wait for ready flag set.
-    ADCON1bits.ADCAL = 1;             // Start calibration.
-    while(ADSTATHbits.ADREADY == 0);
     ADL0CONLbits.SAMP = 1;            // Close sample switch.
     ADL0CONLbits.SLEN = 1;                // Enable sample list.
     
@@ -67,6 +81,10 @@ int main()
         ADL0CONLbits.SAMP = 1;            // Close the sample switch.
         channel_2 = ADRES0;           // Read result for the channel #2.
         channel_38 = ADRES1;          // Read result for the channel #38.
+        
+        printf("%d %d\r\n",channel_2,channel_38);
+        
+        __delay_ms(1000);
     }
     
 }
