@@ -91,8 +91,8 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     OSCILLATOR_Initialize();
+    INTERRUPT_Initialize();
     PADC1_Initialize();
     SDADC1_Initialize();
     UART1_Initialize();

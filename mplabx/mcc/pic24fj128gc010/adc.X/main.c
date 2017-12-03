@@ -55,6 +55,7 @@ int main(void)
     uint16_t adc[7];
     uint8_t tableregindex;
     uint8_t slsize;
+    uint16_t zeemann;
 
     tableregindex = 0;
     slsize = 7;
@@ -72,8 +73,9 @@ int main(void)
         {
             PADC1_Tasks();
         }
-        printf("adc %d %u %u %u %u %u %u %u\r\n",SDADC1_ConversionRawResultGet(), adc[0], adc[1], adc[2], adc[3], adc[4], adc[5], adc[6]);
-        OC1_PrimaryValueSet(adc[6]);
+        zeemann = SDADC1_ConversionRawResultGet();
+        printf("adc %d %u %u %u %u %u %u %u\r\n",zeemann, adc[0], adc[1], adc[2], adc[3], adc[4], adc[5], adc[6]);
+        OC1_PrimaryValueSet(zeemann+500);
         __delay_ms(500);
     }
     
