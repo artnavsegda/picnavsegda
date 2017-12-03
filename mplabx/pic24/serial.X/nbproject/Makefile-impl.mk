@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=serial.X
 
 # Active Configuration
-DEFAULTCONF=gb110
+DEFAULTCONF=gc010
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=gb110 
+ALLCONFS=gb110 gc010 
 
 
 # build
@@ -46,12 +46,14 @@ ALLCONFS=gb110
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=gb110 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=gc010 clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=gb110 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=gc010 build
 
 
 
