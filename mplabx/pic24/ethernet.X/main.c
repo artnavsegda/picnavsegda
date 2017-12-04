@@ -22,10 +22,6 @@ int main(void)
         GenericTCPServer();
         #endif
 
-        #if defined(STACK_USE_MODBUS_TCP_SERVER)
-		MODBUSTCPServer();
-		#endif
-
         #if defined(STACK_USE_BERKELEY_API)
         BerkeleyTCPClientDemo();
         BerkeleyTCPServerDemo();
