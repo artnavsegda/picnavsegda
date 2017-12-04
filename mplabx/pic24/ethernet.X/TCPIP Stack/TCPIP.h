@@ -430,4 +430,9 @@
 #if defined(WF_CS_TRIS)
     #include "TCPIP Stack/WFMac.h"
 #endif
+
+#if defined(STACK_USE_MODBUS_TCP_SERVER)
+	#include "TCPIP Stack/MODBUSTCPServer.h"
+#endif
+        
 #endif

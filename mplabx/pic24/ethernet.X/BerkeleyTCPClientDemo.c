@@ -189,8 +189,7 @@ void BerkeleyTCPClientDemo(void)
             // No break needed
             
         case BSD_DONE:
-            if(BUTTON2_IO == 0u)
-            	BSDClientState = DNS_START_RESOLUTION;
+            BSDClientState = DNS_START_RESOLUTION;
             break;
          
         default:

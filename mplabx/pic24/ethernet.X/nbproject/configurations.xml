@@ -81,12 +81,14 @@
         <itemPath>TCPIP Stack/ZeroconfHelper.h</itemPath>
         <itemPath>TCPIP Stack/ZeroconfLinkLocal.h</itemPath>
         <itemPath>TCPIP Stack/ZeroconfMulticastDNS.h</itemPath>
+        <itemPath>TCPIP Stack/MODBUSTCPServer.h</itemPath>
       </logicalFolder>
       <itemPath>Compiler.h</itemPath>
       <itemPath>GenericTypeDefs.h</itemPath>
       <itemPath>HardwareProfile.h</itemPath>
       <itemPath>TCPIPConfig.h</itemPath>
       <itemPath>HTTPPrint.h</itemPath>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -146,6 +148,7 @@
         <itemPath>TCPIP Stack/ZeroconfHelper.c</itemPath>
         <itemPath>TCPIP Stack/ZeroconfLinkLocal.c</itemPath>
         <itemPath>TCPIP Stack/ZeroconfMulticastDNS.c</itemPath>
+        <itemPath>TCPIP Stack/MODBUSTCPServer.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>CustomHTTPApp.c</itemPath>
