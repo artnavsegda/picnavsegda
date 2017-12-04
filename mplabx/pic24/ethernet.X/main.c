@@ -7,6 +7,57 @@ BYTE AN0String[8];
 
 static void InitializeBoard(void)
 {
+    // UART
+    #if defined(STACK_USE_UART)
+
+        #if defined(__PIC24E__) || defined(__dsPIC33E__)
+            #if defined (ENC_CS_IO) || defined (WF_CS_IO)   // UART to be used in case of ENC28J60 or MRF24W
+                __builtin_write_OSCCONL(OSCCON & 0xbf);
+                RPOR9bits.RP101R = 3; //Map U2TX to RF5
+                RPINR19bits.U2RXR = 0;
+                RPINR19bits.U2RXR = 0x64; //Map U2RX to RF4
+                __builtin_write_OSCCONL(OSCCON | 0x40);
+            #endif
+            #if(ENC100_INTERFACE_MODE == 0)                 // UART to be used only in case of SPI interface with ENC624Jxxx
+                    __builtin_write_OSCCONL(OSCCON & 0xbf);
+                RPOR9bits.RP101R = 3; //Map U2TX to RF5
+                RPINR19bits.U2RXR = 0;
+                RPINR19bits.U2RXR = 0x64; //Map U2RX to RF4
+                __builtin_write_OSCCONL(OSCCON | 0x40);
+
+            #endif
+        #endif
+
+        UARTTX_TRIS = 0;
+        UARTRX_TRIS = 1;
+        UMODE = 0x8000;            // Set UARTEN.  Note: this must be done before setting UTXEN
+
+        #if defined(__C30__)
+            USTA = 0x0400;        // UTXEN set
+            #define CLOSEST_UBRG_VALUE ((GetPeripheralClock()+8ul*BAUD_RATE)/16/BAUD_RATE-1)
+            #define BAUD_ACTUAL (GetPeripheralClock()/16/(CLOSEST_UBRG_VALUE+1))
+        #else    //defined(__C32__)
+            USTA = 0x00001400;        // RXEN set, TXEN set
+            #define CLOSEST_UBRG_VALUE ((GetPeripheralClock()+8ul*BAUD_RATE)/16/BAUD_RATE-1)
+            #define BAUD_ACTUAL (GetPeripheralClock()/16/(CLOSEST_UBRG_VALUE+1))
+        #endif
+    
+        #define BAUD_ERROR ((BAUD_ACTUAL > BAUD_RATE) ? BAUD_ACTUAL-BAUD_RATE : BAUD_RATE-BAUD_ACTUAL)
+        #define BAUD_ERROR_PRECENT    ((BAUD_ERROR*100+BAUD_RATE/2)/BAUD_RATE)
+        #if (BAUD_ERROR_PRECENT > 3)
+            #warning UART frequency error is worse than 3%
+        #elif (BAUD_ERROR_PRECENT > 2)
+            #warning UART frequency error is worse than 2%
+        #endif
+    
+        UBRG = CLOSEST_UBRG_VALUE;
+    #endif 
+
+#if defined(ENC_CS_TRIS)
+    ENC_CS_IO = 1;
+    ENC_CS_TRIS = 0;
+#endif
+    
 #if defined(__PIC24FJ256GB110__) || defined(__PIC24FJ256GB210__)
     __builtin_write_OSCCONL(OSCCON & 0xBF);  // Unlock PPS
     
