@@ -1,5 +1,6 @@
 # General
 .DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -184,3 +185,6 @@ Temporary Items
 /mplabx/pic24/serial.X/dist/gc010/
 /mplabx/pic24/serial.X/build/gb110/
 /mplabx/pic24/serial.X/dist/gb110/
+/mplabx/pic24/ethernet.X/nbproject/private/
+/mplabx/pic24/ethernet.X/build/default/
+/mplabx/pic24/ethernet.X/dist/default/
