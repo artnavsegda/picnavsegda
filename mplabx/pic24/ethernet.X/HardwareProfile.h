@@ -71,6 +71,8 @@
 		// PIC24FJ256GA110 PIM
 		_CONFIG2(FNOSC_PRIPLL & IOL1WAY_OFF & POSCMOD_XT);	// Primary XT OSC with PLL, IOLOCK can be set and cleared
 		_CONFIG1(JTAGEN_OFF & ICS_PGx2 & FWDTEN_OFF);		// Watchdog timer off, ICD debugging on PGEC2/PGED2 pins, JTAG off
+    #elif defined(__PIC24FJ128GC010__)
+        // someday something
 	#elif defined(__PIC24F__)
 		// All other PIC24F PIMs
 		_CONFIG2(FNOSC_PRIPLL & POSCMOD_XT)		// Primary XT OSC with 4x PLL

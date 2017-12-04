@@ -286,6 +286,8 @@ DWORD GenerateRandomDWORD(void)
 	TMR0L = TMR0LSave;
 	T0CON = T0CONSave;
 }
+#elif defined(__PIC24FJ128GC010__)
+    // fix PADC use
 #else
 {
 	WORD AD1CON1Save, AD1CON2Save, AD1CON3Save;

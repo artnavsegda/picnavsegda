@@ -1438,6 +1438,8 @@ static HTTP_IO_RESULT HTTPPostEmail(void)
 			    // Convert 10-bit value into ASCII string
 			    len = (WORD)ADRES;
 			    uitoa(len, (BYTE*)&curHTTP.data[1]);
+            #elif defined(__PIC24FJ128GC010__)
+                // fix PADC use
 			#else
 				len = (WORD)ADC1BUF0;
 			    uitoa(len, (BYTE*)&curHTTP.data[1]);
@@ -1786,6 +1788,8 @@ void HTTPPrint_pot(void)
     //ADval *= (WORD)10;
     //ADval /= (WORD)102;
     uitoa(ADval, AN0String);
+#elif defined(__PIC24FJ128GC010__)
+    // fix PADC use
 #else
 	ADval = (WORD)ADC1BUF0;
 	//ADval *= (WORD)10;
