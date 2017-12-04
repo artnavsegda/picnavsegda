@@ -1,10 +1,3 @@
-/*
- * File:   main.c
- * Author: artnavsegda
- *
- * Created on December 2, 2017, 8:45 AM
- */
-
 #pragma config FNOSC = FRC              // Initial Oscillator Select (Fast RC Oscillator (FRC))
 
 #include "xc.h"
