@@ -149,6 +149,11 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>CustomHTTPApp.c</itemPath>
+      <itemPath>GenericTCPClient.c</itemPath>
+      <itemPath>GenericTCPServer.c</itemPath>
+      <itemPath>BerkeleyTCPClientDemo.c</itemPath>
+      <itemPath>BerkeleyTCPServerDemo.c</itemPath>
+      <itemPath>BerkeleyUDPClientDemo.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
