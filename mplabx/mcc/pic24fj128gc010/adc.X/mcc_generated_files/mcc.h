@@ -48,10 +48,10 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "oc1.h"
-#include "uart1.h"
-#include "padc1.h"
 #include "sdadc1.h"
+#include "padc1.h"
+#include "uart1.h"
+#include "oc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 

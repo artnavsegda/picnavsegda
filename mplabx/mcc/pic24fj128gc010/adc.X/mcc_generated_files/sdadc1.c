@@ -100,8 +100,8 @@ void SDADC1_Initialize(void)
     SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
     // RNDRES Round result to 16 bits; SDWM Every interrupt; SDRDY disabled; CHOP enabled; SDINT Every 5th sample; 
     SD1CON2 = 0xE110;
-    // SDCH Differential Channel 0; SDDIV 64; SDCS FOSC/2; SDOSR 1024; 
-    SD1CON3 = 0xC000;
+    // SDCH Differential Channel 0; SDDIV 16; SDCS FOSC/2; SDOSR 1024; 
+    SD1CON3 = 0x8000;
 
     // Perform SD ADC Calibration.
 	// Note: Calibration may update the register values.
@@ -110,7 +110,7 @@ void SDADC1_Initialize(void)
     // After calibration, Re-Load the Register values, while SD ADC is disabled.
     SD1CON1 = 0x8002 & 0x7FFF; // Enable SD ADC later
     SD1CON2 = 0xE110;
-    SD1CON3 = 0xC000;
+    SD1CON3 = 0x8000;
 
     // Enable the SD ADC.
     SD1CON1bits.SDON = 1;  

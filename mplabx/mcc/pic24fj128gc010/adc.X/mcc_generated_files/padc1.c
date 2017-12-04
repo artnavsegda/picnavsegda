@@ -67,8 +67,8 @@ void PADC1_Initialize(void)
     // BUFOE disabled; BUFSTBY Normal; BUFEN disabled; BUFSIDL disabled; BUFSLP disabled; BUFREF 1.2 V; 
     BUFCON1 = 0x0000;   
 
-    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 32; 
-    ADCON3 = 0x001F;
+    // SLEN3 disabled; SLEN2 disabled; SLEN1 disabled; ADRC FOSC/2; SLEN0 disabled; ADCS 16; 
+    ADCON3 = 0x0008;
         
     //Set Sample lists
 
@@ -79,6 +79,20 @@ void PADC1_Initialize(void)
     ADL0CONL = (0x8006 & 0x7FFF) | 0x4000;  // open manual switch and Enable sample list later
     
     //Set table registers
+    // DIFF disabled; UCTMU disabled; ADCH AN22; 
+    ADTBL5 =  0x16;
+    // UCTMU disabled; ADCH AN19; DIFF disabled; 
+    ADTBL0 =  0x13;
+    // UCTMU disabled; ADCH AN23; DIFF disabled; 
+    ADTBL4 =  0x17;
+    // UCTMU disabled; ADCH AN12; DIFF disabled; 
+    ADTBL2 =  0xc;
+    // UCTMU disabled; ADCH AN28; DIFF disabled; 
+    ADTBL3 =  0x1c;
+    // UCTMU disabled; ADCH AN21; DIFF disabled; 
+    ADTBL1 =  0x15;
+    // DIFF disabled; UCTMU disabled; ADCH AN5; 
+    ADTBL6 =  0x5;
 
     // Set table pointer registers
     ADL0PTR =0;
