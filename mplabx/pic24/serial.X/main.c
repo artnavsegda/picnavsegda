@@ -18,6 +18,7 @@
 
 int main(void)
 {
+    __C30_UART=1; // Divert printf output to UART1
     int i = 0;
     
     iPPSOutput(OUT_PIN_PPS_RP18,OUT_FN_PPS_U1TX);    //Assing U1TX to pin RP18
