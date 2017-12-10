@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    uint8_t _data;
     __C30_UART=1; // Divert printf output to UART1
     int i = 0;
     
@@ -14,9 +15,18 @@ int main(void)
     
     
     OpenUART1(UART_EN,UART_TX_ENABLE,CLOSEST_UBRG_VALUE);
-    printf("Hello world\r\n");
+    printf("MCU started\r\n");
     
     OpenSPI1(SPI_MODE16_ON |SPI_SMP_ON | MASTER_ENABLE_ON | SEC_PRESCAL_7_1, FRAME_ENABLE_OFF,SPI_ENABLE);
+    printf("SPI open\r\n");
+    
+    while(_RD1);
+    _LATD2 = 0;
+    WriteSPI1(0x10|0); while(SPI1_Tx_Buf_Full);
+    WriteSPI1(0x0); while(SPI1_Tx_Buf_Full);
+    if (DataRdySPI1()) _data = ReadSPI1(0xFF);
+    _LATD2 = 1;
+    printf("chip id %d\n\r",_data >> 4);
     
     while (1)
     {
