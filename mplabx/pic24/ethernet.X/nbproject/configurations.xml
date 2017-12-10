@@ -89,6 +89,7 @@
       <itemPath>TCPIPConfig.h</itemPath>
       <itemPath>HTTPPrint.h</itemPath>
       <itemPath>main.h</itemPath>
+      <itemPath>setbaud.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

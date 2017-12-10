@@ -1,6 +1,7 @@
 #define THIS_IS_STACK_APPLICATION
 #include "TCPIP Stack/TCPIP.h"
 #include "main.h"
+#include "setbaud.h"
 
 APP_CONFIG AppConfig;
 BYTE AN0String[8];
@@ -13,16 +14,6 @@ static void InitializeBoard(void)
     UARTRX_TRIS = 1;
     UMODE = 0x8000;            // Set UARTEN.  Note: this must be done before setting UTXEN
     USTA = 0x0400;        // UTXEN set
-    
-    #define CLOSEST_UBRG_VALUE ((GetPeripheralClock()+8ul*BAUD_RATE)/16/BAUD_RATE-1)
-    #define BAUD_ACTUAL (GetPeripheralClock()/16/(CLOSEST_UBRG_VALUE+1))
-    #define BAUD_ERROR ((BAUD_ACTUAL > BAUD_RATE) ? BAUD_ACTUAL-BAUD_RATE : BAUD_RATE-BAUD_ACTUAL)
-    #define BAUD_ERROR_PRECENT    ((BAUD_ERROR*100+BAUD_RATE/2)/BAUD_RATE)
-    #if (BAUD_ERROR_PRECENT > 3)
-        #warning UART frequency error is worse than 3%
-    #elif (BAUD_ERROR_PRECENT > 2)
-        #warning UART frequency error is worse than 2%
-    #endif
     UBRG = CLOSEST_UBRG_VALUE;
 #endif 
 
@@ -39,11 +30,9 @@ static void InitializeBoard(void)
     RPOR7bits.RP15R = 7;        // Assign RP15 to SDO1 (output)
     RPINR20bits.SDI1R = 23;     // Assign RP23 to SDI1 (input)
    
-    // Configure UART2 PPS pins (MAX3232 on Explorer 16)
-    #if !defined(ENC100_INTERFACE_MODE) || (ENC100_INTERFACE_MODE == 0) || defined(ENC100_PSP_USE_INDIRECT_RAM_ADDRESSING)
+    // Configure UART2 PPS pins
     RPINR19bits.U2RXR = 10;     // Assign RF4/RP10 to U2RX (input)
     RPOR8bits.RP17R = 5;        // Assign RF5/RP17 to U2TX (output)
-    #endif
     
     // Configure INT1 PPS pin (MRF24W Wi-Fi PICtail Plus interrupt signal when in SPI slot 1)
     RPINR0bits.INT1R = 33;    // Assign RE8/RPI33 to INT1 (input)
