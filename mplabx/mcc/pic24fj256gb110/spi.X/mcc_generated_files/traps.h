@@ -1,25 +1,25 @@
 /**
-  Generated Main Source File
+  System Traps Generated Driver File 
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    traps.h
 
-  Summary:
-    This is the main file generated using MPLAB(c) Code Configurator
+  @Summary:
+    This is the generated driver implementation file for handling traps
+    using MPLAB(c) Code Configurator
 
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
+  @Description:
+    This source file provides implementations for MPLAB(c) Code Configurator traps.
+    Generation Information : 
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ256GB110
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
 */
-
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,30 +42,45 @@
     TERMS.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include <stdio.h>
-#define FCY     (_XTAL_FREQ/2)
-#include <libpic30.h>
+#ifndef _TRAPS_H
+#define _TRAPS_H
 
-/*
-                         Main application
- */
-int main(void)
-{
-    unsigned int i = 0;
-    // initialize the device
-    SYSTEM_Initialize();
-    printf("Hello world\r\n");
+#include <stdint.h>
 
-    while (1)
-    {
-        // Add your application code
-        printf("%d\r\n",i++);
-        __delay_ms(1000);
-    }
-
-    return -1;
-}
 /**
- End of File
+ * Error codes
+ */
+typedef enum 
+{
+    /* ----- Traps ----- */
+    TRAPS_OSC_FAIL = 0, /** Oscillator Fail Trap Vector */
+    TRAPS_STACK_ERR = 1, /** Stack Error Trap Vector */
+    TRAPS_ADDRESS_ERR = 2, /** Address Error Trap Vector */
+    TRAPS_MATH_ERR = 3, /** Math Error Trap Vector */
+} TRAPS_ERROR_CODE;
+
+/**
+  @Summary
+    Default handler for the traps
+
+  @Description
+    This routine will be called whenever a trap happens. It stores the trap
+    error code and waits forever.
+    This routine has a weak attribute and can be over written.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    None.
+
 */
+void __attribute__((naked, noreturn, weak)) TRAPS_halt_on_error(uint16_t code);
+
+#endif

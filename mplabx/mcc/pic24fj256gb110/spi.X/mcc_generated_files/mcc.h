@@ -1,16 +1,16 @@
 /**
-  Generated Main Source File
+  @Generated MPLAB(c) Code Configurator Header File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    mcc.h
 
-  Summary:
-    This is the main file generated using MPLAB(c) Code Configurator
+  @Summary:
+    This is the mcc.h file generated using MPLAB(c) Code Configurator
 
-  Description:
+  @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
@@ -42,30 +42,47 @@
     TERMS.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include <stdio.h>
-#define FCY     (_XTAL_FREQ/2)
-#include <libpic30.h>
+#ifndef MCC_H
+#define	MCC_H
+#include <xc.h>
+#include "pin_manager.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "spi1.h"
+#include "interrupt_manager.h"
+#include "traps.h"
+#include "uart1.h"
 
-/*
-                         Main application
+#define _XTAL_FREQ  8000000UL
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the device to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    SYSTEM_Initialize(void);
  */
-int main(void)
-{
-    unsigned int i = 0;
-    // initialize the device
-    SYSTEM_Initialize();
-    printf("Hello world\r\n");
+void SYSTEM_Initialize(void);
 
-    while (1)
-    {
-        // Add your application code
-        printf("%d\r\n",i++);
-        __delay_ms(1000);
-    }
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the oscillator to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    OSCILLATOR_Initialize(void);
+ */
+void OSCILLATOR_Initialize(void);
 
-    return -1;
-}
+
+#endif	/* MCC_H */
 /**
  End of File
 */

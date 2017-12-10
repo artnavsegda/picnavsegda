@@ -1,25 +1,25 @@
 /**
-  Generated Main Source File
+  System Interrupts Generated Driver File 
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    interrupt_manager.h
 
-  Summary:
-    This is the main file generated using MPLAB(c) Code Configurator
+  @Summary:
+    This is the generated driver implementation file for setting up the
+    interrupts using MPLAB(c) Code Configurator
 
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
+  @Description:
+    This source file provides implementations for MPLAB(c) Code Configurator interrupts.
+    Generation Information : 
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ256GB110
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
 */
-
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,30 +42,15 @@
     TERMS.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include <stdio.h>
-#define FCY     (_XTAL_FREQ/2)
-#include <libpic30.h>
-
-/*
-                         Main application
- */
-int main(void)
-{
-    unsigned int i = 0;
-    // initialize the device
-    SYSTEM_Initialize();
-    printf("Hello world\r\n");
-
-    while (1)
-    {
-        // Add your application code
-        printf("%d\r\n",i++);
-        __delay_ms(1000);
-    }
-
-    return -1;
-}
 /**
- End of File
+    Section: Includes
 */
+#include <xc.h>
+
+/**
+    void INTERRUPT_Initialize (void)
+*/
+void INTERRUPT_Initialize (void)
+{
+
+}

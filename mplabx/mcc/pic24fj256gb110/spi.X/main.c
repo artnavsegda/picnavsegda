@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
-        Device            :  PIC24FJ256GB110
+        Device            :  PIC24FJ128GB410
     The generated drivers are tested against the following:
         Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
@@ -44,24 +44,55 @@
 
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
-#define FCY     (_XTAL_FREQ/2)
-#include <libpic30.h>
 
 /*
                          Main application
  */
+
+void ads1256config()
+{
+	while(_RD1);
+	_LATD2 = 0;
+	SPI1_Exchange8bit(0x50|0);
+	SPI1_Exchange8bit(0x03);
+	SPI1_Exchange8bit(0x00);
+	SPI1_Exchange8bit(0x08);
+	SPI1_Exchange8bit(0x00);
+	SPI1_Exchange8bit(0x03);
+	_LATD2 = 1;
+}
+
 int main(void)
 {
-    unsigned int i = 0;
+    uint32_t result = 0;
     // initialize the device
     SYSTEM_Initialize();
-    printf("Hello world\r\n");
+    printf("MCU started\n\r");
+    
+    while(_RD1);
+    _LATD2 = 0;
+    SPI1_Exchange8bit(0x10|0);
+    SPI1_Exchange8bit(0x0);
+    uint8_t _data = SPI1_Exchange8bit(0xFF);
+    _LATD2 = 1;
+    printf("chip id %d\n\r",_data >> 4);
+    
+    ads1256config();
 
     while (1)
     {
-        // Add your application code
-        printf("%d\r\n",i++);
-        __delay_ms(1000);
+        _LATE3 = _RG1; // LAMP_ENABLE = ASWITCH
+        _LATE2 = _RE0; // PELTIER_ENABLE = BSWITCH
+        if (_RD1 == 0)
+        {
+            _LATD2 = 0;
+            SPI1_Exchange8bit(0x01);
+			((char *)&result)[2] = SPI1_Exchange8bit(0xFF);
+			((char *)&result)[1] = SPI1_Exchange8bit(0xFF);
+            ((char *)&result)[0] = SPI1_Exchange8bit(0xFF);
+            _LATD2 = 1;
+            printf("%lu\r\n",result);
+        }
     }
 
     return -1;
