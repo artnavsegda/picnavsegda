@@ -44,10 +44,29 @@ static void InitializeBoard(void)
 #endif
 }
 
+static void InitAppConfig(void)
+{
+    memset((void*)&AppConfig, 0x00, sizeof(AppConfig));
+    AppConfig.Flags.bIsDHCPEnabled = FALSE;
+    AppConfig.Flags.bInConfigMode = TRUE;
+
+    AppConfig.MyIPAddr.Val = MY_DEFAULT_IP_ADDR_BYTE1 | MY_DEFAULT_IP_ADDR_BYTE2<<8ul | MY_DEFAULT_IP_ADDR_BYTE3<<16ul | MY_DEFAULT_IP_ADDR_BYTE4<<24ul;
+    AppConfig.DefaultIPAddr.Val = AppConfig.MyIPAddr.Val;
+    AppConfig.MyMask.Val = MY_DEFAULT_MASK_BYTE1 | MY_DEFAULT_MASK_BYTE2<<8ul | MY_DEFAULT_MASK_BYTE3<<16ul | MY_DEFAULT_MASK_BYTE4<<24ul;
+    AppConfig.DefaultMask.Val = AppConfig.MyMask.Val;
+    AppConfig.MyGateway.Val = MY_DEFAULT_GATE_BYTE1 | MY_DEFAULT_GATE_BYTE2<<8ul | MY_DEFAULT_GATE_BYTE3<<16ul | MY_DEFAULT_GATE_BYTE4<<24ul;
+    AppConfig.PrimaryDNSServer.Val = MY_DEFAULT_PRIMARY_DNS_BYTE1 | MY_DEFAULT_PRIMARY_DNS_BYTE2<<8ul  | MY_DEFAULT_PRIMARY_DNS_BYTE3<<16ul  | MY_DEFAULT_PRIMARY_DNS_BYTE4<<24ul;
+    AppConfig.SecondaryDNSServer.Val = MY_DEFAULT_SECONDARY_DNS_BYTE1 | MY_DEFAULT_SECONDARY_DNS_BYTE2<<8ul  | MY_DEFAULT_SECONDARY_DNS_BYTE3<<16ul  | MY_DEFAULT_SECONDARY_DNS_BYTE4<<24ul;
+
+    memcpypgm2ram(AppConfig.NetBIOSName, (ROM void*)MY_DEFAULT_HOST_NAME, 16);
+    FormatNetBIOSName(AppConfig.NetBIOSName);
+    
+}
+
 int main(void)
 {
     InitializeBoard();
-    
+    InitAppConfig();
     StackInit();
     
     while(1)
