@@ -1,4 +1,6 @@
+#include "uart.h"
 #define THIS_IS_STACK_APPLICATION
+#define USE_AND_OR /* To enable AND_OR mask setting */
 #include "TCPIP Stack/TCPIP.h"
 #include "main.h"
 #include "setbaud.h"
@@ -12,8 +14,8 @@ static void InitializeBoard(void)
 #if defined(STACK_USE_UART)
     UARTTX_TRIS = 0;
     UARTRX_TRIS = 1;
-    UMODE = 0x8000;            // Set UARTEN.  Note: this must be done before setting UTXEN
-    USTA = 0x0400;        // UTXEN set
+    UMODE = UART_EN;            // Set UARTEN.  Note: this must be done before setting UTXEN
+    USTA = UART_TX_ENABLE;        // UTXEN set
     UBRG = CLOSEST_UBRG_VALUE;
 #endif 
 
