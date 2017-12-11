@@ -10,12 +10,10 @@
 
 #define BAUD_RATE (9600) // bps
 
-#define _XTAL_FREQ              8000000UL
-
-#define GetSystemClock()		(_XTAL_FREQ)			// Hz
+#define GetSystemClock()		(8000000UL)			// Hz
 #define GetInstructionClock()	(GetSystemClock()/2)	// Normally GetSystemClock()/4 for PIC18, GetSystemClock()/2 for PIC24/dsPIC, and GetSystemClock()/1 for PIC32.  Might need changing if using Doze modes.
 #define GetPeripheralClock()	(GetSystemClock()/2)	// Normally GetSystemClock()/4 for PIC18, GetSystemClock()/2 for PIC24/dsPIC, and GetSystemClock()/1 for PIC32.  Divisor may be different if using a PIC32 since it's configurable.
-#define FCY                     (_XTAL_FREQ/2)
+#define FCY                     GetInstructionClock()
 
 #include "xc.h"
 #include "PPS.h"
