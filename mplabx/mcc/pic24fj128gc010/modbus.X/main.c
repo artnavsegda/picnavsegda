@@ -53,6 +53,7 @@
 int main(void)
 {
     uint8_t buffer[10];
+    int number, i;
     
     // initialize the device
     SYSTEM_Initialize();
@@ -61,8 +62,17 @@ int main(void)
 
     while (1)
     {
-        printf("Recieved %d bytes to the buffer\r\n", UART2_ReadBuffer(buffer,10));
-        __delay_ms(1000);
+        number = UART2_ReadBuffer(buffer,10);
+        if (number > 0)
+        {
+            //UART2_WriteBuffer(buffer,number);
+            printf("Recieved %d bytes to the buffer\r\n",number);
+            for (i=0; i<number;i++)
+                printf("0x%02X ",buffer[i]);
+            printf("\r\n");
+            UART2_WriteBuffer(buffer,number);
+        }
+        __delay_ms(100);
     }
 
     return -1;

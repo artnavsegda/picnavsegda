@@ -48,8 +48,8 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "uart2.h"
 #include "uart1.h"
+#include "uart2.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 
