@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/modbus.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>1222</used>
+      <free>15162</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>263616</length>
+      <used>12114</used>
+      <free>251502</free>
+    </memory>
+  </executable>
+</project>
