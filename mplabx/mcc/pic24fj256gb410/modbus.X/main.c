@@ -38,7 +38,7 @@ int main(void)
     // initialize the device
     SYSTEM_Initialize();
     __delay_ms(100);
-    printf("MCU started\r\n");
+    printf("Unit ID: %d\r\n", DEVICEID);
    
 
     while (1)

@@ -157,14 +157,14 @@ Program Memory  [Origin = 0x100, Length = 0x2ae80]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100              0x1238          0x1b54  (6996)
-.const                      0x1338               0x37c           0x53a  (1338)
-.text                       0x16b4               0x636           0x951  (2385)
-.dinit                      0x1cea               0x1a6           0x279  (633)
-.text                       0x1e90               0x1ca           0x2af  (687)
-.init.delay32               0x205a                0x1c            0x2a  (42)
-.text                       0x2076                0x16            0x21  (33)
+.const                      0x1338               0x37e           0x53d  (1341)
+.text                       0x16b6               0x63e           0x95d  (2397)
+.dinit                      0x1cf4               0x1a6           0x279  (633)
+.text                       0x1e9a               0x1ca           0x2af  (687)
+.init.delay32               0x2064                0x1c            0x2a  (42)
+.text                       0x2080                0x16            0x21  (33)
 
-                 Total program memory used (bytes):         0x2f52  (12114) 4%
+                 Total program memory used (bytes):         0x2f61  (12129) 4%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -287,56 +287,56 @@ External Symbols in Program Memory (by address):
                   0x001274                  ___umoddi3
                   0x00127c                  ___divdi3
                   0x0012dc                  ___moddi3
-                  0x0016b4                  _Swap
-                  0x0016c4                  _main
-                  0x001ad4                  _UART2_Initialize
-                  0x001b1e                  _UART2_Read
-                  0x001b54                  _UART2_ReadBuffer
-                  0x001b88                  _UART2_Write
-                  0x001bbe                  _UART2_WriteBuffer
-                  0x001bf0                  _UART2_TransferStatusGet
-                  0x001c2c                  _UART2_Peek
-                  0x001c54                  _UART2_ReceiveBufferSizeGet
-                  0x001c82                  _UART2_TransmitBufferSizeGet
-                  0x001cb2                  _UART2_ReceiveBufferIsEmpty
-                  0x001cca                  _UART2_TransmitBufferIsFull
-                  0x001ce2                  _UART2_StatusGet
-                  0x001e90                  _PIN_MANAGER_Initialize
-                  0x001f5a                  _UART1_Initialize
-                  0x001f7a                  _UART1_Read
-                  0x001f98                  _UART1_Write
-                  0x001fb0                  _UART1_StatusGet
-                  0x001fb8                  _CRC16
-                  0x002006                  _SYSTEM_Initialize
-                  0x002016                  _OSCILLATOR_Initialize
-                  0x002036                  _INTERRUPT_Initialize
-                  0x00205a                  ___delay32
+                  0x0016b6                  _Swap
+                  0x0016c6                  _main
+                  0x001ade                  _UART2_Initialize
+                  0x001b28                  _UART2_Read
+                  0x001b5e                  _UART2_ReadBuffer
+                  0x001b92                  _UART2_Write
+                  0x001bc8                  _UART2_WriteBuffer
+                  0x001bfa                  _UART2_TransferStatusGet
+                  0x001c36                  _UART2_Peek
+                  0x001c5e                  _UART2_ReceiveBufferSizeGet
+                  0x001c8c                  _UART2_TransmitBufferSizeGet
+                  0x001cbc                  _UART2_ReceiveBufferIsEmpty
+                  0x001cd4                  _UART2_TransmitBufferIsFull
+                  0x001cec                  _UART2_StatusGet
+                  0x001e9a                  _PIN_MANAGER_Initialize
+                  0x001f64                  _UART1_Initialize
+                  0x001f84                  _UART1_Read
+                  0x001fa2                  _UART1_Write
+                  0x001fba                  _UART1_StatusGet
+                  0x001fc2                  _CRC16
+                  0x002010                  _SYSTEM_Initialize
+                  0x002020                  _OSCILLATOR_Initialize
+                  0x002040                  _INTERRUPT_Initialize
+                  0x002064                  ___delay32
                   0x02af80                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x001fb8                  _CRC16
-                  0x002036                  _INTERRUPT_Initialize
-                  0x002016                  _OSCILLATOR_Initialize
-                  0x001e90                  _PIN_MANAGER_Initialize
-                  0x002006                  _SYSTEM_Initialize
-                  0x0016b4                  _Swap
-                  0x001f5a                  _UART1_Initialize
-                  0x001f7a                  _UART1_Read
-                  0x001fb0                  _UART1_StatusGet
-                  0x001f98                  _UART1_Write
-                  0x001ad4                  _UART2_Initialize
-                  0x001c2c                  _UART2_Peek
-                  0x001b1e                  _UART2_Read
-                  0x001b54                  _UART2_ReadBuffer
-                  0x001cb2                  _UART2_ReceiveBufferIsEmpty
-                  0x001c54                  _UART2_ReceiveBufferSizeGet
-                  0x001ce2                  _UART2_StatusGet
-                  0x001bf0                  _UART2_TransferStatusGet
-                  0x001cca                  _UART2_TransmitBufferIsFull
-                  0x001c82                  _UART2_TransmitBufferSizeGet
-                  0x001b88                  _UART2_Write
-                  0x001bbe                  _UART2_WriteBuffer
+                  0x001fc2                  _CRC16
+                  0x002040                  _INTERRUPT_Initialize
+                  0x002020                  _OSCILLATOR_Initialize
+                  0x001e9a                  _PIN_MANAGER_Initialize
+                  0x002010                  _SYSTEM_Initialize
+                  0x0016b6                  _Swap
+                  0x001f64                  _UART1_Initialize
+                  0x001f84                  _UART1_Read
+                  0x001fba                  _UART1_StatusGet
+                  0x001fa2                  _UART1_Write
+                  0x001ade                  _UART2_Initialize
+                  0x001c36                  _UART2_Peek
+                  0x001b28                  _UART2_Read
+                  0x001b5e                  _UART2_ReadBuffer
+                  0x001cbc                  _UART2_ReceiveBufferIsEmpty
+                  0x001c5e                  _UART2_ReceiveBufferSizeGet
+                  0x001cec                  _UART2_StatusGet
+                  0x001bfa                  _UART2_TransferStatusGet
+                  0x001cd4                  _UART2_TransmitBufferIsFull
+                  0x001c8c                  _UART2_TransmitBufferSizeGet
+                  0x001b92                  _UART2_Write
+                  0x001bc8                  _UART2_WriteBuffer
                   0x0002d4                  __AddressError
                   0x000a76                  __Atexit
                   0x00093c                  __Closreg
@@ -356,7 +356,7 @@ External Symbols in Program Memory (by name):
                   0x000a8e                  __Vacopy
                   0x0005a0                  ___Printf_cdnopuxX
                   0x000724                  ___Putfld_cdnopuxX
-                  0x00205a                  ___delay32
+                  0x002064                  ___delay32
                   0x00127c                  ___divdi3
                   0x0010e4                  ___divsi3
                   0x0012dc                  ___moddi3
@@ -378,7 +378,7 @@ External Symbols in Program Memory (by name):
                   0x0003f4                  _fputs
                   0x000a92                  _free
                   0x000afc                  _fwrite
-                  0x0016c4                  _main
+                  0x0016c6                  _main
                   0x000c48                  _malloc
                   0x000cb6                  _memchr
                   0x00048e                  _memcpy
@@ -657,7 +657,7 @@ __FDEVOPT1
  .debug_line      0x00065c        0x1bc build/default/production/main.o
  .debug_line      0x000818         0x9c build/default/production/modbus.o
 
-.debug_frame      0x000000        0x4be
+.debug_frame      0x000000        0x4cc
  *(.debug_frame)
  .debug_frame     0x000000        0x1d6 build/default/production/mcc_generated_files/uart2.o
  .debug_frame     0x0001d6         0x30 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -665,8 +665,8 @@ __FDEVOPT1
  .debug_frame     0x000286         0xa0 build/default/production/mcc_generated_files/uart1.o
  .debug_frame     0x000326         0x30 build/default/production/mcc_generated_files/pin_manager.o
  .debug_frame     0x000356         0x4c build/default/production/mcc_generated_files/mcc.o
- .debug_frame     0x0003a2         0xec build/default/production/main.o
- .debug_frame     0x00048e         0x30 build/default/production/modbus.o
+ .debug_frame     0x0003a2         0xfa build/default/production/main.o
+ .debug_frame     0x00049c         0x30 build/default/production/modbus.o
 
 .debug_str        0x000000         0xd6
  *(.debug_str)
@@ -3398,51 +3398,51 @@ __c30_signature
 .config_IESO      0x02af98          0x2
  .config_IESO     0x02af98          0x2 build/default/production/mcc_generated_files/mcc.o
 
-.const              0x9338        0x37c load address 0x001338  
+.const              0x9338        0x37e load address 0x001338  
  .const             0x9338        0x200 build/default/production/modbus.o
- .const             0x9538        0x17c build/default/production/main.o
+ .const             0x9538        0x17e build/default/production/main.o
 
-.text             0x0016b4        0x636
- .text            0x0016b4        0x420 build/default/production/main.o
-                  0x0016b4                  _Swap
-                  0x0016c4                  _main
- .text            0x001ad4        0x216 build/default/production/mcc_generated_files/uart2.o
-                  0x001ad4                  _UART2_Initialize
-                  0x001b1e                  _UART2_Read
-                  0x001b54                  _UART2_ReadBuffer
-                  0x001b88                  _UART2_Write
-                  0x001bbe                  _UART2_WriteBuffer
-                  0x001bf0                  _UART2_TransferStatusGet
-                  0x001c2c                  _UART2_Peek
-                  0x001c54                  _UART2_ReceiveBufferSizeGet
-                  0x001c82                  _UART2_TransmitBufferSizeGet
-                  0x001cb2                  _UART2_ReceiveBufferIsEmpty
-                  0x001cca                  _UART2_TransmitBufferIsFull
-                  0x001ce2                  _UART2_StatusGet
+.text             0x0016b6        0x63e
+ .text            0x0016b6        0x428 build/default/production/main.o
+                  0x0016b6                  _Swap
+                  0x0016c6                  _main
+ .text            0x001ade        0x216 build/default/production/mcc_generated_files/uart2.o
+                  0x001ade                  _UART2_Initialize
+                  0x001b28                  _UART2_Read
+                  0x001b5e                  _UART2_ReadBuffer
+                  0x001b92                  _UART2_Write
+                  0x001bc8                  _UART2_WriteBuffer
+                  0x001bfa                  _UART2_TransferStatusGet
+                  0x001c36                  _UART2_Peek
+                  0x001c5e                  _UART2_ReceiveBufferSizeGet
+                  0x001c8c                  _UART2_TransmitBufferSizeGet
+                  0x001cbc                  _UART2_ReceiveBufferIsEmpty
+                  0x001cd4                  _UART2_TransmitBufferIsFull
+                  0x001cec                  _UART2_StatusGet
 
-.dinit            0x001cea        0x1a6
- .dinit           0x001cea        0x1a6 data_init
+.dinit            0x001cf4        0x1a6
+ .dinit           0x001cf4        0x1a6 data_init
 
-.text             0x001e90        0x1ca
- .text            0x001e90         0xca build/default/production/mcc_generated_files/pin_manager.o
-                  0x001e90                  _PIN_MANAGER_Initialize
- .text            0x001f5a         0x5e build/default/production/mcc_generated_files/uart1.o
-                  0x001f5a                  _UART1_Initialize
-                  0x001f7a                  _UART1_Read
-                  0x001f98                  _UART1_Write
-                  0x001fb0                  _UART1_StatusGet
- .text            0x001fb8         0x4e build/default/production/modbus.o
-                  0x001fb8                  _CRC16
- .text            0x002006         0x30 build/default/production/mcc_generated_files/mcc.o
-                  0x002006                  _SYSTEM_Initialize
-                  0x002016                  _OSCILLATOR_Initialize
- .text            0x002036         0x24 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x002036                  _INTERRUPT_Initialize
+.text             0x001e9a        0x1ca
+ .text            0x001e9a         0xca build/default/production/mcc_generated_files/pin_manager.o
+                  0x001e9a                  _PIN_MANAGER_Initialize
+ .text            0x001f64         0x5e build/default/production/mcc_generated_files/uart1.o
+                  0x001f64                  _UART1_Initialize
+                  0x001f84                  _UART1_Read
+                  0x001fa2                  _UART1_Write
+                  0x001fba                  _UART1_StatusGet
+ .text            0x001fc2         0x4e build/default/production/modbus.o
+                  0x001fc2                  _CRC16
+ .text            0x002010         0x30 build/default/production/mcc_generated_files/mcc.o
+                  0x002010                  _SYSTEM_Initialize
+                  0x002020                  _OSCILLATOR_Initialize
+ .text            0x002040         0x24 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x002040                  _INTERRUPT_Initialize
 
-.init.delay32     0x00205a         0x1c
- .init.delay32    0x00205a         0x1c /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(delay32da.Leo)
-                  0x00205a                  ___delay32
+.init.delay32     0x002064         0x1c
+ .init.delay32    0x002064         0x1c /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(delay32da.Leo)
+                  0x002064                  ___delay32
 
-.text             0x002076         0x16
- .text            0x002076         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x002076                  _TRAPS_halt_on_error
+.text             0x002080         0x16
+ .text            0x002080         0x16 build/default/production/mcc_generated_files/traps.o
+                  0x002080                  _TRAPS_halt_on_error
