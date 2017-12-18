@@ -80,7 +80,7 @@
 #pragma config FWPSA = PR128    // WDT Prescaler Ratio Select->1:128
 #pragma config WINDIS = OFF    // Windowed WDT Disable->Standard Watchdog Timer
 #pragma config FWDTEN = WDT_DIS    // Watchdog Timer Enable->WDT disabled in hardware; SWDTEN bit disabled
-#pragma config ICS = PGx1    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC1/PGED1
+#pragma config ICS = PGx2    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC2/PGED2
 #pragma config LPCFG = OFF    // Low power regulator control->Disabled - regardless of RETEN
 #pragma config GWRP = OFF    // General Segment Write Protect->Disabled
 #pragma config GCP = OFF    // General Segment Code Protect->Code protection is disabled
@@ -94,6 +94,8 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     OSCILLATOR_Initialize();
     UART2_Initialize();
+    PADC1_Initialize();
+    SDADC1_Initialize();
     UART1_Initialize();
 }
 

@@ -63,7 +63,7 @@ void PIN_MANAGER_Initialize(void)
     LATB = 0x0000;
     LATC = 0x0000;
     LATD = 0x0000;
-    LATE = 0x0000;
+    LATE = 0x000C;
     LATF = 0x0000;
     LATG = 0x0000;
 
@@ -74,7 +74,7 @@ void PIN_MANAGER_Initialize(void)
     TRISB = 0xF0DF;
     TRISC = 0xF01E;
     TRISD = 0xFFF7;
-    TRISE = 0x03FF;
+    TRISE = 0x03F3;
     TRISF = 0x31BD;
     TRISG = 0xF3CF;
 
@@ -109,7 +109,7 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSA = 0xC6F6;
-    ANSB = 0xF0FC;
+    ANSB = 0xF03F;
     ANSC = 0x001A;
     ANSD = 0xEFFF;
     ANSE = 0x02F0;

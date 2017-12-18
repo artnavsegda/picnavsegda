@@ -52,6 +52,8 @@
 #include "uart1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "sdadc1.h"
+#include "padc1.h"
 
 #define _XTAL_FREQ  4000000UL
 

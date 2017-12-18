@@ -10,7 +10,7 @@
 mbframestruct askmbframe, reqmbframe;
 
 unsigned short table[100] = {0xABCD, 0xDEAD};
-unsigned char bctable[100] = {0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 ,0 , 0, 1 };
+unsigned char bctable[100] = {1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 ,0 , 0, 1 };
 unsigned short amount = 100;
 
 WORD CRC16 (const BYTE *nData, WORD wLength);
@@ -30,10 +30,23 @@ int Swap(int number)
     return number;
 }
 
+int MODBUS_WriteBuffer(void *buffer, unsigned int len) {
+    int i;
+    while(U2STAbits.TRMT == 0);  
+    for (i = len; i; --i)
+    {
+        while(U2STAbits.TRMT == 0);
+        U2TXREG = *(char*)buffer++;        
+    }
+    return(len);
+}
+
 int main(void)
 {
     int numread, i;
     unsigned short mycrc;
+    uint16_t zeemann;
+    uint16_t adc[7];
     
     // initialize the device
     SYSTEM_Initialize();
@@ -47,26 +60,26 @@ int main(void)
         if (numread > 0)
         {
             //UART2_WriteBuffer(buffer,number);
-            printf("Recieved %d bytes to the buffer\r\n",numread);
-            for (i=0; i<numread;i++)
-                printf("0x%02X ",((uint8_t *)&askmbframe)[i]);
-            printf("\r\n");
-            printf("Unit id: %u\r\n", askmbframe.unitid);
-            printf("Function code: %d\r\n", askmbframe.fncode);
-            for (i=0; i<((numread-2)/2)-1;i++)
-                printf("%u ",Swap(askmbframe.data.words[i]));
-            printf("\r\n");
-            printf("recieved CRC 0x%04X\n\r",askmbframe.data.words[((numread-2)/2)-1]);
+//            printf("Recieved %d bytes to the buffer\r\n",numread);
+//            for (i=0; i<numread;i++)
+//                printf("0x%02X ",((uint8_t *)&askmbframe)[i]);
+//            printf("\r\n");
+//            printf("Unit id: %u\r\n", askmbframe.unitid);
+//            printf("Function code: %d\r\n", askmbframe.fncode);
+//            for (i=0; i<((numread-2)/2)-1;i++)
+//                printf("%u ",Swap(askmbframe.data.words[i]));
+//            printf("\r\n");
+//            printf("recieved CRC 0x%04X\n\r",askmbframe.data.words[((numread-2)/2)-1]);
             
             if (askmbframe.unitid == DEVICEID)
             {
-                printf("device id matches\r\n");
+//                printf("device id matches\r\n");
                 mycrc = CRC16((unsigned char *)&askmbframe,numread-2);
-                printf("calculated CRC 0x%04X\r\n",mycrc);
+//                printf("calculated CRC 0x%04X\r\n",mycrc);
                 
                 if (askmbframe.data.words[((numread-2)/2)-1] == mycrc)
                 {
-                    printf("crc matches\r\n");
+//                    printf("crc matches\r\n");
                     
                     int firstrequest = 0;
                     int requestnumber = 0;
@@ -75,9 +88,9 @@ int main(void)
                         case 1:
                         case 2:
                             firstrequest = Swap(askmbframe.data.askreadregs.firstreg);
-                            printf("Requesting bits starting from: %d\n", firstrequest);
+//                            printf("Requesting bits starting from: %d\n", firstrequest);
                             requestnumber = Swap(askmbframe.data.askreadregs.regnumber);
-                            printf("Number of bits requested: %d\n", requestnumber);
+//                            printf("Number of bits requested: %d\n", requestnumber);
                             askmbframe.data.reqread.bytestofollow = requestnumber / 8;
                             if ((requestnumber % 8)>0)
                                 askmbframe.data.reqread.bytestofollow++;
@@ -94,9 +107,9 @@ int main(void)
                         case 3:
                         case 4:
                             firstrequest = Swap(askmbframe.data.askreadregs.firstreg);
-                            printf("Requesing register starting from: %d\r\n", firstrequest);
+//                            printf("Requesing register starting from: %d\r\n", firstrequest);
                             requestnumber = Swap(askmbframe.data.askreadregs.regnumber);
-                            printf("Number of registers requested: %d\r\n", requestnumber);
+//                            printf("Number of registers requested: %d\r\n", requestnumber);
                             askmbframe.data.reqread.bytestofollow = requestnumber * 2;
                             replylength = askmbframe.data.reqread.bytestofollow + 3;
                             // fill every requested register with table values
@@ -146,29 +159,47 @@ int main(void)
                         break;
                     }
 
-                    printf("replylength %d\r\n",replylength+2);
+//                    printf("replylength %d\r\n",replylength+2);
 
                     askmbframe.checksum = CRC16((unsigned char *)&askmbframe,replylength);
 
-                    printf("checksum %02X\r\n",askmbframe.checksum);
+//                    printf("checksum %02X\r\n",askmbframe.checksum);
                     
-                    for (i=0; i<replylength;i++)
-                        printf("0x%02X ",((uint8_t *)&askmbframe)[i]);
-                    printf("\r\n");
+//                    for (i=0; i<replylength;i++)
+//                        printf("0x%02X ",((uint8_t *)&askmbframe)[i]);
+//                    printf("\r\n");
                     
                     _LATF1 = 1;
-                    UART2_WriteBuffer((unsigned char *)&askmbframe,replylength);
-                    UART2_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
+                    MODBUS_WriteBuffer((unsigned char *)&askmbframe,replylength);
+                    MODBUS_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
                     __delay_ms(50);
                     _LATF1 = 0;
                 }
-                else
-                    printf("crc mismatch\r\n");
+//                else
+//                    printf("crc mismatch\r\n");
             }
-            else
-                printf("device id mismatch\r\n");
+//            else
+//                printf("device id mismatch\r\n");
         }
         __delay_ms(50);
+        PADC1_SampleList0ManualConversionStart();
+        if( PADC1_SampleList0ConversionResultBufferGet(adc, 0, 6))
+        {
+            PADC1_Tasks();
+        }
+        zeemann = SDADC1_ConversionRawResultGet();
+        table[0] = zeemann;
+        table[1] = adc[0];
+        table[2] = adc[1];
+        table[3] = adc[2];
+        table[4] = adc[3];
+        table[5] = adc[4];
+        table[6] = adc[5];
+        printf("%d %u %u %u %u %u %u\r\n",zeemann, adc[0], adc[1], adc[2], adc[3], adc[4], adc[5]);
+        
+        
+        _LATE3 = bctable[0];
+        _LATE2 = bctable[1];
     }
 
     return -1;
