@@ -46,7 +46,7 @@
 #include <stdio.h>
 
 int getadc(ADC1_CHANNEL channel)
-{
+{       
         int conversion, i;
         //ADC1_Initialize();
         ADC1_ChannelSelect(channel);
