@@ -14,11 +14,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.35
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 */
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
@@ -42,36 +42,24 @@
     TERMS.
 */
 
-#ifndef _INTERRUPT_MANAGER_H
-#define _INTERRUPT_MANAGER_H
+/**
+    Section: Includes
+*/
+#include <xc.h>
 
 /**
-  @Summary
-    Initializes the interrupt priorities of the PIC24FJ128GC010
-
-  @Description
-    This routine sets the interrupt priorities of the modules that have been configured
-    for the PIC24FJ128GC010
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    void SYSTEM_Initialize(void)
-    {
-        // Other initializers are called from this function
-        INTERRUPT_Initialize ();
-    }
-    </code>
-
+    void INTERRUPT_Initialize (void)
 */
-void INTERRUPT_Initialize(void);
+void INTERRUPT_Initialize (void)
+{
+    //    UERI: U2E - UART2 Error
+    //    Priority: 1
+        IPC16bits.U2ERIP = 1;
+    //    UTXI: U2TX - UART2 Transmitter
+    //    Priority: 1
+        IPC7bits.U2TXIP = 1;
+    //    URXI: U2RX - UART2 Receiver
+    //    Priority: 1
+        IPC7bits.U2RXIP = 1;
 
-#endif
+}

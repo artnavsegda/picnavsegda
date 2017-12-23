@@ -1,24 +1,24 @@
 /**
-  System Interrupts Generated Driver File 
+  System Traps Generated Driver File 
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    interrupt_manager.h
+    traps.h
 
   @Summary:
-    This is the generated driver implementation file for setting up the
-    interrupts using MPLAB(c) Code Configurator
+    This is the generated driver implementation file for handling traps
+    using MPLAB(c) Code Configurator
 
   @Description:
-    This source file provides implementations for MPLAB(c) Code Configurator interrupts.
+    This source file provides implementations for MPLAB(c) Code Configurator traps.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.35
         Device            :  PIC24FJ128GC010
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 */
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
@@ -42,24 +42,45 @@
     TERMS.
 */
 
-/**
-    Section: Includes
-*/
-#include <xc.h>
+#ifndef _TRAPS_H
+#define _TRAPS_H
+
+#include <stdint.h>
 
 /**
-    void INTERRUPT_Initialize (void)
-*/
-void INTERRUPT_Initialize (void)
+ * Error codes
+ */
+typedef enum 
 {
-    //    UERI: U2E - UART2 Error
-    //    Priority: 1
-        IPC16bits.U2ERIP = 1;
-    //    UTXI: U2TX - UART2 Transmitter
-    //    Priority: 1
-        IPC7bits.U2TXIP = 1;
-    //    URXI: U2RX - UART2 Receiver
-    //    Priority: 1
-        IPC7bits.U2RXIP = 1;
+    /* ----- Traps ----- */
+    TRAPS_OSC_FAIL = 0, /** Oscillator Fail Trap vector */
+    TRAPS_STACK_ERR = 1, /** Stack Error Trap Vector */
+    TRAPS_ADDRESS_ERR = 2, /** Address Error Trap Vector */
+    TRAPS_MATH_ERR = 3, /** Math Error Trap Vector */
+} TRAPS_ERROR_CODE;
 
-}
+/**
+  @Summary
+    Default handler for the traps
+
+  @Description
+    This routine will be called whenever a trap happens. It stores the trap
+    error code and waits forever.
+    This routine has a weak attribute and can be over written.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    None.
+
+*/
+void __attribute__((naked, noreturn, weak)) TRAPS_halt_on_error(uint16_t code);
+
+#endif

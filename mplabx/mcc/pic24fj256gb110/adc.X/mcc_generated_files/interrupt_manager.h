@@ -1,24 +1,24 @@
 /**
-  System Traps Generated Driver File 
+  System Interrupts Generated Driver File 
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    traps.h
+    interrupt_manager.h
 
   @Summary:
-    This is the generated driver implementation file for handling traps
-    using MPLAB(c) Code Configurator
+    This is the generated driver implementation file for setting up the
+    interrupts using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This source file provides implementations for MPLAB(c) Code Configurator traps.
+    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
-        Device            :  PIC24FJ128GC010
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
+        Device            :  PIC24FJ256GB110
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 */
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
@@ -42,31 +42,16 @@
     TERMS.
 */
 
-#ifndef _TRAPS_H
-#define _TRAPS_H
-
-#include <stdint.h>
-
-/**
- * Error codes
- */
-typedef enum 
-{
-    /* ----- Traps ----- */
-    TRAPS_OSC_FAIL = 0, /** Oscillator Fail Trap vector */
-    TRAPS_STACK_ERR = 1, /** Stack Error Trap Vector */
-    TRAPS_ADDRESS_ERR = 2, /** Address Error Trap Vector */
-    TRAPS_MATH_ERR = 3, /** Math Error Trap Vector */
-} TRAPS_ERROR_CODE;
+#ifndef _INTERRUPT_MANAGER_H
+#define _INTERRUPT_MANAGER_H
 
 /**
   @Summary
-    Default handler for the traps
+    Initializes the interrupt priorities of the PIC24FJ256GB110
 
   @Description
-    This routine will be called whenever a trap happens. It stores the trap
-    error code and waits forever.
-    This routine has a weak attribute and can be over written.
+    This routine sets the interrupt priorities of the modules that have been configured
+    for the PIC24FJ256GB110
 
   @Preconditions
     None.
@@ -78,9 +63,15 @@ typedef enum
     None.
 
   @Example
-    None.
+    <code>
+    void SYSTEM_Initialize(void)
+    {
+        // Other initializers are called from this function
+        INTERRUPT_Initialize ();
+    }
+    </code>
 
 */
-void __attribute__((naked, noreturn, weak)) TRAPS_halt_on_error(uint16_t code);
+void INTERRUPT_Initialize(void);
 
 #endif
