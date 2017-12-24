@@ -30,6 +30,17 @@ int Swap(int number)
     return number;
 }
 
+int MODBUS_WriteBuffer(void *buffer, unsigned int len) {
+    int i;
+    while(U2STAbits.TRMT == 0);  
+    for (i = len; i; --i)
+    {
+        while(U2STAbits.TRMT == 0);
+        U2TXREG = *(char*)buffer++;        
+    }
+    return(len);
+}
+
 int main(void)
 {
     int numread, i;
@@ -157,8 +168,8 @@ int main(void)
                     printf("\r\n");
                     
                     _LATF1 = 1;
-                    UART2_WriteBuffer((unsigned char *)&askmbframe,replylength);
-                    UART2_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
+                    MODBUS_WriteBuffer((unsigned char *)&askmbframe,replylength);
+                    MODBUS_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
                     __delay_ms(50);
                     _LATF1 = 0;
                 }
