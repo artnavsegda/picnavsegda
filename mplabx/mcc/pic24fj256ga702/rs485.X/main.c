@@ -43,6 +43,8 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#define FCY _XTAL_FREQ
+#include <libpic30.h>
 
 /*
                          Main application
@@ -54,7 +56,8 @@ int main(void)
 
     while (1)
     {
-        UART1_Write('a');
+        UART1_Write(0xAA);
+        __delay_ms(1);
     }
 
     return -1;
