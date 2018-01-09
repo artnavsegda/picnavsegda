@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -55,13 +55,13 @@
 */
 /**
   @Summary
-    Sets the GPIO pin, RF1, high using LATF1.
+    Sets the GPIO pin, RD2, high using LATD2.
 
   @Description
-    Sets the GPIO pin, RF1, high using LATF1.
+    Sets the GPIO pin, RD2, high using LATD2.
 
   @Preconditions
-    The RF1 must be set to an output.
+    The RD2 must be set to an output.
 
   @Returns
     None.
@@ -71,21 +71,21 @@
 
   @Example
     <code>
-    // Set RF1 high (1)
-    TXEN_SetHigh();
+    // Set RD2 high (1)
+    CS_ADS1256_SetHigh();
     </code>
 
 */
-#define TXEN_SetHigh()          _LATF1 = 1
+#define CS_ADS1256_SetHigh()          _LATD2 = 1
 /**
   @Summary
-    Sets the GPIO pin, RF1, low using LATF1.
+    Sets the GPIO pin, RD2, low using LATD2.
 
   @Description
-    Sets the GPIO pin, RF1, low using LATF1.
+    Sets the GPIO pin, RD2, low using LATD2.
 
   @Preconditions
-    The RF1 must be set to an output.
+    The RD2 must be set to an output.
 
   @Returns
     None.
@@ -95,21 +95,21 @@
 
   @Example
     <code>
-    // Set RF1 low (0)
-    TXEN_SetLow();
+    // Set RD2 low (0)
+    CS_ADS1256_SetLow();
     </code>
 
 */
-#define TXEN_SetLow()           _LATF1 = 0
+#define CS_ADS1256_SetLow()           _LATD2 = 0
 /**
   @Summary
-    Toggles the GPIO pin, RF1, using LATF1.
+    Toggles the GPIO pin, RD2, using LATD2.
 
   @Description
-    Toggles the GPIO pin, RF1, using LATF1.
+    Toggles the GPIO pin, RD2, using LATD2.
 
   @Preconditions
-    The RF1 must be set to an output.
+    The RD2 must be set to an output.
 
   @Returns
     None.
@@ -119,18 +119,18 @@
 
   @Example
     <code>
-    // Toggle RF1
-    TXEN_Toggle();
+    // Toggle RD2
+    CS_ADS1256_Toggle();
     </code>
 
 */
-#define TXEN_Toggle()           _LATF1 ^= 1
+#define CS_ADS1256_Toggle()           _LATD2 ^= 1
 /**
   @Summary
-    Reads the value of the GPIO pin, RF1.
+    Reads the value of the GPIO pin, RD2.
 
   @Description
-    Reads the value of the GPIO pin, RF1.
+    Reads the value of the GPIO pin, RD2.
 
   @Preconditions
     None.
@@ -145,18 +145,18 @@
     <code>
     uint16_t portValue;
 
-    // Read RF1
-    postValue = TXEN_GetValue();
+    // Read RD2
+    postValue = CS_ADS1256_GetValue();
     </code>
 
 */
-#define TXEN_GetValue()         _RF1
+#define CS_ADS1256_GetValue()         _RD2
 /**
   @Summary
-    Configures the GPIO pin, RF1, as an input.
+    Configures the GPIO pin, RD2, as an input.
 
   @Description
-    Configures the GPIO pin, RF1, as an input.
+    Configures the GPIO pin, RD2, as an input.
 
   @Preconditions
     None.
@@ -169,18 +169,18 @@
 
   @Example
     <code>
-    // Sets the RF1 as an input
-    TXEN_SetDigitalInput();
+    // Sets the RD2 as an input
+    CS_ADS1256_SetDigitalInput();
     </code>
 
 */
-#define TXEN_SetDigitalInput()  _TRISF1 = 1
+#define CS_ADS1256_SetDigitalInput()  _TRISD2 = 1
 /**
   @Summary
-    Configures the GPIO pin, RF1, as an output.
+    Configures the GPIO pin, RD2, as an output.
 
   @Description
-    Configures the GPIO pin, RF1, as an output.
+    Configures the GPIO pin, RD2, as an output.
 
   @Preconditions
     None.
@@ -193,12 +193,12 @@
 
   @Example
     <code>
-    // Sets the RF1 as an output
-    TXEN_SetDigitalOutput();
+    // Sets the RD2 as an output
+    CS_ADS1256_SetDigitalOutput();
     </code>
 
 */
-#define TXEN_SetDigitalOutput() _TRISF1 = 0
+#define CS_ADS1256_SetDigitalOutput() _TRISD2 = 0
 
 /**
     Section: Function Prototypes

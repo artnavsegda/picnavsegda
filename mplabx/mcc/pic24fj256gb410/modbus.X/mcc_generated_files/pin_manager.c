@@ -15,11 +15,11 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -60,9 +60,9 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
     LATA = 0x0000;
-    LATB = 0x0000;
+    LATB = 0x0020;
     LATC = 0x0000;
-    LATD = 0x0000;
+    LATD = 0x1000;
     LATE = 0x0000;
     LATF = 0x0000;
     LATG = 0x0000;
@@ -72,10 +72,10 @@ void PIN_MANAGER_Initialize(void)
      ***************************************************************************/
     TRISA = 0xC6FF;
     TRISB = 0xFFDF;
-    TRISC = 0x901E;
-    TRISD = 0xFFF7;
+    TRISC = 0x101E;
+    TRISD = 0xF5F3;
     TRISE = 0x03FF;
-    TRISF = 0x31BD;
+    TRISF = 0x31BF;
     TRISG = 0xF3CF;
 
     /****************************************************************************
@@ -117,9 +117,9 @@ void PIN_MANAGER_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSA = 0xC6ED;
-    ANSB = 0xFFDC;
+    ANSB = 0xFF1F;
     ANSC = 0x001E;
-    ANSD = 0xEFF7;
+    ANSD = 0xE4F3;
     ANSE = 0x03FF;
     ANSF = 0x313D;
     ANSG = 0xF3C3;
@@ -130,8 +130,11 @@ void PIN_MANAGER_Initialize(void)
      ***************************************************************************/
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
+    RPOR6bits.RP12R = 0x0007;   //RD11->SPI1:SDO1;
+    RPOR2bits.RP4R = 0x0008;   //RD9->SPI1:SCK1OUT;
     RPOR11bits.RP22R = 0x0005;   //RD3->UART2:U2TX;
-    RPOR9bits.RP18R = 0x0003;   //RB5->UART1:U1TX;
+    RPOR9bits.RP18R = 0x0006;   //RB5->UART2:U2RTS;
+    RPINR20bits.SDI1R = 0x0002;   //RD8->SPI1:SDI1;
     RPINR19bits.U2RXR = 0x002A;   //RD12->UART2:U2RX;
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock   PPS

@@ -49,12 +49,22 @@
  */
 int main(void)
 {
+    int conversion;
     // initialize the device
     SYSTEM_Initialize();
+    
+    ADC1_ChannelSelect(ADC1_POTEN);
 
     while (1)
     {
         // Add your application code
+        ADC1_Start();
+        //Provide Delay
+        for(int i=0;i <1000;i++);
+        ADC1_Stop();
+        while(!ADC1_IsConversionComplete())
+            ADC1_Tasks();
+        conversion = ADC1_ConversionResultGet();
     }
 
     return -1;

@@ -56,7 +56,7 @@ void ads1256config()
 	SPI1_Exchange8bit(0x50|0);
 	SPI1_Exchange8bit(0x03);
 	SPI1_Exchange8bit(0x00);
-	SPI1_Exchange8bit(0x08);
+	SPI1_Exchange8bit(0x67);
 	SPI1_Exchange8bit(0x00);
 	SPI1_Exchange8bit(0x03);
 	_LATD2 = 1;
@@ -91,7 +91,7 @@ int main(void)
 			((char *)&result)[1] = SPI1_Exchange8bit(0xFF);
             ((char *)&result)[0] = SPI1_Exchange8bit(0xFF);
             _LATD2 = 1;
-            printf("%lu\r\n",result);
+            printf("%08lX\r\n",result);
         }
     }
 

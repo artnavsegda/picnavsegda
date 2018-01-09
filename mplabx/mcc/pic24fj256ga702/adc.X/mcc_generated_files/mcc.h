@@ -49,9 +49,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "uart1.h"
-#include "adc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "adc1.h"
 
 #define _XTAL_FREQ  8000000UL
 

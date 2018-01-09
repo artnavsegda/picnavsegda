@@ -13,11 +13,11 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.35
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB             :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB             :  MPLAB X 3.60
 */
 
 /*
@@ -55,14 +55,14 @@
 #pragma config AIVTDIS = DISABLE    // Alternate Interrupt Vector Table Disable bit->Disable AIVT
 
 // FOSCSEL
-#pragma config FNOSC = FRCDIV    // Oscillator Select->Fast RC Oscillator with divide-by-n (FRCDIV)
+#pragma config FNOSC = PRI    // Oscillator Select->Primary Oscillator (XT, HS, EC)
 #pragma config PLLMODE = DISABLED    // Frequency Multiplier Select Bits->No PLL used; PLLEN bit is not available
 #pragma config IESO = ON    // Internal External Switchover->Start up device with FRC, then switch to user-selected oscillator source
 
 // FOSC
-#pragma config POSCMOD = NONE    // Primary Oscillator Select->Primary Oscillator disabled
-#pragma config OSCIOFCN = OFF    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as CLKO (FOSC/2)
-#pragma config SOSCSEL = OFF    // SOSC Power Selection Configuration bits->Digital (SCLKI) mode
+#pragma config POSCMOD = XT    // Primary Oscillator Select->XT oscillator mode selected
+#pragma config OSCIOFCN = ON    // OSCO Pin Configuration->OSCO/CLKO/RC15 functions as port I/O (RC15)
+#pragma config SOSCSEL = ON    // SOSC Power Selection Configuration bits->SOSC is used in crystal (SOSCI/SOSCO) mode
 #pragma config PLLSS = PLL_PRI    // PLL Secondary Selection Configuration bit->PLL is fed by the Primary oscillator
 #pragma config IOL1WAY = ON    // IOLOCK One-Way Set Enable->Once set the IOLOCK bit cannot be cleared
 #pragma config FCKSM = CSDCMD    // Clock Switching and Monitor Selection->Clock switching and Fail-Safe Clock Monitor are disabled
@@ -81,7 +81,7 @@
 #pragma config LPCFG = OFF    // Low power regulator control->Disabled
 
 // FICD
-#pragma config ICS = PGx1    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC1/PGED1
+#pragma config ICS = PGx2    // Emulator Pin Placement Select bits->Emulator functions are shared with PGEC2/PGED2
 #pragma config JTAGEN = OFF    // JTAG Port Enable->JTAG port is disabled
 #pragma config BTSWP = OFF    // BOOTSWP Instruction Enable bit->BOOTSWP instruction is disabled
 
@@ -106,16 +106,17 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     OSCILLATOR_Initialize();
+    INTERRUPT_Initialize();
     UART2_Initialize();
+    SPI1_Initialize();
     UART1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // CF no clock failure; NOSC FRCDIV; SOSCEN disabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
-    __builtin_write_OSCCONL((uint8_t) (0x0700 & 0x00FF));
+    // CF no clock failure; NOSC PRI; SOSCEN enabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
+    __builtin_write_OSCCONL((uint8_t) (0x0202 & 0x00FF));
     // CPDIV 1:1; PLLEN disabled; RCDIV FRC/2; DOZE 1:8; DOZEN disabled; ROI disabled; 
     CLKDIV = 0x3100;
     // STOR disabled; STORPOL Interrupt when STOR is 1; STSIDL disabled; STLPOL Interrupt when STLOCK is 1; STLOCK disabled; STSRC SOSC; STEN disabled; TUN Center frequency; 

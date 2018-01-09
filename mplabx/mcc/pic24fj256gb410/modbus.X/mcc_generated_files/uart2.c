@@ -13,11 +13,11 @@
   @Description
     This source file provides APIs for driver for UART2. 
     Generation Information : 
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.35
         Device            :  PIC24FJ256GB410
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.30
-        MPLAB 	          :  MPLAB X 3.45
+        Compiler          :  XC16 1.31
+        MPLAB 	          :  MPLAB X 3.60
 */
 
 /*
@@ -126,12 +126,12 @@ static uint8_t uart2_rxByteQ[UART2_CONFIG_RX_BYTEQ_LENGTH] ;
 
 void UART2_Initialize (void)
 {
-   // STSEL 1; IREN disabled; PDSEL 8N; UARTEN enabled; RTSMD disabled; USIDL disabled; WAKE disabled; ABAUD disabled; LPBACK disabled; BRGH enabled; URXINV disabled; UEN TX_RX; 
-   U2MODE = (0x8008 & ~(1<<15));  // disabling UARTEN bit   
+   // STSEL 1; IREN disabled; PDSEL 8N; UARTEN enabled; RTSMD enabled; USIDL disabled; WAKE disabled; ABAUD disabled; LPBACK disabled; BRGH enabled; URXINV disabled; UEN TX_RX; 
+   U2MODE = (0x8808 & ~(1<<15));  // disabling UARTEN bit   
    // UTXISEL0 TX_ONE_CHAR; UTXINV disabled; OERR NO_ERROR_cleared; URXISEL RX_ONE_CHAR; UTXBRK COMPLETED; UTXEN disabled; ADDEN disabled; 
    U2STA = 0x0000;
-   // BaudRate = 9600; Frequency = 2000000 Hz; U2BRG 51; 
-   U2BRG = 0x0033;
+   // BaudRate = 9600; Frequency = 4000000 Hz; U2BRG 103; 
+   U2BRG = 0x0067;
    // ADMADDR 0; ADMMASK 0; 
    U2ADMD = 0x0000;
    // T0PD 1 ETU; PTRCL T0; TXRPT Retransmits the error byte once; CONV Direct; SCEN disabled; 

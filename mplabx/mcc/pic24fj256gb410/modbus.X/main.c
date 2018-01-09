@@ -32,10 +32,9 @@ int Swap(int number)
 
 int MODBUS_WriteBuffer(void *buffer, unsigned int len) {
     int i;
-    while(U2STAbits.TRMT == 0);  
     for (i = len; i; --i)
     {
-        while(U2STAbits.TRMT == 0);
+        while(U2STAbits.UTXBF == 1);
         U2TXREG = *(char*)buffer++;        
     }
     return(len);
@@ -167,11 +166,10 @@ int main(void)
                         printf("0x%02X ",((uint8_t *)&askmbframe)[i]);
                     printf("\r\n");
                     
-                    _LATF1 = 1;
-                    MODBUS_WriteBuffer((unsigned char *)&askmbframe,replylength);
-                    MODBUS_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
-                    __delay_ms(50);
-                    _LATF1 = 0;
+                    //_LATF1 = 1;
+                    UART2_WriteBuffer((unsigned char *)&askmbframe,replylength);
+                    UART2_WriteBuffer((unsigned char *)&askmbframe.checksum,2);
+                    //_LATF1 = 0;
                 }
                 else
                     printf("crc mismatch\r\n");
