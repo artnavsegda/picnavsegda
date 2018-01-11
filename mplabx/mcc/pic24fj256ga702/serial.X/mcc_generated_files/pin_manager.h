@@ -15,11 +15,10 @@
   @Description:
     This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15
+        Product Revision  :  MPLAB(c) Code Configurator - 4.15.1
         Device            :  PIC24FJ256GA702
-        Version           :  1.02
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.26
+        Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.

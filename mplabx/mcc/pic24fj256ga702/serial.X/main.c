@@ -53,14 +53,17 @@
  */
 int main(void)
 {
+    int i = 0;
     // initialize the device
     SYSTEM_Initialize();
-    __delay_ms(100);
+    __delay_ms(1000);
     printf("hello, world\r\n");
 
     while (1)
     {
         // Add your application code
+        printf("count %d\r\n",i++);
+        __delay_ms(1000);
     }
 
     return -1;

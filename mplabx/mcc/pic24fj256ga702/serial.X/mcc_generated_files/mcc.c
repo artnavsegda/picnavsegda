@@ -13,11 +13,10 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.25
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.26
         Device            :  PIC24FJ256GA702
-        Driver Version    :  1.02
     The generated drivers are tested against the following:
-        Compiler          :  XC16 1.26
+        Compiler          :  XC16 1.30
         MPLAB             :  MPLAB X 3.45
 */
 
@@ -62,7 +61,7 @@
 
 // FOSC
 #pragma config POSCMD = NONE    // Primary Oscillator Mode Select bits->Primary Oscillator disabled
-#pragma config OSCIOFCN = OFF    // OSC2 Pin Function bit->OSC2 is clock output
+#pragma config OSCIOFCN = ON    // OSC2 Pin Function bit->OSC2 is general purpose digital I/O pin
 #pragma config SOSCSEL = ON    // SOSC Power Selection Configuration bits->SOSC is used in crystal (SOSCI/SOSCO) mode
 #pragma config PLLSS = PLL_PRI    // PLL Secondary Selection Configuration bit->PLL is fed by the Primary oscillator
 #pragma config IOL1WAY = ON    // Peripheral pin select configuration bit->Allow only one reconfiguration
@@ -97,8 +96,8 @@
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
     UART1_Initialize();
 }
 
@@ -124,8 +123,6 @@ void OSCILLATOR_Initialize(void)
     OSCDIV = 0x0000;
     // TRIM 0; 
     OSCFDIV = 0x0000;
-    // WDTO disabled; TRAPR disabled; SLEEP disabled; BOR disabled; DPSLP disabled; CM disabled; SWR disabled; SWDTEN disabled; EXTR disabled; POR disabled; SBOREN disabled; IDLE disabled; IOPUWR disabled; VREGS disabled; 
-    RCON = 0x0000;
 }
 
 /**
